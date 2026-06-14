@@ -1,0 +1,45 @@
+@model MLM.Models.Users
+
+@{
+    ViewData["Title"] = "Delete User";
+}
+
+<div class="container mt-4">
+    <div class="alert alert-danger" role="alert">
+        <h4 class="alert-heading">Are you sure you want to delete this user?</h4>
+        <p>Deleting this user is a permanent action and cannot be undone.</p>
+    </div>
+
+    <div class="card shadow-sm border-danger mt-3" style="max-width: 600px;">
+        <div class="card-body">
+            <h5 class="card-title text-danger">User Details</h5>
+            <dl class="row mt-3">
+                <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Name)</dt>
+                <dd class="col-sm-8 fw-bold">@Html.DisplayFor(model => model.Name)</dd>
+
+                <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Email)</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.Email)</dd>
+
+                <dt class="col-sm-4">Role</dt>
+                <dd class="col-sm-8">
+                    @if (Model.Role != null)
+                    {
+                        <span class="badge bg-info text-dark">@Model.Role.Name</span>
+                    }
+                    else
+                    {
+                        <span class="text-muted small">None</span>
+                    }
+                </dd>
+            </dl>
+
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="Id" />
+                <div class="d-flex gap-2 mt-4">
+                    <button type="submit" class="btn btn-danger">Confirm Delete</button>
+                    <a asp-action="Index" class="btn btn-outline-secondary">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

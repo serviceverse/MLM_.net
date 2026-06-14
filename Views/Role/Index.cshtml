@@ -1,0 +1,40 @@
+@model IEnumerable<MLM.Models.Role>
+
+@{
+    ViewData["Title"] = "Roles";
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>Manage Roles</h2>
+        <a asp-action="Create" class="btn btn-primary">Create New Role</a>
+    </div>
+
+    <table class="table table-striped table-hover shadow-sm rounded overflow-hidden">
+        <thead class="table-dark">
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Name)</th>
+                <th width="150">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="align-middle">
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        <div class="btn-group" role="group">
+                            <a asp-action="ManagePermissions" asp-route-id="@item.Id" class="btn btn-sm btn-outline-info" title="Manage Permissions">
+                                <i class="bi bi-key"></i> Permissions
+                            </a>
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-outline-primary">Edit</a>
+                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-outline-danger">Delete</a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
