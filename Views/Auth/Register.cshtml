@@ -9,7 +9,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta FullName="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Register - TheCubeFactory</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -68,7 +68,7 @@
         .brand-icon span:nth-child(3) { opacity: 0.6; }
         .brand-icon span:nth-child(4) { opacity: 0.4; }
 
-        .brand-name {
+        .brand-FullName {
             font-size: 20px;
             font-weight: 700;
             color: #0f172a;
@@ -367,7 +367,7 @@
                 <div class="brand-icon">
                     <span></span><span></span><span></span><span></span>
                 </div>
-                <div class="brand-name">TheCubeFactory</div>
+                <div class="brand-FullName">TheCubeFactory</div>
             </div>
 
             <div class="form-wrapper">
@@ -393,21 +393,21 @@
                         @Html.AntiForgeryToken()
 
                         <div class="input-group-custom">
-                            <label asp-for="Name" class="form-label">Full Name</label>
-                            <input asp-for="Name" type="text" class="form-control" autocomplete="name" placeholder="John Doe" />
-                            <span asp-validation-for="Name" class="field-error"></span>
+                            <label asp-for="FullName" class="form-label">Full FullName</label>
+                            <input asp-for="FullName" type="text" class="form-control" autocomplete="FullName" placeholder="John Doe" />
+                            <span asp-validation-for="FullName" class="field-error"></span>
                         </div>
 
                         <div class="input-group-custom">
                             <label asp-for="Email" class="form-label">Email address</label>
-                            <input asp-for="Email" type="email" class="form-control" autocomplete="email" placeholder="name@company.com" />
+                            <input asp-for="Email" type="email" class="form-control" autocomplete="email" placeholder="FullName@company.com" />
                             <span asp-validation-for="Email" class="field-error"></span>
                         </div>
 
                         <div class="input-group-custom">
-                            <label asp-for="Phone" class="form-label">Phone Number</label>
-                            <input asp-for="Phone" type="text" class="form-control" autocomplete="tel" placeholder="+1 (555) 000-0000" />
-                            <span asp-validation-for="Phone" class="field-error"></span>
+                            <label asp-for="ContactNo" class="form-label">ContactNo Number</label>
+                            <input asp-for="ContactNo" type="text" class="form-control" autocomplete="tel" placeholder="+1 (555) 000-0000" />
+                            <span asp-validation-for="ContactNo" class="field-error"></span>
                         </div>
 
                         <div class="input-group-custom">

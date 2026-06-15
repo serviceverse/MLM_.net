@@ -1,0 +1,35 @@
+@{
+    ViewData["Title"] = "Trade History";
+}
+
+<div class="min-h-screen bg-primary text-[var(--text-primary)] p-8">
+    <div class="max-w-6xl mx-auto space-y-8">
+        <div>
+            <h1 class="text-4xl font-bold text-[var(--text-primary)] mb-2">Trade History</h1>
+            <p class="text-[var(--text-secondary)]">View your historical trades and performance.</p>
+        </div>
+        <div class="bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-3xl p-8">
+            <table class="w-full text-left">
+                <thead class="border-b border-[var(--border-secondary)]">
+                    <tr>
+                        <th class="pb-3 text-[var(--text-secondary)]">Ticket</th>
+                        <th class="pb-3 text-[var(--text-secondary)]">Time</th>
+                        <th class="pb-3 text-[var(--text-secondary)]">Type</th>
+                        <th class="pb-3 text-[var(--text-secondary)]">Lots</th>
+                        <th class="pb-3 text-[var(--text-secondary)]">Symbol</th>
+                        <th class="pb-3 text-[var(--text-secondary)]">Open Price</th>
+                        <th class="pb-3 text-[var(--text-secondary)]">Close Price</th>
+                        <th class="pb-3 text-[var(--text-secondary)]">Profit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="8" class="py-8 text-center text-[var(--text-tertiary)]">
+                            No trades found.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

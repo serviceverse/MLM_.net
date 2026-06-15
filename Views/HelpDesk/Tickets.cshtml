@@ -1,0 +1,37 @@
+@{
+    ViewData["Title"] = "Support Tickets";
+}
+
+<div class="min-h-screen bg-primary text-[var(--text-primary)] p-8">
+    <div class="max-w-6xl mx-auto space-y-8">
+        <div>
+            <h1 class="text-4xl font-bold text-[var(--text-primary)] mb-2">Help Desk</h1>
+            <p class="text-[var(--text-secondary)]">Open a new ticket or view your existing support requests.</p>
+        </div>
+        <div class="bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-3xl p-8">
+            <div class="flex justify-end mb-4">
+                <button class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] px-4 py-2 rounded-xl font-semibold">
+                    New Ticket
+                </button>
+            </div>
+            <table class="w-full text-left">
+                <thead class="border-b border-[var(--border-secondary)]">
+                    <tr>
+                        <th class="pb-3 text-[var(--text-secondary)]">Ticket ID</th>
+                        <th class="pb-3 text-[var(--text-secondary)]">Category</th>
+                        <th class="pb-3 text-[var(--text-secondary)]">Title</th>
+                        <th class="pb-3 text-[var(--text-secondary)]">Status</th>
+                        <th class="pb-3 text-[var(--text-secondary)]">Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="5" class="py-8 text-center text-[var(--text-tertiary)]">
+                            No tickets found.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

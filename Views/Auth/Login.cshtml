@@ -9,7 +9,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta FullName="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login - TheCubeFactory</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -68,7 +68,7 @@
         .brand-icon span:nth-child(3) { opacity: 0.6; }
         .brand-icon span:nth-child(4) { opacity: 0.4; }
 
-        .brand-name {
+        .brand-FullName {
             font-size: 20px;
             font-weight: 700;
             color: #0f172a;
@@ -438,7 +438,7 @@
                 <div class="brand-icon">
                     <span></span><span></span><span></span><span></span>
                 </div>
-                <div class="brand-name">TheCubeFactory</div>
+                <div class="brand-FullName">TheCubeFactory</div>
             </div>
 
             <div class="form-wrapper">
@@ -465,7 +465,7 @@
 
                         <div class="input-group-custom">
                             <label asp-for="Email" class="form-label">Email address</label>
-                            <input asp-for="Email" type="email" class="form-control" autocomplete="email" placeholder="name@company.com" />
+                            <input asp-for="Email" type="email" class="form-control" autocomplete="email" placeholder="FullName@company.com" />
                             <span asp-validation-for="Email" class="field-error"></span>
                         </div>
 

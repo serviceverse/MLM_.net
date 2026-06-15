@@ -1,0 +1,109 @@
+@{
+    ViewData["Title"] = "Deposit";
+}
+
+<div class="min-h-screen bg-primary text-[var(--text-primary)] p-8">
+    <div class="max-w-6xl mx-auto space-y-8">
+        <!-- Header -->
+        <div>
+            <h1 class="text-4xl font-bold text-[var(--text-primary)] mb-2">Deposit</h1>
+            <p class="text-[var(--text-secondary)]">
+                Choose your preferred deposit method to fund your trading account
+            </p>
+        </div>
+
+        <!-- Deposit Type Selection -->
+        <div class="bg-[var(--bg-secondary)]/30 border border-[var(--border-primary)] rounded-2xl p-6 space-y-4">
+            <div class="space-y-2">
+                <label class="text-[var(--text-primary)] text-lg font-semibold">
+                    Deposit Type <span class="text-red-500">*</span>
+                </label>
+                <select class="w-full rounded-xl py-3 px-4 bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] focus:border-[var(--button-primary-bg)] focus:ring-1 focus:ring-[var(--button-primary-bg)]">
+                    <option value="">Please Choose...</option>
+                    <option value="WALLET">Wallet</option>
+                    <option value="ACCOUNT">Account</option>
+                </select>
+            </div>
+
+            <div class="space-y-2">
+                <label class="text-[var(--text-primary)] text-lg font-semibold">
+                    Select Crib Account <span class="text-red-500">*</span>
+                </label>
+                <select class="w-full rounded-xl py-3 px-4 bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] focus:border-[var(--button-primary-bg)] focus:ring-1 focus:ring-[var(--button-primary-bg)]">
+                    <option value="">Please Choose Crib Account...</option>
+                    <!-- Account options will be injected here -->
+                </select>
+            </div>
+        </div>
+
+        <!-- Payment Methods Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Card -->
+            <div class="bg-[var(--bg-secondary)] border border-[var(--border-primary)] hover:bg-[var(--bg-tertiary)] hover:shadow-xl transition-all duration-300 rounded-3xl cursor-pointer group h-full p-6 flex flex-col justify-between">
+                <div class="space-y-4 flex-1">
+                    <div class="flex justify-center items-center h-12">
+                        <img src="/assets/Images/visa_mastercard.png" alt="Card logo" class="h-10 object-contain" />
+                    </div>
+                    <h3 class="text-lg font-semibold text-[var(--text-primary)] text-center">Deposit with Card</h3>
+                    <p class="text-sm text-[var(--text-tertiary)] text-center">Instant deposits with Visa & Mastercard</p>
+                </div>
+                <button class="w-full mt-6 bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] py-3 rounded-xl font-semibold shadow-lg group-hover:shadow-[var(--button-primary-bg)]/20 transition-all duration-300">
+                    Deposit Now
+                </button>
+            </div>
+
+            <!-- USDT -->
+            <div class="bg-[var(--bg-secondary)] border border-[var(--border-primary)] hover:bg-[var(--bg-tertiary)] hover:shadow-xl transition-all duration-300 rounded-3xl cursor-pointer group h-full p-6 flex flex-col justify-between">
+                <div class="space-y-4 flex-1">
+                    <div class="flex justify-center items-center h-12">
+                        <img src="/assets/images/bpe.png" alt="USDT logo" class="h-10 object-contain" />
+                    </div>
+                    <h3 class="text-lg font-semibold text-[var(--text-primary)] text-center">Deposit with USDT</h3>
+                    <p class="text-sm text-[var(--text-tertiary)] text-center">Fast crypto deposits with Tether</p>
+                </div>
+                <button class="w-full mt-6 bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] py-3 rounded-xl font-semibold shadow-lg group-hover:shadow-[var(--button-primary-bg)]/20 transition-all duration-300">
+                    Deposit Now
+                </button>
+            </div>
+
+            <!-- Bank Transfer -->
+            <div class="bg-[var(--bg-secondary)] border border-[var(--border-primary)] hover:bg-[var(--bg-tertiary)] hover:shadow-xl transition-all duration-300 rounded-3xl cursor-pointer group h-full p-6 flex flex-col justify-between">
+                <div class="space-y-4 flex-1">
+                    <div class="flex justify-center items-center h-12">
+                        <img src="https://genova-uploads.s3.ap-south-1.amazonaws.com/mt5/projectImages/bank_transfer.png" alt="Bank logo" class="h-10 object-contain" />
+                    </div>
+                    <h3 class="text-lg font-semibold text-[var(--text-primary)] text-center">Bank Transfer</h3>
+                    <p class="text-sm text-[var(--text-tertiary)] text-center">Secure bank wire transfers</p>
+                </div>
+                <button class="w-full mt-6 bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] py-3 rounded-xl font-semibold shadow-lg group-hover:shadow-[var(--button-primary-bg)]/20 transition-all duration-300">
+                    Deposit Now
+                </button>
+            </div>
+        </div>
+
+        <!-- Deposit Info Section -->
+        <div class="bg-[var(--bg-secondary)]/30 border border-[var(--border-primary)] rounded-2xl p-6">
+            <h3 class="text-lg font-semibold text-[var(--text-primary)] mb-4">Deposit Information</h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h4 class="font-medium text-[var(--accent-success)] mb-2">Processing Times</h4>
+                    <ul class="space-y-1 text-[var(--text-secondary)] text-sm">
+                        <li>• Card deposits: Instant</li>
+                        <li>• USDT deposits: 1-3 confirmations</li>
+                        <li>• Bank transfers: 1-3 business days</li>
+                        <li>• Cash deposits: Instant at locations</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-medium text-[var(--accent-success)] mb-2">Important Notes</h4>
+                    <ul class="space-y-1 text-[var(--text-secondary)] text-sm">
+                        <li>• Minimum deposit: $10</li>
+                        <li>• No deposit fees for most methods</li>
+                        <li>• Funds available immediately after confirmation</li>
+                        <li>• 24/7 customer support available</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

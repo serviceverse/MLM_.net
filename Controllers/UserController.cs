@@ -98,5 +98,56 @@ namespace MLM.Controllers
         }
 
         private bool UserExists(int id) => _context.Users.Any(e => e.Id == id);
+        public IActionResult AddBank()
+        {
+            return View();
+        }        public IActionResult AddExisting()
+        {
+            return View();
+        }        public IActionResult ApprovedDocs()
+        {
+            return View();
+        }        public IActionResult BankList()
+        {
+            return View();
+        }        public IActionResult ChangeMt5Password()
+        {
+            return View();
+        }        public IActionResult ChangePassword()
+        {
+            return View();
+        }        public IActionResult CreateMt5()
+        {
+            return View();
+        }        public IActionResult FollowUp()
+        {
+            return View();
+        }        public IActionResult List()
+        {
+            return View();
+        }        public IActionResult Mt5List()
+        {
+            return View();
+        }        public IActionResult Passwords()
+        {
+            return View();
+        }        public IActionResult ResendDataMail()
+        {
+            return View();
+        }        public IActionResult ResendVerification()
+        {
+            return View();
+        }        public IActionResult UpdateLeverage()
+        {
+            return View();
+        }        public IActionResult UploadDocs()
+        {
+            return View();
+        }
+
+        public IActionResult AddUser() { return View(); }
+        public IActionResult LeverageList() { return View(); }
+        public IActionResult PendingDocs() { return View(); }
+        public IActionResult Referrals() { return View(); }
     }
 }

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta FullName="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - TheCubeFactory</title>
     <script type="importmap"></script>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
@@ -93,6 +93,21 @@
             flex-grow: 1;
             overflow-y: auto;
         }
+        
+        /* Custom Scrollbar for Sidebar */
+        .sidebar-menu::-webkit-scrollbar {
+            width: 4px;
+        }
+        .sidebar-menu::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .sidebar-menu::-webkit-scrollbar-thumb {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+        }
+        .sidebar-menu:hover::-webkit-scrollbar-thumb {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
 
         .menu-label {
             font-size: 11px;
@@ -138,6 +153,59 @@
 
         .menu-item.active i {
             color: var(--primary-color);
+        }
+
+        /* Custom Accordion overrides for sidebar */
+        .sidebar .accordion-button {
+            color: var(--sidebar-text) !important;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+        .sidebar .accordion-button:not(.collapsed) {
+            color: var(--sidebar-hover-text) !important;
+            background-color: var(--sidebar-hover-bg) !important;
+        }
+        .sidebar .accordion-button:hover {
+            color: var(--sidebar-hover-text) !important;
+            background-color: var(--sidebar-hover-bg) !important;
+        }
+        .sidebar .accordion-button:focus {
+            box-shadow: none;
+        }
+        .sidebar .accordion-button::after {
+            filter: invert(0.6); /* make chevron light */
+            background-size: 0.9rem;
+        }
+        .sidebar .accordion-button:not(.collapsed)::after {
+            filter: invert(1);
+        }
+        
+        /* Adjusted menu item for nesting */
+        .sidebar .menu-item {
+            padding: 8px 16px 8px 46px;
+            font-size: 13.5px;
+            color: #64748b;
+        }
+        .sidebar .menu-item i {
+            font-size: 16px;
+            opacity: 0.5;
+        }
+        .sidebar .menu-item:hover {
+            color: var(--sidebar-hover-text);
+            background-color: transparent;
+        }
+        .sidebar .menu-item:hover i {
+            opacity: 1;
+            color: var(--sidebar-hover-text);
+        }
+        .sidebar .menu-item.active {
+            color: var(--primary-color);
+            background-color: transparent;
+            font-weight: 600;
+        }
+        .sidebar .menu-item.active i {
+            color: var(--primary-color);
+            opacity: 1;
         }
 
         /* Main Content Area */
@@ -274,31 +342,7 @@
                 </a>
             </div>
             <div class="sidebar-menu">
-                <div class="menu-label">Menu</div>
-                <a asp-controller="Home" asp-action="Index" class="menu-item @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Home" ? "active" : "")">
-                    <i class="bi bi-grid-1x2"></i>
-                    <span>Dashboard</span>
-                </a>
-                
-                <div class="menu-label">Management</div>
-                <a asp-controller="User" asp-action="Index" class="menu-item @(ViewContext.RouteData.Values["Controller"]?.ToString() == "User" ? "active" : "")">
-                    <i class="bi bi-people"></i>
-                    <span>Users</span>
-                </a>
-                <a asp-controller="Role" asp-action="Index" class="menu-item @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Role" ? "active" : "")">
-                    <i class="bi bi-shield-lock"></i>
-                    <span>Roles</span>
-                </a>
-                
-                <div class="menu-label">System Setup</div>
-                <a asp-controller="AppModule" asp-action="Index" class="menu-item @(ViewContext.RouteData.Values["Controller"]?.ToString() == "AppModule" ? "active" : "")">
-                    <i class="bi bi-collection"></i>
-                    <span>Modules</span>
-                </a>
-                <a asp-controller="AppAction" asp-action="Index" class="menu-item @(ViewContext.RouteData.Values["Controller"]?.ToString() == "AppAction" ? "active" : "")">
-                    <i class="bi bi-lightning"></i>
-                    <span>Actions</span>
-                </a>
+                @await Component.InvokeAsync("Sidebar")
             </div>
         </aside>
 

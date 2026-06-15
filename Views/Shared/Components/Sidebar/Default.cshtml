@@ -1,0 +1,70 @@
+@model List<MLM.Models.NavigationGroup>
+
+@{
+    string GetIcon(string? iconName)
+    {
+        return iconName?.ToLower() switch
+        {
+            "dashboard" => "bi-speedometer2",
+            "shieldcheck" => "bi-shield-check",
+            "user" => "bi-person",
+            "wallet" => "bi-wallet2",
+            "users" => "bi-people",
+            "filetext" => "bi-file-earmark-text",
+            "creditcard" => "bi-credit-card",
+            "gift" => "bi-gift",
+            "newspaper" => "bi-newspaper",
+            "lifebuoy" => "bi-life-preserver",
+            "dribbble" => "bi-dribbble",
+            "filterdollar" => "bi-currency-dollar",
+            "arrowrightleft" => "bi-arrow-left-right",
+            "linechart" => "bi-graph-up",
+            "settings" => "bi-gear",
+            "email" => "bi-envelope",
+            "notification" => "bi-bell",
+            "milestonemanagement" => "bi-flag",
+            "request" => "bi-card-checklist",
+            _ => "bi-circle"
+        };
+    }
+}
+
+<div class="accordion" id="sidebarAccordion">
+    @foreach (var group in Model)
+    {
+        var groupId = "collapse_" + group.Id;
+        var headingId = "heading_" + group.Id;
+        
+        var isGroupActive = group.Items.Any(i => 
+            ViewContext.HttpContext.Request.Path.StartsWithSegments(i.Route, StringComparison.OrdinalIgnoreCase) || 
+            (i.Route == "/" && ViewContext.HttpContext.Request.Path == "/")
+        );
+        
+        <div class="accordion-item border-0 mb-1" style="background: transparent;">
+            <h2 class="accordion-header" id="@headingId">
+                <button class="accordion-button @(isGroupActive ? "" : "collapsed") shadow-none px-3 py-3" 
+                        type="button" 
+                        data-bs-toggle="collapse" 
+                        data-bs-target="#@groupId" 
+                        aria-expanded="@(isGroupActive ? "true" : "false")" 
+                        aria-controls="@groupId"
+                        style="background: transparent; color: inherit;">
+                    <i class="bi @GetIcon(group.Icon) me-3 fs-5"></i>
+                    <span style="font-weight: 500; font-size: 14px;">@group.Name</span>
+                </button>
+            </h2>
+            <div id="@groupId" class="accordion-collapse collapse @(isGroupActive ? "show" : "")" aria-labelledby="@headingId" data-bs-parent="#sidebarAccordion">
+                <div class="accordion-body p-0 pb-2">
+                    @foreach (var item in group.Items.OrderBy(i => i.Sequence))
+                    {
+                        var isActive = ViewContext.HttpContext.Request.Path.StartsWithSegments(item.Route, StringComparison.OrdinalIgnoreCase) || (item.Route == "/" && ViewContext.HttpContext.Request.Path == "/") ? "active" : "";
+                        <a href="@item.Route" class="menu-item @isActive">
+                            <i class="bi bi-dash"></i>
+                            <span>@item.Name</span>
+                        </a>
+                    }
+                </div>
+            </div>
+        </div>
+    }
+</div>

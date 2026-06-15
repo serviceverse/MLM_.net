@@ -1,0 +1,36 @@
+@{
+    ViewData["Title"] = "Wallet History";
+}
+
+<div class="min-h-screen bg-primary text-[var(--text-primary)] p-8">
+    <div class="max-w-6xl mx-auto space-y-8">
+        <!-- Header -->
+        <div>
+            <h1 class="text-4xl font-bold text-[var(--text-primary)] mb-2">Wallet History</h1>
+            <p class="text-[var(--text-secondary)]">
+                View your recent deposits, withdrawals, and internal transfers.
+            </p>
+        </div>
+
+        <div class="bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-3xl p-8">
+            <table class="w-full text-left">
+                <thead class="border-b border-[var(--border-secondary)]">
+                    <tr>
+                        <th class="pb-3 text-[var(--text-secondary)]">Date</th>
+                        <th class="pb-3 text-[var(--text-secondary)]">Transaction ID</th>
+                        <th class="pb-3 text-[var(--text-secondary)]">Type</th>
+                        <th class="pb-3 text-[var(--text-secondary)]">Amount</th>
+                        <th class="pb-3 text-[var(--text-secondary)]">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="5" class="py-8 text-center text-[var(--text-tertiary)]">
+                            No transactions found.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

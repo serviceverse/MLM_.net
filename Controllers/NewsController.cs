@@ -1,0 +1,21 @@
+using Microsoft.AspNetCore.Mvc;
+using MLM.Data;
+
+namespace MLM.Controllers
+{
+    public class NewsController : Controller
+    {
+        private readonly AppDBContext _context;
+
+        public NewsController(AppDBContext context)
+        {
+            _context = context;
+        }
+
+        public IActionResult Index()
+        {
+            return View();
+        }
+
+    }
+}
