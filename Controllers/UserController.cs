@@ -154,5 +154,14 @@ namespace MLM.Controllers
         public IActionResult LeverageList() { return View(); }
         public IActionResult PendingDocs() { return View(); }
         public IActionResult Referrals() { return View(); }
+        
+        // Client IB Request Page
+        [HttpGet("/IbRequest")]
+        public IActionResult IbRequest()
+        {
+            // For now, pass an empty/null status to show the application form by default
+            ViewBag.Status = null; // Can be "PENDING", "APPROVED", "REJECTED"
+            return View();
+        }
     }
 }

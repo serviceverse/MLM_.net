@@ -1,18 +1,18 @@
 @{
     ViewData["Title"] = "Pending IB Withdrawals (Floxypay Auto)";
 }
-<div class="p-6 md:p-8">
+<div class="p-2 md:p-4">
     
         <!-- Page Header -->
-    <div class="mb-6">
+    <div class="mb-2">
         <h1 class="text-2xl font-bold text-[var(--text-primary)]">Pending IB Withdrawals (Floxypay Auto)</h1>
         <p class="text-sm text-[var(--text-secondary)] mt-1">Manage and review automated IB withdrawals</p>
     </div>
 
     <!-- Main Card -->
-    <div class="bg-[var(--bg-primary)] border border-[var(--border-secondary)] rounded-xl shadow-sm">
+    <div class="bg-[var(--bg-primary)] border border-[var(--border-secondary)] rounded-sm shadow-none">
             <!-- Filters -->
-        <div class="px-6 py-4 border-b border-[var(--border-secondary)] flex flex-wrap items-center justify-between gap-4">
+        <div class="px-3 py-2 border-b border-[var(--border-secondary)] flex flex-wrap items-center justify-between gap-4">
                 <div class="flex items-center space-x-2">
                     <span class="text-[var(--text-secondary)]">Show</span>
                     <select class="w-20 bg-[var(--bg-tertiary)] border-[var(--border-secondary)] text-[var(--text-primary)] rounded-md py-2 px-3 outline-none">
@@ -34,15 +34,15 @@
             <div class="overflow-x-auto">
                 <table class="min-w-[1000px] w-full text-sm">
                     <thead>
-                        <tr class="border-b border-[var(--border-secondary)]">
-                            <th class="py-3 px-4 text-left text-[var(--text-secondary)] font-semibold uppercase">#</th>
-                            <th class="py-3 px-4 text-left text-[var(--text-secondary)] font-semibold uppercase">IB Name</th>
-                            <th class="py-3 px-4 text-left text-[var(--text-secondary)] font-semibold uppercase">Email</th>
-                            <th class="py-3 px-4 text-left text-[var(--text-secondary)] font-semibold uppercase">Amount</th>
-                            <th class="py-3 px-4 text-left text-[var(--text-secondary)] font-semibold uppercase">Method</th>
-                            <th class="py-3 px-4 text-left text-[var(--text-secondary)] font-semibold uppercase">Destination</th>
-                            <th class="py-3 px-4 text-left text-[var(--text-secondary)] font-semibold uppercase">Date</th>
-                            <th class="py-3 px-4 text-left text-[var(--text-secondary)] font-semibold uppercase">Action</th>
+                        <tr class="border-b border-[var(--border-secondary)] hover:bg-[var(--bg-tertiary)] even:bg-[var(--bg-secondary)]/40 transition-none">
+                            <th class="py-1.5 px-2 text-[11px] border-r border-[var(--border-secondary)] whitespace-nowrap text-left text-[var(--text-secondary)] font-semibold uppercase">#</th>
+                            <th class="py-1.5 px-2 text-[11px] border-r border-[var(--border-secondary)] whitespace-nowrap text-left text-[var(--text-secondary)] font-semibold uppercase">IB Name</th>
+                            <th class="py-1.5 px-2 text-[11px] border-r border-[var(--border-secondary)] whitespace-nowrap text-left text-[var(--text-secondary)] font-semibold uppercase">Email</th>
+                            <th class="py-1.5 px-2 text-[11px] border-r border-[var(--border-secondary)] whitespace-nowrap text-left text-[var(--text-secondary)] font-semibold uppercase">Amount</th>
+                            <th class="py-1.5 px-2 text-[11px] border-r border-[var(--border-secondary)] whitespace-nowrap text-left text-[var(--text-secondary)] font-semibold uppercase">Method</th>
+                            <th class="py-1.5 px-2 text-[11px] border-r border-[var(--border-secondary)] whitespace-nowrap text-left text-[var(--text-secondary)] font-semibold uppercase">Destination</th>
+                            <th class="py-1.5 px-2 text-[11px] border-r border-[var(--border-secondary)] whitespace-nowrap text-left text-[var(--text-secondary)] font-semibold uppercase">Date</th>
+                            <th class="py-1.5 px-2 text-[11px] border-r border-[var(--border-secondary)] whitespace-nowrap text-left text-[var(--text-secondary)] font-semibold uppercase">Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -54,7 +54,7 @@
             </div>
 
             <!-- Pagination -->
-        <div class="px-6 py-4 border-t border-[var(--border-secondary)] flex flex-wrap items-center justify-between gap-4">
+        <div class="px-3 py-2 border-t border-[var(--border-secondary)] flex flex-wrap items-center justify-between gap-4">
                 <div class="text-[var(--text-secondary)]">Showing 0 to 0 of 0 entries</div>
                 <div class="flex items-center space-x-2">
                     <button disabled class="border border-[var(--border-secondary)] text-[var(--text-secondary)] hover:bg-[var(--bg-tertiary)] bg-transparent px-3 py-1 text-sm rounded-md opacity-50 cursor-not-allowed">Previous</button>

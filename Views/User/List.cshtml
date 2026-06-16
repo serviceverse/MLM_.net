@@ -3,10 +3,10 @@
     ViewData["Title"] = "CRM Clients";
 }
 
-<div class="p-6 md:p-8">
+<div class="p-2 md:p-4">
     
         <!-- Page Header -->
-    <div class="mb-6 flex justify-between items-center">
+    <div class="mb-2 flex justify-between items-center">
         <div>
             <h1 class="text-2xl font-bold text-[var(--text-primary)]">CRM Clients</h1>
             <p class="text-sm text-[var(--text-secondary)] mt-1">Manage all registered client accounts</p>
@@ -18,9 +18,9 @@
     </div>
 
         <!-- Card Wrapper -->
-        <div class="bg-[var(--bg-primary)] border border-[var(--border-secondary)] rounded-xl shadow-sm">
+        <div class="bg-[var(--bg-primary)] border border-[var(--border-secondary)] rounded-sm shadow-none">
                 <!-- Filters -->
-        <div class="px-6 py-4 border-b border-[var(--border-secondary)] flex flex-wrap items-center justify-between gap-4">
+        <div class="px-3 py-2 border-b border-[var(--border-secondary)] flex flex-wrap items-center justify-between gap-4">
                     <div class="flex items-center space-x-2">
                         <span class="text-[var(--text-secondary)]">Show</span>
                         <select class="h-10 w-20 items-center justify-between rounded-md border border-[var(--border-secondary)] bg-[var(--bg-tertiary)] px-3 py-2 text-sm ring-offset-background focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-[var(--text-primary)]">
@@ -45,10 +45,10 @@
                 <div class="overflow-x-auto">
                     <table class="min-w-[1700px] w-full text-sm">
                         <thead>
-                            <tr class="border-b border-[var(--border-secondary)]">
+                            <tr class="border-b border-[var(--border-secondary)] hover:bg-[var(--bg-tertiary)] even:bg-[var(--bg-secondary)]/40 transition-none">
                                 @foreach (var heading in new[] { "#", "Name", "Email", "Wallet", "Country", "Phone", "No of Referral", "Joined", "Marketing Name", "Status", "Action" })
                                 {
-                                    <th class="py-3 px-4 text-left text-[var(--text-secondary)] font-semibold uppercase">
+                                    <th class="py-1.5 px-2 text-[11px] border-r border-[var(--border-secondary)] whitespace-nowrap text-left text-[var(--text-secondary)] font-semibold uppercase">
                                         @heading
                                     </th>
                                 }
@@ -68,22 +68,22 @@
                                 int index = 1;
                                 foreach (var client in Model)
                                 {
-                                    <tr class="border-b border-[var(--border-secondary)] hover:bg-[var(--bg-tertiary)]/50">
-                                        <td class="py-3 px-4 text-[var(--text-primary)]">@index</td>
-                                        <td class="py-3 px-4 text-[var(--text-primary)]">@client.FullName</td>
-                                        <td class="py-3 px-4 text-[var(--text-primary)]">@client.Email</td>
-                                        <td class="py-3 px-4 text-green-400">$@(client.Wallet?.Balance ?? 0)</td>
-                                        <td class="py-3 px-4 text-[var(--text-primary)]">India</td>
-                                        <td class="py-3 px-4 text-[var(--text-primary)]">@client.ContactNo</td>
-                                        <td class="py-3 px-4 text-[var(--text-primary)]">@(client.ReferralsReceived?.Count ?? 0)</td>
-                                        <td class="py-3 px-4 text-[var(--text-primary)]">@DateTime.Now.ToString("dd MMM yyyy")</td>
-                                        <td class="py-3 px-4 text-[var(--text-primary)]">Admin</td>
-                                        <td class="py-3 px-4">
+                                    <tr class="border-b border-[var(--border-secondary)] hover:bg-[var(--bg-tertiary)] even:bg-[var(--bg-secondary)]/40 transition-none">
+                                        <td class="py-1 px-2 text-[12px] border-r border-[var(--border-secondary)] whitespace-nowrap text-[var(--text-primary)]">@index</td>
+                                        <td class="py-1 px-2 text-[12px] border-r border-[var(--border-secondary)] whitespace-nowrap text-[var(--text-primary)]">@client.FullName</td>
+                                        <td class="py-1 px-2 text-[12px] border-r border-[var(--border-secondary)] whitespace-nowrap text-[var(--text-primary)]">@client.Email</td>
+                                        <td class="py-1 px-2 text-[12px] border-r border-[var(--border-secondary)] whitespace-nowrap text-green-400">$@(client.Wallet?.Balance ?? 0)</td>
+                                        <td class="py-1 px-2 text-[12px] border-r border-[var(--border-secondary)] whitespace-nowrap text-[var(--text-primary)]">India</td>
+                                        <td class="py-1 px-2 text-[12px] border-r border-[var(--border-secondary)] whitespace-nowrap text-[var(--text-primary)]">@client.ContactNo</td>
+                                        <td class="py-1 px-2 text-[12px] border-r border-[var(--border-secondary)] whitespace-nowrap text-[var(--text-primary)]">@(client.ReferralsReceived?.Count ?? 0)</td>
+                                        <td class="py-1 px-2 text-[12px] border-r border-[var(--border-secondary)] whitespace-nowrap text-[var(--text-primary)]">@DateTime.Now.ToString("dd MMM yyyy")</td>
+                                        <td class="py-1 px-2 text-[12px] border-r border-[var(--border-secondary)] whitespace-nowrap text-[var(--text-primary)]">Admin</td>
+                                        <td class="py-1 px-2 text-[12px] border-r border-[var(--border-secondary)] whitespace-nowrap">
                                             <span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold bg-green-600 text-white border-transparent">
                                                 ACTIVE
                                             </span>
                                         </td>
-                                        <td class="py-3 px-4">
+                                        <td class="py-1 px-2 text-[12px] border-r border-[var(--border-secondary)] whitespace-nowrap">
                                             <div class="col-span-full mt-4 relative inline-block text-left group">
                                                 <button type="button" class="inline-flex items-center justify-center rounded-md h-8 w-8 text-sm font-medium hover:bg-[var(--bg-tertiary)] hover:text-[var(--text-primary)] focus:outline-none">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
@@ -115,7 +115,7 @@
                 </div>
 
                 <!-- Pagination -->
-        <div class="px-6 py-4 border-t border-[var(--border-secondary)] flex flex-wrap items-center justify-between gap-4">
+        <div class="px-3 py-2 border-t border-[var(--border-secondary)] flex flex-wrap items-center justify-between gap-4">
                     <div class="text-[var(--text-secondary)]">
                         Showing @(Model != null && Model.Any() ? 1 : 0) to @(Model?.Count() ?? 0) of @(Model?.Count() ?? 0) entries
                     </div>

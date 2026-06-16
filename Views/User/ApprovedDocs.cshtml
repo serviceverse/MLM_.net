@@ -1,7 +1,7 @@
 @{
     ViewData["Title"] = "KYC Document Approval";
 }
-<div class="p-6 md:p-8">
+<div class="p-2 md:p-4">
     
         <div>
             <h1 class="text-2xl font-bold text-[var(--text-primary)]">KYC Document Approval</h1>
@@ -10,7 +10,7 @@
 
         <div class="bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-3xl w-full p-8">
             <!-- Tabs -->
-            <div class="mb-6 flex space-x-2 bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] rounded-xl p-1 w-max">
+            <div class="mb-2 flex space-x-2 bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] rounded-xl p-1 w-max">
                 <button class="px-4 py-2 rounded-lg text-sm font-medium text-[var(--text-secondary)] hover:bg-[var(--bg-secondary)]">Pending (0)</button>
                 <button class="px-4 py-2 rounded-lg text-sm font-medium bg-green-500/20 text-green-800 dark:bg-green-600 dark:text-white">Approved (0)</button>
                 <button class="px-4 py-2 rounded-lg text-sm font-medium text-[var(--text-secondary)] hover:bg-[var(--bg-secondary)]">Rejected (0)</button>
@@ -41,14 +41,14 @@
             <div class="overflow-x-auto">
                 <table class="w-full text-sm">
                     <thead>
-                        <tr class="border-b border-[var(--border-secondary)]">
-                            <th class="py-3 px-4 text-left text-[var(--text-secondary)] font-semibold uppercase">#</th>
-                            <th class="py-3 px-4 text-left text-[var(--text-secondary)] font-semibold uppercase">User</th>
-                            <th class="py-3 px-4 text-left text-[var(--text-secondary)] font-semibold uppercase">POI Document</th>
-                            <th class="py-3 px-4 text-left text-[var(--text-secondary)] font-semibold uppercase">POA Document</th>
-                            <th class="py-3 px-4 text-left text-[var(--text-secondary)] font-semibold uppercase">POI Status</th>
-                            <th class="py-3 px-4 text-left text-[var(--text-secondary)] font-semibold uppercase">POA Status</th>
-                            <th class="py-3 px-4 text-left text-[var(--text-secondary)] font-semibold uppercase">Actions</th>
+                        <tr class="border-b border-[var(--border-secondary)] hover:bg-[var(--bg-tertiary)] even:bg-[var(--bg-secondary)]/40 transition-none">
+                            <th class="py-1.5 px-2 text-[11px] border-r border-[var(--border-secondary)] whitespace-nowrap text-left text-[var(--text-secondary)] font-semibold uppercase">#</th>
+                            <th class="py-1.5 px-2 text-[11px] border-r border-[var(--border-secondary)] whitespace-nowrap text-left text-[var(--text-secondary)] font-semibold uppercase">User</th>
+                            <th class="py-1.5 px-2 text-[11px] border-r border-[var(--border-secondary)] whitespace-nowrap text-left text-[var(--text-secondary)] font-semibold uppercase">POI Document</th>
+                            <th class="py-1.5 px-2 text-[11px] border-r border-[var(--border-secondary)] whitespace-nowrap text-left text-[var(--text-secondary)] font-semibold uppercase">POA Document</th>
+                            <th class="py-1.5 px-2 text-[11px] border-r border-[var(--border-secondary)] whitespace-nowrap text-left text-[var(--text-secondary)] font-semibold uppercase">POI Status</th>
+                            <th class="py-1.5 px-2 text-[11px] border-r border-[var(--border-secondary)] whitespace-nowrap text-left text-[var(--text-secondary)] font-semibold uppercase">POA Status</th>
+                            <th class="py-1.5 px-2 text-[11px] border-r border-[var(--border-secondary)] whitespace-nowrap text-left text-[var(--text-secondary)] font-semibold uppercase">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -60,7 +60,7 @@
             </div>
 
             <!-- Pagination -->
-        <div class="px-6 py-4 border-t border-[var(--border-secondary)] flex flex-wrap items-center justify-between gap-4">
+        <div class="px-3 py-2 border-t border-[var(--border-secondary)] flex flex-wrap items-center justify-between gap-4">
                 <div class="text-[var(--text-secondary)]">Showing 0 to 0 of 0 entries</div>
                 <div class="flex items-center space-x-2">
                     <button disabled class="border border-[var(--border-secondary)] text-[var(--text-secondary)] bg-transparent px-3 py-1 rounded-md text-sm opacity-50 cursor-not-allowed">Previous</button>

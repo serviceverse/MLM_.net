@@ -1,7 +1,7 @@
 @{
     ViewData["Title"] = "IB Withdraw Report";
 }
-<div class="p-6 md:p-8">
+<div class="p-2 md:p-4">
     
         <!-- Header -->
         <div>
@@ -71,18 +71,18 @@
             <div class="w-full overflow-x-auto">
                 <table class="w-full min-w-[1200px] text-sm">
                     <thead>
-                        <tr class="border-b border-[var(--border-secondary)]">
-                            <th class="py-3 px-4 text-left text-[var(--text-secondary)] font-semibold uppercase">ID</th>
-                            <th class="py-3 px-4 text-left text-[var(--text-secondary)] font-semibold uppercase">Name / Email</th>
-                            <th class="py-3 px-4 text-left text-[var(--text-secondary)] font-semibold uppercase">Withdraw To</th>
-                            <th class="py-3 px-4 text-left text-[var(--text-secondary)] font-semibold uppercase">Amount</th>
-                            <th class="py-3 px-4 text-left text-[var(--text-secondary)] font-semibold uppercase">Payment Method</th>
-                            <th class="py-3 px-4 text-left text-[var(--text-secondary)] font-semibold uppercase">Note</th>
-                            <th class="py-3 px-4 text-left text-[var(--text-secondary)] font-semibold uppercase">Comment</th>
-                            <th class="py-3 px-4 text-left text-[var(--text-secondary)] font-semibold uppercase">Status</th>
-                            <th class="py-3 px-4 text-left text-[var(--text-secondary)] font-semibold uppercase">Date</th>
-                            <th class="py-3 px-4 text-left text-[var(--text-secondary)] font-semibold uppercase">Exchanger</th>
-                            <th class="py-3 px-4 text-left text-[var(--text-secondary)] font-semibold uppercase">Approved / Rejected By</th>
+                        <tr class="border-b border-[var(--border-secondary)] hover:bg-[var(--bg-tertiary)] even:bg-[var(--bg-secondary)]/40 transition-none">
+                            <th class="py-1.5 px-2 text-[11px] border-r border-[var(--border-secondary)] whitespace-nowrap text-left text-[var(--text-secondary)] font-semibold uppercase">ID</th>
+                            <th class="py-1.5 px-2 text-[11px] border-r border-[var(--border-secondary)] whitespace-nowrap text-left text-[var(--text-secondary)] font-semibold uppercase">Name / Email</th>
+                            <th class="py-1.5 px-2 text-[11px] border-r border-[var(--border-secondary)] whitespace-nowrap text-left text-[var(--text-secondary)] font-semibold uppercase">Withdraw To</th>
+                            <th class="py-1.5 px-2 text-[11px] border-r border-[var(--border-secondary)] whitespace-nowrap text-left text-[var(--text-secondary)] font-semibold uppercase">Amount</th>
+                            <th class="py-1.5 px-2 text-[11px] border-r border-[var(--border-secondary)] whitespace-nowrap text-left text-[var(--text-secondary)] font-semibold uppercase">Payment Method</th>
+                            <th class="py-1.5 px-2 text-[11px] border-r border-[var(--border-secondary)] whitespace-nowrap text-left text-[var(--text-secondary)] font-semibold uppercase">Note</th>
+                            <th class="py-1.5 px-2 text-[11px] border-r border-[var(--border-secondary)] whitespace-nowrap text-left text-[var(--text-secondary)] font-semibold uppercase">Comment</th>
+                            <th class="py-1.5 px-2 text-[11px] border-r border-[var(--border-secondary)] whitespace-nowrap text-left text-[var(--text-secondary)] font-semibold uppercase">Status</th>
+                            <th class="py-1.5 px-2 text-[11px] border-r border-[var(--border-secondary)] whitespace-nowrap text-left text-[var(--text-secondary)] font-semibold uppercase">Date</th>
+                            <th class="py-1.5 px-2 text-[11px] border-r border-[var(--border-secondary)] whitespace-nowrap text-left text-[var(--text-secondary)] font-semibold uppercase">Exchanger</th>
+                            <th class="py-1.5 px-2 text-[11px] border-r border-[var(--border-secondary)] whitespace-nowrap text-left text-[var(--text-secondary)] font-semibold uppercase">Approved / Rejected By</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -94,7 +94,7 @@
             </div>
 
             <!-- Pagination -->
-        <div class="px-6 py-4 border-t border-[var(--border-secondary)] flex flex-wrap items-center justify-between gap-4">
+        <div class="px-3 py-2 border-t border-[var(--border-secondary)] flex flex-wrap items-center justify-between gap-4">
                 <div class="text-[var(--text-secondary)]">Showing 0 to 0 of 0 entries</div>
                 <div class="flex items-center space-x-2">
                     <button disabled class="border border-[var(--border-secondary)] text-[var(--text-secondary)] hover:bg-[var(--bg-tertiary)] bg-transparent px-3 py-1 rounded text-sm opacity-50 cursor-not-allowed">Previous</button>

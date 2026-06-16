@@ -1,10 +1,10 @@
 @{
     ViewData["Title"] = "Deal Report";
 }
-<div class="p-6 md:p-8">
+<div class="p-2 md:p-4">
     
         <!-- Header & Action Bar -->
-        <div class="mb-6">
+        <div class="mb-2">
             <div>
                 <h1 class="text-2xl font-bold">Deal Report</h1>
                 <p class="text-sm text-[var(--text-secondary)] mt-1">Analyze your trading deals and performance</p>
@@ -39,7 +39,7 @@
 
         <!-- Table Card -->
         <div class="flex-1 overflow-hidden flex flex-col">
-            <div class="px-6 py-4 border-b border-[var(--border-secondary)] flex flex-wrap items-center justify-between gap-4">
+            <div class="px-3 py-2 border-b border-[var(--border-secondary)] flex flex-wrap items-center justify-between gap-4">
                 <div class="flex items-center space-x-2">
                     <span class="text-[var(--text-secondary)]">Show</span>
                     <select class="bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-lg py-1 px-2 outline-none">
@@ -61,7 +61,7 @@
             <div class="overflow-x-auto">
                 <table class="w-full">
                     <thead>
-                        <tr class="border-b border-[var(--border-secondary)]">
+                        <tr class="border-b border-[var(--border-secondary)] hover:bg-[var(--bg-tertiary)] even:bg-[var(--bg-secondary)]/40 transition-none">
                             <th class="text-left py-4 px-4 font-medium text-[var(--text-secondary)] uppercase text-sm">Login</th>
                             <th class="text-left py-4 px-4 font-medium text-[var(--text-secondary)] uppercase text-sm">Date</th>
                             <th class="text-left py-4 px-4 font-medium text-[var(--text-secondary)] uppercase text-sm">Order</th>

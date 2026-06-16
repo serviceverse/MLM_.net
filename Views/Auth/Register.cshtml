@@ -1,16 +1,14 @@
-@model MLM.Models.Users
-
 @{
     Layout = null;
-    ViewData["Title"] = "Register";
+    ViewData["Title"] = "Sign up - TheCubeFactory";
 }
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <meta FullName="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Register - TheCubeFactory</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
@@ -86,7 +84,7 @@
 
         .form-box {
             width: 100%;
-            max-width: 400px;
+            max-width: 480px; /* slightly wider for two columns */
         }
 
         .form-title {
@@ -103,6 +101,12 @@
             margin-bottom: 28px;
         }
 
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
         .input-group-custom {
             margin-bottom: 16px;
         }
@@ -114,8 +118,12 @@
             color: #334155;
             margin-bottom: 6px;
         }
+        
+        .form-label .required {
+            color: #ef4444;
+        }
 
-        .form-control {
+        .form-control, .form-select {
             width: 100%;
             height: 48px;
             border-radius: 10px;
@@ -128,10 +136,35 @@
             box-shadow: 0 1px 2px rgba(0,0,0,0.03);
         }
 
-        .form-control:focus {
+        .form-control:focus, .form-select:focus {
             border-color: #6366f1;
             box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15);
             outline: none;
+        }
+
+        .password-wrapper {
+            position: relative;
+            display: block;
+        }
+
+        .password-toggle {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: #94a3b8;
+            cursor: pointer;
+            padding: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.2s;
+        }
+
+        .password-toggle:hover {
+            color: #475569;
         }
 
         .field-error {
@@ -156,7 +189,7 @@
             align-items: center;
             justify-content: center;
             box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.2), 0 2px 4px -1px rgba(79, 70, 229, 0.1);
-            margin-top: 24px;
+            margin-top: 8px;
         }
 
         .btn-login:hover {
@@ -168,7 +201,7 @@
         .bottom-text {
             text-align: center;
             color: #64748b;
-            margin-top: 36px;
+            margin-top: 24px;
             font-size: 15px;
         }
 
@@ -190,7 +223,7 @@
             border: 1px solid transparent;
         }
 
-        .alert-error, .alert-danger {
+        .alert-danger {
             background-color: #fef2f2;
             border-color: #fecaca;
             color: #991b1b;
@@ -200,6 +233,12 @@
             background-color: #f0fdf4;
             border-color: #bbf7d0;
             color: #166534;
+        }
+
+        .alert-info {
+            background-color: #eff6ff;
+            border-color: #bfdbfe;
+            color: #1e40af;
         }
 
 
@@ -342,6 +381,10 @@
                 flex: 0 0 100%;
                 padding: 40px 24px;
             }
+            .form-grid {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
         }
 
         @@media (max-width: 576px) {
@@ -373,47 +416,87 @@
             <div class="form-wrapper">
                 <div class="form-box">
                     <h1 class="form-title">Create an account</h1>
-                    <p class="form-subtitle">Please fill in your details to sign up</p>
+                    <p class="form-subtitle">Join us and start your journey today</p>
+
+                    @if (ViewBag.ReferralId != null)
+                    {
+                        <div class="alert alert-info">
+                            <strong>Referred by:</strong> @ViewBag.ReferralId
+                        </div>
+                    }
 
                     @if (ViewBag.Error != null)
                     {
-                        <div class="alert alert-error">
+                        <div class="alert alert-danger">
                             @ViewBag.Error
                         </div>
                     }
 
-                    @if (ViewBag.Success != null)
+                    @if (TempData["Success"] != null)
                     {
                         <div class="alert alert-success">
-                            @ViewBag.Success
+                            @TempData["Success"]
                         </div>
                     }
 
-                    <form asp-action="RegisteUser" asp-controller="Auth" method="post">
+                    <form action="/Auth/Register" method="post">
                         @Html.AntiForgeryToken()
 
-                        <div class="input-group-custom">
-                            <label asp-for="FullName" class="form-label">Full FullName</label>
-                            <input asp-for="FullName" type="text" class="form-control" autocomplete="FullName" placeholder="John Doe" />
-                            <span asp-validation-for="FullName" class="field-error"></span>
+                        @if (ViewBag.ReferralId != null)
+                        {
+                            <input type="hidden" name="ReferralId" value="@ViewBag.ReferralId" />
+                        }
+
+                        <div class="form-grid">
+                            <div class="input-group-custom">
+                                <label class="form-label">Email address <span class="required">*</span></label>
+                                <input name="Email" type="email" class="form-control" autocomplete="email" placeholder="FullName@company.com" required />
+                            </div>
+
+                            <div class="input-group-custom">
+                                <label class="form-label">Full Name <span class="required">*</span></label>
+                                <input name="FullName" type="text" class="form-control" placeholder="John Doe" required />
+                            </div>
                         </div>
 
-                        <div class="input-group-custom">
-                            <label asp-for="Email" class="form-label">Email address</label>
-                            <input asp-for="Email" type="email" class="form-control" autocomplete="email" placeholder="FullName@company.com" />
-                            <span asp-validation-for="Email" class="field-error"></span>
+                        <div class="form-grid">
+                            <div class="input-group-custom">
+                                <label class="form-label">Password <span class="required">*</span></label>
+                                <div class="password-wrapper">
+                                    <input name="Password" id="passwordInput" type="password" class="form-control" placeholder="••••••••" required />
+                                    <button type="button" class="password-toggle" onclick="togglePassword('passwordInput', this)">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="input-group-custom">
+                                <label class="form-label">Confirm Password <span class="required">*</span></label>
+                                <div class="password-wrapper">
+                                    <input name="ConfirmPassword" id="confirmPasswordInput" type="password" class="form-control" placeholder="••••••••" required />
+                                    <button type="button" class="password-toggle" onclick="togglePassword('confirmPasswordInput', this)">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="input-group-custom">
-                            <label asp-for="ContactNo" class="form-label">ContactNo Number</label>
-                            <input asp-for="ContactNo" type="text" class="form-control" autocomplete="tel" placeholder="+1 (555) 000-0000" />
-                            <span asp-validation-for="ContactNo" class="field-error"></span>
-                        </div>
+                        <div class="form-grid">
+                            <div class="input-group-custom">
+                                <label class="form-label">Country <span class="required">*</span></label>
+                                <select name="Country" class="form-select" required>
+                                    <option value="">Select Country</option>
+                                    <option value="India">India</option>
+                                    <option value="United States">United States</option>
+                                    <option value="United Kingdom">United Kingdom</option>
+                                    <option value="UAE">UAE</option>
+                                </select>
+                            </div>
 
-                        <div class="input-group-custom">
-                            <label asp-for="Password" class="form-label">Password</label>
-                            <input asp-for="Password" type="password" class="form-control" autocomplete="new-password" placeholder="••••••••" />
-                            <span asp-validation-for="Password" class="field-error"></span>
+                            <div class="input-group-custom">
+                                <label class="form-label">Phone Number <span class="required">*</span></label>
+                                <input name="Phone" type="tel" class="form-control" placeholder="+1 234 567 890" required />
+                            </div>
                         </div>
 
                         <button type="submit" class="btn-login">
@@ -422,8 +505,8 @@
                     </form>
 
                     <p class="bottom-text">
-                        Already registered?
-                        <a asp-controller="Auth" asp-action="Login">Login here</a>
+                        Already have an account?
+                        <a href="/Auth/Login">Sign in</a>
                     </p>
                 </div>
             </div>
@@ -458,5 +541,17 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
     <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script>
+        function togglePassword(inputId, btn) {
+            const input = document.getElementById(inputId);
+            if (input.type === 'password') {
+                input.type = 'text';
+                btn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>';
+            } else {
+                input.type = 'password';
+                btn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>';
+            }
+        }
+    </script>
 </body>
 </html>

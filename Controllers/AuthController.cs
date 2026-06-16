@@ -14,9 +14,70 @@ namespace MLM.Controllers
             _context = context;
         }
 
-        public IActionResult ClientRegisterReferralid()
+        [HttpGet]
+        public IActionResult Register()
         {
             return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Register(string Email, string FullName, string Password, string ConfirmPassword, string Country, string Phone, string ReferralId)
+        {
+            ViewBag.ReferralId = ReferralId;
+
+            if (string.IsNullOrEmpty(Email) || string.IsNullOrEmpty(Password) || string.IsNullOrEmpty(FullName))
+            {
+                ViewBag.Error = "All fields are required.";
+                return View();
+            }
+
+            if (Password != ConfirmPassword)
+            {
+                ViewBag.Error = "Passwords do not match.";
+                return View();
+            }
+
+            var exists = await _context.Users.AnyAsync(u => u.Email == Email);
+            if (exists)
+            {
+                ViewBag.Error = "Email is already registered.";
+                return View();
+            }
+
+            var clientRole = await _context.Roles.FirstOrDefaultAsync(r => r.Name == "Client");
+            var org = await _context.Organizations.FirstOrDefaultAsync();
+
+            string salt = BCrypt.Net.BCrypt.GenerateSalt(10);
+            string hash = BCrypt.Net.BCrypt.HashPassword(Password, salt);
+            string newReferralCode = Guid.NewGuid().ToString("N").Substring(0, 8).ToUpper();
+
+            var newUser = new Users
+            {
+                Username = Email.Split('@')[0],
+                FullName = FullName,
+                Email = Email,
+                ContactNo = Phone,
+                Hash = hash,
+                Salt = salt,
+                RoleId = clientRole?.Id ?? 1,
+                ReferralCode = newReferralCode,
+                OrganizationId = org?.Id ?? 1
+            };
+
+            _context.Users.Add(newUser);
+            await _context.SaveChangesAsync();
+
+            TempData["Success"] = "Registration successful! Please sign in.";
+            return RedirectToAction("Login");
+        }
+
+
+        [HttpGet("Auth/ClientRegisterReferralid/{id}")]
+        public IActionResult ClientRegisterReferralid(string id)
+        {
+            ViewBag.ReferralId = id;
+            return View("Register");
         }
         public IActionResult MtsadminSignin()
         {

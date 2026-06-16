@@ -16,9 +16,9 @@
   --button-default-hover-bg: #f1f5f9;
   --button-default-hover-text: #0f172a;
 
-  --button-primary-bg: #22c55e;
+  --button-primary-bg: #4f46e5;
   --button-primary-text: #ffffff;
-  --button-primary-hover-bg: #16a34a;
+  --button-primary-hover-bg: #4338ca;
   --button-primary-hover-text: #ffffff;
 
   --button-secondary-bg: #e2e8f0;
@@ -31,8 +31,8 @@
   --button-nav-default-hover-bg: #f1f5f9;
   --button-nav-default-hover-text: #0f172a;
 
-  --button-nav-active-bg: #dcfce7;
-  --button-nav-active-text: #22c55e;
+  --button-nav-active-bg: #e0e7ff;
+  --button-nav-active-text: #4f46e5;
 }
 
 /* OVERRIDE BOOTSTRAP CLASSES TO PREVENT BRIGHT BLUE UI */

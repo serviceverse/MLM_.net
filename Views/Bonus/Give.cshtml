@@ -1,15 +1,56 @@
 @{
-    ViewData["Title"] = "Give";
+    ViewData["Title"] = "Give Bonus";
 }
 
-<div class="p-6 md:p-8">
-    <div class="max-w-6xl space-y-6">
-        <div>
-            <h1 class="text-2xl font-bold text-[var(--text-primary)]">Give</h1>
-            <p class="text-[var(--text-secondary)]">Migrated from: (admin)\bonus\give\page.tsx</p>
-        </div>
-        <div class="flex-1 overflow-hidden flex flex-col">
-            <p class="text-[var(--text-tertiary)]">Content for Give will go here.</p>
-        </div>
+<div class="p-4 md:p-8 flex items-start justify-center">
+    <div class="w-full max-w-xl bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-3xl shadow-sm p-6 md:p-8">
+        <h2 class="text-xl font-semibold text-[var(--text-primary)] mb-6">Give Bonus</h2>
+        
+        <form class="space-y-5">
+            <!-- Search User -->
+            <div class="space-y-2">
+                <label class="text-sm font-medium text-[var(--text-secondary)]">
+                    Client <span class="text-red-500">*</span>
+                </label>
+                <div class="relative">
+                    <input type="text" placeholder="Search by name or email" class="w-full pl-4 bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-xl py-3 focus:outline-none focus:border-[var(--button-primary-bg)] focus:ring-1 focus:ring-[var(--button-primary-bg)]" />
+                </div>
+            </div>
+
+            <!-- Crib Account Select -->
+            <div class="space-y-2">
+                <label class="text-sm font-medium text-[var(--text-secondary)]">
+                    Crib Account <span class="text-red-500">*</span>
+                </label>
+                <div class="relative">
+                    <select class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-xl py-3 px-4 focus:outline-none focus:border-[var(--button-primary-bg)] focus:ring-1 focus:ring-[var(--button-primary-bg)] appearance-none">
+                        <option value="">Select Crib Account</option>
+                        <!-- Options would be populated from ViewBag.Accounts -->
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-[var(--text-secondary)]">
+                        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bonus Amount -->
+            <div class="space-y-2">
+                <label class="text-sm font-medium text-[var(--text-secondary)]">
+                    Bonus Amount <span class="text-red-500">*</span>
+                </label>
+                <input type="number" name="amount" placeholder="e.g. 100" class="w-full pl-4 bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] focus:outline-none focus:border-[var(--button-primary-bg)] focus:ring-1 focus:ring-[var(--button-primary-bg)] rounded-xl py-3" />
+            </div>
+
+            <!-- Reason -->
+            <div class="space-y-2">
+                <label class="text-sm font-medium text-[var(--text-secondary)]">Reason</label>
+                <input type="text" name="reason" placeholder="Optional reason" class="w-full pl-4 bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] focus:outline-none focus:border-[var(--button-primary-bg)] focus:ring-1 focus:ring-[var(--button-primary-bg)] rounded-xl py-3" />
+            </div>
+
+            <!-- Submit -->
+            <button type="submit" class="w-full bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] hover:text-[var(--button-primary-hover-text)] px-8 py-3 rounded-xl font-semibold transition-colors mt-4">
+                Give Bonus
+            </button>
+        </form>
     </div>
 </div>

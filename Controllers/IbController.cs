@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using MLM.Data;
+using System.Collections.Generic;
 
 namespace MLM.Controllers
 {
@@ -18,22 +19,27 @@ namespace MLM.Controllers
         }
         public IActionResult MyClients()
         {
+            ViewBag.Clients = new List<dynamic>();
             return View();
         }
         public IActionResult MyCommissions()
         {
+            ViewBag.Commissions = new List<dynamic>();
             return View();
         }
         public IActionResult SetupSubIbCommission()
         {
+            ViewBag.Commissions = new List<dynamic>();
             return View();
         }
         public IActionResult TeamDepositReport()
         {
+            ViewBag.Deposits = new List<dynamic>();
             return View();
         }
         public IActionResult TeamWithdrawReport()
         {
+            ViewBag.Withdraws = new List<dynamic>();
             return View();
         }
         public IActionResult TreeCharts()
@@ -42,12 +48,13 @@ namespace MLM.Controllers
         }
         public IActionResult UsdtWithdrawn()
         {
+            ViewBag.Withdraws = new List<dynamic>();
             return View();
         }
         public IActionResult Withdrawn()
         {
+            ViewBag.Withdraws = new List<dynamic>();
             return View();
         }
-
     }
 }

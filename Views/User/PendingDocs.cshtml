@@ -1,7 +1,7 @@
 @{
     ViewData["Title"] = "KYC Approvals";
 }
-<div class="p-6 md:p-8">
+<div class="p-2 md:p-4">
     
         <div>
             <h1 class="text-3xl font-bold">KYC Approvals</h1>
@@ -10,7 +10,7 @@
 
         <div class="bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-3xl w-full p-8">
             <!-- Tabs -->
-            <div class="mb-6 flex space-x-2 bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] rounded-xl p-1 w-max">
+            <div class="mb-2 flex space-x-2 bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] rounded-xl p-1 w-max">
                 <button class="px-4 py-2 rounded-lg text-sm font-medium bg-yellow-500/20 text-yellow-800 dark:bg-yellow-500 dark:text-white">Pending</button>
                 <button class="px-4 py-2 rounded-lg text-sm font-medium text-[var(--text-secondary)] hover:bg-[var(--bg-secondary)]">Approved</button>
                 <button class="px-4 py-2 rounded-lg text-sm font-medium text-[var(--text-secondary)] hover:bg-[var(--bg-secondary)]">Rejected</button>
@@ -27,15 +27,15 @@
             <div class="overflow-x-auto">
                 <table class="w-full text-sm">
                     <thead>
-                        <tr class="border-b border-[var(--border-secondary)]">
-                            <th class="py-3 px-4 text-left text-[var(--text-secondary)] font-medium">User</th>
-                            <th class="py-3 px-4 text-left text-[var(--text-secondary)] font-medium">Email</th>
-                            <th class="py-3 px-4 text-left text-[var(--text-secondary)] font-medium">Document Type</th>
-                            <th class="py-3 px-4 text-left text-[var(--text-secondary)] font-medium">Document</th>
-                            <th class="py-3 px-4 text-left text-[var(--text-secondary)] font-medium">Status</th>
-                            <th class="py-3 px-4 text-left text-[var(--text-secondary)] font-medium">Updated</th>
-                            <th class="py-3 px-4 text-left text-[var(--text-secondary)] font-medium">Reason</th>
-                            <th class="py-3 px-4 text-left text-[var(--text-secondary)] font-medium">Actions</th>
+                        <tr class="border-b border-[var(--border-secondary)] hover:bg-[var(--bg-tertiary)] even:bg-[var(--bg-secondary)]/40 transition-none">
+                            <th class="py-1.5 px-2 text-[11px] border-r border-[var(--border-secondary)] whitespace-nowrap text-left text-[var(--text-secondary)] font-medium">User</th>
+                            <th class="py-1.5 px-2 text-[11px] border-r border-[var(--border-secondary)] whitespace-nowrap text-left text-[var(--text-secondary)] font-medium">Email</th>
+                            <th class="py-1.5 px-2 text-[11px] border-r border-[var(--border-secondary)] whitespace-nowrap text-left text-[var(--text-secondary)] font-medium">Document Type</th>
+                            <th class="py-1.5 px-2 text-[11px] border-r border-[var(--border-secondary)] whitespace-nowrap text-left text-[var(--text-secondary)] font-medium">Document</th>
+                            <th class="py-1.5 px-2 text-[11px] border-r border-[var(--border-secondary)] whitespace-nowrap text-left text-[var(--text-secondary)] font-medium">Status</th>
+                            <th class="py-1.5 px-2 text-[11px] border-r border-[var(--border-secondary)] whitespace-nowrap text-left text-[var(--text-secondary)] font-medium">Updated</th>
+                            <th class="py-1.5 px-2 text-[11px] border-r border-[var(--border-secondary)] whitespace-nowrap text-left text-[var(--text-secondary)] font-medium">Reason</th>
+                            <th class="py-1.5 px-2 text-[11px] border-r border-[var(--border-secondary)] whitespace-nowrap text-left text-[var(--text-secondary)] font-medium">Actions</th>
                         </tr>
                     </thead>
                     <tbody>

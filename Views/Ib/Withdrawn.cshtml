@@ -1,15 +1,66 @@
 @{
-    ViewData["Title"] = "Withdrawn";
+    ViewData["Title"] = "Bank Withdrawals";
 }
 
-<div class="p-6 md:p-8">
-    <div class="max-w-6xl space-y-6">
+<div class="p-4 md:p-8 space-y-6 ">
+    <div class="mb-2 flex justify-between items-center">
         <div>
-            <h1 class="text-2xl font-bold text-[var(--text-primary)]">Withdrawn</h1>
-            <p class="text-[var(--text-secondary)]">Migrated from: ib\withdrawn\page.tsx</p>
+            <h1 class="text-3xl font-bold text-[var(--text-primary)] tracking-tight">Bank Withdrawals</h1>
+            <p class="text-[var(--text-secondary)] mt-1">Manage your fiat withdrawal requests</p>
         </div>
-        <div class="flex-1 overflow-hidden flex flex-col">
-            <p class="text-[var(--text-tertiary)]">Content for Withdrawn will go here.</p>
+    </div>
+
+    <!-- Card Wrapper -->
+    <div class="bg-[var(--bg-primary)] border border-[var(--border-secondary)] rounded-2xl shadow-sm overflow-hidden flex flex-col">
+        <!-- Filters -->
+        <div class="px-5 py-4 border-b border-[var(--border-secondary)] flex flex-wrap items-center justify-between gap-4 bg-[var(--bg-primary)]">
+            <div class="flex items-center space-x-2">
+                <span class="text-[var(--text-secondary)] text-sm font-medium">Show</span>
+                <select class="h-9 w-20 rounded-lg border border-[var(--border-secondary)] bg-[var(--bg-primary)] px-2 py-1 text-sm text-[var(--text-primary)] shadow-sm focus:outline-none focus:border-[#4f46e5] focus:ring-1 focus:ring-[#4f46e5]/20">
+                    <option value="10">10</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                </select>
+                <span class="text-[var(--text-secondary)] text-sm font-medium">entries</span>
+            </div>
+
+            <div class="flex items-center space-x-2">
+                <span class="text-[var(--text-secondary)] text-sm font-medium">Search:</span>
+                <input type="text" placeholder="Search..." class="h-9 w-64 rounded-lg border border-[var(--border-secondary)] bg-[var(--bg-primary)] px-3 py-1 text-sm shadow-sm focus:outline-none focus:border-[#4f46e5] focus:ring-1 focus:ring-[#4f46e5]/20 transition-all" />
+            </div>
+        </div>
+
+        <!-- Table Content -->
+        <div class="overflow-x-auto bg-[var(--bg-primary)]">
+            <table class="w-full text-sm">
+                <thead>
+                    <tr class="border-b border-[var(--border-secondary)] bg-[var(--bg-tertiary)]">
+                        @foreach (var heading in new[] { "#", "Date", "Transaction ID", "Amount", "Bank Details", "Status", "Action" })
+                        {
+                            <th class="py-3 px-5 text-xs text-left text-[var(--text-secondary)] font-semibold uppercase tracking-wider ">@heading</th>
+                        }
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (ViewBag.Withdrawals == null || ((IEnumerable<dynamic>)ViewBag.Withdrawals).Count() == 0)
+                    {
+                        <tr>
+                            <td colspan="7" class="text-center py-8 text-sm text-[var(--text-tertiary)] font-medium">No bank withdrawals found</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Pagination -->
+        <div class="px-5 py-4 border-t border-[var(--border-secondary)] flex flex-wrap items-center justify-between gap-4 bg-[var(--bg-primary)]">
+            <div class="text-[var(--text-secondary)] text-sm font-medium">Showing 0 to 0 of 0 entries</div>
+            <div class="flex items-center space-x-2">
+                <button disabled class="px-3 py-1.5 text-sm border border-[var(--border-secondary)] rounded-lg text-[var(--text-tertiary)] opacity-50 cursor-not-allowed font-medium">Previous</button>
+                <span class="px-3 py-1.5 text-sm bg-indigo-50 text-indigo-700 border border-indigo-100 rounded-lg font-semibold">1</span>
+                <button disabled class="px-3 py-1.5 text-sm border border-[var(--border-secondary)] rounded-lg text-[var(--text-tertiary)] opacity-50 cursor-not-allowed font-medium">Next</button>
+            </div>
         </div>
     </div>
 </div>

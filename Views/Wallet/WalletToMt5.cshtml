@@ -1,15 +1,91 @@
 @{
-    ViewData["Title"] = "WalletToMt5";
+    ViewData["Title"] = "Wallet To Crib Account";
 }
 
-<div class="p-6 md:p-8">
-    <div class="max-w-6xl space-y-6">
-        <div>
-            <h1 class="text-2xl font-bold text-[var(--text-primary)]">WalletToMt5</h1>
-            <p class="text-[var(--text-secondary)]">Migrated from: wallet\wallet-to-mt5\page.tsx</p>
+<div class="p-4 md:p-8 space-y-6 max-w-4xl mx-auto">
+    <!-- Header -->
+    <div class="text-center space-y-3 mb-8">
+        <div class="w-16 h-16 bg-gradient-to-tr from-[var(--button-primary-bg)] to-indigo-400 rounded-full flex items-center justify-center mx-auto shadow-lg shadow-[var(--button-primary-bg)]/20">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
         </div>
-        <div class="flex-1 overflow-hidden flex flex-col">
-            <p class="text-[var(--text-tertiary)]">Content for WalletToMt5 will go here.</p>
+        <h1 class="text-3xl font-bold text-[var(--text-primary)] tracking-tight">Wallet To Crib Account</h1>
+        <p class="text-[var(--text-secondary)] font-medium">Transfer funds from your wallet to your Crib account</p>
+    </div>
+
+    <!-- Wallet Balance Card -->
+    <div class="bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-100 rounded-2xl shadow-sm p-6 mb-6">
+        <div class="flex flex-col sm:flex-row items-center justify-center space-y-3 sm:space-y-0 sm:space-x-4 text-center">
+            <div class="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center border border-emerald-200">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-emerald-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 0 0 0 4h4v-4Z"/></svg>
+            </div>
+            <span class="text-lg text-emerald-900 font-medium">
+                Your wallet balance: 
+                <span class="font-bold text-emerald-700 ml-1">
+                    $@(ViewBag.WalletBalance?.ToString("0.00") ?? "0.00") USD
+                </span>
+            </span>
         </div>
+    </div>
+
+    <!-- Transfer Form Card -->
+    <div class="bg-[var(--bg-primary)] border border-[var(--border-secondary)] rounded-3xl shadow-sm p-6 md:p-10">
+        <form class="space-y-6">
+            <!-- Select Account -->
+            <div class="space-y-2">
+                <label class="text-[var(--text-primary)] font-bold">
+                    Select Account <span class="text-red-500">*</span>
+                </label>
+                <select class="w-full bg-[var(--bg-primary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-xl py-3 px-4 outline-none shadow-sm focus:border-[var(--button-primary-bg)] focus:ring-2 focus:ring-[var(--button-primary-bg)]/20 transition-all font-medium appearance-none" required>
+                    <option value="">Please Choose...</option>
+                    @if (ViewBag.Accounts != null)
+                    {
+                        foreach (var acc in ViewBag.Accounts)
+                        {
+                            <option value="@acc.Id">Account #@acc.Id (@acc.Name)</option>
+                        }
+                    }
+                </select>
+            </div>
+
+            <!-- Amount -->
+            <div class="space-y-2">
+                <label class="text-[var(--text-primary)] font-bold">
+                    Amount <span class="text-red-500">*</span>
+                </label>
+                <div class="relative">
+                    <span class="absolute left-4 top-1/2 transform -translate-y-1/2 text-[var(--text-secondary)] font-bold">$</span>
+                    <input type="number" step="0.01" min="0" placeholder="Enter amount" class="w-full bg-[var(--bg-primary)] border border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] rounded-xl py-3 pl-8 pr-4 outline-none shadow-sm focus:border-[var(--button-primary-bg)] focus:ring-2 focus:ring-[var(--button-primary-bg)]/20 transition-all font-medium" required />
+                </div>
+            </div>
+
+            <!-- Note -->
+            <div class="space-y-2">
+                <label class="text-[var(--text-primary)] font-bold">
+                    Note <span class="text-red-500">*</span>
+                </label>
+                <input type="text" placeholder="Enter Note" class="w-full bg-[var(--bg-primary)] border border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] rounded-xl py-3 px-4 outline-none shadow-sm focus:border-[var(--button-primary-bg)] focus:ring-2 focus:ring-[var(--button-primary-bg)]/20 transition-all font-medium" required />
+            </div>
+
+            <!-- Submit -->
+            <div class="pt-4">
+                <button type="submit" class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] px-8 py-3.5 rounded-xl font-bold shadow-md shadow-[var(--button-primary-bg)]/20 transition-all w-full sm:w-auto flex items-center justify-center">
+                    Submit Transfer
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Info Card -->
+    <div class="bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] rounded-2xl p-6 md:p-8">
+        <h3 class="text-lg font-bold text-[var(--text-primary)] mb-3 flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2 text-[var(--button-primary-bg)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+            Transfer Information
+        </h3>
+        <ul class="space-y-2 text-[var(--text-secondary)] font-medium text-sm">
+            <li class="flex items-start"><span class="mr-2 text-[var(--button-primary-bg)]">•</span> Transfers from wallet to Crib are instant and free</li>
+            <li class="flex items-start"><span class="mr-2 text-[var(--button-primary-bg)]">•</span> Minimum transfer amount: $1.00</li>
+            <li class="flex items-start"><span class="mr-2 text-[var(--button-primary-bg)]">•</span> Funds will be available in your Crib account immediately</li>
+            <li class="flex items-start"><span class="mr-2 text-[var(--button-primary-bg)]">•</span> You can only transfer available balance from your wallet</li>
+        </ul>
     </div>
 </div>
