@@ -1,16 +1,73 @@
 @{
-    ViewData["Title"] = "ApprovedDocs";
+    ViewData["Title"] = "KYC Document Approval";
 }
-
-<div class="min-h-screen bg-primary text-[var(--text-primary)] p-8">
-    <div class="max-w-6xl mx-auto space-y-8">
+<div class="p-6 md:p-8">
+    
         <div>
-            <h1 class="text-4xl font-bold text-[var(--text-primary)] mb-2">ApprovedDocs</h1>
-            <p class="text-[var(--text-secondary)]">Migrated from: (admin)\user\approved-docs\page.tsx</p>
+            <h1 class="text-2xl font-bold text-[var(--text-primary)]">KYC Document Approval</h1>
+            <p class="text-[var(--text-secondary)]">Review pending, approved, or rejected KYC document submissions</p>
         </div>
-        <div class="bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-3xl p-8">
-            <p class="text-[var(--text-tertiary)]">Content for ApprovedDocs will go here.</p>
+
+        <div class="bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-3xl w-full p-8">
+            <!-- Tabs -->
+            <div class="mb-6 flex space-x-2 bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] rounded-xl p-1 w-max">
+                <button class="px-4 py-2 rounded-lg text-sm font-medium text-[var(--text-secondary)] hover:bg-[var(--bg-secondary)]">Pending (0)</button>
+                <button class="px-4 py-2 rounded-lg text-sm font-medium bg-green-500/20 text-green-800 dark:bg-green-600 dark:text-white">Approved (0)</button>
+                <button class="px-4 py-2 rounded-lg text-sm font-medium text-[var(--text-secondary)] hover:bg-[var(--bg-secondary)]">Rejected (0)</button>
+            </div>
+
+            <!-- Filters -->
+            <div class="flex items-center justify-between mt-6 mb-6">
+                <div class="flex items-center space-x-2">
+                    <span class="text-[var(--text-secondary)]">Show</span>
+                    <select class="w-20 bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-md py-2 px-3 outline-none">
+                        <option value="10">10</option>
+                        <option value="25">25</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                    </select>
+                    <span class="text-[var(--text-secondary)]">entries</span>
+                </div>
+
+                <div class="flex items-center space-x-2">
+                    <span class="text-[var(--text-secondary)]">Search:</span>
+                    <div class="relative">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-gray-400 absolute left-3 top-1/2 transform -translate-y-1/2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                        <input type="text" placeholder="Search by user name..." class="pl-10 bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] focus:border-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)] w-80 py-2 px-3 rounded-md outline-none focus:ring-2" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm">
+                    <thead>
+                        <tr class="border-b border-[var(--border-secondary)]">
+                            <th class="py-3 px-4 text-left text-[var(--text-secondary)] font-semibold uppercase">#</th>
+                            <th class="py-3 px-4 text-left text-[var(--text-secondary)] font-semibold uppercase">User</th>
+                            <th class="py-3 px-4 text-left text-[var(--text-secondary)] font-semibold uppercase">POI Document</th>
+                            <th class="py-3 px-4 text-left text-[var(--text-secondary)] font-semibold uppercase">POA Document</th>
+                            <th class="py-3 px-4 text-left text-[var(--text-secondary)] font-semibold uppercase">POI Status</th>
+                            <th class="py-3 px-4 text-left text-[var(--text-secondary)] font-semibold uppercase">POA Status</th>
+                            <th class="py-3 px-4 text-left text-[var(--text-secondary)] font-semibold uppercase">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="7" class="text-center py-12 text-gray-400">No records found</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Pagination -->
+        <div class="px-6 py-4 border-t border-[var(--border-secondary)] flex flex-wrap items-center justify-between gap-4">
+                <div class="text-[var(--text-secondary)]">Showing 0 to 0 of 0 entries</div>
+                <div class="flex items-center space-x-2">
+                    <button disabled class="border border-[var(--border-secondary)] text-[var(--text-secondary)] bg-transparent px-3 py-1 rounded-md text-sm opacity-50 cursor-not-allowed">Previous</button>
+                    <span class="px-3 py-1 text-sm bg-[var(--button-primary-bg)] text-[var(--button-primary-text)] rounded">1 / 1</span>
+                    <button disabled class="border border-[var(--border-secondary)] text-[var(--text-secondary)] bg-transparent px-3 py-1 rounded-md text-sm opacity-50 cursor-not-allowed">Next</button>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-

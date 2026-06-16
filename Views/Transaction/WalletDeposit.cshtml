@@ -1,15 +1,59 @@
 @{
-    ViewData["Title"] = "TransactionWalletDeposit";
+    ViewData["Title"] = "Client Wallet Deposit";
 }
+<div class="p-6 md:p-8">
+        <div class="max-w-6xl space-y-6">
+            <h1 class="text-2xl font-bold text-[var(--text-primary)]">Client Wallet Deposit</h1>
+            <p class="text-[var(--text-secondary)]">Search client and submit deposit details</p>
 
-<div class="min-h-screen bg-primary text-[var(--text-primary)] p-8">
-    <div class="max-w-6xl mx-auto space-y-8">
-        <div>
-            <h1 class="text-4xl font-bold text-[var(--text-primary)] mb-2">TransactionWalletDeposit</h1>
-            <p class="text-[var(--text-secondary)]">Migrated from: (admin)\transaction\wallet-deposit\page.tsx</p>
-        </div>
-        <div class="bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-3xl p-8">
-            <p class="text-[var(--text-tertiary)]">Content for TransactionWalletDeposit will go here.</p>
+            <div class="bg-[var(--bg-primary)] border border-[var(--border-secondary)] rounded-xl shadow-sm p-6 md:p-8">
+                <form class="grid grid-cols-1 lg:grid-cols-2 gap-6 relative">
+                    <!-- Client Search -->
+                    <div class="space-y-2 relative">
+                        <label class="text-[var(--text-primary)] font-medium">Client</label>
+                        <input type="text" placeholder="Search by name" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-xl py-3 px-3 outline-none focus:ring-2 focus:ring-[var(--button-primary-bg)]" />
+                    </div>
+
+                    <!-- Amount -->
+                    <div class="space-y-2">
+                        <label class="text-[var(--text-primary)] font-medium">Amount</label>
+                        <input type="number" placeholder="Enter amount" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-xl py-3 px-3 outline-none focus:ring-2 focus:ring-[var(--button-primary-bg)]" />
+                    </div>
+
+                    <!-- Deposit Method -->
+                    <div class="space-y-2">
+                        <label class="text-[var(--text-primary)] font-medium">Deposit Method</label>
+                        <select class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-xl py-3 px-3 outline-none focus:ring-2 focus:ring-[var(--button-primary-bg)]">
+                            <option value="">Select method</option>
+                            <option value="card">Card</option>
+                            <option value="usdt">Usdt</option>
+                            <option value="bank">Bank</option>
+                            <option value="cash">Cash</option>
+                        </select>
+                    </div>
+
+                    <!-- Transaction ID -->
+                    <div class="space-y-2">
+                        <label class="text-[var(--text-primary)] font-medium">Transaction ID</label>
+                        <input type="text" placeholder="Optional transaction reference" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-xl py-3 px-3 outline-none focus:ring-2 focus:ring-[var(--button-primary-bg)]" />
+                    </div>
+
+                    <!-- Note -->
+                    <div class="space-y-2">
+                        <label class="text-[var(--text-primary)] font-medium">Note</label>
+                        <input type="text" placeholder="Additional remarks" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-xl py-3 px-3 outline-none focus:ring-2 focus:ring-[var(--button-primary-bg)]" />
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="col-span-full mt-4 flex gap-4 pt-4">
+                        <button type="button" class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] hover:text-[var(--button-primary-hover-text)] px-8 py-3 rounded-xl font-semibold ">
+                            Submit Deposit
+                        </button>
+                        <button type="button" class="border border-[var(--border-secondary)] text-[var(--text-secondary)] hover:bg-[var(--bg-tertiary)] bg-transparent px-6 py-3 rounded-xl font-semibold">
+                            Reset
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
-</div>

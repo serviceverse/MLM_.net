@@ -1,16 +1,54 @@
 @{
-    ViewData["Title"] = "PositionReport";
+    ViewData["Title"] = "Position Report";
 }
+<div class="p-6 md:p-8">
+    <div class="page-scroll-content px-8 py-6">
+        
+            <!-- Header -->
+            <div>
+                <h1 class="text-2xl font-bold text-[var(--text-primary)]">Position Report</h1>
+                <p class="text-[var(--text-secondary)]">Check all open/closed positions for selected clients</p>
+            </div>
 
-<div class="min-h-screen bg-primary text-[var(--text-primary)] p-8">
-    <div class="max-w-6xl mx-auto space-y-8">
-        <div>
-            <h1 class="text-4xl font-bold text-[var(--text-primary)] mb-2">PositionReport</h1>
-            <p class="text-[var(--text-secondary)]">Migrated from: (admin)\all-reports\position-report\page.tsx</p>
-        </div>
-        <div class="bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-3xl p-8">
-            <p class="text-[var(--text-tertiary)]">Content for PositionReport will go here.</p>
+            <!-- Filters -->
+            <div class="bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-3xl p-6 flex flex-wrap items-end gap-4">
+                <div class="space-y-2">
+                    <label class="text-[var(--text-primary)] font-medium">From:</label>
+                    <input type="date" class="bg-[var(--bg-tertiary)] border-[var(--border-secondary)] text-[var(--text-primary)] p-2 rounded outline-none" />
+                </div>
+                <div class="space-y-2">
+                    <label class="text-[var(--text-primary)] font-medium">To:</label>
+                    <input type="date" class="bg-[var(--bg-tertiary)] border-[var(--border-secondary)] text-[var(--text-primary)] p-2 rounded outline-none" />
+                </div>
+                <div class="space-y-2 relative">
+                    <label class="text-[var(--text-primary)] font-medium">Client:</label>
+                    <input type="text" placeholder="Search client" class="bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] focus:border-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)] rounded-xl py-2 px-3 outline-none" />
+                </div>
+                <button class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] hover:text-[var(--button-primary-hover-text)] font-semibold px-6 py-2 rounded-xl">
+                    Search
+                </button>
+            </div>
+
+            <!-- Table -->
+            <div class="bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-3xl p-8 overflow-auto">
+                <table class="w-full">
+                    <thead>
+                        <tr class="border-b border-[var(--border-primary)] text-left">
+                            <th class="px-4 py-2 text-[var(--text-secondary)]">Client</th>
+                            <th class="px-4 py-2 text-[var(--text-secondary)]">Symbol</th>
+                            <th class="px-4 py-2 text-[var(--text-secondary)]">Type</th>
+                            <th class="px-4 py-2 text-[var(--text-secondary)]">Lot Size</th>
+                            <th class="px-4 py-2 text-[var(--text-secondary)]">Open Time</th>
+                            <th class="px-4 py-2 text-[var(--text-secondary)]">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="6" class="text-center text-[var(--text-secondary)] py-6">No data available</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </div>
-

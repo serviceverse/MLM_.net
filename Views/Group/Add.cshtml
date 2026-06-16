@@ -1,16 +1,64 @@
 @{
-    ViewData["Title"] = "Add";
+    ViewData["Title"] = "Add Group";
 }
+<div class="p-6 md:p-8">
+        <div class="w-full">
+            <div class="w-full bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-3xl shadow-md p-6 md:p-8 space-y-6">
+                <h2 class="text-xl font-semibold text-[var(--text-primary)]">Add Group</h2>
 
-<div class="min-h-screen bg-primary text-[var(--text-primary)] p-8">
-    <div class="max-w-6xl mx-auto space-y-8">
-        <div>
-            <h1 class="text-4xl font-bold text-[var(--text-primary)] mb-2">Add</h1>
-            <p class="text-[var(--text-secondary)]">Migrated from: (admin)\group\add\page.tsx</p>
-        </div>
-        <div class="bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-3xl p-8">
-            <p class="text-[var(--text-tertiary)]">Content for Add will go here.</p>
+                <form class="grid grid-cols-1 lg:grid-cols-2 gap-6 relative">
+                    <!-- Master Group -->
+                    <div class="space-y-2">
+                        <label class="text-sm font-medium text-[var(--text-primary)]">
+                            Master Group <span class="text-red-400">*</span>
+                        </label>
+                        <select class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-lg py-2 px-3 outline-none focus:border-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)]">
+                            <option>Select master group</option>
+                        </select>
+                    </div>
+
+                    <!-- Group Name -->
+                    <div class="space-y-2">
+                        <label class="text-sm font-medium text-[var(--text-primary)]">
+                            Group Name <span class="text-red-400">*</span>
+                        </label>
+                        <input type="text" placeholder="Enter group name" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] rounded-lg py-2 px-3 outline-none focus:border-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)]" />
+                    </div>
+
+                    <!-- Group Code -->
+                    <div class="space-y-2">
+                        <label class="text-sm font-medium text-[var(--text-primary)]">
+                            Group Code <span class="text-red-400">*</span>
+                        </label>
+                        <input type="text" placeholder="Unique Crib group code" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] rounded-lg py-2 px-3 outline-none focus:border-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)]" />
+                    </div>
+
+                    <!-- Min Deposit -->
+                    <div class="space-y-2">
+                        <label class="text-sm font-medium text-[var(--text-primary)]">
+                            Min Deposite ($)<span class="text-red-400">*</span>
+                        </label>
+                        <input type="text" placeholder="e.g., 10" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] rounded-lg py-2 px-3 outline-none focus:border-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)]" />
+                    </div>
+
+                    <!-- Leverage -->
+                    <div class="space-y-2">
+                        <label class="text-sm font-medium text-[var(--text-primary)]">
+                            Leverage <span class="text-red-400">*</span>
+                        </label>
+                        <input type="text" placeholder="e.g., 1:300" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] rounded-lg py-2 px-3 outline-none focus:border-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)]" />
+                    </div>
+
+                    <!-- Description -->
+                    <div class="space-y-2">
+                        <label class="text-sm font-medium text-[var(--text-primary)]">Description</label>
+                        <input type="text" placeholder="Optional description" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] rounded-lg py-2 px-3 outline-none focus:border-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)]" />
+                    </div>
+
+                    <button type="button" class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] hover:text-[var(--button-primary-hover-text)] w-full py-2 rounded-xl font-semibold">
+                        Add Group
+                    </button>
+                </form>
+            </div>
         </div>
     </div>
-</div>
-

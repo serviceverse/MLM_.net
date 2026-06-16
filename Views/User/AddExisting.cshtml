@@ -1,16 +1,67 @@
 @{
-    ViewData["Title"] = "AddExisting";
+    ViewData["Title"] = "Link Existing Crib Account";
 }
-
-<div class="min-h-screen bg-primary text-[var(--text-primary)] p-8">
-    <div class="max-w-6xl mx-auto space-y-8">
-        <div>
-            <h1 class="text-4xl font-bold text-[var(--text-primary)] mb-2">AddExisting</h1>
-            <p class="text-[var(--text-secondary)]">Migrated from: (admin)\user\add-existing\page.tsx</p>
+<div class="custome-scroll min-h-screen bg-primary text-[var(--text-primary)] p-8">
+    <div class="w-full space-y-8">
+        <!-- Header & Action Bar -->
+        <div class="mb-6">
+            <div>
+                <h1 class="text-2xl font-bold">Link Existing Crib Account</h1>
+                <p class="text-sm text-[var(--text-secondary)] mt-1">Link Crib account to an existing customer</p>
+            </div>
+            <!-- Action items will go here -->
         </div>
-        <div class="bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-3xl p-8">
-            <p class="text-[var(--text-tertiary)]">Content for AddExisting will go here.</p>
+
+        <div class="bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-3xl w-full p-8">
+            <form class="grid grid-cols-1 lg:grid-cols-2 gap-6 relative">
+                <!-- Client Search -->
+                <div class="space-y-2">
+                    <label class="text-[var(--text-primary)] font-medium">Client</label>
+                    <input type="text" placeholder="Search Client" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-xl py-3 px-3 outline-none focus:ring-2 focus:ring-[var(--button-primary-bg)]" />
+                </div>
+
+                <!-- Account Number -->
+                <div class="space-y-2">
+                    <label class="text-[var(--text-primary)] font-medium">Account Number</label>
+                    <input type="number" placeholder="Crib Account Number" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-xl py-3 px-3 outline-none focus:ring-2 focus:ring-[var(--button-primary-bg)]" />
+                </div>
+
+                <!-- Account Type -->
+                <div class="space-y-2">
+                    <label class="text-[var(--text-primary)] font-medium">Select Account Type <span class="text-red-400">*</span></label>
+                    <select class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-xl py-3 px-3 outline-none focus:ring-2 focus:ring-[var(--button-primary-bg)]">
+                        <option value="">Please choose an account type...</option>
+                    </select>
+                </div>
+
+                <!-- Leverage -->
+                <div class="space-y-2">
+                    <label class="text-[var(--text-primary)] font-medium">Select Leverage <span class="text-red-400">*</span></label>
+                    <select class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-xl py-3 px-3 outline-none focus:ring-2 focus:ring-[var(--button-primary-bg)]">
+                        <option value="">Please choose leverage...</option>
+                    </select>
+                </div>
+
+                <!-- Password -->
+                <div class="space-y-2">
+                    <label class="text-[var(--text-primary)] font-medium">Password</label>
+                    <div class="relative">
+                        <input type="password" placeholder="Enter Password" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-xl py-3 px-3 outline-none focus:ring-2 focus:ring-[var(--button-primary-bg)]" />
+                        <button type="button" class="absolute right-3 top-1/2 -translate-y-1/2 p-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[var(--text-tertiary)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Buttons -->
+                <div class="col-span-full mt-4 flex gap-4 pt-4">
+                    <button type="submit" class="bg-[var(--button-primary-bg)] hover:opacity-90 text-[var(--button-primary-text)] px-8 py-3 rounded-xl font-semibold">
+                        Create Account
+                    </button>
+                    <button type="button" class="border border-[var(--border-secondary)] text-[var(--text-secondary)] hover:bg-[var(--bg-tertiary)] px-6 py-3 rounded-xl font-semibold bg-transparent">
+                        Reset
+                    </button>
+                </div>
+            </form>
         </div>
     </div>
-</div>
-

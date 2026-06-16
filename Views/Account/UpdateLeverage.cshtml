@@ -1,15 +1,56 @@
 @{
-    ViewData["Title"] = "UpdateLeverage";
+    ViewData["Title"] = "Update Leverage";
 }
-
-<div class="min-h-screen bg-primary text-[var(--text-primary)] p-8">
-    <div class="max-w-6xl mx-auto space-y-8">
+<div class="p-6 md:p-8">
+    <div class="max-w-6xl space-y-6">
         <div>
-            <h1 class="text-4xl font-bold text-[var(--text-primary)] mb-2">UpdateLeverage</h1>
-            <p class="text-[var(--text-secondary)]">Migrated from: account\update-leverage\page.tsx</p>
+            <h1 class="text-2xl font-bold text-[var(--text-primary)]">Update Leverage</h1>
+            <p class="text-[var(--text-secondary)]">Modify the leverage for your existing Crib trading accounts</p>
         </div>
-        <div class="bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-3xl p-8">
-            <p class="text-[var(--text-tertiary)]">Content for UpdateLeverage will go here.</p>
+        <div class="bg-[var(--bg-primary)] border border-[var(--border-secondary)] rounded-xl shadow-sm p-6 md:p-8">
+            <form class="grid grid-cols-1 lg:grid-cols-2 gap-6 relative">
+                <div class="space-y-2">
+                    <label class="text-[var(--text-primary)] font-medium">Select Crib Account <span class="text-red-400">*</span></label>
+                    <select class="w-full bg-[var(--bg-tertiary)] border-[var(--border-secondary)] text-[var(--text-primary)] rounded-xl py-3 px-3 outline-none focus:ring-2 focus:ring-[var(--button-primary-bg)]">
+                        <option value="">Please choose an account...</option>
+                    </select>
+                </div>
+                <div class="space-y-2">
+                    <label class="text-[var(--text-primary)] font-medium">Select New Leverage <span class="text-red-400">*</span></label>
+                    <select class="w-full bg-[var(--bg-tertiary)] border-[var(--border-secondary)] text-[var(--text-primary)] rounded-xl py-3 px-3 outline-none focus:ring-2 focus:ring-[var(--button-primary-bg)]">
+                        <option value="">Please choose new leverage...</option>
+                    </select>
+                </div>
+                <div class="col-span-full mt-4 flex gap-4 pt-4">
+                    <button type="submit" class="bg-[var(--button-primary-bg)] text-[var(--button-primary-text)] px-8 py-3 rounded-xl font-semibold hover:opacity-90 flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+                        Update Leverage
+                    </button>
+                    <button type="reset" class="border border-[var(--border-secondary)] text-[var(--text-secondary)] bg-transparent hover:bg-[var(--bg-tertiary)] px-6 py-3 rounded-xl font-semibold">Reset</button>
+                </div>
+            </form>
+        </div>
+        <div class="bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-2xl p-6 opacity-80">
+            <h3 class="text-lg font-semibold text-[var(--text-primary)] mb-3">Important Information</h3>
+            <ul class="space-y-2 text-[var(--text-secondary)] text-sm">
+                <li>• <strong>Leverage Changes:</strong> Updates typically take effect immediately</li>
+                <li>• <strong>Risk Management:</strong> Higher leverage increases both potential profits and losses</li>
+                <li>• <strong>Margin Requirements:</strong> Changing leverage will affect your margin requirements</li>
+                <li>• <strong>Open Positions:</strong> Existing positions may be affected by leverage changes</li>
+            </ul>
+        </div>
+        <div class="bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-2xl p-6 opacity-80">
+            <h3 class="text-lg font-semibold text-[var(--text-primary)] mb-3">Leverage Guide</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                <div class="space-y-2">
+                    <div class="text-[var(--text-secondary)]"><strong class="text-[var(--text-primary)]">1:100-1:200:</strong> Conservative leverage</div>
+                    <div class="text-[var(--text-secondary)]"><strong class="text-[var(--text-primary)]">1:300-1:500:</strong> Moderate leverage</div>
+                </div>
+                <div class="space-y-2">
+                    <div class="text-[var(--text-secondary)]"><strong class="text-[var(--text-primary)]">1:600-1:1000:</strong> High leverage</div>
+                    <div class="text-[var(--text-secondary)]"><strong class="text-[var(--text-primary)]">Risk Warning:</strong> Higher leverage = Higher risk</div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

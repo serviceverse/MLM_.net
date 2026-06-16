@@ -1,15 +1,122 @@
 @{
-    ViewData["Title"] = "DocumentUpload";
+    ViewData["Title"] = "Document Upload";
 }
-
-<div class="min-h-screen bg-primary text-[var(--text-primary)] p-8">
-    <div class="max-w-6xl mx-auto space-y-8">
-        <div>
-            <h1 class="text-4xl font-bold text-[var(--text-primary)] mb-2">DocumentUpload</h1>
-            <p class="text-[var(--text-secondary)]">Migrated from: compliance\document-upload\page.tsx</p>
+<div class="p-6 md:p-8">
+    
+        <!-- Header -->
+        <!-- Header & Action Bar -->
+        <div class="mb-6">
+            <div>
+                <h1 class="text-2xl font-bold">Upload Document List</h1>
+                <p class="text-sm text-[var(--text-secondary)] mt-1">Manage your trading account verification documents</p>
+            </div>
+            <!-- Action items will go here -->
         </div>
-        <div class="bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-3xl p-8">
-            <p class="text-[var(--text-tertiary)]">Content for DocumentUpload will go here.</p>
+
+        <!-- Upload Section -->
+        <div class="flex gap-6">
+            <!-- POA Card -->
+            <div class="bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-3xl w-full p-8">
+                <h2 class="text-2xl font-semibold mb-6">
+                    Proof of Address (POA) 
+                    <span class="text-xs text-[var(--text-tertiary)]">Aadhar Card</span>
+                </h2>
+                <div class="border-2 border-dashed border-[var(--border-secondary)] hover:border-[var(--button-primary-bg)]/50 hover:bg-[var(--bg-tertiary)]/30 rounded-2xl p-12 text-center transition-all duration-300">
+                    <div class="flex flex-col items-center space-y-4">
+                        <div class="relative">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 text-[var(--text-tertiary)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
+                        </div>
+                        <div class="space-y-2">
+                            <p class="text-lg text-[var(--text-secondary)]">
+                                Drag & drop files or 
+                                <label class="text-[var(--button-primary-bg)] hover:text-[var(--button-primary-hover-bg)] cursor-pointer underline">
+                                    Browse
+                                    <input type="file" multiple accept=".jpeg,.jpg,.png,.pdf" class="hidden" />
+                                </label>
+                            </p>
+                            <p class="text-sm text-[var(--text-tertiary)]">Supported formats: JPEG, JPG, PNG, PDF</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-center mt-8">
+                    <button class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] hover:text-[var(--button-primary-hover-text)] px-8 py-3 rounded-xl font-semibold">
+                        UPLOAD FILES
+                    </button>
+                </div>
+            </div>
+
+            <!-- POI Card -->
+            <div class="bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-3xl w-full p-8">
+                <h2 class="text-2xl font-semibold mb-6">
+                    Proof of Identity (POI) 
+                    <span class="text-xs text-[var(--text-tertiary)]">Driving License, Pancard</span>
+                </h2>
+                <div class="border-2 border-dashed border-[var(--border-secondary)] hover:border-[var(--button-primary-bg)]/50 hover:bg-[var(--bg-tertiary)]/30 rounded-2xl p-12 text-center transition-all duration-300">
+                    <div class="flex flex-col items-center space-y-4">
+                        <div class="relative">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 text-[var(--text-tertiary)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
+                        </div>
+                        <div class="space-y-2">
+                            <p class="text-lg text-[var(--text-secondary)]">
+                                Drag & drop files or 
+                                <label class="text-[var(--button-primary-bg)] hover:text-[var(--button-primary-hover-bg)] cursor-pointer underline">
+                                    Browse
+                                    <input type="file" multiple accept=".jpeg,.jpg,.png,.pdf" class="hidden" />
+                                </label>
+                            </p>
+                            <p class="text-sm text-[var(--text-tertiary)]">Supported formats: JPEG, JPG, PNG, PDF</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-center mt-8">
+                    <button class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] hover:text-[var(--button-primary-hover-text)] px-8 py-3 rounded-xl font-semibold">
+                        UPLOAD FILES
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- KYC Status Section -->
+        <div class="flex-1 overflow-hidden flex flex-col">
+            <h2 class="text-2xl font-semibold mb-6">My KYC Status</h2>
+
+            <div class="border-b border-[var(--border-secondary)] mb-4 flex gap-4">
+                <button class="py-2 px-4 border-b-2 border-yellow-400 text-[var(--text-primary)] font-semibold">Pending (0)</button>
+                <button class="py-2 px-4 text-[var(--text-secondary)] hover:text-[var(--text-primary)]">Approved (0)</button>
+                <button class="py-2 px-4 text-[var(--text-secondary)] hover:text-[var(--text-primary)]">Rejected (0)</button>
+            </div>
+
+            <div class="flex justify-end mb-4">
+                <div class="relative w-80">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-[var(--text-tertiary)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                    <input type="text" placeholder="Search by document type or status" class="pl-10 w-full bg-[var(--bg-tertiary)] border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] focus:border-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)] py-2 rounded outline-none" />
+                </div>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full">
+                    <thead>
+                        <tr class="border-b border-[var(--border-secondary)] text-left text-[var(--text-secondary)]">
+                            <th class="py-3 px-4 font-medium">Serial No.</th>
+                            <th class="py-3 px-4 font-medium">Document Type</th>
+                            <th class="py-3 px-4 font-medium">Document</th>
+                            <th class="py-3 px-4 font-medium">Status</th>
+                            <th class="py-3 px-4 font-medium">Submitted Date</th>
+                            <th class="py-3 px-4 font-medium">Comments</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="6" class="text-center text-[var(--text-tertiary)] py-8">
+                                <div class="flex flex-col items-center space-y-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-[var(--text-tertiary)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                                    <p>No pending KYC documents found</p>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </div>

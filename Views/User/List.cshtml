@@ -1,16 +1,138 @@
+@model IEnumerable<MLM.Models.Users>
 @{
-    ViewData["Title"] = "List";
+    ViewData["Title"] = "CRM Clients";
 }
 
-<div class="min-h-screen bg-primary text-[var(--text-primary)] p-8">
-    <div class="max-w-6xl mx-auto space-y-8">
+<div class="p-6 md:p-8">
+    
+        <!-- Page Header -->
+    <div class="mb-6 flex justify-between items-center">
         <div>
-            <h1 class="text-4xl font-bold text-[var(--text-primary)] mb-2">List</h1>
-            <p class="text-[var(--text-secondary)]">Migrated from: (admin)\user\list\page.tsx</p>
+            <h1 class="text-2xl font-bold text-[var(--text-primary)]">CRM Clients</h1>
+            <p class="text-sm text-[var(--text-secondary)] mt-1">Manage all registered client accounts</p>
         </div>
-        <div class="bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-3xl p-8">
-            <p class="text-[var(--text-tertiary)]">Content for List will go here.</p>
+        <a href="/User/AddUser" class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 bg-[var(--button-primary-bg)] text-[var(--button-primary-text)] hover:opacity-90">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 mr-1"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+                Add Client
+            </a>
+    </div>
+
+        <!-- Card Wrapper -->
+        <div class="bg-[var(--bg-primary)] border border-[var(--border-secondary)] rounded-xl shadow-sm">
+                <!-- Filters -->
+        <div class="px-6 py-4 border-b border-[var(--border-secondary)] flex flex-wrap items-center justify-between gap-4">
+                    <div class="flex items-center space-x-2">
+                        <span class="text-[var(--text-secondary)]">Show</span>
+                        <select class="h-10 w-20 items-center justify-between rounded-md border border-[var(--border-secondary)] bg-[var(--bg-tertiary)] px-3 py-2 text-sm ring-offset-background focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-[var(--text-primary)]">
+                            <option value="10">10</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                        </select>
+                        <span class="text-[var(--text-secondary)]">entries</span>
+                    </div>
+
+                    <div class="flex items-center space-x-2">
+                        <span class="text-[var(--text-secondary)]">Search:</span>
+                        <div class="relative">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-gray-400 absolute left-3 top-1/2 transform -translate-y-1/2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                            <input type="text" placeholder="Search by name, email, phone or ID" class="flex h-10 w-full rounded-md border px-3 py-2 text-sm ring-offset-background pl-10 bg-[var(--bg-tertiary)] border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] focus:border-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)]" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Table Content -->
+                <div class="overflow-x-auto">
+                    <table class="min-w-[1700px] w-full text-sm">
+                        <thead>
+                            <tr class="border-b border-[var(--border-secondary)]">
+                                @foreach (var heading in new[] { "#", "Name", "Email", "Wallet", "Country", "Phone", "No of Referral", "Joined", "Marketing Name", "Status", "Action" })
+                                {
+                                    <th class="py-3 px-4 text-left text-[var(--text-secondary)] font-semibold uppercase">
+                                        @heading
+                                    </th>
+                                }
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model == null || !Model.Any())
+                            {
+                                <tr>
+                                    <td colspan="11" class="text-center py-12 text-gray-400">
+                                        No data found
+                                    </td>
+                                </tr>
+                            }
+                            else
+                            {
+                                int index = 1;
+                                foreach (var client in Model)
+                                {
+                                    <tr class="border-b border-[var(--border-secondary)] hover:bg-[var(--bg-tertiary)]/50">
+                                        <td class="py-3 px-4 text-[var(--text-primary)]">@index</td>
+                                        <td class="py-3 px-4 text-[var(--text-primary)]">@client.FullName</td>
+                                        <td class="py-3 px-4 text-[var(--text-primary)]">@client.Email</td>
+                                        <td class="py-3 px-4 text-green-400">$@(client.Wallet?.Balance ?? 0)</td>
+                                        <td class="py-3 px-4 text-[var(--text-primary)]">India</td>
+                                        <td class="py-3 px-4 text-[var(--text-primary)]">@client.ContactNo</td>
+                                        <td class="py-3 px-4 text-[var(--text-primary)]">@(client.ReferralsReceived?.Count ?? 0)</td>
+                                        <td class="py-3 px-4 text-[var(--text-primary)]">@DateTime.Now.ToString("dd MMM yyyy")</td>
+                                        <td class="py-3 px-4 text-[var(--text-primary)]">Admin</td>
+                                        <td class="py-3 px-4">
+                                            <span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold bg-green-600 text-white border-transparent">
+                                                ACTIVE
+                                            </span>
+                                        </td>
+                                        <td class="py-3 px-4">
+                                            <div class="col-span-full mt-4 relative inline-block text-left group">
+                                                <button type="button" class="inline-flex items-center justify-center rounded-md h-8 w-8 text-sm font-medium hover:bg-[var(--bg-tertiary)] hover:text-[var(--text-primary)] focus:outline-none">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
+                                                </button>
+                                                <!-- Dropdown menu, hidden by default. Use JS or Alpine to toggle. Here we use CSS hover for simplicity or it can be left as placeholder -->
+                                                <div class="hidden group-hover:flex absolute right-0 mt-2 w-auto origin-top-right rounded-md bg-[var(--bg-secondary)] border border-[var(--border-primary)] shadow-lg focus:outline-none p-2 flex-row gap-2 z-10">
+                                                    <a href="#" class="inline-flex items-center justify-center rounded-md text-xs font-medium bg-[var(--bg-tertiary)] text-[var(--text-primary)] hover:bg-[var(--bg-tertiary)]/80 h-8 px-3 py-2">Info</a>
+                                                    <a href="#" class="inline-flex items-center justify-center rounded-md text-xs font-medium bg-[var(--bg-tertiary)] text-[var(--text-primary)] hover:bg-[var(--bg-tertiary)]/80 h-8 px-3 py-2">View</a>
+                                                    <a href="#" class="inline-flex items-center justify-center rounded-md text-xs font-medium bg-[var(--bg-tertiary)] text-[var(--text-primary)] hover:bg-[var(--bg-tertiary)]/80 h-8 px-3 py-2">Wallet</a>
+                                                    <a href="/User/Referrals?userId=@client.Id" class="inline-flex items-center justify-center rounded-md text-xs font-medium bg-[var(--bg-tertiary)] text-[var(--text-primary)] hover:bg-[var(--bg-tertiary)]/80 h-8 px-3 py-2">Tree</a>
+                                                    <button class="inline-flex items-center justify-center rounded-md text-xs font-medium bg-red-600 text-white hover:bg-red-700 h-8 px-3 py-2">Block</button>
+                                                    @if (client.IBRecord == null)
+                                                    {
+                                                        <button class="inline-flex items-center justify-center rounded-md text-xs font-medium bg-yellow-500 text-white hover:bg-yellow-600 h-8 px-3 py-2">Promote IB</button>
+                                                    }
+                                                    else
+                                                    {
+                                                        <button disabled class="inline-flex items-center justify-center rounded-md text-xs font-medium bg-green-500 text-white opacity-50 cursor-not-allowed h-8 px-3 py-2">Already IB</button>
+                                                    }
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    index++;
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Pagination -->
+        <div class="px-6 py-4 border-t border-[var(--border-secondary)] flex flex-wrap items-center justify-between gap-4">
+                    <div class="text-[var(--text-secondary)]">
+                        Showing @(Model != null && Model.Any() ? 1 : 0) to @(Model?.Count() ?? 0) of @(Model?.Count() ?? 0) entries
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <button disabled class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors border border-[var(--border-secondary)] text-[var(--text-secondary)] hover:bg-[var(--bg-tertiary)] bg-transparent h-9 px-3 opacity-50 cursor-not-allowed">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 mr-1"><path d="m15 18-6-6 6-6"/></svg>
+                            Previous
+                        </button>
+                        <span class="px-3 py-1 text-sm bg-[var(--button-primary-bg)] text-[var(--button-primary-text)] rounded">
+                            1 / 1
+                        </span>
+                        <button disabled class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors border border-[var(--border-secondary)] text-[var(--text-secondary)] hover:bg-[var(--bg-tertiary)] bg-transparent h-9 px-3 opacity-50 cursor-not-allowed">
+                            Next
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 ml-1"><path d="m9 18 6-6-6-6"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</div>
-

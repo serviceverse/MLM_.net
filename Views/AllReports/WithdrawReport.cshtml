@@ -1,16 +1,114 @@
 @{
-    ViewData["Title"] = "WithdrawReport";
+    ViewData["Title"] = "Withdraw Report";
 }
+<div class="p-6 md:p-8">
+    <div class="page-scroll-content px-8 py-6">
+        
+            <!-- Header -->
+            <div>
+                <h1 class="text-2xl font-bold text-[var(--text-primary)]">Withdraw Report</h1>
+                <p class="text-[var(--text-secondary)]">View and track all client withdrawal transactions</p>
+            </div>
 
-<div class="min-h-screen bg-primary text-[var(--text-primary)] p-8">
-    <div class="max-w-6xl mx-auto space-y-8">
-        <div>
-            <h1 class="text-4xl font-bold text-[var(--text-primary)] mb-2">WithdrawReport</h1>
-            <p class="text-[var(--text-secondary)]">Migrated from: (admin)\all-reports\withdraw-report\page.tsx</p>
-        </div>
-        <div class="bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-3xl p-8">
-            <p class="text-[var(--text-tertiary)]">Content for WithdrawReport will go here.</p>
+            <!-- Filters -->
+            <div class="bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-3xl p-6 flex flex-wrap items-end gap-4">
+                <div class="space-y-2">
+                    <label>From:</label>
+                    <input type="date" class="bg-[var(--bg-tertiary)] border-[var(--border-secondary)] text-[var(--text-primary)] p-2 rounded outline-none" />
+                </div>
+                <div class="space-y-2">
+                    <label>To:</label>
+                    <input type="date" class="bg-[var(--bg-tertiary)] border-[var(--border-secondary)] text-[var(--text-primary)] p-2 rounded outline-none" />
+                </div>
+
+                <!-- Status Filter -->
+                <div class="space-y-2">
+                    <label>Status:</label>
+                    <select class="w-[180px] bg-[var(--bg-tertiary)] border-[var(--border-secondary)] p-2 rounded outline-none">
+                        <option value="">All Status</option>
+                        <option value="APPROVED">Approved</option>
+                        <option value="PENDING">Pending</option>
+                        <option value="REJECTED">Rejected</option>
+                    </select>
+                </div>
+
+                <!-- Method Filter -->
+                <div class="space-y-2">
+                    <label>Payment Method:</label>
+                    <select class="w-[180px] bg-[var(--bg-tertiary)] border-[var(--border-secondary)] p-2 rounded outline-none">
+                        <option value="">All Methods</option>
+                        <option value="cash">Cash</option>
+                        <option value="usdt">USDT</option>
+                        <option value="bank">Bank</option>
+                    </select>
+                </div>
+
+                <button class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] hover:text-[var(--button-primary-hover-text)] px-4 py-2 rounded">
+                    Search
+                </button>
+            </div>
+
+            <!-- Table -->
+            <div class="bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-3xl p-8 overflow-auto">
+                <div class="flex justify-between items-center mb-4">
+                    <div class="flex items-center gap-2">
+                        <span class="text-sm text-[var(--text-secondary)]">Show</span>
+                        <select class="w-[80px] bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] p-2 rounded outline-none">
+                            <option>10</option>
+                        </select>
+                        <span class="text-sm text-[var(--text-secondary)]">entries</span>
+                        <button class="flex items-center gap-2 text-[var(--button-primary-text)] bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] px-4 py-2 rounded">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+                            Export CSV
+                        </button>
+                    </div>
+
+                    <div class="space-y-2 relative">
+                        <label>Client:</label>
+                        <input type="text" placeholder="Search client" class="bg-[var(--bg-tertiary)] border-[var(--border-secondary)] text-[var(--text-primary)] p-2 rounded outline-none" />
+                    </div>
+                </div>
+
+                <table class="w-full min-w-[1400px] border-collapse">
+                    <thead>
+                        <tr class="border-b border-[var(--border-primary)] text-left">
+                            <th class="px-4 py-2">ID</th>
+                            <th class="px-4 py-2">Name / Email</th>
+                            <th class="px-4 py-2">Crib ID</th>
+                            <th class="px-4 py-2">Amount</th>
+                            <th class="px-4 py-2">Withdraw To</th>
+                            <th class="px-4 py-2">Payment Method</th>
+                            <th class="px-4 py-2">Note</th>
+                            <th class="px-4 py-2">Network</th>
+                            <th class="px-4 py-2">Status</th>
+                            <th class="px-4 py-2">Date</th>
+                            <th class="px-4 py-2">Modified Date</th>
+                            <th class="px-4 py-2">Type</th>
+                            <th class="px-4 py-2">Approved / Rejected By</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="13" class="text-center text-[var(--text-secondary)] py-6">
+                                No data available
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- Pagination controls -->
+                <div class="flex justify-between items-center mt-4">
+                    <span class="text-sm text-[var(--text-secondary)]">
+                        Showing 0 to 0 of 0 entries
+                    </span>
+
+                    <div class="flex items-center gap-2">
+                        <button disabled class="bg-[var(--bg-tertiary)] border-[var(--border-secondary)] text-[var(--text-primary)] px-3 py-1 rounded text-sm opacity-50 cursor-not-allowed"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+                        <span>Page 1 of 1</span>
+                        <button disabled class="bg-[var(--bg-tertiary)] border-[var(--border-secondary)] text-[var(--text-primary)] px-3 py-1 rounded text-sm opacity-50 cursor-not-allowed"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-

@@ -1,31 +1,104 @@
-html {
-  font-size: 14px;
+/* Custom Theme Variables Ported from React */
+:root {
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-tertiary: #475569;
+
+  --bg-primary: #ffffff;
+  --bg-secondary: #f1f5f9;
+  --bg-tertiary: #e2e8f0;
+
+  --border-primary: #cbd5e1;
+  --border-secondary: #e5e7eb;
+
+  --button-default-bg: #ffffff;
+  --button-default-text: #334155;
+  --button-default-hover-bg: #f1f5f9;
+  --button-default-hover-text: #0f172a;
+
+  --button-primary-bg: #22c55e;
+  --button-primary-text: #ffffff;
+  --button-primary-hover-bg: #16a34a;
+  --button-primary-hover-text: #ffffff;
+
+  --button-secondary-bg: #e2e8f0;
+  --button-secondary-text: #0f172a;
+  --button-secondary-hover-bg: #cbd5e1;
+  --button-secondary-hover-text: #0f172a;
+
+  --button-nav-default-bg: #ffffff;
+  --button-nav-default-text: #475569;
+  --button-nav-default-hover-bg: #f1f5f9;
+  --button-nav-default-hover-text: #0f172a;
+
+  --button-nav-active-bg: #dcfce7;
+  --button-nav-active-text: #22c55e;
 }
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+/* OVERRIDE BOOTSTRAP CLASSES TO PREVENT BRIGHT BLUE UI */
+.bg-primary {
+  background-color: var(--bg-primary) !important;
+}
+.text-primary {
+  color: var(--text-primary) !important;
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+/* FIX TAILWIND AND BOOTSTRAP COLLAPSE CONFLICT */
+/* Tailwind sets .collapse to visibility: collapse, which makes Bootstrap accordions invisible after opening */
+.collapse.show {
+  visibility: visible !important;
 }
 
+/* Professional Typography */
+:root {
+  --font-primary: 1rem;       /* 16px */
+  --font-secondary: 0.875rem; /* 14px */
+  --font-tertiary: 0.75rem;   /* 12px */
+}
+
+/* Base Body settings */
 html {
   position: relative;
   min-height: 100%;
 }
-
 body {
-  margin-bottom: 60px;
+  font-family: 'Inter', sans-serif;
+  font-size: var(--font-secondary);
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
 }
 
-.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
-  color: var(--bs-secondary-color);
-  text-align: end;
+/* Professional Table Overrides */
+table th {
+  font-size: var(--font-tertiary) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  font-weight: 600 !important;
+  color: var(--text-secondary) !important;
+  padding: 0.75rem 1.5rem !important; /* py-3 px-6 */
+  border-bottom: 1px solid var(--border-secondary) !important;
 }
 
-.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
-  text-align: start;
+table td {
+  font-size: var(--font-secondary) !important;
+  color: var(--text-primary) !important;
+  padding: 1rem 1.5rem !important; /* py-4 px-6 */
+}
+
+table tbody tr {
+  border-bottom: 1px solid var(--border-secondary) !important;
+  transition: background-color 0.2s ease !important;
+}
+
+table tbody tr:hover {
+  background-color: var(--bg-secondary) !important;
+}
+/* custom scrollbar for forms/modals */
+.custome-scroll {
+  height: auto;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+.custome-scroll::-webkit-scrollbar {
+  display: none;
 }

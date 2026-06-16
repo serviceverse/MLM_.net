@@ -1,15 +1,97 @@
 @{
-    ViewData["Title"] = "NewTicket";
+    ViewData["Title"] = "New Ticket";
 }
-
-<div class="min-h-screen bg-primary text-[var(--text-primary)] p-8">
-    <div class="max-w-6xl mx-auto space-y-8">
-        <div>
-            <h1 class="text-4xl font-bold text-[var(--text-primary)] mb-2">NewTicket</h1>
-            <p class="text-[var(--text-secondary)]">Migrated from: help-desk\new-ticket\page.tsx</p>
+<div class="p-6 md:p-8">
+    <div class="max-w-6xl space-y-6">
+        <!-- Header -->
+        <div class="text-center space-y-4">
+            <div class="w-16 h-16 bg-gradient-to-r from-[var(--button-primary-bg)] to-[var(--button-primary-hover-bg)] rounded-full flex items-center justify-center mx-auto shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-[var(--text-primary)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+            </div>
+            <h1 class="text-2xl font-bold text-[var(--text-primary)]">Create New Ticket</h1>
+            <p class="text-[var(--text-secondary)]">Submit a support request and our team will assist you</p>
         </div>
-        <div class="bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-3xl p-8">
-            <p class="text-[var(--text-tertiary)]">Content for NewTicket will go here.</p>
+
+        <!-- Create Ticket Form -->
+        <div class="bg-[var(--bg-primary)] border border-[var(--border-secondary)] rounded-xl shadow-sm">
+                <form class="grid grid-cols-1 lg:grid-cols-2 gap-6 relative">
+                    <!-- Category -->
+                    <div class="space-y-2">
+                        <label class="text-[var(--text-tertiary)] font-medium block">
+                            Category <span class="text-red-400">*</span>
+                        </label>
+                        <select class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] focus:border-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)] rounded-xl py-3 px-4 outline-none" required>
+                            <option value="">Please Choose...</option>
+                            <option value="GENERAL">GENERAL</option>
+                            <option value="ACCOUNT">ACCOUNT</option>
+                            <option value="DEPOSIT">DEPOSIT</option>
+                            <option value="WITHDRAW">WITHDRAW</option>
+                            <option value="KYC">KYC</option>
+                            <option value="TECHNICAL">TECHNICAL</option>
+                        </select>
+                    </div>
+
+                    <!-- Title -->
+                    <div class="space-y-2">
+                        <label class="text-[var(--text-tertiary)] font-medium block">
+                            Title <span class="text-red-400">*</span>
+                        </label>
+                        <input type="text" placeholder="Enter Title" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-secondary)] focus:border-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)] rounded-xl py-3 px-4 outline-none" required />
+                    </div>
+
+                    <!-- Priority -->
+                    <div class="space-y-2">
+                        <label class="text-[var(--text-tertiary)] font-medium block">
+                            Priority <span class="text-red-400">*</span>
+                        </label>
+                        <select class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] focus:border-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)] rounded-xl py-3 px-4 outline-none" required>
+                            <option value="">Please Choose...</option>
+                            <option value="LOW">LOW</option>
+                            <option value="MEDIUM">MEDIUM</option>
+                            <option value="HIGH">HIGH</option>
+                        </select>
+                    </div>
+
+                    <!-- Description -->
+                    <div class="space-y-2">
+                        <label class="text-[var(--text-tertiary)] font-medium block">
+                            Describe your problem <span class="text-red-400">*</span>
+                        </label>
+                        <textarea placeholder="Describe your problem" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-secondary)] focus:border-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)] rounded-xl py-3 px-4 outline-none min-h-[128px] resize-none" required></textarea>
+                        <p class="text-xs text-[var(--text-secondary)]">
+                            Please provide as much detail as possible to help us resolve your issue quickly
+                        </p>
+                    </div>
+
+                    <!-- Attachment -->
+                    <div class="space-y-2">
+                        <label class="text-[var(--text-tertiary)] font-medium block">
+                            Attachment <span class="text-[var(--text-secondary)]">(optional)</span>
+                        </label>
+                        <input type="file" accept="image/png,image/jpeg,application/pdf" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] file:mr-4 file:rounded-lg file:border-0 file:bg-[var(--button-primary-bg)] file:px-4 file:py-2 file:text-[var(--button-primary-text)] hover:file:bg-[var(--button-primary-hover-bg)] rounded-xl py-2 px-2 outline-none" />
+                        <p class="text-xs text-[var(--text-secondary)]">
+                            Supported: PNG, JPG/JPEG, PDF. Max size: 5 MB.
+                        </p>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="col-span-full mt-4 flex justify-start pt-4">
+                        <button type="submit" class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] px-8 py-3 rounded-xl font-semibold flex items-center transition-colors">
+                            Submit
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Information -->
+        <div class="bg-[var(--bg-tertiary)]/30 border border-[var(--border-primary)] rounded-2xl p-6">
+            <h3 class="text-lg font-semibold text-[var(--text-primary)] mb-3">What happens next?</h3>
+            <ul class="space-y-2 text-[var(--text-secondary)] text-sm">
+                <li>• You will receive a confirmation email with your ticket number</li>
+                <li>• Our support team will review your ticket within 2-4 hours</li>
+                <li>• You will be notified via email when there are updates to your ticket</li>
+                <li>• You can track the progress of your ticket in the "My Tickets" section</li>
+            </ul>
         </div>
     </div>
-</div>

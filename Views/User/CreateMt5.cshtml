@@ -1,16 +1,65 @@
 @{
-    ViewData["Title"] = "CreateMt5";
+    ViewData["Title"] = "Create Crib Account";
 }
-
-<div class="min-h-screen bg-primary text-[var(--text-primary)] p-8">
-    <div class="max-w-6xl mx-auto space-y-8">
+<div class="p-6 md:p-8">
+    <div class="max-w-6xl space-y-6">
         <div>
-            <h1 class="text-4xl font-bold text-[var(--text-primary)] mb-2">CreateMt5</h1>
-            <p class="text-[var(--text-secondary)]">Migrated from: (admin)\user\create-mt5\page.tsx</p>
+            <h1 class="text-2xl font-bold text-[var(--text-primary)]">Create Crib Account</h1>
+            <p class="text-[var(--text-secondary)]"></p>
         </div>
-        <div class="bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-3xl p-8">
-            <p class="text-[var(--text-tertiary)]">Content for CreateMt5 will go here.</p>
+
+        <div class="bg-[var(--bg-primary)] border border-[var(--border-secondary)] rounded-xl shadow-sm p-6 md:p-8">
+            <form class="grid grid-cols-1 lg:grid-cols-2 gap-6 relative">
+                <!-- Client Search -->
+                <div class="space-y-2">
+                    <label class="text-[var(--text-primary)] font-medium">Client</label>
+                    <input type="text" placeholder="Search Client" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-xl py-3 px-3 outline-none focus:ring-2 focus:ring-[var(--button-primary-bg)]" />
+                </div>
+
+                <!-- Account Type -->
+                <div class="space-y-2">
+                    <label class="text-[var(--text-primary)] font-medium">Select Account Type <span class="text-red-400">*</span></label>
+                    <select class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-xl py-3 px-3 outline-none focus:ring-2 focus:ring-[var(--button-primary-bg)]">
+                        <option value="">Please choose an account type...</option>
+                    </select>
+                </div>
+
+                <!-- Leverage -->
+                <div class="space-y-2">
+                    <label class="text-[var(--text-primary)] font-medium">Select Leverage <span class="text-red-400">*</span></label>
+                    <select class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-xl py-3 px-3 outline-none focus:ring-2 focus:ring-[var(--button-primary-bg)]">
+                        <option value="">Please choose leverage...</option>
+                    </select>
+                </div>
+
+                <!-- Password -->
+                <div class="space-y-2">
+                    <label class="text-[var(--text-primary)] font-medium">Password</label>
+                    <div class="relative">
+                        <input type="password" placeholder="Enter Password" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-xl py-3 px-3 outline-none focus:ring-2 focus:ring-[var(--button-primary-bg)]" />
+                    </div>
+                </div>
+
+                <div class="col-span-full mt-4 flex gap-4 pt-4">
+                    <button type="submit" class="bg-[var(--button-primary-bg)] hover:opacity-90 text-[var(--button-primary-text)] px-8 py-3 rounded-xl font-semibold ">
+                        Create Account
+                    </button>
+                    <button type="button" class="border border-[var(--border-secondary)] text-[var(--text-secondary)] hover:bg-[var(--bg-tertiary)] bg-transparent px-6 py-3 rounded-xl font-semibold">
+                        Reset
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <div class="bg-[var(--bg-secondary)]/30 border border-[var(--border-primary)] rounded-2xl p-6">
+            <h3 class="text-lg font-semibold text-[var(--text-primary)] mb-3">Account Information</h3>
+            <ul class="space-y-2 text-[var(--text-secondary)] text-sm">
+                <li>• <strong>Password:</strong> Used for full trading access and account management</li>
+                <li>• Both passwords must be at least 8 characters long and different from each other</li>
+                <li>• Account creation typically takes 1-2 minutes to process</li>
+                <li>• You will receive account details via email once created successfully</li>
+                <li>• Keep your passwords secure and do not share them with unauthorized persons</li>
+            </ul>
         </div>
     </div>
 </div>
-

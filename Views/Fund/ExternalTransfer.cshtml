@@ -1,15 +1,42 @@
 @{
-    ViewData["Title"] = "ExternalTransfer";
+    ViewData["Title"] = "External Transfer";
 }
+<div class="p-6 md:p-8">
+    <div class="bg-[var(--bg-primary)] border border-[var(--border-secondary)] rounded-xl shadow-sm p-6 md:p-8 space-y-6">
+        <h2 class="text-xl font-semibold">External Transfer</h2>
+        <form class="grid grid-cols-1 lg:grid-cols-2 gap-6 relative">
+            <!-- From Account -->
+            <div class="space-y-2">
+                <label class="text-sm font-medium block">From Account <span class="text-red-500">*</span></label>
+                <select class="w-full bg-[var(--bg-tertiary)] border-[var(--border-secondary)] text-[var(--text-primary)] focus:ring-[var(--accent-success)] focus:border-[var(--accent-success)] rounded-lg py-3 px-4 outline-none">
+                    <option value="">Please Choose...</option>
+                </select>
+            </div>
 
-<div class="min-h-screen bg-primary text-[var(--text-primary)] p-8">
-    <div class="max-w-6xl mx-auto space-y-8">
-        <div>
-            <h1 class="text-4xl font-bold text-[var(--text-primary)] mb-2">ExternalTransfer</h1>
-            <p class="text-[var(--text-secondary)]">Migrated from: fund\external-transfer\page.tsx</p>
-        </div>
-        <div class="bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-3xl p-8">
-            <p class="text-[var(--text-tertiary)]">Content for ExternalTransfer will go here.</p>
-        </div>
+            <!-- To Account -->
+            <div class="space-y-2">
+                <label class="text-sm font-medium block">To Account <span class="text-red-500">*</span></label>
+                <input type="text" placeholder="Enter destination Crib ID" class="w-full bg-[var(--bg-tertiary)] border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] focus:border-[var(--accent-success)] focus:ring-[var(--accent-success)] rounded-lg py-3 px-4 outline-none" />
+            </div>
+
+            <!-- Amount -->
+            <div class="space-y-2">
+                <label class="text-sm font-medium block">Amount <span class="text-red-500">*</span></label>
+                <input type="number" placeholder="Enter amount" class="w-full bg-[var(--bg-tertiary)] border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] focus:border-[var(--accent-success)] focus:ring-[var(--accent-success)] rounded-lg py-3 px-4 outline-none" />
+            </div>
+
+            <!-- Google 2FA -->
+            <div class="space-y-2">
+                <label class="text-sm font-medium block">Google 2FA Code <span class="text-red-500">*</span></label>
+                <input type="text" maxlength="6" placeholder="Enter Google 2FA Code" class="w-full bg-[var(--bg-tertiary)] border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] focus:border-[var(--accent-success)] focus:ring-[var(--accent-success)] rounded-lg py-3 px-4 outline-none" />
+            </div>
+
+            <!-- Submit Button -->
+            <div class="col-span-full mt-4 flex justify-start pt-4">
+                <button type="submit" class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] px-8 py-3 rounded-xl font-semibold">
+                    Submit
+                </button>
+            </div>
+        </form>
     </div>
 </div>

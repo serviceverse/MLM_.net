@@ -1,15 +1,103 @@
 @{
-    ViewData["Title"] = "Deal";
+    ViewData["Title"] = "Deal Report";
 }
-
-<div class="min-h-screen bg-primary text-[var(--text-primary)] p-8">
-    <div class="max-w-6xl mx-auto space-y-8">
-        <div>
-            <h1 class="text-4xl font-bold text-[var(--text-primary)] mb-2">Deal</h1>
-            <p class="text-[var(--text-secondary)]">Migrated from: reports\deal\page.tsx</p>
+<div class="p-6 md:p-8">
+    
+        <!-- Header & Action Bar -->
+        <div class="mb-6">
+            <div>
+                <h1 class="text-2xl font-bold">Deal Report</h1>
+                <p class="text-sm text-[var(--text-secondary)] mt-1">Analyze your trading deals and performance</p>
+            </div>
+            <!-- Action items will go here -->
         </div>
-        <div class="bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-3xl p-8">
-            <p class="text-[var(--text-tertiary)]">Content for Deal will go here.</p>
+
+        <!-- Filter Card -->
+        <div class="bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-3xl p-6">
+            <div class="flex flex-wrap items-end gap-4">
+                <div class="space-y-2">
+                    <label class="block text-sm font-medium">Select Account:</label>
+                    <select class="w-48 bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] focus:border-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)] rounded-xl py-2 px-3 outline-none">
+                        <option value="">Please Choose...</option>
+                        <option value="12345678">12345678</option>
+                        <option value="87654321">87654321</option>
+                    </select>
+                </div>
+                <div class="space-y-2">
+                    <label class="block text-sm font-medium">From:</label>
+                    <input type="date" class="bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-xl py-2 px-3 outline-none" />
+                </div>
+                <div class="space-y-2">
+                    <label class="block text-sm font-medium">To:</label>
+                    <input type="date" class="bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-xl py-2 px-3 outline-none" />
+                </div>
+                <button class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] hover:text-[var(--button-primary-hover-text)] px-8 py-2.5 rounded-md font-semibold transition-colors">
+                    Search
+                </button>
+            </div>
+        </div>
+
+        <!-- Table Card -->
+        <div class="flex-1 overflow-hidden flex flex-col">
+            <div class="px-6 py-4 border-b border-[var(--border-secondary)] flex flex-wrap items-center justify-between gap-4">
+                <div class="flex items-center space-x-2">
+                    <span class="text-[var(--text-secondary)]">Show</span>
+                    <select class="bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-lg py-1 px-2 outline-none">
+                        <option value="10">10</option>
+                        <option value="25">25</option>
+                        <option value="50">50</option>
+                    </select>
+                    <span class="text-[var(--text-secondary)]">entries</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <span class="text-[var(--text-secondary)]">Search:</span>
+                    <div class="relative">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-[var(--text-tertiary)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                        <input type="text" placeholder="Search deals..." class="pl-10 bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] focus:border-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)] rounded-lg py-2 outline-none" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full">
+                    <thead>
+                        <tr class="border-b border-[var(--border-secondary)]">
+                            <th class="text-left py-4 px-4 font-medium text-[var(--text-secondary)] uppercase text-sm">Login</th>
+                            <th class="text-left py-4 px-4 font-medium text-[var(--text-secondary)] uppercase text-sm">Date</th>
+                            <th class="text-left py-4 px-4 font-medium text-[var(--text-secondary)] uppercase text-sm">Order</th>
+                            <th class="text-left py-4 px-4 font-medium text-[var(--text-secondary)] uppercase text-sm">Symbol</th>
+                            <th class="text-left py-4 px-4 font-medium text-[var(--text-secondary)] uppercase text-sm">Volume</th>
+                            <th class="text-left py-4 px-4 font-medium text-[var(--text-secondary)] uppercase text-sm">Price</th>
+                            <th class="text-left py-4 px-4 font-medium text-[var(--text-secondary)] uppercase text-sm">Profit</th>
+                            <th class="text-left py-4 px-4 font-medium text-[var(--text-secondary)] uppercase text-sm">ExpertPosition ID</th>
+                            <th class="text-left py-4 px-4 font-medium text-[var(--text-secondary)] uppercase text-sm">Comment</th>
+                            <th class="text-left py-4 px-4 font-medium text-[var(--text-secondary)] uppercase text-sm">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="10" class="py-8 text-center text-[var(--text-tertiary)]">
+                                No data available in table
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="flex items-center justify-between mt-6">
+                <div class="text-[var(--text-secondary)] text-sm">Showing 0 to 0 of 0 entries</div>
+                <div class="flex items-center space-x-2">
+                    <button class="border border-[var(--border-secondary)] text-[var(--text-secondary)] hover:bg-[var(--bg-tertiary)] bg-transparent rounded px-3 py-1 text-sm inline-flex items-center opacity-50 cursor-not-allowed">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+                        Previous
+                    </button>
+                    <button class="bg-[var(--button-primary-bg)] text-[var(--button-primary-text)] hover:bg-[var(--button-primary-hover-bg)] rounded px-3 py-1 text-sm">1</button>
+                    <button class="border border-[var(--border-secondary)] text-[var(--text-secondary)] hover:bg-[var(--bg-tertiary)] bg-transparent rounded px-3 py-1 text-sm inline-flex items-center opacity-50 cursor-not-allowed">
+                        Next
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 </div>

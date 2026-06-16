@@ -1,15 +1,57 @@
 @{
-    ViewData["Title"] = "UpdateLiveAccount";
+    ViewData["Title"] = "Update Crib Account";
 }
-
-<div class="min-h-screen bg-primary text-[var(--text-primary)] p-8">
-    <div class="max-w-6xl mx-auto space-y-8">
+<div class="p-6 md:p-8">
+    <div class="max-w-6xl space-y-6">
         <div>
-            <h1 class="text-4xl font-bold text-[var(--text-primary)] mb-2">UpdateLiveAccount</h1>
-            <p class="text-[var(--text-secondary)]">Migrated from: account\update-live-account\page.tsx</p>
+            <h1 class="text-2xl font-bold text-[var(--text-primary)]">Update Crib Account</h1>
+            <p class="text-[var(--text-secondary)]">Modify your existing Crib trading account</p>
         </div>
-        <div class="bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-3xl p-8">
-            <p class="text-[var(--text-tertiary)]">Content for UpdateLiveAccount will go here.</p>
+        <div class="bg-[var(--bg-primary)] border border-[var(--border-secondary)] rounded-xl shadow-sm p-6 md:p-8">
+            <form class="grid grid-cols-1 lg:grid-cols-2 gap-6 relative">
+                <div class="space-y-2">
+                    <label class="text-[var(--text-primary)] font-medium">Select Group</label>
+                    <select class="w-full bg-[var(--bg-tertiary)] border-[var(--border-secondary)] text-[var(--text-primary)] rounded-xl py-3 px-3 outline-none focus:ring-2 focus:ring-[var(--button-primary-bg)]">
+                        <option value="">Select group...</option>
+                    </select>
+                </div>
+                <div class="space-y-2">
+                    <label class="text-[var(--text-primary)] font-medium">Select Leverage</label>
+                    <select class="w-full bg-[var(--bg-tertiary)] border-[var(--border-secondary)] text-[var(--text-primary)] rounded-xl py-3 px-3 outline-none focus:ring-2 focus:ring-[var(--button-primary-bg)]">
+                        <option value="">Select leverage...</option>
+                    </select>
+                </div>
+                <div class="space-y-2">
+                    <label class="text-[var(--text-primary)] font-medium">Password <span class="text-red-400">*</span></label>
+                    <input type="password" placeholder="Enter password" class="w-full rounded-xl border border-[var(--border-secondary)] px-3 py-3 text-sm bg-[var(--bg-tertiary)] text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--button-primary-bg)]" />
+                </div>
+                <div class="col-span-full mt-4 flex gap-4 pt-4">
+                    <button type="submit" class="bg-[var(--button-primary-bg)] text-[var(--button-primary-text)] px-8 py-3 rounded-xl font-semibold hover:opacity-90 flex items-center justify-center">
+                        Update Account
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div class="bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-2xl p-6 opacity-80">
+            <h3 class="text-lg font-semibold text-[var(--text-primary)] mb-3">Account Information</h3>
+            <ul class="space-y-2 text-[var(--text-secondary)] text-sm">
+                <li>• <strong>Password:</strong> Used for full trading access and management</li>
+                <li>• Ensure passwords are 8+ characters and different from each other</li>
+                <li>• Updating may take a few seconds to reflect</li>
+            </ul>
+        </div>
+        <div class="bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-2xl p-6 opacity-80">
+            <h3 class="text-lg font-semibold text-[var(--text-primary)] mb-3">Account Types</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                <div class="space-y-2">
+                    <div class="text-[var(--text-secondary)]"><strong class="text-[var(--text-primary)]">Standard:</strong> Basic trading account</div>
+                    <div class="text-[var(--text-secondary)]"><strong class="text-[var(--text-primary)]">ECN:</strong> Low latency execution</div>
+                </div>
+                <div class="space-y-2">
+                    <div class="text-[var(--text-secondary)]"><strong class="text-[var(--text-primary)]">Pro:</strong> Professional-grade tools</div>
+                    <div class="text-[var(--text-secondary)]"><strong class="text-[var(--text-primary)]">VIP:</strong> High-volume trading benefits</div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

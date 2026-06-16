@@ -1,16 +1,41 @@
 @{
-    ViewData["Title"] = "ExternalTransfer";
+    ViewData["Title"] = "External Transfer";
 }
+<div class="p-6 md:p-8">
+        <div class="max-w-6xl space-y-6">
+            <h1 class="text-4xl font-bold mb-2">External Transfer</h1>
+            <p class="text-[var(--text-secondary)]">Manually transfer funds between Crib accounts by entering the account numbers.</p>
 
-<div class="min-h-screen bg-primary text-[var(--text-primary)] p-8">
-    <div class="max-w-6xl mx-auto space-y-8">
-        <div>
-            <h1 class="text-4xl font-bold text-[var(--text-primary)] mb-2">ExternalTransfer</h1>
-            <p class="text-[var(--text-secondary)]">Migrated from: (admin)\transaction\external-transfer\page.tsx</p>
-        </div>
-        <div class="bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-3xl p-8">
-            <p class="text-[var(--text-tertiary)]">Content for ExternalTransfer will go here.</p>
+            <div class="bg-[var(--bg-primary)] border border-[var(--border-secondary)] rounded-xl shadow-sm p-6 md:p-8">
+                <form class="grid grid-cols-1 lg:grid-cols-2 gap-6 relative">
+                    <!-- From Account -->
+                    <div class="space-y-2">
+                        <label class="text-[var(--text-primary)]">From Account</label>
+                        <input type="number" placeholder="Enter source Crib account number" class="w-full bg-[var(--bg-tertiary)] border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] focus:border-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)] rounded-xl py-3 px-3 outline-none" />
+                    </div>
+
+                    <!-- To Account -->
+                    <div class="space-y-2">
+                        <label class="text-[var(--text-primary)]">To Account</label>
+                        <input type="number" placeholder="Enter destination Crib account number" class="w-full bg-[var(--bg-tertiary)] border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] focus:border-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)] rounded-xl py-3 px-3 outline-none" />
+                    </div>
+
+                    <!-- Amount -->
+                    <div class="space-y-2">
+                        <label class="text-[var(--text-primary)]">Amount</label>
+                        <input type="number" step="0.01" placeholder="Enter amount (e.g., 100 or 100.50)" class="w-full bg-[var(--bg-tertiary)] border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] focus:border-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)] rounded-xl py-3 px-3 outline-none" />
+                    </div>
+
+                    <!-- Submit + Reset -->
+                    <div class="col-span-full mt-4 flex gap-4 pt-4">
+                        <button type="button" class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] hover:text-[var(--button-primary-hover-text)] px-8 py-3 rounded-xl font-semibold ">
+                            Transfer Funds
+                        </button>
+                        <button type="button" class="border border-[var(--border-secondary)] text-[var(--text-secondary)] hover:bg-[var(--bg-tertiary)] bg-transparent px-6 py-3 rounded-xl font-semibold">
+                            Reset
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
-</div>
-

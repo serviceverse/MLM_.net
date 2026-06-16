@@ -1,16 +1,73 @@
 @{
-    ViewData["Title"] = "BankList";
+    ViewData["Title"] = "Bank Details Management";
 }
-
-<div class="min-h-screen bg-primary text-[var(--text-primary)] p-8">
-    <div class="max-w-6xl mx-auto space-y-8">
-        <div>
-            <h1 class="text-4xl font-bold text-[var(--text-primary)] mb-2">BankList</h1>
-            <p class="text-[var(--text-secondary)]">Migrated from: (admin)\user\bank-list\page.tsx</p>
+<div class="p-6 md:p-8">
+    
+        <!-- Header & Action Bar -->
+        <div class="mb-6">
+            <div>
+                <h1 class="text-2xl font-bold">Bank Details Management</h1>
+                <p class="text-sm text-[var(--text-secondary)] mt-1">Review pending, approved, or rejected bank submissions</p>
+            </div>
+            <!-- Action items will go here -->
         </div>
-        <div class="bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-3xl p-8">
-            <p class="text-[var(--text-tertiary)]">Content for BankList will go here.</p>
+
+        <div class="bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-3xl w-full p-8">
+            <!-- Tabs -->
+            <div class="mb-6 flex space-x-2 bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] rounded-xl p-1 w-max">
+                <button class="px-4 py-2 rounded-lg text-sm font-medium bg-yellow-500/20 text-yellow-800 dark:bg-yellow-500 dark:text-white">Pending (0)</button>
+                <button class="px-4 py-2 rounded-lg text-sm font-medium text-[var(--text-secondary)] hover:bg-[var(--bg-secondary)]">Approved (0)</button>
+                <button class="px-4 py-2 rounded-lg text-sm font-medium text-[var(--text-secondary)] hover:bg-[var(--bg-secondary)]">Rejected (0)</button>
+            </div>
+
+            <!-- Controls -->
+            <div class="flex justify-between items-center mt-6 mb-4">
+                <div class="text-[var(--text-secondary)]">Search:</div>
+                <div class="flex gap-4 items-center">
+                    <div class="relative w-80">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[var(--text-tertiary)] absolute left-3 top-1/2 -translate-y-1/2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                        <input type="text" placeholder="Search by name, account no, bank..." class="w-full pl-10 px-3 py-2 rounded-md text-sm bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] focus:outline-none focus:ring-2 focus:ring-[var(--button-primary-bg)]" />
+                    </div>
+                    <select class="w-[120px] px-3 py-2 rounded-md text-sm bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] focus:outline-none">
+                        <option value="10">10</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Table -->
+            <div class="overflow-x-auto rounded-2xl border border-[var(--border-primary)]">
+                <table class="w-full text-sm">
+                    <thead class="bg-[var(--bg-tertiary)]">
+                        <tr class="border-b border-[var(--border-primary)]">
+                            <th class="text-left py-4 px-4 text-[var(--text-secondary)] uppercase font-semibold">ACCOUNT NAME</th>
+                            <th class="text-left py-4 px-4 text-[var(--text-secondary)] uppercase font-semibold">ACCOUNT NO</th>
+                            <th class="text-left py-4 px-4 text-[var(--text-secondary)] uppercase font-semibold">IFSC</th>
+                            <th class="text-left py-4 px-4 text-[var(--text-secondary)] uppercase font-semibold">BANK NAME</th>
+                            <th class="text-left py-4 px-4 text-[var(--text-secondary)] uppercase font-semibold">IBAN</th>
+                            <th class="text-left py-4 px-4 text-[var(--text-secondary)] uppercase font-semibold">COUNTRY</th>
+                            <th class="text-left py-4 px-4 text-[var(--text-secondary)] uppercase font-semibold">STATUS</th>
+                            <th class="text-left py-4 px-4 text-[var(--text-secondary)] uppercase font-semibold">ACTIONS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="8" class="py-8 text-center text-[var(--text-tertiary)]">No pending bank details found</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Pagination -->
+            <div class="flex justify-between items-center mt-6">
+                <div class="text-[var(--text-secondary)] text-sm">Showing 0 to 0 of 0 entries</div>
+                <div class="flex items-center gap-2">
+                    <button disabled class="px-3 py-1 text-sm border rounded-md border-[var(--border-secondary)] text-[var(--text-secondary)] opacity-50 cursor-not-allowed">Previous</button>
+                    <button class="px-3 py-1 text-sm rounded-md bg-[var(--button-primary-bg)] text-[var(--button-primary-text)]">1</button>
+                    <button disabled class="px-3 py-1 text-sm border rounded-md border-[var(--border-secondary)] text-[var(--text-secondary)] opacity-50 cursor-not-allowed">Next</button>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-

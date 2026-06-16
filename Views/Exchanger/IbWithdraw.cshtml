@@ -1,16 +1,107 @@
 @{
-    ViewData["Title"] = "IbWithdraw";
+    ViewData["Title"] = "IB Withdraw Report";
 }
-
-<div class="min-h-screen bg-primary text-[var(--text-primary)] p-8">
-    <div class="max-w-6xl mx-auto space-y-8">
+<div class="p-6 md:p-8">
+    
+        <!-- Header -->
         <div>
-            <h1 class="text-4xl font-bold text-[var(--text-primary)] mb-2">IbWithdraw</h1>
-            <p class="text-[var(--text-secondary)]">Migrated from: (admin)\exchanger\ib-withdraw\page.tsx</p>
+            <h1 class="text-2xl font-bold text-[var(--text-primary)]">IB Withdraw Report</h1>
+            <p class="text-[var(--text-secondary)]">Track and analyze all IB withdraws</p>
         </div>
-        <div class="bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-3xl p-8">
-            <p class="text-[var(--text-tertiary)]">Content for IbWithdraw will go here.</p>
+
+        <!-- Filters -->
+        <div class="bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-3xl p-6 flex flex-wrap items-end gap-4">
+            <div>
+                <label class="text-[var(--text-secondary)] mb-1 block">From</label>
+                <input type="date" class="bg-[var(--bg-tertiary)] border-[var(--border-secondary)] text-[var(--text-primary)] p-2 rounded" />
+            </div>
+            <div>
+                <label class="text-[var(--text-secondary)] mb-1 block">To</label>
+                <input type="date" class="bg-[var(--bg-tertiary)] border-[var(--border-secondary)] text-[var(--text-primary)] p-2 rounded" />
+            </div>
+            <div>
+                <label class="text-[var(--text-secondary)] mb-1 block">Status</label>
+                <select class="w-40 bg-[var(--bg-tertiary)] border-[var(--border-secondary)] text-[var(--text-primary)] p-2 rounded outline-none">
+                    <option>All</option>
+                </select>
+            </div>
+            <div>
+                <label class="text-[var(--text-secondary)] mb-1 block">Method</label>
+                <select class="w-40 bg-[var(--bg-tertiary)] border-[var(--border-secondary)] text-[var(--text-primary)] p-2 rounded outline-none">
+                    <option>All</option>
+                </select>
+            </div>
+            <div>
+                <label class="text-[var(--text-secondary)] mb-1 block">Exchanger</label>
+                <select class="w-40 bg-[var(--bg-tertiary)] border-[var(--border-secondary)] text-[var(--text-primary)] p-2 rounded outline-none">
+                    <option>All</option>
+                </select>
+            </div>
+            <button class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] hover:text-[var(--button-primary-hover-text)] px-4 py-2 rounded">
+                Search
+            </button>
+        </div>
+
+        <!-- Table -->
+        <div class="flex-1 overflow-hidden flex flex-col">
+            <div class="flex items-center justify-between mb-6">
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center space-x-2">
+                        <span class="text-[var(--text-secondary)]">Show</span>
+                        <select class="w-20 bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] p-2 rounded outline-none">
+                            <option>10</option>
+                        </select>
+                        <span class="text-[var(--text-secondary)]">entries</span>
+                    </div>
+                    <button class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] hover:text-[var(--button-primary-hover-text)] px-4 py-2 rounded flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+                        Export CSV
+                    </button>
+                </div>
+
+                <div class="flex items-center space-x-2">
+                    <span class="text-[var(--text-secondary)]">Search:</span>
+                    <div class="relative">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-gray-400 absolute left-3 top-1/2 transform -translate-y-1/2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                        <input type="text" placeholder="Search withdraws..." class="pl-10 bg-[var(--bg-tertiary)] border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] focus:border-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)] w-64 p-2 rounded outline-none" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full overflow-x-auto">
+                <table class="w-full min-w-[1200px] text-sm">
+                    <thead>
+                        <tr class="border-b border-[var(--border-secondary)]">
+                            <th class="py-3 px-4 text-left text-[var(--text-secondary)] font-semibold uppercase">ID</th>
+                            <th class="py-3 px-4 text-left text-[var(--text-secondary)] font-semibold uppercase">Name / Email</th>
+                            <th class="py-3 px-4 text-left text-[var(--text-secondary)] font-semibold uppercase">Withdraw To</th>
+                            <th class="py-3 px-4 text-left text-[var(--text-secondary)] font-semibold uppercase">Amount</th>
+                            <th class="py-3 px-4 text-left text-[var(--text-secondary)] font-semibold uppercase">Payment Method</th>
+                            <th class="py-3 px-4 text-left text-[var(--text-secondary)] font-semibold uppercase">Note</th>
+                            <th class="py-3 px-4 text-left text-[var(--text-secondary)] font-semibold uppercase">Comment</th>
+                            <th class="py-3 px-4 text-left text-[var(--text-secondary)] font-semibold uppercase">Status</th>
+                            <th class="py-3 px-4 text-left text-[var(--text-secondary)] font-semibold uppercase">Date</th>
+                            <th class="py-3 px-4 text-left text-[var(--text-secondary)] font-semibold uppercase">Exchanger</th>
+                            <th class="py-3 px-4 text-left text-[var(--text-secondary)] font-semibold uppercase">Approved / Rejected By</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="11" class="text-center py-12 text-gray-400">No withdraws found</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Pagination -->
+        <div class="px-6 py-4 border-t border-[var(--border-secondary)] flex flex-wrap items-center justify-between gap-4">
+                <div class="text-[var(--text-secondary)]">Showing 0 to 0 of 0 entries</div>
+                <div class="flex items-center space-x-2">
+                    <button disabled class="border border-[var(--border-secondary)] text-[var(--text-secondary)] hover:bg-[var(--bg-tertiary)] bg-transparent px-3 py-1 rounded text-sm opacity-50 cursor-not-allowed">Previous</button>
+                    <span class="px-3 py-1 text-sm bg-[var(--button-primary-bg)] text-[var(--button-primary-text)] rounded">1 / 1</span>
+                    <button disabled class="border border-[var(--border-secondary)] text-[var(--text-secondary)] hover:bg-[var(--bg-tertiary)] bg-transparent px-3 py-1 rounded text-sm opacity-50 cursor-not-allowed">Next</button>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-

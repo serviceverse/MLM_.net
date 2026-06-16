@@ -1,16 +1,67 @@
 @{
-    ViewData["Title"] = "PendingDeposit";
+    ViewData["Title"] = "Pending Client Deposits";
 }
+<div class="p-6 md:p-8">
+    
+        <!-- Page Header -->
+    <div class="mb-6">
+        <h1 class="text-2xl font-bold text-[var(--text-primary)]">Pending Client Deposits</h1>
+        <p class="text-sm text-[var(--text-secondary)] mt-1">Manage and review pending deposits</p>
+    </div>
 
-<div class="min-h-screen bg-primary text-[var(--text-primary)] p-8">
-    <div class="max-w-6xl mx-auto space-y-8">
-        <div>
-            <h1 class="text-4xl font-bold text-[var(--text-primary)] mb-2">PendingDeposit</h1>
-            <p class="text-[var(--text-secondary)]">Migrated from: (admin)\transaction\pending-deposit\page.tsx</p>
-        </div>
-        <div class="bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-3xl p-8">
-            <p class="text-[var(--text-tertiary)]">Content for PendingDeposit will go here.</p>
+    <!-- Main Card -->
+    <div class="bg-[var(--bg-primary)] border border-[var(--border-secondary)] rounded-xl shadow-sm">
+            <!-- Filters -->
+        <div class="px-6 py-4 border-b border-[var(--border-secondary)] flex flex-wrap items-center justify-between gap-4">
+                <div class="flex items-center space-x-2">
+                    <span class="text-[var(--text-secondary)]">Show</span>
+                    <select class="w-20 bg-[var(--bg-tertiary)] border-[var(--border-secondary)] text-[var(--text-primary)] rounded-md py-2 px-3 outline-none">
+                        <option>10</option>
+                    </select>
+                    <span class="text-[var(--text-secondary)]">entries</span>
+                </div>
+
+                <div class="flex items-center space-x-2">
+                    <span class="text-[var(--text-secondary)]">Search:</span>
+                    <div class="relative">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-gray-400 absolute left-3 top-1/2 transform -translate-y-1/2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                        <input type="text" placeholder="Search by name, email, method..." class="pl-10 bg-[var(--bg-tertiary)] border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] focus:border-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)] rounded-md py-2 px-3 outline-none w-64" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Table -->
+            <div class="overflow-x-auto">
+                <table class="min-w-[1000px] w-full text-sm">
+                    <thead>
+                        <tr class="border-b border-[var(--border-secondary)]">
+                            <th class="py-3 px-4 text-left text-[var(--text-secondary)] font-semibold uppercase">#</th>
+                            <th class="py-3 px-4 text-left text-[var(--text-secondary)] font-semibold uppercase">Full Name</th>
+                            <th class="py-3 px-4 text-left text-[var(--text-secondary)] font-semibold uppercase">Email</th>
+                            <th class="py-3 px-4 text-left text-[var(--text-secondary)] font-semibold uppercase">Amount</th>
+                            <th class="py-3 px-4 text-left text-[var(--text-secondary)] font-semibold uppercase">Method</th>
+                            <th class="py-3 px-4 text-left text-[var(--text-secondary)] font-semibold uppercase">Payment Proof</th>
+                            <th class="py-3 px-4 text-left text-[var(--text-secondary)] font-semibold uppercase">Date</th>
+                            <th class="py-3 px-4 text-left text-[var(--text-secondary)] font-semibold uppercase">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="8" class="text-center py-12 text-gray-400">No data available</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Pagination -->
+        <div class="px-6 py-4 border-t border-[var(--border-secondary)] flex flex-wrap items-center justify-between gap-4">
+                <div class="text-[var(--text-secondary)]">Showing 0 to 0 of 0 entries</div>
+                <div class="flex items-center space-x-2">
+                    <button disabled class="border border-[var(--border-secondary)] text-[var(--text-secondary)] hover:bg-[var(--bg-tertiary)] bg-transparent px-3 py-1 text-sm rounded-md opacity-50 cursor-not-allowed">Previous</button>
+                    <span class="px-3 py-1 text-sm bg-[var(--button-primary-bg)] text-[var(--button-primary-text)] rounded">1 / 1</span>
+                    <button disabled class="border border-[var(--border-secondary)] text-[var(--text-secondary)] hover:bg-[var(--bg-tertiary)] bg-transparent px-3 py-1 text-sm rounded-md opacity-50 cursor-not-allowed">Next</button>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-

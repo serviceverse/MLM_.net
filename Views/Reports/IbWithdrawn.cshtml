@@ -1,15 +1,104 @@
 @{
-    ViewData["Title"] = "IbWithdrawn";
+    ViewData["Title"] = "IB Withdraw";
 }
-
-<div class="min-h-screen bg-primary text-[var(--text-primary)] p-8">
-    <div class="max-w-6xl mx-auto space-y-8">
+<div class="p-6 md:p-8">
+    <div class="max-w-6xl space-y-6">
+        <!-- Header -->
         <div>
-            <h1 class="text-4xl font-bold text-[var(--text-primary)] mb-2">IbWithdrawn</h1>
-            <p class="text-[var(--text-secondary)]">Migrated from: reports\ib-withdrawn\page.tsx</p>
+            <h1 class="text-2xl font-bold text-[var(--text-primary)]">IB Withdraw</h1>
+            <p class="text-[var(--text-secondary)]">Request withdrawal of your IB commission earnings</p>
         </div>
-        <div class="bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-3xl p-8">
-            <p class="text-[var(--text-tertiary)]">Content for IbWithdrawn will go here.</p>
+
+        <!-- Available Balance -->
+        <div class="bg-gradient-to-r from-lime-400/10 to-green-400/10 border border-[var(--border-primary)] rounded-2xl p-6">
+            <!-- Page Header -->
+    <div class="mb-6">
+        <h1 class="text-2xl font-bold text-[var(--text-primary)]">IB Withdraw</h1>
+        <p class="text-sm text-[var(--text-secondary)] mt-1">Request withdrawal of your IB commission earnings</p>
+    </div>
+
+    <!-- Main Card -->
+    <div class="bg-[var(--bg-primary)] border border-[var(--border-secondary)] rounded-xl shadow-sm">
+            <form class="grid grid-cols-1 lg:grid-cols-2 gap-6 relative">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Withdraw Type -->
+                    <div class="space-y-2">
+                        <label class="text-[var(--text-tertiary)] font-medium block">
+                            Withdraw Type <span class="text-red-400">*</span>
+                        </label>
+                        <select class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] focus:border-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)] rounded-xl py-3 px-4 outline-none" required>
+                            <option value="">Please Choose...</option>
+                            <option value="bank">Bank</option>
+                            <option value="mt5">Crib</option>
+                            <option value="wallet">Wallet</option>
+                        </select>
+                    </div>
+
+                    <!-- Withdraw To -->
+                    <div class="space-y-2">
+                        <label class="text-[var(--text-tertiary)] font-medium block">
+                            Withdraw To <span class="text-red-400">*</span>
+                        </label>
+                        <select class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] focus:border-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)] rounded-xl py-3 px-4 outline-none" required>
+                            <option value="">Please Choose...</option>
+                            <option value="primary-account">Primary Account</option>
+                            <option value="secondary-account">Secondary Account</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Note -->
+                <div class="space-y-2">
+                    <label class="text-[var(--text-tertiary)] font-medium block">
+                        Note <span class="text-red-400">*</span>
+                    </label>
+                    <textarea placeholder="Enter Note" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] focus:border-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)] rounded-xl py-3 px-4 outline-none min-h-[100px] resize-none" required></textarea>
+                </div>
+
+                <!-- Important Notice -->
+                <div class="bg-[var(--alert-warning-bg)] border border-[var(--alert-warning-border)] rounded-xl p-4 flex items-start space-x-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[var(--alert-warning-icon)] shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                    <div class="text-sm text-[var(--alert-warning-text)]">
+                        <strong>Important:</strong> Withdrawal requests are processed within 24-48 hours during business days. Minimum withdrawal amount is $50. Processing fees may apply depending on the withdrawal method.
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="col-span-full mt-4 flex justify-center pt-4">
+                    <button type="submit" class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] px-8 py-3 rounded-xl font-semibold transition-colors">
+                        Submit
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Withdrawal Guidelines -->
+        <div class="bg-[var(--bg-tertiary)]/30 border border-[var(--border-primary)] rounded-2xl p-6">
+            <h3 class="text-lg font-semibold text-[var(--text-primary)] mb-4">Withdrawal Guidelines</h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h4 class="font-medium text-[var(--button-primary-bg)] mb-2 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        Processing Time
+                    </h4>
+                    <ul class="text-[var(--text-secondary)] text-sm space-y-1">
+                        <li>• Bank transfers: 1-3 business days</li>
+                        <li>• Crib account: Instant</li>
+                        <li>• Crypto wallet: 30 minutes - 2 hours</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-medium text-[var(--button-primary-bg)] mb-2 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        Fees & Limits
+                    </h4>
+                    <ul class="text-[var(--text-secondary)] text-sm space-y-1">
+                        <li>• Minimum withdrawal: $50</li>
+                        <li>• Bank transfer fee: $25</li>
+                        <li>• Crypto withdrawal: Network fees apply</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </div>

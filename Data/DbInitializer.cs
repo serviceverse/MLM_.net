@@ -211,6 +211,7 @@ namespace MLM.Data
                     new NavigationItem { Name = "Login Activity", Key = "login-activity", Route = "/AllReports/LoginActivity", GroupId = reportsGroup.Id, Sequence = 8 },
 
                     new NavigationItem { Name = "App Settings", Key = "app-settings", Route = "/Settings/AppSettings", GroupId = settingsGroup.Id, Sequence = 1 },
+                    new NavigationItem { Name = "Role", Key = "role", Route = "/Role/Index", GroupId = settingsGroup.Id, Sequence = 2 },
                     new NavigationItem { Name = "Permission", Key = "menu-permission", Route = "/Settings/MenuPermission", GroupId = settingsGroup.Id, Sequence = 3 },
                     new NavigationItem { Name = "User Management", Key = "users-management", Route = "/Settings/UsersManagement", GroupId = settingsGroup.Id, Sequence = 4 },
 

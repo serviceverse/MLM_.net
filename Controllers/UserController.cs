@@ -122,9 +122,14 @@ namespace MLM.Controllers
         }        public IActionResult FollowUp()
         {
             return View();
-        }        public IActionResult List()
+        }        public async Task<IActionResult> List()
         {
-            return View();
+            var users = await _context.Users
+                .Include(u => u.Wallet)
+                .Include(u => u.IBRecord)
+                .Include(u => u.ReferralsReceived)
+                .ToListAsync();
+            return View(users);
         }        public IActionResult Mt5List()
         {
             return View();

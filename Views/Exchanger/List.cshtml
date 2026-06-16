@@ -1,16 +1,60 @@
 @{
-    ViewData["Title"] = "List";
+    ViewData["Title"] = "Exchanger List";
 }
-
-<div class="min-h-screen bg-primary text-[var(--text-primary)] p-8">
-    <div class="max-w-6xl mx-auto space-y-8">
-        <div>
-            <h1 class="text-4xl font-bold text-[var(--text-primary)] mb-2">List</h1>
-            <p class="text-[var(--text-secondary)]">Migrated from: (admin)\exchanger\list\page.tsx</p>
+<div class="p-6 md:p-8">
+    <div class="page-scroll-content px-8 py-6">
+        
+            <div class="flex justify-between items-center">
+                <!-- Header & Action Bar -->
+        <div class="mb-6">
+            <div>
+                <h1 class="text-2xl font-bold">Exchanger List</h1>
+                <p class="text-sm text-[var(--text-secondary)] mt-1">View and manage all exchangers</p>
+            </div>
+            <!-- Action items will go here -->
         </div>
-        <div class="bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-3xl p-8">
-            <p class="text-[var(--text-tertiary)]">Content for List will go here.</p>
+                <button class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] flex items-center gap-2 px-4 py-2 rounded">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></svg>
+                    Add Exchanger
+                </button>
+            </div>
+
+            <div class="flex-1 overflow-hidden flex flex-col">
+                <!-- Search -->
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6">
+                    <div class="text-[var(--text-secondary)]">Search:</div>
+                    <div class="relative w-full sm:w-80">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[var(--text-muted)] absolute left-3 top-1/2 -translate-y-1/2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                        <input type="text" placeholder="Search by name or email..." class="pl-10 bg-[var(--bg-tertiary)] border border-[var(--border-primary)] text-[var(--text-primary)] placeholder-[var(--text-muted)] w-full py-2 px-3 rounded outline-none" />
+                    </div>
+                </div>
+
+                <!-- Table -->
+                <div class="w-full overflow-x-auto">
+                    <table class="w-full min-w-[1300px] border-collapse">
+                        <thead class="bg-[var(--bg-tertiary)]">
+                        <tr>
+                                <th class="py-4 px-4 text-left text-[var(--text-secondary)] uppercase font-semibold">ID</th>
+                                <th class="py-4 px-4 text-left text-[var(--text-secondary)] uppercase font-semibold">Name</th>
+                                <th class="py-4 px-4 text-left text-[var(--text-secondary)] uppercase font-semibold">Email</th>
+                                <th class="py-4 px-4 text-left text-[var(--text-secondary)] uppercase font-semibold">Mobile</th>
+                                <th class="py-4 px-4 text-left text-[var(--text-secondary)] uppercase font-semibold">Total Deposit</th>
+                                <th class="py-4 px-4 text-left text-[var(--text-secondary)] uppercase font-semibold">Total Withdraw</th>
+                                <th class="py-4 px-4 text-left text-[var(--text-secondary)] uppercase font-semibold">Remaining</th>
+                                <th class="py-4 px-4 text-left text-[var(--text-secondary)] uppercase font-semibold w-[250px]">Status</th>
+                                <th class="py-4 px-4 text-left text-[var(--text-secondary)] uppercase font-semibold">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="9" class="py-8 text-center text-[var(--text-secondary)]">
+                                    No exchangers found
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-

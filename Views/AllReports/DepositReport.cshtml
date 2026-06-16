@@ -1,16 +1,105 @@
 @{
-    ViewData["Title"] = "DepositReport";
+    ViewData["Title"] = "Deposit Report";
 }
-
-<div class="min-h-screen bg-primary text-[var(--text-primary)] p-8">
-    <div class="max-w-6xl mx-auto space-y-8">
-        <div>
-            <h1 class="text-4xl font-bold text-[var(--text-primary)] mb-2">DepositReport</h1>
-            <p class="text-[var(--text-secondary)]">Migrated from: (admin)\all-reports\deposit-report\page.tsx</p>
+<div class="p-6 md:p-8">
+    
+        <!-- Header -->
+        <!-- Header & Action Bar -->
+        <div class="mb-6">
+            <div>
+                <h1 class="text-2xl font-bold">Deposit Report</h1>
+                <p class="text-sm text-[var(--text-secondary)] mt-1">View and analyze all deposit transactions</p>
+            </div>
+            <!-- Action items will go here -->
         </div>
-        <div class="bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-3xl p-8">
-            <p class="text-[var(--text-tertiary)]">Content for DepositReport will go here.</p>
+
+        <!-- Filters -->
+        <div class="bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-3xl p-6 flex flex-wrap items-end gap-4">
+            <div>
+                <label class="block mb-1">From</label>
+                <input type="date" class="bg-[var(--bg-tertiary)] border-[var(--border-secondary)] text-[var(--text-primary)] p-2 rounded" />
+            </div>
+            <div>
+                <label class="block mb-1">To</label>
+                <input type="date" class="bg-[var(--bg-tertiary)] border-[var(--border-secondary)] text-[var(--text-primary)] p-2 rounded" />
+            </div>
+            <div>
+                <label class="block mb-1">Status</label>
+                <select class="w-40 bg-[var(--bg-tertiary)] border-[var(--border-secondary)] text-[var(--text-primary)] p-2 rounded outline-none">
+                    <option>All</option>
+                </select>
+            </div>
+            <div>
+                <label class="block mb-1">Method</label>
+                <select class="w-40 bg-[var(--bg-tertiary)] border-[var(--border-secondary)] text-[var(--text-primary)] p-2 rounded outline-none">
+                    <option>All</option>
+                </select>
+            </div>
+            <button class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] hover:text-[var(--button-primary-hover-text)] px-4 py-2 rounded">
+                Search
+            </button>
+        </div>
+
+        <!-- Table + Actions -->
+        <div class="flex-1 overflow-hidden flex flex-col">
+            <div class="flex items-center justify-between mb-6">
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center space-x-2">
+                        <span>Show</span>
+                        <select class="w-20 bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] p-2 rounded outline-none">
+                            <option>10</option>
+                        </select>
+                        <span>entries</span>
+                    </div>
+                    <button class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] hover:text-[var(--button-primary-hover-text)] px-4 py-2 rounded flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+                        Export CSV
+                    </button>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <span>Search:</span>
+                    <input type="text" placeholder="Search deposits..." class="w-64 bg-[var(--bg-tertiary)] border-[var(--border-secondary)] text-[var(--text-primary)] p-2 rounded outline-none" />
+                </div>
+            </div>
+
+            <!-- Table -->
+            <div class="w-full overflow-x-auto">
+                <table class="w-full min-w-[1400px] border-collapse">
+                    <thead class="bg-[var(--bg-tertiary)]">
+                        <tr>
+                            <th class="py-4 px-4 text-left text-[var(--text-secondary)] uppercase font-semibold">ID</th>
+                            <th class="py-4 px-4 text-left text-[var(--text-secondary)] uppercase font-semibold">Name</th>
+                            <th class="py-4 px-4 text-left text-[var(--text-secondary)] uppercase font-semibold">Crib ID</th>
+                            <th class="py-4 px-4 text-left text-[var(--text-secondary)] uppercase font-semibold">Amount</th>
+                            <th class="py-4 px-4 text-left text-[var(--text-secondary)] uppercase font-semibold">Payment Method</th>
+                            <th class="py-4 px-4 text-left text-[var(--text-secondary)] uppercase font-semibold">Note</th>
+                            <th class="py-4 px-4 text-left text-[var(--text-secondary)] uppercase font-semibold">Comment</th>
+                            <th class="py-4 px-4 text-left text-[var(--text-secondary)] uppercase font-semibold">Deposit Proof</th>
+                            <th class="py-4 px-4 text-left text-[var(--text-secondary)] uppercase font-semibold">Status</th>
+                            <th class="py-4 px-4 text-left text-[var(--text-secondary)] uppercase font-semibold">Date</th>
+                            <th class="py-4 px-4 text-left text-[var(--text-secondary)] uppercase font-semibold">Modified Date</th>
+                            <th class="py-4 px-4 text-left text-[var(--text-secondary)] uppercase font-semibold">Marketing Name</th>
+                            <th class="py-4 px-4 text-left text-[var(--text-secondary)] uppercase font-semibold">Approved / Rejected By</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="13" class="py-8 text-center text-[var(--text-secondary)]">
+                                No deposits found
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Pagination -->
+            <div class="flex justify-between items-center mt-6">
+                <div>Showing 0 to 0 of 0 entries</div>
+                <div class="flex space-x-2">
+                    <button disabled class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] px-3 py-1 rounded text-sm opacity-50 cursor-not-allowed">Previous</button>
+                    <button disabled class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] px-3 py-1 rounded text-sm opacity-50 cursor-not-allowed">Next</button>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-

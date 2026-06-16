@@ -1,15 +1,72 @@
 @{
-    ViewData["Title"] = "InternalTransfer";
+    ViewData["Title"] = "Client Internal Transfer Report";
 }
-
-<div class="min-h-screen bg-primary text-[var(--text-primary)] p-8">
-    <div class="max-w-6xl mx-auto space-y-8">
-        <div>
-            <h1 class="text-4xl font-bold text-[var(--text-primary)] mb-2">InternalTransfer</h1>
-            <p class="text-[var(--text-secondary)]">Migrated from: reports\internal-transfer\page.tsx</p>
+<div class="p-6 md:p-8">
+    
+        <!-- Header -->
+        <div class="flex items-center justify-between gap-4">
+            <div>
+                <h1 class="text-2xl font-bold text-[var(--text-primary)]">
+                    Client Internal Transfer Report
+                </h1>
+                <p class="text-[var(--text-secondary)]">
+                    Track transfers between Crib accounts of a client
+                </p>
+            </div>
+            <button class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] font-semibold px-4 py-2 rounded-xl flex items-center transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Export CSV
+            </button>
         </div>
-        <div class="bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-3xl p-8">
-            <p class="text-[var(--text-tertiary)]">Content for InternalTransfer will go here.</p>
+
+        <!-- Filters -->
+        <div class="bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-3xl p-6">
+            <div class="flex flex-wrap items-end gap-4">
+                <div class="space-y-2">
+                    <label class="text-[var(--text-primary)] font-medium block">From:</label>
+                    <input type="date" class="bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-xl py-2 px-3 outline-none" />
+                </div>
+                <div class="space-y-2">
+                    <label class="text-[var(--text-primary)] font-medium block">To:</label>
+                    <input type="date" class="bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-xl py-2 px-3 outline-none" />
+                </div>
+                <div class="space-y-2 relative">
+                    <label class="text-[var(--text-primary)] font-medium block">Client:</label>
+                    <input type="text" placeholder="Search client" class="bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] focus:border-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)] rounded-xl py-2 px-3 outline-none" />
+                </div>
+                <div class="flex items-center gap-3">
+                    <button class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] font-semibold px-6 py-2 rounded-xl transition-colors">
+                        Search
+                    </button>
+                    <button class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] border border-[var(--border-secondary)] font-semibold px-4 py-2 rounded-xl flex items-center transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        Export CSV
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Table -->
+        <div class="bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-3xl p-8 overflow-auto">
+            <table class="w-full">
+                <thead>
+                    <tr class="border-b border-[var(--border-primary)] text-left">
+                        <th class="text-left py-4 px-4 text-[var(--text-secondary)] uppercase text-sm font-semibold">ID</th>
+                        <th class="text-left py-4 px-4 text-[var(--text-secondary)] uppercase text-sm font-semibold">From Account</th>
+                        <th class="text-left py-4 px-4 text-[var(--text-secondary)] uppercase text-sm font-semibold">To Account</th>
+                        <th class="text-left py-4 px-4 text-[var(--text-secondary)] uppercase text-sm font-semibold">Amount</th>
+                        <th class="text-left py-4 px-4 text-[var(--text-secondary)] uppercase text-sm font-semibold">Status</th>
+                        <th class="text-left py-4 px-4 text-[var(--text-secondary)] uppercase text-sm font-semibold">Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="6" class="text-center text-[var(--text-secondary)] py-6">
+                            No data available
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>

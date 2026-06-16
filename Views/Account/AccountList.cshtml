@@ -1,15 +1,72 @@
 @{
-    ViewData["Title"] = "AccountList";
+    ViewData["Title"] = "Account List";
 }
+<div class="p-6 md:p-8">
+    
+        <!-- Header -->
+        <!-- Page Header -->
+    <div class="mb-6">
+        <h1 class="text-2xl font-bold text-[var(--text-primary)]">Account List</h1>
+        <p class="text-sm text-[var(--text-secondary)] mt-1">Manage your Crib trading accounts</p>
+    </div>
 
-<div class="min-h-screen bg-primary text-[var(--text-primary)] p-8">
-    <div class="max-w-6xl mx-auto space-y-8">
-        <div>
-            <h1 class="text-4xl font-bold text-[var(--text-primary)] mb-2">AccountList</h1>
-            <p class="text-[var(--text-secondary)]">Migrated from: account\account-list\page.tsx</p>
-        </div>
-        <div class="bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-3xl p-8">
-            <p class="text-[var(--text-tertiary)]">Content for AccountList will go here.</p>
+    <!-- Main Card -->
+    <div class="bg-[var(--bg-primary)] border border-[var(--border-secondary)] rounded-xl shadow-sm">
+            <!-- Controls -->
+            <div class="px-6 py-4 border-b border-[var(--border-secondary)] flex flex-wrap items-center justify-between gap-4">
+                <div class="flex items-center space-x-2">
+                    <span class="text-[var(--text-secondary)]">Show</span>
+                    <select class="h-10 w-20 rounded-md border border-[var(--border-secondary)] bg-[var(--bg-tertiary)] px-3 text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--button-primary-bg)]">
+                        <option value="10">10</option>
+                        <option value="25">25</option>
+                        <option value="50">50</option>
+                    </select>
+                    <span class="text-[var(--text-secondary)]">entries</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <span class="text-[var(--text-secondary)]">Search:</span>
+                    <div class="relative">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[var(--text-tertiary)] absolute left-3 top-1/2 transform -translate-y-1/2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                        <input type="text" placeholder="Search accounts..." class="flex h-10 w-full rounded-md border pl-10 px-3 py-2 text-sm bg-[var(--bg-tertiary)] border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] focus:border-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)] focus:outline-none" />
+                    </div>
+                </div>
+            </div>
+            <!-- Table -->
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm">
+                    <thead>
+                        <tr class="border-b border-[var(--border-secondary)]">
+                            <th class="text-left py-4 px-4 text-[var(--text-secondary)] uppercase font-semibold">Serial No.</th>
+                            <th class="text-left py-4 px-4 text-[var(--text-secondary)] uppercase font-semibold">Crib ID</th>
+                            <th class="text-left py-4 px-4 text-[var(--text-secondary)] uppercase font-semibold">Account Type</th>
+                            <th class="text-left py-4 px-4 text-[var(--text-secondary)] uppercase font-semibold">USER Name</th>
+                            <th class="py-3 px-4 text-left text-[var(--text-secondary)] uppercase font-semibold">PASSWORD</th>
+                            <th class="py-3 px-4 text-left text-[var(--text-secondary)] uppercase font-semibold">LEVERAGE</th>
+                            <th class="py-3 px-4 text-left text-[var(--text-secondary)] uppercase font-semibold">BALANCE</th>
+                            <th class="text-left py-4 px-4 text-[var(--text-secondary)] uppercase font-semibold">Date</th>
+                            <th class="text-left py-4 px-4 text-[var(--text-secondary)] uppercase font-semibold">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="9" class="py-8 text-center text-[var(--text-tertiary)]">No accounts found.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- Pagination -->
+        <div class="px-6 py-4 border-t border-[var(--border-secondary)] flex flex-wrap items-center justify-between gap-4">
+                <div class="text-[var(--text-secondary)]">Showing 0 to 0 of 0 entries</div>
+                <div class="flex items-center space-x-2">
+                    <button disabled class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors border border-[var(--border-secondary)] text-[var(--text-secondary)] bg-transparent h-9 px-3 opacity-50 cursor-not-allowed">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg> Previous
+                    </button>
+                    <span class="px-3 py-1 text-sm bg-[var(--button-primary-bg)] text-[var(--button-primary-text)] rounded">1</span>
+                    <button disabled class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors border border-[var(--border-secondary)] text-[var(--text-secondary)] bg-transparent h-9 px-3 opacity-50 cursor-not-allowed">
+                        Next <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 </div>

@@ -1,16 +1,53 @@
 @{
-    ViewData["Title"] = "UpdateLeverage";
+    ViewData["Title"] = "Update User Leverage";
 }
+<div class="custome-scroll min-h-screen bg-primary text-[var(--text-primary)] p-8">
+    <div class="w-full space-y-8">
+        <h1 class="text-2xl font-bold text-[var(--text-primary)]">Update User Leverage</h1>
+        <p class="text-[var(--text-secondary)]">Select a client and account to change leverage.</p>
 
-<div class="min-h-screen bg-primary text-[var(--text-primary)] p-8">
-    <div class="max-w-6xl mx-auto space-y-8">
-        <div>
-            <h1 class="text-4xl font-bold text-[var(--text-primary)] mb-2">UpdateLeverage</h1>
-            <p class="text-[var(--text-secondary)]">Migrated from: (admin)\user\update-leverage\page.tsx</p>
-        </div>
-        <div class="bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-3xl p-8">
-            <p class="text-[var(--text-tertiary)]">Content for UpdateLeverage will go here.</p>
+        <div class="bg-[var(--bg-primary)] border border-[var(--border-secondary)] rounded-xl shadow-sm p-6 md:p-8">
+            <form class="grid grid-cols-1 lg:grid-cols-2 gap-6 relative">
+                <!-- Client Search -->
+                <div class="space-y-2">
+                    <label class="text-[var(--text-primary)] font-medium">Client</label>
+                    <input type="text" placeholder="Search Client" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-xl py-3 px-3 outline-none focus:ring-2 focus:ring-[var(--button-primary-bg)]" />
+                </div>
+
+                <!-- Account Select -->
+                <div class="space-y-2">
+                    <label class="text-[var(--text-primary)]">Account (Crib ID)</label>
+                    <select class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-xl py-3 px-3 outline-none focus:ring-2 focus:ring-[var(--button-primary-bg)]">
+                        <option>No accounts available</option>
+                    </select>
+                </div>
+
+                <!-- Readonly fields -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="space-y-1">
+                        <label class="text-[var(--text-primary)]">Selected Crib ID</label>
+                        <input disabled class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-md py-2 px-3 opacity-50" />
+                    </div>
+                    <div class="space-y-1">
+                        <label class="text-[var(--text-primary)]">Current Leverage</label>
+                        <input disabled class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-md py-2 px-3 opacity-50" />
+                    </div>
+                </div>
+
+                <!-- New Leverage -->
+                <div class="space-y-2">
+                    <label class="text-[var(--text-primary)]">New Leverage</label>
+                    <select class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-xl py-3 px-3 outline-none focus:ring-2 focus:ring-[var(--button-primary-bg)]">
+                        <option>No leverage options</option>
+                    </select>
+                </div>
+
+                <!-- Submit -->
+                <div class="col-span-full mt-4 flex justify-end">
+                    <button type="button" class="bg-[var(--button-primary-bg)] hover:opacity-90 text-[var(--button-primary-text)] px-8 py-3 rounded-xl font-semibold">
+                        Update Leverage
+                    </button>
+                </div>
+            </form>
         </div>
     </div>
-</div>
-

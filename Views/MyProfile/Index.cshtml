@@ -1,15 +1,75 @@
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "My Profile";
 }
-
-<div class="min-h-screen bg-primary text-[var(--text-primary)] p-8">
-    <div class="max-w-6xl mx-auto space-y-8">
-        <div>
-            <h1 class="text-4xl font-bold text-[var(--text-primary)] mb-2">Index</h1>
-            <p class="text-[var(--text-secondary)]">Migrated from: my-profile\page.tsx</p>
+<div class="p-6 md:p-8">
+    <div class="max-w-6xl space-y-6">
+        <div class="flex justify-between items-center">
+            <h1 class="text-3xl font-bold text-[var(--text-primary)]">My Profile</h1>
+            <button class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] hover:text-[var(--button-primary-hover-text)] px-4 py-3 rounded-xl font-semibold border border-[var(--button-primary-bg)] flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></svg>
+                Edit
+            </button>
         </div>
-        <div class="bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-3xl p-8">
-            <p class="text-[var(--text-tertiary)]">Content for Index will go here.</p>
+
+        <!-- Profile Info -->
+        <div class="bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-3xl">
+            <div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <p class="text-xs text-[var(--text-tertiary)]">Full Name</p>
+                    <p class="text-sm text-[var(--text-primary)] font-medium mt-1">-</p>
+                </div>
+                <div>
+                    <p class="text-xs text-[var(--text-tertiary)]">Username</p>
+                    <p class="text-sm text-[var(--text-primary)] font-medium mt-1">-</p>
+                </div>
+                <div>
+                    <p class="text-xs text-[var(--text-tertiary)]">Email</p>
+                    <p class="text-sm text-[var(--text-primary)] font-medium mt-1">-</p>
+                </div>
+                <div>
+                    <p class="text-xs text-[var(--text-tertiary)]">Contact No</p>
+                    <p class="text-sm text-[var(--text-primary)] font-medium mt-1">-</p>
+                </div>
+                <div>
+                    <p class="text-xs text-[var(--text-tertiary)]">City</p>
+                    <p class="text-sm text-[var(--text-primary)] font-medium mt-1">-</p>
+                </div>
+                <div>
+                    <p class="text-xs text-[var(--text-tertiary)]">Country</p>
+                    <p class="text-sm text-[var(--text-primary)] font-medium mt-1">-</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Referral Code -->
+        <div class="bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-3xl flex items-center justify-between p-6">
+            <div>
+                <p class="text-sm text-[var(--text-tertiary)]">Referral Code</p>
+                <p class="text-[var(--button-success-bg)] text-xl font-bold mt-1">-</p>
+            </div>
+            <button class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] px-3 py-3 rounded-xl font-semibold flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                Copy
+            </button>
+        </div>
+
+        <!-- KYC Section -->
+        <div class="bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-3xl p-6">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="flex items-center gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-[var(--button-warning-bg)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg>
+                    <div>
+                        <p class="text-lg font-semibold text-[var(--text-primary)]">KYC Status</p>
+                        <p class="text-sm text-[var(--text-tertiary)] flex items-center gap-1 text-[var(--button-warning-bg)]">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/><path d="M12 12v9"/><path d="m16 16-4-4-4 4"/></svg>
+                            Pending Review
+                        </p>
+                    </div>
+                </div>
+                <a href="/Compliance/DocumentUpload" class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] px-8 py-3 rounded-xl font-semibold border border-[var(--button-primary-bg)] inline-flex justify-center items-center">
+                    View / Upload KYC
+                </a>
+            </div>
         </div>
     </div>
 </div>

@@ -41,6 +41,10 @@ namespace MLM.Controllers
         {
             return View();
         }
+        public IActionResult SendEmail()
+        {
+            return View();
+        }
 
     }
 }
