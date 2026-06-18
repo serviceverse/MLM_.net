@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MLM.Migrations
 {
     [DbContext(typeof(AppDBContext))]
-    [Migration("20260618132631_DBInit")]
+    [Migration("20260618133105_DBInit")]
     partial class DBInit
     {
         /// <inheritdoc />
@@ -117,7 +117,7 @@ namespace MLM.Migrations
                         .HasColumnType("bit");
 
                     b.Property<decimal>("WithdrawFee")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(18, 2)");
 
                     b.HasKey("Id");
 

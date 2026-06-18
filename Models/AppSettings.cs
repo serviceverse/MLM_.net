@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MLM.Models
 {
@@ -56,6 +57,7 @@ namespace MLM.Models
 
         public int NoOfClientRequiredForIb { get; set; }
 
+        [Column(TypeName = "decimal(18, 2)")]
         public decimal WithdrawFee { get; set; }
 
         public int RequiredTradeSeconds { get; set; }

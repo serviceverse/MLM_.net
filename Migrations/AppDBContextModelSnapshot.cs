@@ -114,7 +114,7 @@ namespace MLM.Migrations
                         .HasColumnType("bit");
 
                     b.Property<decimal>("WithdrawFee")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(18, 2)");
 
                     b.HasKey("Id");
 
