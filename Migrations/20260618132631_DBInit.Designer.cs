@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MLM.Migrations
 {
     [DbContext(typeof(AppDBContext))]
-    [Migration("20260617094758_AddSettingsAndLogs")]
-    partial class AddSettingsAndLogs
+    [Migration("20260618132631_DBInit")]
+    partial class DBInit
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

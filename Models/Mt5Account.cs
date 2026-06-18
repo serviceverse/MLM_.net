@@ -43,7 +43,7 @@ namespace MLM.Models
         public decimal Balance { get; set; } = 0;
 
         [StringLength(100)]
-        public string Server { get; set; } = "CRIB";
+        public string Server { get; set; } = "IMAN";
 
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 

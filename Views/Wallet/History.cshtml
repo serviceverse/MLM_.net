@@ -57,7 +57,7 @@
             <table class="w-full text-sm">
                 <thead>
                     <tr class="border-b border-[var(--border-secondary)] bg-[var(--bg-tertiary)]">
-                        @foreach (var heading in new[] { "ID", "Method", "Crib Account", "Amount", "Note", "Status", "Date" })
+                        @foreach (var heading in new[] { "ID", "Method", "Iman Account", "Amount", "Note", "Status", "Date" })
                         {
                             <th class="py-3 px-5 text-xs text-left text-[var(--text-secondary)] font-bold uppercase tracking-wider">@heading</th>
                         }
@@ -71,7 +71,7 @@
                             <tr class="border-b border-[var(--border-secondary)] hover:bg-[var(--bg-tertiary)]/50 transition-colors">
                                 <td class="py-4 px-5 text-[var(--text-primary)] font-medium">@txn.Id</td>
                                 <td class="py-4 px-5 text-[var(--text-primary)]">@txn.Method</td>
-                                <td class="py-4 px-5 text-[var(--text-primary)]">@txn.CribAccount</td>
+                                <td class="py-4 px-5 text-[var(--text-primary)]">@txn.ImanAccount</td>
                                 <td class="py-4 px-5 text-[var(--text-primary)] font-bold">$@txn.Amount.ToString("0.00")</td>
                                 <td class="py-4 px-5 text-[var(--text-secondary)]">@txn.Note</td>
                                 <td class="py-4 px-5">

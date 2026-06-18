@@ -11,9 +11,9 @@ namespace MLM.Controllers
             // Dummy data for wallet history
             var transactions = new List<dynamic>
             {
-                new { Id = "TXN12345", Method = "Internal Transfer", CribAccount = "MT5-9876", Amount = 500.00m, Note = "Monthly profit withdrawal", Status = "Completed", Date = DateTime.Now.AddDays(-2) },
-                new { Id = "TXN12346", Method = "Deposit", CribAccount = "-", Amount = 1200.00m, Note = "Bank deposit", Status = "Approved", Date = DateTime.Now.AddDays(-5) },
-                new { Id = "TXN12347", Method = "Withdrawal", CribAccount = "-", Amount = 300.00m, Note = "Transfer to bank", Status = "Pending", Date = DateTime.Now.AddHours(-4) }
+                new { Id = "TXN12345", Method = "Internal Transfer", ImanAccount = "MT5-9876", Amount = 500.00m, Note = "Monthly profit withdrawal", Status = "Completed", Date = DateTime.Now.AddDays(-2) },
+                new { Id = "TXN12346", Method = "Deposit", ImanAccount = "-", Amount = 1200.00m, Note = "Bank deposit", Status = "Approved", Date = DateTime.Now.AddDays(-5) },
+                new { Id = "TXN12347", Method = "Withdrawal", ImanAccount = "-", Amount = 300.00m, Note = "Transfer to bank", Status = "Pending", Date = DateTime.Now.AddHours(-4) }
             };
 
             ViewBag.Transactions = transactions;

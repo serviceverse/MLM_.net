@@ -452,3 +452,4 @@ C:\Users\Kuter\Documents\.net\MLM_.net\obj\Debug\net10.0\ref\MLM.dll
 C:\Users\Kuter\Documents\.net\MLM_.net\bin\Debug\net10.0\BCrypt-Net-Next.dll
 C:\Users\Kuter\Documents\.net\MLM_.net\obj\Debug\net10.0\compressed\vml4vazxfk-{0}-1ieaimc0zs-1ieaimc0zs.gz
 C:\Users\Kuter\Documents\.net\MLM_.net\obj\Debug\net10.0\compressed\tjgll5tn6g-{0}-rg7e7ng8mq-rg7e7ng8mq.gz
+C:\Users\Kuter\Documents\.net\MLM_.net\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt

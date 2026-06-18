@@ -1,0 +1,177 @@
+@{
+    ViewData["Title"] = "Send Email";
+}
+
+<div class="p-2 md:p-4">
+    <!-- Page Header -->
+    <div class="mb-4">
+        <h1 class="text-2xl font-bold text-[var(--text-primary)]">Send Email</h1>
+        <p class="text-sm text-[var(--text-secondary)] mt-1">Select recipients, add a subject and message, then click send.</p>
+    </div>
+
+    <!-- Main Card -->
+    <div class="bg-white border border-[var(--border-secondary)] rounded-sm shadow-none p-4 md:p-6 max-w-4xl">
+        <div class="space-y-6">
+            
+            <!-- Select All Checkbox -->
+            <div class="flex items-center gap-2">
+                <input type="checkbox" id="selectAll" class="w-4 h-4 text-[var(--button-primary-bg)] border-[var(--border-secondary)] rounded focus:ring-[var(--button-primary-bg)]" />
+                <label for="selectAll" class="text-sm font-medium text-[var(--text-primary)] cursor-pointer">Send to all clients</label>
+            </div>
+
+            <!-- Email Search/Selection -->
+            <div class="space-y-1.5" id="emailSelectionContainer">
+                <label class="text-xs font-semibold text-[var(--text-primary)]">Search & Add Emails</label>
+                <div class="relative">
+                    <input type="search" placeholder="Search by name or email" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] rounded-sm py-1.5 px-3 text-xs focus:outline-none focus:border-[var(--button-primary-bg)] focus:ring-1 focus:ring-[var(--button-primary-bg)]" />
+                </div>
+                <!-- Selected Emails Chips -->
+                <div class="flex flex-wrap gap-2 mt-2">
+                    <!-- Example selected email -->
+                    <div class="bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] px-2 py-1 rounded-sm text-xs flex items-center gap-1.5 text-[var(--text-primary)]">
+                        client@example.com
+                        <button type="button" class="text-red-500 hover:text-red-700 font-bold ml-1">&times;</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Subject -->
+            <div class="space-y-1.5">
+                <label class="text-xs font-semibold text-[var(--text-primary)]">Subject <span class="text-red-500">*</span></label>
+                <input type="text" placeholder="Enter subject" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] rounded-sm py-1.5 px-3 text-xs focus:outline-none focus:border-[var(--button-primary-bg)] focus:ring-1 focus:ring-[var(--button-primary-bg)]" />
+            </div>
+
+            <!-- Rich Text Toggle -->
+            <div class="flex items-center gap-2 mt-4">
+                <input type="checkbox" id="useRichEditor" checked class="w-4 h-4 text-[var(--button-primary-bg)] border-[var(--border-secondary)] rounded focus:ring-[var(--button-primary-bg)]" />
+                <label for="useRichEditor" class="text-sm font-medium text-[var(--text-primary)] cursor-pointer">Use rich text editor</label>
+            </div>
+
+            <!-- Message Area -->
+            <div class="space-y-1.5">
+                <label class="text-xs font-semibold text-[var(--text-primary)]">Message <span class="text-red-500">*</span></label>
+                
+                <!-- Rich Text Toolbar -->
+                <div class="flex flex-wrap items-center gap-1 p-1 rounded-t-sm border border-[var(--border-secondary)] border-b-0 bg-[var(--bg-tertiary)]">
+                    <button type="button" class="p-1.5 text-[var(--text-secondary)] hover:bg-[var(--bg-secondary)] rounded" title="Bold">
+                        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h8a4 4 0 0 1 4 4 4 4 0 0 1-4 4H6z"/><path d="M6 12h9a4 4 0 0 1 4 4 4 4 0 0 1-4 4H6z"/></svg>
+                    </button>
+                    <button type="button" class="p-1.5 text-[var(--text-secondary)] hover:bg-[var(--bg-secondary)] rounded" title="Italic">
+                        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="4" x2="10" y2="4"/><line x1="14" y1="20" x2="5" y2="20"/><line x1="15" y1="4" x2="9" y2="20"/></svg>
+                    </button>
+                    <button type="button" class="p-1.5 text-[var(--text-secondary)] hover:bg-[var(--bg-secondary)] rounded" title="Underline">
+                        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v7a6 6 0 0 0 6 6 6 6 0 0 0 6-6V3"/><line x1="4" y1="21" x2="20" y2="21"/></svg>
+                    </button>
+                    
+                    <div class="w-px h-5 bg-[var(--border-secondary)] mx-1"></div>
+                    
+                    <button type="button" class="p-1.5 text-[var(--text-secondary)] hover:bg-[var(--bg-secondary)] rounded" title="Align Left">
+                        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="21" y1="6" x2="3" y2="6"/><line x1="15" y1="12" x2="3" y2="12"/><line x1="17" y1="18" x2="3" y2="18"/></svg>
+                    </button>
+                    <button type="button" class="p-1.5 text-[var(--text-secondary)] hover:bg-[var(--bg-secondary)] rounded" title="Align Center">
+                        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="21" y1="6" x2="3" y2="6"/><line x1="19" y1="12" x2="5" y2="12"/><line x1="17" y1="18" x2="7" y2="18"/></svg>
+                    </button>
+                    <button type="button" class="p-1.5 text-[var(--text-secondary)] hover:bg-[var(--bg-secondary)] rounded" title="Align Right">
+                        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="21" y1="6" x2="3" y2="6"/><line x1="21" y1="12" x2="9" y2="12"/><line x1="21" y1="18" x2="7" y2="18"/></svg>
+                    </button>
+
+                    <div class="w-px h-5 bg-[var(--border-secondary)] mx-1"></div>
+
+                    <button type="button" class="p-1.5 text-[var(--text-secondary)] hover:bg-[var(--bg-secondary)] rounded" title="Bulleted List">
+                        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+                    </button>
+                    <button type="button" class="p-1.5 text-[var(--text-secondary)] hover:bg-[var(--bg-secondary)] rounded" title="Numbered List">
+                        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="10" y1="6" x2="21" y2="6"/><line x1="10" y1="12" x2="21" y2="12"/><line x1="10" y1="18" x2="21" y2="18"/><path d="M4 6h1v4"/><path d="M4 10h2"/><path d="M6 18H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
+                    </button>
+
+                    <div class="w-px h-5 bg-[var(--border-secondary)] mx-1"></div>
+
+                    <select class="bg-transparent text-[var(--text-secondary)] text-xs border-none outline-none py-1 px-2 cursor-pointer hover:bg-[var(--bg-secondary)] rounded">
+                        <option>Default Font</option>
+                        <option>Inter</option>
+                        <option>Georgia</option>
+                        <option>Monospace</option>
+                    </select>
+
+                    <select class="bg-transparent text-[var(--text-secondary)] text-xs border-none outline-none py-1 px-2 cursor-pointer hover:bg-[var(--bg-secondary)] rounded">
+                        <option>Normal Size</option>
+                        <option>Small</option>
+                        <option>Large</option>
+                        <option>Huge</option>
+                    </select>
+                </div>
+                
+                <!-- Editor Area -->
+                <div contenteditable="true" class="min-h-[200px] bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] rounded-b-sm p-3 text-sm text-[var(--text-primary)] focus:outline-none focus:border-[var(--button-primary-bg)] focus:ring-1 focus:ring-[var(--button-primary-bg)] overflow-y-auto">
+                    <!-- Type your message here... -->
+                </div>
+            </div>
+
+            <!-- Attachments -->
+            <div class="space-y-1.5 mt-4">
+                <label class="text-xs font-semibold text-[var(--text-primary)]">Attachments</label>
+                <div class="flex items-center gap-3">
+                    <input type="file" multiple class="block w-full text-xs text-[var(--text-secondary)]
+                        file:mr-4 file:py-1.5 file:px-3
+                        file:rounded-sm file:border-0
+                        file:text-xs file:font-semibold
+                        file:bg-[var(--bg-tertiary)] file:text-[var(--text-primary)]
+                        file:border file:border-[var(--border-secondary)]
+                        hover:file:bg-[var(--bg-secondary)] cursor-pointer" />
+                </div>
+                <p class="text-[11px] text-[var(--text-tertiary)] mt-1 flex items-center gap-1">
+                    <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
+                    Supported: images, PDF, DOC/DOCX, TXT
+                </p>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="button" class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] px-6 py-2 rounded-sm text-xs font-semibold flex items-center gap-2 mt-6">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                Send Email
+            </button>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const selectAllCheckbox = document.getElementById('selectAll');
+            const emailSelectionContainer = document.getElementById('emailSelectionContainer');
+
+            selectAllCheckbox.addEventListener('change', function() {
+                if (this.checked) {
+                    emailSelectionContainer.style.display = 'none';
+                } else {
+                    emailSelectionContainer.style.display = 'block';
+                }
+            });
+
+            // Basic editor commands (just for UI interaction)
+            const toolbarButtons = document.querySelectorAll('.space-y-1\\.5 button[title]');
+            toolbarButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const command = getCommandFromTitle(this.getAttribute('title'));
+                    if (command) {
+                        document.execCommand(command, false, null);
+                    }
+                });
+            });
+
+            function getCommandFromTitle(title) {
+                switch(title) {
+                    case 'Bold': return 'bold';
+                    case 'Italic': return 'italic';
+                    case 'Underline': return 'underline';
+                    case 'Align Left': return 'justifyLeft';
+                    case 'Align Center': return 'justifyCenter';
+                    case 'Align Right': return 'justifyRight';
+                    case 'Bulleted List': return 'insertUnorderedList';
+                    case 'Numbered List': return 'insertOrderedList';
+                    default: return null;
+                }
+            }
+        });
+    </script>
+}

@@ -1,60 +1,54 @@
 @{
     ViewData["Title"] = "Exchanger List";
 }
+
 <div class="p-2 md:p-4">
-    <div class="page-scroll-content px-8 py-6">
-        
-            <div class="flex justify-between items-center">
-                <!-- Header & Action Bar -->
-        <div class="mb-2">
-            <div>
-                <h1 class="text-2xl font-bold">Exchanger List</h1>
-                <p class="text-sm text-[var(--text-secondary)] mt-1">View and manage all exchangers</p>
-            </div>
-            <!-- Action items will go here -->
+    <!-- Header -->
+    <div class="mb-4 flex justify-between items-center">
+        <div>
+            <h1 class="text-2xl font-bold text-[var(--text-primary)]">Exchanger List</h1>
+            <p class="text-sm text-[var(--text-secondary)] mt-1">View and manage all exchangers</p>
         </div>
-                <button class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] flex items-center gap-2 px-4 py-2 rounded">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></svg>
-                    Add Exchanger
-                </button>
-            </div>
+        <button class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] px-4 py-2 rounded-sm text-xs font-semibold flex items-center transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></svg>
+            Add Exchanger
+        </button>
+    </div>
 
-            <div class="flex-1 overflow-hidden flex flex-col">
-                <!-- Search -->
-                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6">
-                    <div class="text-[var(--text-secondary)]">Search:</div>
-                    <div class="relative w-full sm:w-80">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[var(--text-muted)] absolute left-3 top-1/2 -translate-y-1/2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-                        <input type="text" placeholder="Search by name or email..." class="pl-10 bg-[var(--bg-tertiary)] border border-[var(--border-primary)] text-[var(--text-primary)] placeholder-[var(--text-muted)] w-full py-2 px-3 rounded outline-none" />
-                    </div>
-                </div>
-
-                <!-- Table -->
-                <div class="w-full overflow-x-auto">
-                    <table class="w-full min-w-[1300px] border-collapse">
-                        <thead class="bg-[var(--bg-tertiary)]">
-                        <tr>
-                                <th class="py-4 px-4 text-left text-[var(--text-secondary)] uppercase font-semibold">ID</th>
-                                <th class="py-4 px-4 text-left text-[var(--text-secondary)] uppercase font-semibold">Name</th>
-                                <th class="py-4 px-4 text-left text-[var(--text-secondary)] uppercase font-semibold">Email</th>
-                                <th class="py-4 px-4 text-left text-[var(--text-secondary)] uppercase font-semibold">Mobile</th>
-                                <th class="py-4 px-4 text-left text-[var(--text-secondary)] uppercase font-semibold">Total Deposit</th>
-                                <th class="py-4 px-4 text-left text-[var(--text-secondary)] uppercase font-semibold">Total Withdraw</th>
-                                <th class="py-4 px-4 text-left text-[var(--text-secondary)] uppercase font-semibold">Remaining</th>
-                                <th class="py-4 px-4 text-left text-[var(--text-secondary)] uppercase font-semibold w-[250px]">Status</th>
-                                <th class="py-4 px-4 text-left text-[var(--text-secondary)] uppercase font-semibold">Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td colspan="9" class="py-8 text-center text-[var(--text-secondary)]">
-                                    No exchangers found
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+    <!-- Main Card -->
+    <div class="bg-white border border-[var(--border-secondary)] rounded-sm shadow-none">
+        <!-- Search Row -->
+        <div class="px-2 py-2 border-b border-[var(--border-secondary)] flex flex-wrap justify-between items-center gap-4">
+            <div class="relative w-full max-w-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 text-[var(--text-tertiary)] absolute left-2.5 top-1/2 -translate-y-1/2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                <input type="text" placeholder="Search by name or email..." class="pl-8 bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] focus:border-[var(--button-primary-bg)] focus:ring-1 focus:ring-[var(--button-primary-bg)] rounded-sm py-1.5 px-3 text-xs w-full outline-none" />
             </div>
+        </div>
+
+        <!-- Table -->
+        <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+                <thead>
+                    <tr class="border-b border-[var(--border-secondary)] text-left bg-[var(--bg-tertiary)]">
+                        <th class="py-1.5 px-2 text-[11px] border-r border-[var(--border-secondary)] whitespace-nowrap text-[var(--text-secondary)] font-semibold uppercase">ID</th>
+                        <th class="py-1.5 px-2 text-[11px] border-r border-[var(--border-secondary)] whitespace-nowrap text-[var(--text-secondary)] font-semibold uppercase">Name</th>
+                        <th class="py-1.5 px-2 text-[11px] border-r border-[var(--border-secondary)] whitespace-nowrap text-[var(--text-secondary)] font-semibold uppercase">Email</th>
+                        <th class="py-1.5 px-2 text-[11px] border-r border-[var(--border-secondary)] whitespace-nowrap text-[var(--text-secondary)] font-semibold uppercase">Mobile</th>
+                        <th class="py-1.5 px-2 text-[11px] border-r border-[var(--border-secondary)] whitespace-nowrap text-[var(--text-secondary)] font-semibold uppercase">Total Deposit</th>
+                        <th class="py-1.5 px-2 text-[11px] border-r border-[var(--border-secondary)] whitespace-nowrap text-[var(--text-secondary)] font-semibold uppercase">Total Withdraw</th>
+                        <th class="py-1.5 px-2 text-[11px] border-r border-[var(--border-secondary)] whitespace-nowrap text-[var(--text-secondary)] font-semibold uppercase">Remaining</th>
+                        <th class="py-1.5 px-2 text-[11px] border-r border-[var(--border-secondary)] whitespace-nowrap text-[var(--text-secondary)] font-semibold uppercase">Status</th>
+                        <th class="py-1.5 px-2 text-[11px] text-right whitespace-nowrap text-[var(--text-secondary)] font-semibold uppercase">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="9" class="py-6 text-center text-xs text-[var(--text-secondary)]">
+                            No exchangers found
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>

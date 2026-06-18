@@ -1,59 +1,65 @@
 @{
     ViewData["Title"] = "Update Group";
 }
-<div class="p-6 md:p-8">
-        <div class="w-full">
-            <div class="w-full bg-white border border-[var(--border-secondary)] rounded-sm shadow-md p-6 md:p-8 space-y-4">
-                <h2 class="text-xl font-semibold text-[var(--text-primary)]">Update Group</h2>
 
-                <!-- Search group by name -->
-                <div class="space-y-2">
-                    <label class="text-sm font-medium text-[var(--text-primary)]">
-                        Search Group by Name
-                    </label>
-                    <input type="text" placeholder="Start typing group name..." class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] rounded-lg py-2 px-3 outline-none focus:border-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)]" />
-                </div>
-
-                <form class="grid grid-cols-1 lg:grid-cols-2 gap-4 relative">
-                    <div class="space-y-2">
-                        <label class="text-sm font-medium text-[var(--text-primary)]">
-                            Group Name <span class="text-red-400">*</span>
-                        </label>
-                        <input type="text" placeholder="Enter group name" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] rounded-lg py-2 px-3 outline-none focus:border-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)]" />
-                    </div>
-
-                    <div class="space-y-2">
-                        <label class="text-sm font-medium text-[var(--text-primary)]">
-                            Group Code <span class="text-red-400">*</span>
-                        </label>
-                        <input type="text" placeholder="Unique Crib group code" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] rounded-lg py-2 px-3 outline-none focus:border-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)]" />
-                    </div>
-
-                    <div class="space-y-2">
-                        <label class="text-sm font-medium text-[var(--text-primary)]">
-                            Leverage <span class="text-red-400">*</span>
-                        </label>
-                        <input type="text" placeholder="e.g., 1:100" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] rounded-lg py-2 px-3 outline-none focus:border-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)]" />
-                    </div>
-
-                    <div class="space-y-2">
-                        <label class="text-sm font-medium text-[var(--text-primary)]">
-                            Commission <span class="text-red-400">*</span>
-                        </label>
-                        <input type="text" placeholder="Commission per lot" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] rounded-lg py-2 px-3 outline-none focus:border-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)]" />
-                    </div>
-
-                    <div class="space-y-2">
-                        <label class="text-sm font-medium text-[var(--text-primary)]">
-                            Description
-                        </label>
-                        <input type="text" placeholder="Optional description" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] rounded-lg py-2 px-3 outline-none focus:border-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)]" />
-                    </div>
-
-                    <button type="button" class="w-full py-2 rounded-xl font-semibold bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] hover:text-[var(--button-primary-hover-text)]">
-                        Update Group
-                    </button>
-                </form>
-            </div>
+<div class="p-2 md:p-4">
+    <div class="mb-4 flex justify-between items-center">
+        <div>
+            <h1 class="text-2xl font-bold text-[var(--text-primary)]">Update Group</h1>
+            <p class="text-sm text-[var(--text-secondary)] mt-1">Modify an existing trading group</p>
         </div>
     </div>
+
+    <div class="bg-white border border-[var(--border-secondary)] rounded-sm shadow-none p-4 md:p-6 max-w-2xl">
+        <form class="space-y-4">
+            <!-- Search group by name -->
+            <div class="space-y-1.5 pb-4 border-b border-[var(--border-secondary)]">
+                <label class="text-xs font-semibold text-[var(--text-primary)]">
+                    Search Group by Name
+                </label>
+                <input type="text" placeholder="Start typing group name..." class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] rounded-sm py-1.5 px-3 text-xs focus:outline-none focus:border-[var(--button-primary-bg)] focus:ring-1 focus:ring-[var(--button-primary-bg)]" />
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="space-y-1.5">
+                    <label class="text-xs font-semibold text-[var(--text-primary)]">
+                        Group Name <span class="text-red-500">*</span>
+                    </label>
+                    <input type="text" placeholder="Enter group name" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] rounded-sm py-1.5 px-3 text-xs focus:outline-none focus:border-[var(--button-primary-bg)] focus:ring-1 focus:ring-[var(--button-primary-bg)]" />
+                </div>
+
+                <div class="space-y-1.5">
+                    <label class="text-xs font-semibold text-[var(--text-primary)]">
+                        Group Code <span class="text-red-500">*</span>
+                    </label>
+                    <input type="text" placeholder="Unique Iman group code" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] rounded-sm py-1.5 px-3 text-xs focus:outline-none focus:border-[var(--button-primary-bg)] focus:ring-1 focus:ring-[var(--button-primary-bg)]" />
+                </div>
+
+                <div class="space-y-1.5">
+                    <label class="text-xs font-semibold text-[var(--text-primary)]">
+                        Leverage <span class="text-red-500">*</span>
+                    </label>
+                    <input type="text" placeholder="e.g., 1:100" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] rounded-sm py-1.5 px-3 text-xs focus:outline-none focus:border-[var(--button-primary-bg)] focus:ring-1 focus:ring-[var(--button-primary-bg)]" />
+                </div>
+
+                <div class="space-y-1.5">
+                    <label class="text-xs font-semibold text-[var(--text-primary)]">
+                        Commission <span class="text-red-500">*</span>
+                    </label>
+                    <input type="text" placeholder="Commission per lot" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] rounded-sm py-1.5 px-3 text-xs focus:outline-none focus:border-[var(--button-primary-bg)] focus:ring-1 focus:ring-[var(--button-primary-bg)]" />
+                </div>
+
+                <div class="space-y-1.5 md:col-span-2">
+                    <label class="text-xs font-semibold text-[var(--text-primary)]">
+                        Description
+                    </label>
+                    <input type="text" placeholder="Optional description" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] rounded-sm py-1.5 px-3 text-xs focus:outline-none focus:border-[var(--button-primary-bg)] focus:ring-1 focus:ring-[var(--button-primary-bg)]" />
+                </div>
+            </div>
+
+            <button type="button" class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] px-4 py-2 rounded-sm text-xs font-semibold mt-4">
+                Update Group
+            </button>
+        </form>
+    </div>
+</div>

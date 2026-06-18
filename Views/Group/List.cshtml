@@ -1,50 +1,50 @@
 @{
     ViewData["Title"] = "Groups List";
 }
+
 <div class="p-2 md:p-4">
-    
-        <!-- Page Header -->
-    <div class="mb-2">
-        <h1 class="text-2xl font-bold text-[var(--text-primary)]">Groups</h1>
-        <p class="text-sm text-[var(--text-secondary)] mt-1">List of all configured trading groups</p>
+    <!-- Page Header -->
+    <div class="mb-4 flex justify-between items-center">
+        <div>
+            <h1 class="text-2xl font-bold text-[var(--text-primary)]">Groups</h1>
+            <p class="text-sm text-[var(--text-secondary)] mt-1">List of all configured trading groups</p>
+        </div>
     </div>
 
     <!-- Main Card -->
-    <div class="bg-[var(--bg-primary)] border border-[var(--border-secondary)] rounded-sm shadow-none">
-            <!-- Search Row -->
-        <div class="px-3 py-2 border-b border-[var(--border-secondary)] flex flex-wrap justify-between items-center gap-4">
-                <div class="text-[var(--text-secondary)]">Search:</div>
-                <div class="relative w-80">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[var(--text-tertiary)] absolute left-3 top-1/2 -translate-y-1/2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-                    <input type="text" placeholder="Search by name, code or manager group..." class="pl-10 bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] focus:border-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)] rounded-xl py-2 px-3 w-full outline-none" />
-                </div>
+    <div class="bg-white border border-[var(--border-secondary)] rounded-sm shadow-none">
+        <!-- Search Row -->
+        <div class="px-2 py-2 border-b border-[var(--border-secondary)] flex flex-wrap justify-between items-center gap-4">
+            <div class="relative w-full max-w-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 text-[var(--text-tertiary)] absolute left-2.5 top-1/2 -translate-y-1/2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                <input type="text" placeholder="Search by name, code or manager group..." class="pl-8 bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] focus:border-[var(--button-primary-bg)] focus:ring-1 focus:ring-[var(--button-primary-bg)] rounded-sm py-1.5 px-3 text-xs w-full outline-none" />
             </div>
+        </div>
 
-            <!-- Table -->
-            <div class="overflow-x-auto">
-                <table class="w-full">
-                    <thead class="bg-[var(--bg-tertiary)]">
-                        <tr>
-                            <th class="text-left py-4 px-4 text-[var(--text-secondary)] uppercase font-semibold">Name</th>
-                            <th class="text-left py-4 px-4 text-[var(--text-secondary)] uppercase font-semibold">Code</th>
-                            <th class="text-left py-4 px-4 text-[var(--text-secondary)] uppercase font-semibold">Manager Group</th>
-                            <th class="text-left py-4 px-4 text-[var(--text-secondary)] uppercase font-semibold">Minimum Deposit</th>
-                            <th class="text-left py-4 px-4 text-[var(--text-secondary)] uppercase font-semibold">Commission</th>
-                            <th class="text-left py-4 px-4 text-[var(--text-secondary)] uppercase font-semibold">Spread</th>
-                            <th class="text-left py-4 px-4 text-[var(--text-secondary)] uppercase font-semibold">Maximum Leverage</th>
-                            <th class="text-left py-4 px-4 text-[var(--text-secondary)] uppercase font-semibold">Status</th>
-                            <th class="text-left py-4 px-4 text-[var(--text-secondary)] uppercase font-semibold">Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td colspan="9" class="py-8 text-center text-[var(--text-secondary)]">
-                                No groups found
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+        <!-- Table -->
+        <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+                <thead>
+                    <tr class="border-b border-[var(--border-secondary)] text-left bg-[var(--bg-tertiary)]">
+                        <th class="py-1.5 px-2 text-[11px] border-r border-[var(--border-secondary)] whitespace-nowrap text-[var(--text-secondary)] font-semibold uppercase">Name</th>
+                        <th class="py-1.5 px-2 text-[11px] border-r border-[var(--border-secondary)] whitespace-nowrap text-[var(--text-secondary)] font-semibold uppercase">Code</th>
+                        <th class="py-1.5 px-2 text-[11px] border-r border-[var(--border-secondary)] whitespace-nowrap text-[var(--text-secondary)] font-semibold uppercase">Manager Group</th>
+                        <th class="py-1.5 px-2 text-[11px] border-r border-[var(--border-secondary)] whitespace-nowrap text-[var(--text-secondary)] font-semibold uppercase">Minimum Deposit</th>
+                        <th class="py-1.5 px-2 text-[11px] border-r border-[var(--border-secondary)] whitespace-nowrap text-[var(--text-secondary)] font-semibold uppercase">Commission</th>
+                        <th class="py-1.5 px-2 text-[11px] border-r border-[var(--border-secondary)] whitespace-nowrap text-[var(--text-secondary)] font-semibold uppercase">Spread</th>
+                        <th class="py-1.5 px-2 text-[11px] border-r border-[var(--border-secondary)] whitespace-nowrap text-[var(--text-secondary)] font-semibold uppercase">Maximum Leverage</th>
+                        <th class="py-1.5 px-2 text-[11px] border-r border-[var(--border-secondary)] whitespace-nowrap text-[var(--text-secondary)] font-semibold uppercase">Status</th>
+                        <th class="py-1.5 px-2 text-[11px] text-right whitespace-nowrap text-[var(--text-secondary)] font-semibold uppercase">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="9" class="py-6 text-center text-xs text-[var(--text-secondary)]">
+                            No groups found
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>

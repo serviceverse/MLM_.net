@@ -31,5 +31,10 @@ namespace MLM.Controllers
             ViewBag.ActiveBonuses = new List<dynamic>();
             return View();
         }
+
+        public IActionResult List()
+        {
+            return View();
+        }
     }
 }

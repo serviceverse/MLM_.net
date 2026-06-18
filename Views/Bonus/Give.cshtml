@@ -1,56 +1,70 @@
 @{
     ViewData["Title"] = "Give Bonus";
 }
-
-<div class="p-4 md:p-8 flex items-start justify-center">
-    <div class="w-full max-w-xl bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-sm shadow-none p-4 md:p-6">
-        <h2 class="text-xl font-semibold text-[var(--text-primary)] mb-6">Give Bonus</h2>
-        
-        <form class="space-y-4">
-            <!-- Search User -->
-            <div class="space-y-2">
-                <label class="text-sm font-medium text-[var(--text-primary)] mb-1">
-                    Client <span class="text-red-500">*</span>
-                </label>
-                <div class="relative">
-                    <input type="text" placeholder="Search by name or email" class="w-full pl-4 bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-sm py-2 px-3 text-sm focus:outline-none focus:border-[var(--button-primary-bg)] focus:ring-1 focus:ring-[var(--button-primary-bg)]" />
-                </div>
+<div class="p-6 md:p-8">
+    <div class="max-w-6xl space-y-4">
+        <!-- Header -->
+        <div class="mb-6">
+            <div>
+                <h1 class="text-2xl font-bold">Give Bonus</h1>
+                <p class="text-sm text-[var(--text-secondary)] mt-1">Assign a new bonus to a client's account</p>
             </div>
+        </div>
 
-            <!-- Crib Account Select -->
-            <div class="space-y-2">
-                <label class="text-sm font-medium text-[var(--text-primary)] mb-1">
-                    Crib Account <span class="text-red-500">*</span>
-                </label>
-                <div class="relative">
-                    <select class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-sm py-2 px-3 text-sm focus:outline-none focus:border-[var(--button-primary-bg)] focus:ring-1 focus:ring-[var(--button-primary-bg)] appearance-none">
-                        <option value="">Select Crib Account</option>
-                        <!-- Options would be populated from ViewBag.Accounts -->
-                    </select>
-                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-[var(--text-secondary)]">
-                        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        <!-- Bonus Form -->
+        <div class="bg-[var(--bg-primary)] border border-[var(--border-secondary)] rounded-xl shadow-sm p-6 md:p-8">
+            <form class="grid grid-cols-1 lg:grid-cols-2 gap-4 relative">
+                <!-- Search User -->
+                <div class="space-y-2">
+                    <label class="font-medium block">Client <span class="text-red-400">*</span></label>
+                    <div class="relative">
+                        <input type="text" placeholder="Search by name or email" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] focus:border-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)] rounded-sm py-2 px-3 text-sm outline-none" required />
                     </div>
                 </div>
-            </div>
 
-            <!-- Bonus Amount -->
-            <div class="space-y-2">
-                <label class="text-sm font-medium text-[var(--text-primary)] mb-1">
-                    Bonus Amount <span class="text-red-500">*</span>
-                </label>
-                <input type="number" name="amount" placeholder="e.g. 100" class="w-full pl-4 bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] focus:outline-none focus:border-[var(--button-primary-bg)] focus:ring-1 focus:ring-[var(--button-primary-bg)] rounded-sm py-2 px-3 text-sm" />
-            </div>
+                <!-- Iman Account Select -->
+                <div class="space-y-2">
+                    <label class="font-medium block">Iman Account <span class="text-red-400">*</span></label>
+                    <div class="relative">
+                        <select class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] focus:border-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)] rounded-sm py-2 px-3 text-sm outline-none" required>
+                            <option value="">Select Iman Account</option>
+                            <!-- Options would be populated from ViewBag.Accounts -->
+                        </select>
+                    </div>
+                </div>
 
-            <!-- Reason -->
-            <div class="space-y-2">
-                <label class="text-sm font-medium text-[var(--text-primary)] mb-1">Reason</label>
-                <input type="text" name="reason" placeholder="Optional reason" class="w-full pl-4 bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] focus:outline-none focus:border-[var(--button-primary-bg)] focus:ring-1 focus:ring-[var(--button-primary-bg)] rounded-sm py-2 px-3 text-sm" />
-            </div>
+                <!-- Bonus Amount -->
+                <div class="space-y-2">
+                    <label class="font-medium block">Bonus Amount <span class="text-red-400">*</span></label>
+                    <div class="relative">
+                        <span class="absolute left-4 top-1/2 transform -translate-y-1/2 text-[var(--text-tertiary)]">$</span>
+                        <input type="number" step="0.01" min="0" name="amount" placeholder="e.g. 100" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] focus:border-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)] rounded-sm py-2 px-3 text-sm pl-8 outline-none" required />
+                    </div>
+                </div>
 
-            <!-- Submit -->
-            <button type="submit" class="w-full bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] hover:text-[var(--button-primary-hover-text)] px-6 py-2 rounded-sm text-sm font-semibold transition-colors mt-4">
-                Give Bonus
-            </button>
-        </form>
+                <!-- Reason -->
+                <div class="space-y-2">
+                    <label class="font-medium block">Reason</label>
+                    <input type="text" name="reason" placeholder="Optional reason" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] focus:border-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)] rounded-sm py-2 px-3 text-sm outline-none" />
+                </div>
+
+                <!-- Submit Button -->
+                <div class="col-span-full mt-4 flex justify-start pt-4">
+                    <button type="submit" class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] px-6 py-2 rounded-sm text-sm font-semibold">
+                        Give Bonus
+                    </button>
+                </div>
+            </form>
+        </div>
+        
+        <!-- Bonus Info -->
+        <div class="bg-[var(--bg-secondary)]/30 border border-[var(--border-primary)] rounded-2xl p-6">
+            <h3 class="text-lg font-semibold mb-3">Bonus Information</h3>
+            <ul class="space-y-2 text-[var(--text-secondary)] text-sm">
+                <li>• Bonuses applied to Iman accounts will be available immediately</li>
+                <li>• Ensure you select the correct client and account before proceeding</li>
+                <li>• You can track issued bonuses from the Bonus List page</li>
+            </ul>
+        </div>
     </div>
 </div>

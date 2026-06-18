@@ -6,48 +6,155 @@
 
 <div class="p-2 md:p-4">
     
-        <div class="flex items-center justify-between">
+        <div class="flex items-center justify-between mb-4">
             <div>
                 <h1 class="text-2xl font-bold text-[var(--text-primary)]">Manage Roles</h1>
-                <p class="text-[var(--text-secondary)]">Create and manage user roles in the system</p>
+                <p class="text-sm text-[var(--text-secondary)] mt-1">Create and manage user roles in the system</p>
             </div>
-            <a asp-action="Create" class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] font-semibold px-6 py-2 rounded-xl transition-colors flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            <a asp-action="Create" class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] font-semibold px-4 py-2 rounded-sm text-sm transition-colors flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
                 Create New Role
             </a>
         </div>
 
-        <div class="bg-white border border-[var(--border-secondary)] rounded-sm p-8 overflow-auto">
-            <table class="w-full">
-                <thead>
-                    <tr class="border-b border-[var(--border-primary)] text-left">
-                        <th class="py-4 px-4 text-[var(--text-secondary)] uppercase text-sm font-semibold">@Html.DisplayNameFor(model => model.Name)</th>
-                        <th class="py-4 px-4 text-[var(--text-secondary)] uppercase text-sm font-semibold text-right">Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var item in Model)
-                    {
-                        <tr class="border-b border-[var(--border-secondary)] hover:bg-[var(--bg-tertiary)]/50 transition-colors">
-                            <td class="py-4 px-4 text-[var(--text-primary)] font-medium">
-                                @Html.DisplayFor(modelItem => item.Name)
-                            </td>
-                            <td class="py-4 px-4 text-right">
-                                <div class="flex items-center justify-end space-x-3">
-                                    <a asp-controller="Settings" asp-action="MenuPermission" asp-route-roleId="@item.Id" class="text-blue-500 hover:text-blue-400 font-medium text-sm flex items-center">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                                        Permissions
-                                    </a>
-                                    <span class="text-[var(--text-tertiary)]">|</span>
-                                    <a asp-action="Edit" asp-route-id="@item.Id" class="text-[var(--button-primary-bg)] hover:text-[var(--button-primary-hover-bg)] font-medium text-sm">Edit</a>
-                                    <span class="text-[var(--text-tertiary)]">|</span>
-                                    <a asp-action="Delete" asp-route-id="@item.Id" class="text-red-500 hover:text-red-400 font-medium text-sm">Delete</a>
-                                </div>
-                            </td>
+        <div class="bg-white border border-[var(--border-secondary)] rounded-sm shadow-none">
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm">
+                    <thead>
+                        <tr class="border-b border-[var(--border-secondary)] text-left hover:bg-[var(--bg-tertiary)] transition-none">
+                            <th class="py-2 px-4 text-[var(--text-secondary)] uppercase text-xs font-semibold border-r border-[var(--border-secondary)]">@Html.DisplayNameFor(model => model.Name)</th>
+                            <th class="py-2 px-4 text-[var(--text-secondary)] uppercase text-xs font-semibold text-right">Actions</th>
                         </tr>
-                    }
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr class="border-b border-[var(--border-secondary)] hover:bg-[var(--bg-tertiary)] transition-none group">
+                                <td class="py-2.5 px-4 text-[var(--text-primary)] font-medium border-r border-[var(--border-secondary)] text-xs">
+                                    @Html.DisplayFor(modelItem => item.Name)
+                                </td>
+                                <td class="py-2.5 px-4 text-right">
+                                    <div class="flex items-center justify-end space-x-3">
+                                        <button type="button" onclick="loadPermissions(@item.Id)" class="text-blue-600 hover:text-blue-500 font-semibold text-xs flex items-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                                            Permissions
+                                        </button>
+                                        <span class="text-[var(--text-tertiary)]">|</span>
+                                        <a asp-action="Edit" asp-route-id="@item.Id" class="text-[var(--button-primary-bg)] hover:text-[var(--button-primary-hover-bg)] font-semibold text-xs">Edit</a>
+                                        <span class="text-[var(--text-tertiary)]">|</span>
+                                        <a asp-action="Delete" asp-route-id="@item.Id" class="text-red-500 hover:text-red-600 font-semibold text-xs">Delete</a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr id="permissions-row-@item.Id" class="hidden">
+                                <td colspan="2" class="p-0 border-b border-[var(--border-secondary)] bg-[var(--bg-tertiary)]/30">
+                                    <div id="permissions-container-@item.Id" class="animate-in slide-in-from-top-2 fade-in duration-200">
+                                        <!-- Permissions content will be loaded here -->
+                                        <div class="p-8 text-center text-[var(--text-secondary)]">Loading...</div>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
         </div>
-    </div>
 </div>
+
+@section Scripts {
+    <script>
+        async function loadPermissions(roleId) {
+            const row = document.getElementById('permissions-row-' + roleId);
+            const container = document.getElementById('permissions-container-' + roleId);
+            
+            // Toggle visibility if already loaded
+            if (!row.classList.contains('hidden')) {
+                row.classList.add('hidden');
+                return;
+            }
+
+            // Hide all other permission rows
+            document.querySelectorAll('[id^="permissions-row-"]').forEach(el => {
+                if(el.id !== 'permissions-row-' + roleId) el.classList.add('hidden');
+            });
+
+            // Show the row
+            row.classList.remove('hidden');
+            container.innerHTML = '<div class="p-8 text-center text-[var(--text-secondary)]"><div class="spinner-border spinner-border-sm text-primary" role="status"></div> Loading permissions...</div>';
+
+            try {
+                const response = await fetch('/Role/GetRolePermissions?roleId=' + roleId);
+                if (response.ok) {
+                    const html = await response.text();
+                    container.innerHTML = html;
+                } else {
+                    container.innerHTML = '<div class="p-4 text-center text-red-500">Failed to load permissions.</div>';
+                }
+            } catch (err) {
+                console.error(err);
+                container.innerHTML = '<div class="p-4 text-center text-red-500">Error loading permissions.</div>';
+            }
+        }
+
+        function closePermissionsRow(roleId) {
+            const row = document.getElementById('permissions-row-' + roleId);
+            if (row) row.classList.add('hidden');
+        }
+
+        function toggleActions(roleId, menuId, isChecked) {
+            const checkboxes = document.querySelectorAll('#permissions-container-' + roleId + ' input[type="checkbox"][data-menu-id="' + menuId + '"]');
+            checkboxes.forEach(function(cb) {
+                cb.disabled = !isChecked;
+                if (!isChecked) {
+                    cb.checked = false;
+                }
+            });
+        }
+
+        async function savePermissions(event, roleId) {
+            event.preventDefault();
+            const btn = document.getElementById('saveBtn_' + roleId);
+            const originalText = btn.innerHTML;
+            btn.innerHTML = 'Saving...';
+            btn.disabled = true;
+
+            const form = event.target;
+            const menuInputs = form.querySelectorAll('input[name="menuIds"]:checked');
+            const actionInputs = form.querySelectorAll('input[name="actionIds"]:checked');
+            
+            const menuIds = Array.from(menuInputs).map(cb => parseInt(cb.value));
+            const actionIds = Array.from(actionInputs).map(cb => parseInt(cb.value));
+
+            try {
+                const response = await fetch('/Role/SaveRolePermissions?roleId=' + roleId, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'RequestVerificationToken': document.querySelector('input[name="__RequestVerificationToken"]')?.value || ''
+                    },
+                    body: JSON.stringify({ menuIds, actionIds })
+                });
+
+                if (response.ok) {
+                    const result = await response.json();
+                    if (result.success) {
+                        // Show success state
+                        btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-1.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Saved!';
+                        btn.classList.add('bg-green-500', 'hover:bg-green-600');
+                        btn.classList.remove('bg-[var(--button-primary-bg)]', 'hover:bg-[var(--button-primary-hover-bg)]');
+                        setTimeout(() => closePermissionsRow(roleId), 1000);
+                    }
+                } else {
+                    alert('Failed to save permissions');
+                    btn.innerHTML = originalText;
+                    btn.disabled = false;
+                }
+            } catch (err) {
+                console.error(err);
+                alert('Error saving permissions');
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+            }
+        }
+    </script>
+}

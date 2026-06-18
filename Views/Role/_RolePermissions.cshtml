@@ -1,0 +1,82 @@
+@{
+    var currentRoleId = ViewBag.CurrentRoleId as int?;
+    var groups = ViewBag.NavigationGroups as List<MLM.Models.NavigationGroup>;
+    var items = ViewBag.NavigationItems as List<MLM.Models.NavigationItem>;
+    var actions = ViewBag.NavigationActions as List<MLM.Models.NavigationAction>;
+    var permittedMenus = ViewBag.PermittedMenus as List<int> ?? new List<int>();
+    var permittedActions = ViewBag.PermittedActions as List<int> ?? new List<int>();
+}
+
+<div class="p-4 bg-[var(--bg-secondary)] border-x border-b border-[var(--border-secondary)] rounded-b-sm shadow-inner relative">
+    <div class="mb-4 pb-2 border-b border-[var(--border-secondary)] flex justify-between items-center">
+        <h4 class="text-lg font-bold text-[var(--text-primary)]">Manage Permissions</h4>
+        <button type="button" onclick="closePermissionsRow(@currentRoleId)" class="text-[var(--text-secondary)] hover:text-[var(--text-primary)] focus:outline-none">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+    </div>
+
+    <form id="permissionsForm_@currentRoleId" onsubmit="savePermissions(event, @currentRoleId)">
+        <input type="hidden" name="roleId" value="@currentRoleId" />
+
+        <div class="space-y-6 max-h-[60vh] overflow-y-auto pr-2 custom-scroll">
+            @if (groups != null)
+            {
+                @foreach (var group in groups)
+                {
+                    var groupItems = items?.Where(i => i.GroupId == group.Id).OrderBy(i => i.Sequence).ToList();
+                    if (groupItems != null && groupItems.Any())
+                    {
+                        <div class="space-y-3">
+                            <h5 class="text-sm font-bold text-[var(--text-primary)] uppercase tracking-wider text-[var(--text-tertiary)]">@group.Name</h5>
+                            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3">
+                                @foreach (var item in groupItems)
+                                {
+                                    var isMenuChecked = permittedMenus.Contains(item.Id);
+                                    var itemActions = actions?.Where(a => a.ItemId == item.Id).ToList() ?? new List<MLM.Models.NavigationAction>();
+
+                                    <div class="bg-white border border-[var(--border-secondary)] rounded-md p-3 space-y-2">
+                                        <div class="flex items-center space-x-2">
+                                            <input type="checkbox" name="menuIds" value="@item.Id" id="menu_@(currentRoleId)_@item.Id" 
+                                                   @(isMenuChecked ? "checked" : "")
+                                                   onchange="toggleActions(@currentRoleId, @item.Id, this.checked)"
+                                                   class="w-4 h-4 rounded border-[var(--border-secondary)] text-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)] cursor-pointer" />
+                                            <label for="menu_@(currentRoleId)_@item.Id" class="font-medium text-[var(--text-primary)] text-sm cursor-pointer select-none">@item.Name</label>
+                                        </div>
+
+                                        @if(itemActions.Any())
+                                        {
+                                            <div class="pl-6 space-y-1 pt-1 border-t border-[var(--border-secondary)]/50 mt-1">
+                                                @foreach (var action in itemActions)
+                                                {
+                                                    var isActionChecked = permittedActions.Contains(action.Id);
+                                                    <div class="flex items-center space-x-2">
+                                                        <input type="checkbox" name="actionIds" value="@action.Id" id="action_@(currentRoleId)_@action.Id"
+                                                               data-menu-id="@item.Id"
+                                                               @(isActionChecked ? "checked" : "")
+                                                               @(isMenuChecked ? "" : "disabled")
+                                                               class="w-3.5 h-3.5 rounded border-[var(--border-secondary)] text-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)] cursor-pointer" />
+                                                        <label for="action_@(currentRoleId)_@action.Id" class="text-[var(--text-secondary)] text-xs cursor-pointer select-none">@action.Name</label>
+                                                    </div>
+                                                }
+                                            </div>
+                                        }
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    }
+                }
+            }
+        </div>
+
+        <div class="mt-6 flex justify-end gap-3 pt-4 border-t border-[var(--border-secondary)]">
+            <button type="button" onclick="closePermissionsRow(@currentRoleId)" class="px-4 py-1.5 text-sm font-medium text-[var(--text-secondary)] bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] rounded-sm hover:bg-[var(--bg-secondary)] focus:outline-none">
+                Cancel
+            </button>
+            <button type="submit" id="saveBtn_@currentRoleId" class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] font-semibold px-6 py-1.5 rounded-sm text-sm transition-colors flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-1.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+                Save Permissions
+            </button>
+        </div>
+    </form>
+</div>

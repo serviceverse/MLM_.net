@@ -97,24 +97,66 @@ namespace MLM.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        // RBAC Permission Management (Commented out to prevent build errors)
-        /*
-        [PermissionAuthorize("Roles", "Edit")]
-        public async Task<IActionResult> ManagePermissions(int id)
+        [PermissionAuthorize("Roles", "Get")]
+        [HttpGet]
+        public async Task<IActionResult> GetRolePermissions(int roleId)
         {
-            // The old view requires AppModules, which are deleted.
-            // We need a new view for Navigation Menu management.
-            return NotFound("Not implemented in the new Navigation model yet.");
+            ViewBag.CurrentRoleId = roleId;
+            ViewBag.NavigationGroups = await _context.NavigationGroups.OrderBy(g => g.Sequence).ToListAsync();
+            ViewBag.NavigationItems = await _context.NavigationItems.OrderBy(i => i.Sequence).ToListAsync();
+            ViewBag.NavigationActions = await _context.NavigationActions.ToListAsync();
+
+            ViewBag.PermittedMenus = await _context.NavigationMenuPermissions
+                .Where(p => p.RoleId == roleId)
+                .Select(p => p.MenuId)
+                .ToListAsync();
+
+            ViewBag.PermittedActions = await _context.NavigationActionPermissions
+                .Where(p => p.RoleId == roleId)
+                .Select(p => p.ActionId)
+                .ToListAsync();
+
+            return PartialView("_RolePermissions");
         }
 
         [PermissionAuthorize("Roles", "Edit")]
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> UpdatePermissions(int roleId, string[] permissions)
+        public async Task<IActionResult> SaveRolePermissions(int roleId, [FromBody] PermissionsDto permissions)
         {
-            return NotFound("Not implemented in the new Navigation model yet.");
+            var existingMenuPerms = _context.NavigationMenuPermissions.Where(p => p.RoleId == roleId);
+            _context.NavigationMenuPermissions.RemoveRange(existingMenuPerms);
+
+            var existingActionPerms = _context.NavigationActionPermissions.Where(p => p.RoleId == roleId);
+            _context.NavigationActionPermissions.RemoveRange(existingActionPerms);
+
+            if (permissions?.MenuIds != null)
+            {
+                foreach (var menuId in permissions.MenuIds)
+                {
+                    _context.NavigationMenuPermissions.Add(new NavigationMenuPermission
+                    {
+                        RoleId = roleId,
+                        MenuId = menuId
+                    });
+                }
+            }
+
+            if (permissions?.ActionIds != null)
+            {
+                foreach (var actionId in permissions.ActionIds)
+                {
+                    _context.NavigationActionPermissions.Add(new NavigationActionPermission
+                    {
+                        RoleId = roleId,
+                        ActionId = actionId
+                    });
+                }
+            }
+
+            await _context.SaveChangesAsync();
+            return Json(new { success = true });
         }
-        */
+
 
         private bool RoleExists(int id) => _context.Roles.Any(e => e.Id == id);
     }

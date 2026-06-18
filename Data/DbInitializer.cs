@@ -12,11 +12,11 @@ namespace MLM.Data
             // Check if Super Admin already initialized
             if (context.Organizations.Any(o => o.Code == "crm-admin"))
             {
-                Console.WriteLine("✅ Super Admin already initialized.");
+                Console.WriteLine("âœ… Super Admin already initialized.");
                 return;
             }
 
-            Console.WriteLine("🚀 Initializing Super Admin...");
+            Console.WriteLine("ðŸš€ Initializing Super Admin...");
 
             using var transaction = context.Database.BeginTransaction();
 
@@ -24,7 +24,7 @@ namespace MLM.Data
             {
                 var superAdminOrg = new Organization
                 {
-                    Name = "crib",
+                    Name = "iman",
                     Code = "crm-admin",
                     Email = "admin@crm.com"
                 };
@@ -109,7 +109,7 @@ namespace MLM.Data
                     new NavigationItem { Name = "Bank Details", Key = "bank-details", Route = "/Compliance/BankDetails", GroupId = complianceGroup.Id, Sequence = 2 },
                     new NavigationItem { Name = "Open Live Account", Key = "open-live-account", Route = "/Account/OpenLiveAccount", GroupId = myAccountGroup.Id, Sequence = 1 },
                     new NavigationItem { Name = "Account List", Key = "account-list", Route = "/Account/AccountList", GroupId = myAccountGroup.Id, Sequence = 2 },
-                    new NavigationItem { Name = "Change Crib Password", Key = "change-mt5-password", Route = "/Account/ChangePassword", GroupId = myAccountGroup.Id, Sequence = 3 },
+                    new NavigationItem { Name = "Change Iman Password", Key = "change-mt5-password", Route = "/Account/ChangePassword", GroupId = myAccountGroup.Id, Sequence = 3 },
                     new NavigationItem { Name = "Deposits", Key = "deposits", Route = "/Fund/Deposits", GroupId = myFundGroup.Id, Sequence = 1 },
                     new NavigationItem { Name = "Withdraw", Key = "withdraw", Route = "/Fund/Withdraw", GroupId = myFundGroup.Id, Sequence = 2 },
                     new NavigationItem { Name = "Internal Transfer", Key = "internal-transfer", Route = "/Fund/InternalTransfer", GroupId = myFundGroup.Id, Sequence = 3 },
@@ -129,8 +129,8 @@ namespace MLM.Data
                     new NavigationItem { Name = "Internal Transfer Report", Key = "internal-transfer-report", Route = "/Reports/InternalTransfer", GroupId = myReportsGroup.Id, Sequence = 4 },
                     new NavigationItem { Name = "Deal Report", Key = "deal-report", Route = "/Reports/Deal", GroupId = myReportsGroup.Id, Sequence = 1 },
                     new NavigationItem { Name = "Wallet History", Key = "wallet-history", Route = "/Wallet/History", GroupId = myWalletGroup.Id, Sequence = 1 },
-                    new NavigationItem { Name = "Crib To Wallet", Key = "mt5-to-wallet", Route = "/Wallet/Mt5ToWallet", GroupId = myWalletGroup.Id, Sequence = 2 },
-                    new NavigationItem { Name = "Wallet To Crib", Key = "wallet-to-mt5", Route = "/Wallet/WalletToMt5", GroupId = myWalletGroup.Id, Sequence = 3 },
+                    new NavigationItem { Name = "Iman To Wallet", Key = "mt5-to-wallet", Route = "/Wallet/Mt5ToWallet", GroupId = myWalletGroup.Id, Sequence = 2 },
+                    new NavigationItem { Name = "Wallet To Iman", Key = "wallet-to-mt5", Route = "/Wallet/WalletToMt5", GroupId = myWalletGroup.Id, Sequence = 3 },
                     new NavigationItem { Name = "My Tickets", Key = "my-tickets", Route = "/HelpDesk/MyTickets", GroupId = helpDeskGroup.Id, Sequence = 1 },
                     new NavigationItem { Name = "New Tickets", Key = "new-tickets", Route = "/HelpDesk/NewTicket", GroupId = helpDeskGroup.Id, Sequence = 2 },
                     new NavigationItem { Name = "Rewards", Key = "rewards", Route = "/Rewards", GroupId = rewardsGroup.Id, Sequence = 1 },
@@ -140,8 +140,8 @@ namespace MLM.Data
 
                     // admin part 
                     new NavigationItem { Name = "User List", Key = "user-list", Route = "/User/List", GroupId = userManagementGroup.Id, Sequence = 1 },
-                    new NavigationItem { Name = "Create Crib Account", Key = "create-mt5", Route = "/User/CreateMt5", GroupId = userManagementGroup.Id, Sequence = 2 },
-                    new NavigationItem { Name = "Crib User List", Key = "mt5-user-list", Route = "/User/Mt5List", GroupId = userManagementGroup.Id, Sequence = 3 },
+                    new NavigationItem { Name = "Create Iman Account", Key = "create-mt5", Route = "/User/CreateMt5", GroupId = userManagementGroup.Id, Sequence = 2 },
+                    new NavigationItem { Name = "Iman User List", Key = "mt5-user-list", Route = "/User/Mt5List", GroupId = userManagementGroup.Id, Sequence = 3 },
                     new NavigationItem { Name = "Follow Up List", Key = "follow-up", Route = "/User/FollowUp", GroupId = userManagementGroup.Id, Sequence = 4 },
                     new NavigationItem { Name = "User Documents List", Key = "approved-docs", Route = "/User/ApprovedDocs", GroupId = userManagementGroup.Id, Sequence = 6 },
                     new NavigationItem { Name = "Upload User Documents", Key = "upload-docs", Route = "/User/UploadDocs", GroupId = userManagementGroup.Id, Sequence = 7 },
@@ -150,10 +150,10 @@ namespace MLM.Data
                     new NavigationItem { Name = "User Password List", Key = "password-list", Route = "/User/Passwords", GroupId = userManagementGroup.Id, Sequence = 10 },
                     new NavigationItem { Name = "Change User Password", Key = "change-password", Route = "/User/ChangePassword", GroupId = userManagementGroup.Id, Sequence = 11 },
                     new NavigationItem { Name = "Add Existing Client", Key = "existing-client", Route = "/User/AddExisting", GroupId = userManagementGroup.Id, Sequence = 12 },
-                    new NavigationItem { Name = "Change Crib Password", Key = "change-mt5-password", Route = "/User/ChangeMt5Password", GroupId = userManagementGroup.Id, Sequence = 13 },
-                    new NavigationItem { Name = "Update Crib Leverage", Key = "update-mt5-leverage", Route = "/User/UpdateLeverage", GroupId = userManagementGroup.Id, Sequence = 14 },
+                    new NavigationItem { Name = "Change Iman Password", Key = "change-mt5-password", Route = "/User/ChangeMt5Password", GroupId = userManagementGroup.Id, Sequence = 13 },
+                    new NavigationItem { Name = "Update Iman Leverage", Key = "update-mt5-leverage", Route = "/User/UpdateLeverage", GroupId = userManagementGroup.Id, Sequence = 14 },
                     new NavigationItem { Name = "Resend Verification Mail", Key = "resend-mail", Route = "/User/ResendVerification", GroupId = userManagementGroup.Id, Sequence = 15 },
-                    new NavigationItem { Name = "Resend Crib Data Mail", Key = "resend-data-mail", Route = "/User/ResendDataMail", GroupId = userManagementGroup.Id, Sequence = 16 },
+                    new NavigationItem { Name = "Resend Iman Data Mail", Key = "resend-data-mail", Route = "/User/ResendDataMail", GroupId = userManagementGroup.Id, Sequence = 16 },
 
                     new NavigationItem { Name = "Give Bonus", Key = "give-bonus", Route = "/Bonus/Give", GroupId = bonusGroup.Id, Sequence = 1 },
                     new NavigationItem { Name = "Remove Bonus", Key = "remove-bonus", Route = "/Bonus/Remove", GroupId = bonusGroup.Id, Sequence = 2 },
@@ -166,7 +166,7 @@ namespace MLM.Data
 
                     new NavigationItem { Name = "Add Group", Key = "add-group", Route = "/Group/Add", GroupId = groupManagementGroup.Id, Sequence = 1 },
                     new NavigationItem { Name = "Group List", Key = "group-list", Route = "/Group/List", GroupId = groupManagementGroup.Id, Sequence = 2 },
-                    new NavigationItem { Name = "Update Crib Group", Key = "update-mt5-group", Route = "/Group/UpdateMt5", GroupId = groupManagementGroup.Id, Sequence = 3 },
+                    new NavigationItem { Name = "Update Iman Group", Key = "update-mt5-group", Route = "/Group/UpdateMt5", GroupId = groupManagementGroup.Id, Sequence = 3 },
 
                     new NavigationItem { Name = "Client Deposit", Key = "client-deposit", Route = "/Transaction/ClientDeposit", GroupId = transactionGroup.Id, Sequence = 1 },
                     new NavigationItem { Name = "Client Withdraw", Key = "client-withdraw", Route = "/Transaction/ClientWithdraw", GroupId = transactionGroup.Id, Sequence = 3 },
@@ -298,12 +298,12 @@ namespace MLM.Data
                 context.SaveChanges();
 
                 transaction.Commit();
-                Console.WriteLine("✅ Super Admin initialized successfully!");
+                Console.WriteLine("âœ… Super Admin initialized successfully!");
             }
             catch (Exception ex)
             {
                 transaction.Rollback();
-                Console.WriteLine($"❌ Error initializing Super Admin: {ex.Message}");
+                Console.WriteLine($"âŒ Error initializing Super Admin: {ex.Message}");
                 throw;
             }
         }
