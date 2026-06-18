@@ -2,7 +2,7 @@
     ViewData["Title"] = "IB Withdraw";
 }
 <div class="p-6 md:p-8">
-    <div class="max-w-6xl space-y-6">
+    <div class="max-w-6xl space-y-4">
         <!-- Header -->
         <div>
             <h1 class="text-2xl font-bold text-[var(--text-primary)]">IB Withdraw</h1>
@@ -19,14 +19,14 @@
 
     <!-- Main Card -->
     <div class="bg-[var(--bg-primary)] border border-[var(--border-secondary)] rounded-xl shadow-sm">
-            <form class="grid grid-cols-1 lg:grid-cols-2 gap-6 relative">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <form class="grid grid-cols-1 lg:grid-cols-2 gap-4 relative">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <!-- Withdraw Type -->
                     <div class="space-y-2">
                         <label class="text-[var(--text-tertiary)] font-medium block">
                             Withdraw Type <span class="text-red-400">*</span>
                         </label>
-                        <select class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] focus:border-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)] rounded-xl py-3 px-4 outline-none" required>
+                        <select class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] focus:border-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)] rounded-sm py-2 px-3 text-sm outline-none" required>
                             <option value="">Please Choose...</option>
                             <option value="bank">Bank</option>
                             <option value="mt5">Crib</option>
@@ -39,7 +39,7 @@
                         <label class="text-[var(--text-tertiary)] font-medium block">
                             Withdraw To <span class="text-red-400">*</span>
                         </label>
-                        <select class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] focus:border-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)] rounded-xl py-3 px-4 outline-none" required>
+                        <select class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] focus:border-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)] rounded-sm py-2 px-3 text-sm outline-none" required>
                             <option value="">Please Choose...</option>
                             <option value="primary-account">Primary Account</option>
                             <option value="secondary-account">Secondary Account</option>
@@ -52,7 +52,7 @@
                     <label class="text-[var(--text-tertiary)] font-medium block">
                         Note <span class="text-red-400">*</span>
                     </label>
-                    <textarea placeholder="Enter Note" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] focus:border-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)] rounded-xl py-3 px-4 outline-none min-h-[100px] resize-none" required></textarea>
+                    <textarea placeholder="Enter Note" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] focus:border-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)] rounded-sm py-2 px-3 text-sm outline-none min-h-[100px] resize-none" required></textarea>
                 </div>
 
                 <!-- Important Notice -->
@@ -65,7 +65,7 @@
 
                 <!-- Submit Button -->
                 <div class="col-span-full mt-4 flex justify-center pt-4">
-                    <button type="submit" class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] px-8 py-3 rounded-xl font-semibold transition-colors">
+                    <button type="submit" class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] px-6 py-2 rounded-sm text-sm font-semibold transition-colors">
                         Submit
                     </button>
                 </div>
@@ -75,16 +75,16 @@
         <!-- Withdrawal Guidelines -->
         <div class="bg-[var(--bg-tertiary)]/30 border border-[var(--border-primary)] rounded-2xl p-6">
             <h3 class="text-lg font-semibold text-[var(--text-primary)] mb-4">Withdrawal Guidelines</h3>
-            <div class="grid md:grid-cols-2 gap-6">
+            <div class="grid md:grid-cols-2 gap-4">
                 <div>
                     <h4 class="font-medium text-[var(--button-primary-bg)] mb-2 flex items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
                         Processing Time
                     </h4>
                     <ul class="text-[var(--text-secondary)] text-sm space-y-1">
-                        <li>• Bank transfers: 1-3 business days</li>
-                        <li>• Crib account: Instant</li>
-                        <li>• Crypto wallet: 30 minutes - 2 hours</li>
+                        <li>â€¢ Bank transfers: 1-3 business days</li>
+                        <li>â€¢ Crib account: Instant</li>
+                        <li>â€¢ Crypto wallet: 30 minutes - 2 hours</li>
                     </ul>
                 </div>
                 <div>
@@ -93,9 +93,9 @@
                         Fees & Limits
                     </h4>
                     <ul class="text-[var(--text-secondary)] text-sm space-y-1">
-                        <li>• Minimum withdrawal: $50</li>
-                        <li>• Bank transfer fee: $25</li>
-                        <li>• Crypto withdrawal: Network fees apply</li>
+                        <li>â€¢ Minimum withdrawal: $50</li>
+                        <li>â€¢ Bank transfer fee: $25</li>
+                        <li>â€¢ Crypto withdrawal: Network fees apply</li>
                     </ul>
                 </div>
             </div>

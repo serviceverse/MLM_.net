@@ -5,21 +5,21 @@
 <div class="p-4 md:p-8 space-y-8 ">
     <!-- Header -->
     <div>
-        <h1 class="text-3xl font-bold text-[var(--text-primary)] tracking-tight">Setup Sub-IB Commission</h1>
+        <h1 class="text-2xl font-bold text-[var(--text-primary)] tracking-tight">Setup Sub-IB Commission</h1>
         <p class="text-[var(--text-secondary)] mt-1">
             Assign commission structures to your sub-IBs
         </p>
     </div>
 
     <!-- Form Card -->
-    <div class="bg-[var(--bg-primary)] border border-[var(--border-secondary)] rounded-2xl p-6 md:p-8 shadow-sm">
-        <form class="space-y-6">
+    <div class="bg-white border border-[var(--border-secondary)] rounded-sm p-6 md:p-8 shadow-sm">
+        <form class="space-y-4">
             
             <!-- IB User Selection -->
             <div class="space-y-2">
                 <label class="block text-sm font-semibold text-[var(--text-primary)]">Select Sub-IB <span class="text-red-500">*</span></label>
                 <div class="relative">
-                    <input type="text" placeholder="Search by name or email" class="w-full bg-[var(--bg-primary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-xl py-3 px-4 shadow-sm focus:outline-none focus:border-[#4f46e5] focus:ring-2 focus:ring-[#4f46e5]/20 transition-all" />
+                    <input type="text" placeholder="Search by name or email" class="w-full bg-[var(--bg-primary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-sm py-2 px-3 text-sm shadow-sm focus:outline-none focus:border-[#4f46e5] focus:ring-2 focus:ring-[#4f46e5]/20 transition-all" />
                 </div>
             </div>
 
@@ -29,15 +29,15 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
                     <div>
                         <label class="block text-sm font-medium text-[var(--text-secondary)] mb-2">Standard Group</label>
-                        <input type="number" min="0" step="0.01" placeholder="e.g. 5" class="w-full bg-[var(--bg-primary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-xl py-3 px-4 shadow-sm focus:outline-none focus:border-[#4f46e5] focus:ring-2 focus:ring-[#4f46e5]/20 transition-all" />
+                        <input type="number" min="0" step="0.01" placeholder="e.g. 5" class="w-full bg-[var(--bg-primary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-sm py-2 px-3 text-sm shadow-sm focus:outline-none focus:border-[#4f46e5] focus:ring-2 focus:ring-[#4f46e5]/20 transition-all" />
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-[var(--text-secondary)] mb-2">Pro Group</label>
-                        <input type="number" min="0" step="0.01" placeholder="e.g. 8" class="w-full bg-[var(--bg-primary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-xl py-3 px-4 shadow-sm focus:outline-none focus:border-[#4f46e5] focus:ring-2 focus:ring-[#4f46e5]/20 transition-all" />
+                        <input type="number" min="0" step="0.01" placeholder="e.g. 8" class="w-full bg-[var(--bg-primary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-sm py-2 px-3 text-sm shadow-sm focus:outline-none focus:border-[#4f46e5] focus:ring-2 focus:ring-[#4f46e5]/20 transition-all" />
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-[var(--text-secondary)] mb-2">VIP Group</label>
-                        <input type="number" min="0" step="0.01" placeholder="e.g. 12" class="w-full bg-[var(--bg-primary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-xl py-3 px-4 shadow-sm focus:outline-none focus:border-[#4f46e5] focus:ring-2 focus:ring-[#4f46e5]/20 transition-all" />
+                        <input type="number" min="0" step="0.01" placeholder="e.g. 12" class="w-full bg-[var(--bg-primary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-sm py-2 px-3 text-sm shadow-sm focus:outline-none focus:border-[#4f46e5] focus:ring-2 focus:ring-[#4f46e5]/20 transition-all" />
                     </div>
                 </div>
                 <p class="text-xs text-orange-500 mt-2 font-medium">Note: You cannot assign a commission rate higher than your own.</p>
@@ -45,7 +45,7 @@
 
             <!-- Actions -->
             <div class="flex gap-4 pt-4">
-                <button type="submit" class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-white px-8 py-3 rounded-xl font-semibold shadow-md shadow-[var(--button-primary-bg)]/20 transition-all">
+                <button type="submit" class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-white px-6 py-2 rounded-sm text-sm font-semibold shadow-md shadow-[var(--button-primary-bg)]/20 transition-all">
                     Save Commissions
                 </button>
             </div>
@@ -56,7 +56,7 @@
     <div>
         <h2 class="text-2xl font-bold mb-4 text-[var(--text-primary)] tracking-tight">Sub-IB Commission Listing</h2>
 
-        <div class="bg-[var(--bg-primary)] border border-[var(--border-secondary)] rounded-2xl shadow-sm overflow-hidden">
+        <div class="bg-white border border-[var(--border-secondary)] rounded-sm shadow-sm overflow-hidden">
             <!-- Filters -->
             <div class="px-5 py-4 border-b border-[var(--border-secondary)] flex flex-wrap items-center justify-between gap-4 bg-[var(--bg-primary)]">
                 <div class="flex items-center space-x-2">

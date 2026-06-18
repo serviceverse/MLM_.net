@@ -2,13 +2,13 @@
     ViewData["Title"] = "Wallet To Crib Account";
 }
 
-<div class="p-4 md:p-8 space-y-6 max-w-4xl mx-auto">
+<div class="p-4 md:p-8 space-y-4 max-w-4xl mx-auto">
     <!-- Header -->
     <div class="text-center space-y-3 mb-8">
         <div class="w-16 h-16 bg-gradient-to-tr from-[var(--button-primary-bg)] to-indigo-400 rounded-full flex items-center justify-center mx-auto shadow-lg shadow-[var(--button-primary-bg)]/20">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
         </div>
-        <h1 class="text-3xl font-bold text-[var(--text-primary)] tracking-tight">Wallet To Crib Account</h1>
+        <h1 class="text-2xl font-bold text-[var(--text-primary)] tracking-tight">Wallet To Crib Account</h1>
         <p class="text-[var(--text-secondary)] font-medium">Transfer funds from your wallet to your Crib account</p>
     </div>
 
@@ -29,13 +29,13 @@
 
     <!-- Transfer Form Card -->
     <div class="bg-[var(--bg-primary)] border border-[var(--border-secondary)] rounded-3xl shadow-sm p-6 md:p-10">
-        <form class="space-y-6">
+        <form class="space-y-4">
             <!-- Select Account -->
             <div class="space-y-2">
                 <label class="text-[var(--text-primary)] font-bold">
                     Select Account <span class="text-red-500">*</span>
                 </label>
-                <select class="w-full bg-[var(--bg-primary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-xl py-3 px-4 outline-none shadow-sm focus:border-[var(--button-primary-bg)] focus:ring-2 focus:ring-[var(--button-primary-bg)]/20 transition-all font-medium appearance-none" required>
+                <select class="w-full bg-[var(--bg-primary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-sm py-2 px-3 text-sm outline-none shadow-sm focus:border-[var(--button-primary-bg)] focus:ring-2 focus:ring-[var(--button-primary-bg)]/20 transition-all font-medium appearance-none" required>
                     <option value="">Please Choose...</option>
                     @if (ViewBag.Accounts != null)
                     {
@@ -54,7 +54,7 @@
                 </label>
                 <div class="relative">
                     <span class="absolute left-4 top-1/2 transform -translate-y-1/2 text-[var(--text-secondary)] font-bold">$</span>
-                    <input type="number" step="0.01" min="0" placeholder="Enter amount" class="w-full bg-[var(--bg-primary)] border border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] rounded-xl py-3 pl-8 pr-4 outline-none shadow-sm focus:border-[var(--button-primary-bg)] focus:ring-2 focus:ring-[var(--button-primary-bg)]/20 transition-all font-medium" required />
+                    <input type="number" step="0.01" min="0" placeholder="Enter amount" class="w-full bg-[var(--bg-primary)] border border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] rounded-sm py-2 px-3 text-sm pl-8 pr-4 outline-none shadow-sm focus:border-[var(--button-primary-bg)] focus:ring-2 focus:ring-[var(--button-primary-bg)]/20 transition-all font-medium" required />
                 </div>
             </div>
 
@@ -63,7 +63,7 @@
                 <label class="text-[var(--text-primary)] font-bold">
                     Note <span class="text-red-500">*</span>
                 </label>
-                <input type="text" placeholder="Enter Note" class="w-full bg-[var(--bg-primary)] border border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] rounded-xl py-3 px-4 outline-none shadow-sm focus:border-[var(--button-primary-bg)] focus:ring-2 focus:ring-[var(--button-primary-bg)]/20 transition-all font-medium" required />
+                <input type="text" placeholder="Enter Note" class="w-full bg-[var(--bg-primary)] border border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] rounded-sm py-2 px-3 text-sm outline-none shadow-sm focus:border-[var(--button-primary-bg)] focus:ring-2 focus:ring-[var(--button-primary-bg)]/20 transition-all font-medium" required />
             </div>
 
             <!-- Submit -->
@@ -76,16 +76,16 @@
     </div>
 
     <!-- Info Card -->
-    <div class="bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] rounded-2xl p-6 md:p-8">
+    <div class="bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] rounded-sm p-4 md:p-6">
         <h3 class="text-lg font-bold text-[var(--text-primary)] mb-3 flex items-center">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2 text-[var(--button-primary-bg)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
             Transfer Information
         </h3>
         <ul class="space-y-2 text-[var(--text-secondary)] font-medium text-sm">
-            <li class="flex items-start"><span class="mr-2 text-[var(--button-primary-bg)]">•</span> Transfers from wallet to Crib are instant and free</li>
-            <li class="flex items-start"><span class="mr-2 text-[var(--button-primary-bg)]">•</span> Minimum transfer amount: $1.00</li>
-            <li class="flex items-start"><span class="mr-2 text-[var(--button-primary-bg)]">•</span> Funds will be available in your Crib account immediately</li>
-            <li class="flex items-start"><span class="mr-2 text-[var(--button-primary-bg)]">•</span> You can only transfer available balance from your wallet</li>
+            <li class="flex items-start"><span class="mr-2 text-[var(--button-primary-bg)]">â€¢</span> Transfers from wallet to Crib are instant and free</li>
+            <li class="flex items-start"><span class="mr-2 text-[var(--button-primary-bg)]">â€¢</span> Minimum transfer amount: $1.00</li>
+            <li class="flex items-start"><span class="mr-2 text-[var(--button-primary-bg)]">â€¢</span> Funds will be available in your Crib account immediately</li>
+            <li class="flex items-start"><span class="mr-2 text-[var(--button-primary-bg)]">â€¢</span> You can only transfer available balance from your wallet</li>
         </ul>
     </div>
 </div>

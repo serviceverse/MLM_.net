@@ -2,17 +2,17 @@
     ViewData["Title"] = "IB Dashboard";
 }
 
-<div class="p-4 md:p-8 space-y-6">
+<div class="p-4 md:p-8 space-y-4">
     <div>
-        <h1 class="text-3xl font-bold text-[var(--text-primary)] tracking-tight">IB Dashboard</h1>
+        <h1 class="text-2xl font-bold text-[var(--text-primary)] tracking-tight">IB Dashboard</h1>
         <p class="text-[var(--text-secondary)] mt-1">Monitor your IB performance and earnings</p>
     </div>
 
     <!-- Top Row -->
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
         
         <!-- Monthly Commission Chart Placeholder -->
-        <div class="bg-[var(--bg-primary)] border border-[var(--border-secondary)] rounded-2xl p-6 shadow-sm">
+        <div class="bg-white border border-[var(--border-secondary)] rounded-sm p-6 shadow-sm">
             <div class="flex items-center space-x-2 mb-4">
                 <svg class="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                 <h3 class="text-lg font-bold text-[var(--text-primary)]">Monthly Commission</h3>
@@ -23,7 +23,7 @@
         </div>
 
         <!-- Commission Stats -->
-        <div class="bg-[var(--bg-primary)] border border-[var(--border-secondary)] rounded-2xl p-6 shadow-sm">
+        <div class="bg-white border border-[var(--border-secondary)] rounded-sm p-6 shadow-sm">
             <div class="grid grid-cols-2 gap-4 h-full content-center">
                 <div class="text-center">
                     <h3 class="text-3xl font-extrabold text-[var(--text-primary)]">$0</h3>
@@ -45,7 +45,7 @@
         </div>
 
         <!-- Client Transaction Chart Placeholder -->
-        <div class="bg-[var(--bg-primary)] border border-[var(--border-secondary)] rounded-2xl p-6 shadow-sm">
+        <div class="bg-white border border-[var(--border-secondary)] rounded-sm p-6 shadow-sm">
             <div class="flex items-center space-x-2 mb-4">
                 <svg class="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
                 <h3 class="text-lg font-bold text-[var(--text-primary)]">My Client Transaction</h3>
@@ -57,10 +57,10 @@
     </div>
 
     <!-- Status Cards -->
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
         @foreach (var stat in new[] { "KYC", "Live Account", "FTD", "Active Traders & Sub IB" })
         {
-            <div class="bg-[var(--bg-primary)] border border-[var(--border-secondary)] rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+            <div class="bg-white border border-[var(--border-secondary)] rounded-sm p-6 shadow-sm hover:shadow-md transition-shadow">
                 <h3 class="text-lg font-bold text-[var(--text-primary)] mb-4">@stat</h3>
                 <div class="h-24 flex flex-col items-center justify-center">
                     <div class="text-3xl font-extrabold text-[var(--text-primary)] mb-2">0</div>
@@ -80,7 +80,7 @@
     </div>
 
     <!-- Referral & Top Earners -->
-    <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-4">
         
         <!-- Referral Card -->
         <div class="bg-gradient-to-br from-indigo-50 to-white border border-indigo-100 rounded-2xl p-6 shadow-sm text-center flex flex-col justify-center relative overflow-hidden">
@@ -97,7 +97,7 @@
         </div>
 
         <!-- Top Earners Table (Dense Grid) -->
-        <div class="lg:col-span-3 bg-[var(--bg-primary)] border border-[var(--border-secondary)] rounded-2xl shadow-sm overflow-hidden flex flex-col">
+        <div class="lg:col-span-3 bg-white border border-[var(--border-secondary)] rounded-sm shadow-sm overflow-hidden flex flex-col">
             <div class="px-5 py-4 border-b border-[var(--border-secondary)] flex justify-between items-center bg-[var(--bg-primary)]">
                 <h3 class="text-lg font-bold text-[var(--text-primary)]">Top 5 Earnings of Sub IBs</h3>
                 

@@ -8,6 +8,8 @@ namespace MLM.Data
         public DbSet<Users> Users { get; set; } = null!;
         public DbSet<Role> Roles { get; set; } = null!;
         public DbSet<Organization> Organizations { get; set; } = null!;
+        public DbSet<AppSettings> AppSettings { get; set; } = null!;
+        public DbSet<ErrorLog> ErrorLogs { get; set; } = null!;
         public DbSet<NavigationGroup> NavigationGroups { get; set; } = null!;
         public DbSet<NavigationItem> NavigationItems { get; set; } = null!;
         public DbSet<NavigationAction> NavigationActions { get; set; } = null!;

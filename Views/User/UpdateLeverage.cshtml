@@ -7,17 +7,17 @@
         <p class="text-[var(--text-secondary)]">Select a client and account to change leverage.</p>
 
         <div class="bg-[var(--bg-primary)] border border-[var(--border-secondary)] rounded-xl shadow-sm p-6 md:p-8">
-            <form class="grid grid-cols-1 lg:grid-cols-2 gap-6 relative">
+            <form class="grid grid-cols-1 lg:grid-cols-2 gap-4 relative">
                 <!-- Client Search -->
                 <div class="space-y-2">
-                    <label class="text-[var(--text-primary)] font-medium">Client</label>
-                    <input type="text" placeholder="Search Client" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-xl py-3 px-3 outline-none focus:ring-2 focus:ring-[var(--button-primary-bg)]" />
+                    <label class="text-[var(--text-primary)] text-sm font-medium mb-1">Client</label>
+                    <input type="text" placeholder="Search Client" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-sm py-2 px-3 text-sm outline-none focus:ring-2 focus:ring-[var(--button-primary-bg)]" />
                 </div>
 
                 <!-- Account Select -->
                 <div class="space-y-2">
                     <label class="text-[var(--text-primary)]">Account (Crib ID)</label>
-                    <select class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-xl py-3 px-3 outline-none focus:ring-2 focus:ring-[var(--button-primary-bg)]">
+                    <select class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-sm py-2 px-3 text-sm outline-none focus:ring-2 focus:ring-[var(--button-primary-bg)]">
                         <option>No accounts available</option>
                     </select>
                 </div>
@@ -37,14 +37,14 @@
                 <!-- New Leverage -->
                 <div class="space-y-2">
                     <label class="text-[var(--text-primary)]">New Leverage</label>
-                    <select class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-xl py-3 px-3 outline-none focus:ring-2 focus:ring-[var(--button-primary-bg)]">
+                    <select class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-sm py-2 px-3 text-sm outline-none focus:ring-2 focus:ring-[var(--button-primary-bg)]">
                         <option>No leverage options</option>
                     </select>
                 </div>
 
                 <!-- Submit -->
                 <div class="col-span-full mt-4 flex justify-end">
-                    <button type="button" class="bg-[var(--button-primary-bg)] hover:opacity-90 text-[var(--button-primary-text)] px-8 py-3 rounded-xl font-semibold">
+                    <button type="button" class="bg-[var(--button-primary-bg)] hover:opacity-90 text-[var(--button-primary-text)] px-6 py-2 rounded-sm text-sm font-semibold">
                         Update Leverage
                     </button>
                 </div>

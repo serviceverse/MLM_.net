@@ -2,7 +2,7 @@
     ViewData["Title"] = "Deposits";
 }
 <div class="p-6 md:p-8">
-    <div class="max-w-6xl space-y-6">
+    <div class="max-w-6xl space-y-4">
         <!-- Header -->
         <!-- Header & Action Bar -->
         <div class="mb-6">
@@ -17,7 +17,7 @@
         <div class="bg-[var(--bg-secondary)]/30 border border-[var(--border-primary)] rounded-2xl p-6 space-y-4">
             <div class="space-y-2">
                 <label class="text-lg font-semibold block">Deposit Type <span class="text-red-500">*</span></label>
-                <select class="w-full rounded-xl py-3 px-4 bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] focus:border-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)] outline-none">
+                <select class="w-full rounded-sm py-2 px-3 text-sm bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] focus:border-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)] outline-none">
                     <option value="">Please Choose...</option>
                     <option value="WALLET">Wallet</option>
                     <option value="ACCOUNT">Account</option>
@@ -26,7 +26,7 @@
         </div>
 
         <!-- Payment Methods Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             <!-- Card -->
             <div class="bg-[var(--bg-secondary)] border border-[var(--border-primary)] hover:bg-[var(--bg-tertiary)] hover:shadow-xl transition-all duration-300 rounded-3xl p-6 flex flex-col justify-between h-full group">
                 <div class="space-y-4 flex-1">
@@ -36,7 +36,7 @@
                     <h3 class="text-lg font-semibold text-center">Deposit with Card</h3>
                     <p class="text-sm text-[var(--text-tertiary)] text-center">Instant deposits with Visa & Mastercard</p>
                 </div>
-                <button class="w-full mt-6 bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] py-3 rounded-xl font-semibold shadow-lg group-hover:shadow-[var(--button-primary-bg)]/20 transition-all duration-300">
+                <button class="w-full mt-6 bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] py-2 rounded-sm text-sm font-semibold shadow-lg group-hover:shadow-[var(--button-primary-bg)]/20 transition-all duration-300">
                     Deposit Now
                 </button>
             </div>
@@ -50,7 +50,7 @@
                     <h3 class="text-lg font-semibold text-center">Deposit with USDT</h3>
                     <p class="text-sm text-[var(--text-tertiary)] text-center">Fast crypto deposits with Tether</p>
                 </div>
-                <button class="w-full mt-6 bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] py-3 rounded-xl font-semibold shadow-lg group-hover:shadow-[var(--button-primary-bg)]/20 transition-all duration-300">
+                <button class="w-full mt-6 bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] py-2 rounded-sm text-sm font-semibold shadow-lg group-hover:shadow-[var(--button-primary-bg)]/20 transition-all duration-300">
                     Deposit Now
                 </button>
             </div>
@@ -64,7 +64,7 @@
                     <h3 class="text-lg font-semibold text-center">Deposit with Bank Transfer</h3>
                     <p class="text-sm text-[var(--text-tertiary)] text-center">Secure bank wire transfers</p>
                 </div>
-                <button class="w-full mt-6 bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] py-3 rounded-xl font-semibold shadow-lg group-hover:shadow-[var(--button-primary-bg)]/20 transition-all duration-300">
+                <button class="w-full mt-6 bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] py-2 rounded-sm text-sm font-semibold shadow-lg group-hover:shadow-[var(--button-primary-bg)]/20 transition-all duration-300">
                     Deposit Now
                 </button>
             </div>
@@ -73,23 +73,23 @@
         <!-- Deposit Info Section -->
         <div class="bg-[var(--bg-secondary)]/30 border border-[var(--border-primary)] rounded-2xl p-6">
             <h3 class="text-lg font-semibold mb-4">Deposit Information</h3>
-            <div class="grid md:grid-cols-2 gap-6">
+            <div class="grid md:grid-cols-2 gap-4">
                 <div>
                     <h4 class="font-medium text-[var(--accent-success)] mb-2">Processing Times</h4>
                     <ul class="space-y-1 text-[var(--text-secondary)] text-sm">
-                        <li>• Card deposits: Instant</li>
-                        <li>• USDT deposits: 1-3 confirmations</li>
-                        <li>• Bank transfers: 1-3 business days</li>
-                        <li>• Cash deposits: Instant at locations</li>
+                        <li>â€¢ Card deposits: Instant</li>
+                        <li>â€¢ USDT deposits: 1-3 confirmations</li>
+                        <li>â€¢ Bank transfers: 1-3 business days</li>
+                        <li>â€¢ Cash deposits: Instant at locations</li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="font-medium text-[var(--accent-success)] mb-2">Important Notes</h4>
                     <ul class="space-y-1 text-[var(--text-secondary)] text-sm">
-                        <li>• Minimum deposit: $10</li>
-                        <li>• No deposit fees for most methods</li>
-                        <li>• Funds available immediately after confirmation</li>
-                        <li>• 24/7 customer support available</li>
+                        <li>â€¢ Minimum deposit: $10</li>
+                        <li>â€¢ No deposit fees for most methods</li>
+                        <li>â€¢ Funds available immediately after confirmation</li>
+                        <li>â€¢ 24/7 customer support available</li>
                     </ul>
                 </div>
             </div>

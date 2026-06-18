@@ -1,15 +1,217 @@
 @{
-    ViewData["Title"] = "AppSettings";
+    ViewData["Title"] = "Company Settings";
 }
 
-<div class="p-6 md:p-8">
-    <div class="max-w-6xl space-y-6">
-        <div>
-            <h1 class="text-2xl font-bold text-[var(--text-primary)]">AppSettings</h1>
-            <p class="text-[var(--text-secondary)]">Migrated from: settings\app-settings\page.tsx</p>
-        </div>
-        <div class="flex-1 overflow-hidden flex flex-col">
-            <p class="text-[var(--text-tertiary)]">Content for AppSettings will go here.</p>
-        </div>
+<div class="p-4 md:p-6 space-y-4">
+    <div>
+        <h1 class="text-2xl font-bold text-[var(--text-primary)]">Company Settings</h1>
+        <p class="text-[var(--text-secondary)]">Manage your organization-wide preferences and UI settings</p>
     </div>
+
+    <!-- Tabs List -->
+    <div class="flex flex-wrap gap-2 bg-white p-2 rounded-sm border border-[var(--border-secondary)]">
+        <button type="button" class="tab-btn px-4 py-2 rounded-sm text-sm font-medium bg-[var(--button-primary-bg)] text-[var(--button-primary-text)]" data-target="theme">Theme Settings</button>
+        <button type="button" class="tab-btn px-4 py-2 rounded-sm text-sm font-medium text-[var(--text-secondary)] hover:bg-[var(--bg-tertiary)]" data-target="email">Email Settings</button>
+        <button type="button" class="tab-btn px-4 py-2 rounded-sm text-sm font-medium text-[var(--text-secondary)] hover:bg-[var(--bg-tertiary)]" data-target="icons">Icon Settings</button>
+        <button type="button" class="tab-btn px-4 py-2 rounded-sm text-sm font-medium text-[var(--text-secondary)] hover:bg-[var(--bg-tertiary)]" data-target="security">App Settings</button>
+    </div>
+
+    <form class="space-y-4">
+        <!-- Theme Tab -->
+        <div id="theme" class="tab-content block">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-white p-4 md:p-6 rounded-sm border border-[var(--border-secondary)]">
+                <div class="space-y-1">
+                    <label class="text-[var(--text-primary)] text-sm font-medium mb-1">Primary Color</label>
+                    <input type="color" name="primaryColor" value="#00ff00" class="w-full h-10 bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] rounded-sm p-1 outline-none" />
+                </div>
+                <div class="space-y-1">
+                    <label class="text-[var(--text-primary)] text-sm font-medium mb-1">Secondary Color</label>
+                    <input type="color" name="secondaryColor" value="#ffffff" class="w-full h-10 bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] rounded-sm p-1 outline-none" />
+                </div>
+                <div class="space-y-1">
+                    <label class="text-[var(--text-primary)] text-sm font-medium mb-1">Tertiary Color</label>
+                    <input type="color" name="tertiaryColor" value="#000000" class="w-full h-10 bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] rounded-sm p-1 outline-none" />
+                </div>
+                <div class="flex items-center justify-between col-span-1 md:col-span-2 mt-2">
+                    <label class="text-[var(--text-primary)] text-sm font-medium">Enable Dark Theme</label>
+                    <input type="checkbox" name="darkTheme" class="w-4 h-4 text-[var(--button-primary-bg)] rounded focus:ring-[var(--button-primary-bg)]" />
+                </div>
+            </div>
+        </div>
+
+        <!-- Email Tab -->
+        <div id="email" class="tab-content hidden">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-white p-4 md:p-6 rounded-sm border border-[var(--border-secondary)]">
+                <div class="space-y-1">
+                    <label class="text-[var(--text-primary)] text-sm font-medium mb-1">SMTP Server</label>
+                    <select class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-sm py-2 px-3 text-sm outline-none focus:ring-1 focus:ring-[var(--button-primary-bg)]">
+                        <option>smtp.gmail.com</option>
+                        <option>smtp.zoho.in</option>
+                        <option>smtp-mail.outlook.com</option>
+                        <option>custom</option>
+                    </select>
+                </div>
+                <div class="space-y-1">
+                    <label class="text-[var(--text-primary)] text-sm font-medium mb-1">Port</label>
+                    <select class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-sm py-2 px-3 text-sm outline-none focus:ring-1 focus:ring-[var(--button-primary-bg)]">
+                        <option>465</option>
+                        <option>587</option>
+                        <option>25</option>
+                    </select>
+                </div>
+                <div class="space-y-1">
+                    <label class="text-[var(--text-primary)] text-sm font-medium mb-1">Sender Email</label>
+                    <input type="email" name="smtpEmail" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-sm py-2 px-3 text-sm outline-none focus:ring-1 focus:ring-[var(--button-primary-bg)]" />
+                </div>
+                <div class="space-y-1">
+                    <label class="text-[var(--text-primary)] text-sm font-medium mb-1">Email Password</label>
+                    <input type="password" name="smtpPassword" placeholder="••••••••" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-sm py-2 px-3 text-sm outline-none focus:ring-1 focus:ring-[var(--button-primary-bg)]" />
+                    <p class="text-xs text-[var(--text-tertiary)] mt-1">Leave blank to keep your existing password unchanged.</p>
+                </div>
+                <div class="space-y-1">
+                    <label class="text-[var(--text-primary)] text-sm font-medium mb-1">From Name</label>
+                    <input type="text" name="smtpFromName" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-sm py-2 px-3 text-sm outline-none focus:ring-1 focus:ring-[var(--button-primary-bg)]" />
+                </div>
+                <div class="space-y-1">
+                    <label class="text-[var(--text-primary)] text-sm font-medium mb-1">Use SSL</label>
+                    <select class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-sm py-2 px-3 text-sm outline-none focus:ring-1 focus:ring-[var(--button-primary-bg)]">
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
+                    </select>
+                </div>
+                <div class="space-y-1">
+                    <label class="text-[var(--text-primary)] text-sm font-medium mb-1">Connection Timeout (ms)</label>
+                    <input type="number" name="smtpTimeout" placeholder="10000" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-sm py-2 px-3 text-sm outline-none focus:ring-1 focus:ring-[var(--button-primary-bg)]" />
+                </div>
+            </div>
+        </div>
+
+        <!-- Icons Tab -->
+        <div id="icons" class="tab-content hidden">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bg-white border border-[var(--border-secondary)] rounded-sm p-4 text-center">
+                    <label class="text-[var(--text-primary)] text-sm font-medium mb-2 block">App Logo</label>
+                    <input type="file" accept="image/*" class="w-full text-sm text-[var(--text-primary)] file:mr-4 file:py-2 file:px-4 file:rounded-sm file:border-0 file:font-medium file:bg-[var(--bg-tertiary)] file:text-[var(--text-primary)] hover:file:bg-gray-100" />
+                </div>
+                <div class="bg-white border border-[var(--border-secondary)] rounded-sm p-4 text-center">
+                    <label class="text-[var(--text-primary)] text-sm font-medium mb-2 block">App Icon</label>
+                    <input type="file" accept="image/*" class="w-full text-sm text-[var(--text-primary)] file:mr-4 file:py-2 file:px-4 file:rounded-sm file:border-0 file:font-medium file:bg-[var(--bg-tertiary)] file:text-[var(--text-primary)] hover:file:bg-gray-100" />
+                </div>
+                <div class="bg-white border border-[var(--border-secondary)] rounded-sm p-4 text-center">
+                    <label class="text-[var(--text-primary)] text-sm font-medium mb-2 block">Favicon</label>
+                    <input type="file" accept="image/*" class="w-full text-sm text-[var(--text-primary)] file:mr-4 file:py-2 file:px-4 file:rounded-sm file:border-0 file:font-medium file:bg-[var(--bg-tertiary)] file:text-[var(--text-primary)] hover:file:bg-gray-100" />
+                </div>
+            </div>
+        </div>
+
+        <!-- App Settings Tab -->
+        <div id="security" class="tab-content hidden">
+            <div class="space-y-4 bg-white p-4 md:p-6 rounded-sm border border-[var(--border-secondary)]">
+                <div class="flex items-center justify-between border-b border-[var(--border-secondary)] pb-3">
+                    <label class="text-[var(--text-primary)] text-sm font-medium">OTP Required on Login</label>
+                    <input type="checkbox" name="otpLoginRequired" class="w-4 h-4 text-[var(--button-primary-bg)] rounded focus:ring-[var(--button-primary-bg)]" />
+                </div>
+                <div class="flex items-center justify-between border-b border-[var(--border-secondary)] pb-3">
+                    <label class="text-[var(--text-primary)] text-sm font-medium">Enable Captcha</label>
+                    <input type="checkbox" name="captchaEnabled" class="w-4 h-4 text-[var(--button-primary-bg)] rounded focus:ring-[var(--button-primary-bg)]" />
+                </div>
+                <div class="flex items-center justify-between border-b border-[var(--border-secondary)] pb-3">
+                    <label class="text-[var(--text-primary)] text-sm font-medium">Referral</label>
+                    <input type="checkbox" name="referralEnabled" class="w-4 h-4 text-[var(--button-primary-bg)] rounded focus:ring-[var(--button-primary-bg)]" />
+                </div>
+                <div class="flex items-center justify-between border-b border-[var(--border-secondary)] pb-3">
+                    <label class="text-[var(--text-primary)] text-sm font-medium">Currency</label>
+                    <div class="w-1/2">
+                        <select class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-sm py-2 px-3 text-sm outline-none focus:ring-1 focus:ring-[var(--button-primary-bg)]">
+                            <option>USD</option>
+                            <option>INR</option>
+                            <option>EUR</option>
+                            <option>GBP</option>
+                            <option>AED</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="flex items-center justify-between border-b border-[var(--border-secondary)] pb-3">
+                    <label class="text-[var(--text-primary)] text-sm font-medium">Transaction Type</label>
+                    <div class="w-1/2">
+                        <select class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-sm py-2 px-3 text-sm outline-none focus:ring-1 focus:ring-[var(--button-primary-bg)]">
+                            <option>WALLET</option>
+                            <option>ACCOUNT</option>
+                            <option>BOTH</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="flex items-center justify-between border-b border-[var(--border-secondary)] pb-3">
+                    <label class="text-[var(--text-primary)] text-sm font-medium">Default Payment Mode</label>
+                    <div class="w-1/2">
+                        <select class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-sm py-2 px-3 text-sm outline-none focus:ring-1 focus:ring-[var(--button-primary-bg)]">
+                            <option>card</option>
+                            <option>usdt</option>
+                            <option>bank</option>
+                            <option>cash</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="flex items-center justify-between border-b border-[var(--border-secondary)] pb-3">
+                    <label class="text-[var(--text-primary)] text-sm font-medium">Client Count Required To Be An IB</label>
+                    <div class="w-1/2">
+                        <input type="number" name="noOfClientRequiredForIb" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-sm py-2 px-3 text-sm outline-none focus:ring-1 focus:ring-[var(--button-primary-bg)]" />
+                    </div>
+                </div>
+                <div class="flex items-center justify-between border-b border-[var(--border-secondary)] pb-3">
+                    <label class="text-[var(--text-primary)] text-sm font-medium">Withdraw Fee</label>
+                    <div class="w-1/2">
+                        <input type="number" name="withdrawFee" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-sm py-2 px-3 text-sm outline-none focus:ring-1 focus:ring-[var(--button-primary-bg)]" />
+                    </div>
+                </div>
+                <div class="flex items-center justify-between border-b border-[var(--border-secondary)] pb-3">
+                    <label class="text-[var(--text-primary)] text-sm font-medium">Required Trade Second For Commission</label>
+                    <div class="w-1/2">
+                        <input type="number" name="requiredTradeSeconds" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-sm py-2 px-3 text-sm outline-none focus:ring-1 focus:ring-[var(--button-primary-bg)]" />
+                    </div>
+                </div>
+                <div class="flex items-center justify-between">
+                    <label class="text-[var(--text-primary)] text-sm font-medium">Crib Server</label>
+                    <div class="w-1/2">
+                        <input type="text" name="mt5Server" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-sm py-2 px-3 text-sm outline-none focus:ring-1 focus:ring-[var(--button-primary-bg)]" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-right pt-4">
+            <button type="button" class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] hover:text-[var(--button-primary-hover-text)] rounded-sm px-6 py-2 text-sm font-semibold">
+                Save Changes
+            </button>
+        </div>
+    </form>
 </div>
+
+@section Scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Reset all
+                    tabBtns.forEach(b => {
+                        b.classList.remove('bg-[var(--button-primary-bg)]', 'text-[var(--button-primary-text)]');
+                        b.classList.add('text-[var(--text-secondary)]', 'hover:bg-[var(--bg-tertiary)]');
+                    });
+                    tabContents.forEach(c => {
+                        c.classList.remove('block');
+                        c.classList.add('hidden');
+                    });
+
+                    // Set active
+                    btn.classList.remove('text-[var(--text-secondary)]', 'hover:bg-[var(--bg-tertiary)]');
+                    btn.classList.add('bg-[var(--button-primary-bg)]', 'text-[var(--button-primary-text)]');
+                    document.getElementById(btn.dataset.target).classList.remove('hidden');
+                    document.getElementById(btn.dataset.target).classList.add('block');
+                });
+            });
+        });
+    </script>
+}

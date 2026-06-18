@@ -2,20 +2,20 @@
     ViewData["Title"] = "Send Confirmation Email";
 }
 <div class="min-h-screen bg-primary text-[var(--text-primary)] p-8 flex justify-center items-start">
-    <div class="w-full space-y-6">
+    <div class="w-full space-y-4">
         <div class="space-y-2 relative">
-            <label class="text-[var(--text-primary)] font-medium">Client</label>
-            <input type="text" placeholder="Search Client" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-xl py-3 px-3 outline-none focus:ring-2 focus:ring-[var(--button-primary-bg)]" />
+            <label class="text-[var(--text-primary)] text-sm font-medium mb-1">Client</label>
+            <input type="text" placeholder="Search Client" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-sm py-2 px-3 text-sm outline-none focus:ring-2 focus:ring-[var(--button-primary-bg)]" />
         </div>
 
-        <div class="bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-3xl w-full p-8 space-y-6 hidden">
+        <div class="bg-white border border-[var(--border-secondary)] rounded-sm w-full p-8 space-y-4 hidden">
             <!-- Account Details Hidden initially via logic in real app -->
             <h2 class="text-2xl text-[var(--text-secondary)] font-bold">Crib Account Details</h2>
             <div class="space-y-2">
                 <p><strong class="text-[var(--text-secondary)]">Full Name:</strong> </p>
                 <p><strong class="text-[var(--text-secondary)]">Email:</strong> </p>
             </div>
-            <button class="bg-[var(--button-primary-bg)] hover:opacity-90 text-[var(--button-primary-text)] px-8 py-3 rounded-xl font-semibold">
+            <button class="bg-[var(--button-primary-bg)] hover:opacity-90 text-[var(--button-primary-text)] px-6 py-2 rounded-sm text-sm font-semibold">
                 Send Email
             </button>
         </div>

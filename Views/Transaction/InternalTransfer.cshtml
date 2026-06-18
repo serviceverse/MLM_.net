@@ -2,52 +2,52 @@
     ViewData["Title"] = "Client Internal Transfer";
 }
 <div class="p-6 md:p-8">
-        <div class="max-w-6xl space-y-6">
+        <div class="max-w-6xl space-y-4">
             <h1 class="text-4xl font-bold mb-2">Client Internal Transfer</h1>
             <p class="text-[var(--text-secondary)]">Transfer funds between Crib accounts for a specific client</p>
 
-            <div class="bg-[var(--bg-primary)] border border-[var(--border-secondary)] rounded-xl shadow-sm p-6 md:p-8">
-                <form class="grid grid-cols-1 lg:grid-cols-2 gap-6 relative">
+            <div class="bg-white border border-[var(--border-secondary)] rounded-sm shadow-none p-4 md:p-6">
+                <form class="grid grid-cols-1 lg:grid-cols-2 gap-4 relative">
                     <!-- Client Search -->
-                    <div class="space-y-2 relative">
-                        <label class="text-[var(--text-primary)] font-medium">Client</label>
-                        <input type="text" placeholder="Search Client" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-xl py-3 px-3 outline-none focus:ring-2 focus:ring-[var(--button-primary-bg)]" />
+                    <div class="space-y-1 relative">
+                        <label class="text-[var(--text-primary)] text-sm font-medium mb-1">Client</label>
+                        <input type="text" placeholder="Search Client" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-sm py-2 px-3 text-sm outline-none focus:ring-1 focus:ring-[var(--button-primary-bg)]" />
                     </div>
 
                     <!-- From Account -->
-                    <div class="space-y-2">
+                    <div class="space-y-1">
                         <label class="text-[var(--text-primary)]">From Account</label>
-                        <select class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-xl py-3 px-3 outline-none focus:ring-2 focus:ring-[var(--button-primary-bg)]">
+                        <select class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-sm py-2 px-3 text-sm outline-none focus:ring-1 focus:ring-[var(--button-primary-bg)]">
                             <option>Select From Account</option>
                         </select>
                     </div>
 
                     <!-- To Account -->
-                    <div class="space-y-2">
+                    <div class="space-y-1">
                         <label class="text-[var(--text-primary)]">To Account</label>
-                        <select class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-xl py-3 px-3 outline-none focus:ring-2 focus:ring-[var(--button-primary-bg)]">
+                        <select class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-sm py-2 px-3 text-sm outline-none focus:ring-1 focus:ring-[var(--button-primary-bg)]">
                             <option>Select To Account</option>
                         </select>
                     </div>
 
                     <!-- Amount -->
-                    <div class="space-y-2">
+                    <div class="space-y-1">
                         <label class="text-[var(--text-primary)]">Amount</label>
-                        <input type="number" placeholder="Transfer amount" class="w-full bg-[var(--bg-tertiary)] border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] focus:border-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)] rounded-xl py-3 px-3 outline-none" />
+                        <input type="number" placeholder="Transfer amount" class="w-full bg-[var(--bg-tertiary)] border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] focus:border-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)] rounded-sm py-2 px-3 text-sm outline-none" />
                     </div>
 
                     <!-- Note -->
-                    <div class="space-y-2">
+                    <div class="space-y-1">
                         <label class="text-[var(--text-primary)]">Note</label>
-                        <input type="text" placeholder="Remarks (optional)" class="w-full bg-[var(--bg-tertiary)] border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] focus:border-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)] rounded-xl py-3 px-3 outline-none" />
+                        <input type="text" placeholder="Remarks (optional)" class="w-full bg-[var(--bg-tertiary)] border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] focus:border-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)] rounded-sm py-2 px-3 text-sm outline-none" />
                     </div>
 
                     <!-- Submit + Reset -->
                     <div class="col-span-full mt-4 flex gap-4 pt-4">
-                        <button type="button" class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] hover:text-[var(--button-primary-hover-text)] px-8 py-3 rounded-xl font-semibold ">
+                        <button type="button" class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] hover:text-[var(--button-primary-hover-text)] px-6 py-2 rounded-sm text-sm font-semibold ">
                             Transfer Funds
                         </button>
-                        <button type="button" class="border border-[var(--border-secondary)] text-[var(--text-secondary)] hover:bg-[var(--bg-tertiary)] bg-transparent px-6 py-3 rounded-xl font-semibold">
+                        <button type="button" class="border border-[var(--border-secondary)] text-[var(--text-secondary)] hover:bg-[var(--bg-tertiary)] bg-transparent px-4 py-2 rounded-sm text-sm font-semibold">
                             Reset
                         </button>
                     </div>

@@ -12,41 +12,41 @@
             <!-- Action items will go here -->
         </div>
 
-        <div class="bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-3xl w-full p-8">
-            <form class="grid grid-cols-1 lg:grid-cols-2 gap-6 relative">
+        <div class="bg-white border border-[var(--border-secondary)] rounded-sm w-full p-8">
+            <form class="grid grid-cols-1 lg:grid-cols-2 gap-4 relative">
                 <!-- Client Search -->
                 <div class="space-y-2">
-                    <label class="text-[var(--text-primary)] font-medium">Client</label>
-                    <input type="text" placeholder="Search Client" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-xl py-3 px-3 outline-none focus:ring-2 focus:ring-[var(--button-primary-bg)]" />
+                    <label class="text-[var(--text-primary)] text-sm font-medium mb-1">Client</label>
+                    <input type="text" placeholder="Search Client" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-sm py-2 px-3 text-sm outline-none focus:ring-2 focus:ring-[var(--button-primary-bg)]" />
                 </div>
 
                 <!-- Account Number -->
                 <div class="space-y-2">
-                    <label class="text-[var(--text-primary)] font-medium">Account Number</label>
-                    <input type="number" placeholder="Crib Account Number" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-xl py-3 px-3 outline-none focus:ring-2 focus:ring-[var(--button-primary-bg)]" />
+                    <label class="text-[var(--text-primary)] text-sm font-medium mb-1">Account Number</label>
+                    <input type="number" placeholder="Crib Account Number" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-sm py-2 px-3 text-sm outline-none focus:ring-2 focus:ring-[var(--button-primary-bg)]" />
                 </div>
 
                 <!-- Account Type -->
                 <div class="space-y-2">
-                    <label class="text-[var(--text-primary)] font-medium">Select Account Type <span class="text-red-400">*</span></label>
-                    <select class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-xl py-3 px-3 outline-none focus:ring-2 focus:ring-[var(--button-primary-bg)]">
+                    <label class="text-[var(--text-primary)] text-sm font-medium mb-1">Select Account Type <span class="text-red-400">*</span></label>
+                    <select class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-sm py-2 px-3 text-sm outline-none focus:ring-2 focus:ring-[var(--button-primary-bg)]">
                         <option value="">Please choose an account type...</option>
                     </select>
                 </div>
 
                 <!-- Leverage -->
                 <div class="space-y-2">
-                    <label class="text-[var(--text-primary)] font-medium">Select Leverage <span class="text-red-400">*</span></label>
-                    <select class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-xl py-3 px-3 outline-none focus:ring-2 focus:ring-[var(--button-primary-bg)]">
+                    <label class="text-[var(--text-primary)] text-sm font-medium mb-1">Select Leverage <span class="text-red-400">*</span></label>
+                    <select class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-sm py-2 px-3 text-sm outline-none focus:ring-2 focus:ring-[var(--button-primary-bg)]">
                         <option value="">Please choose leverage...</option>
                     </select>
                 </div>
 
                 <!-- Password -->
                 <div class="space-y-2">
-                    <label class="text-[var(--text-primary)] font-medium">Password</label>
+                    <label class="text-[var(--text-primary)] text-sm font-medium mb-1">Password</label>
                     <div class="relative">
-                        <input type="password" placeholder="Enter Password" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-xl py-3 px-3 outline-none focus:ring-2 focus:ring-[var(--button-primary-bg)]" />
+                        <input type="password" placeholder="Enter Password" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-sm py-2 px-3 text-sm outline-none focus:ring-2 focus:ring-[var(--button-primary-bg)]" />
                         <button type="button" class="absolute right-3 top-1/2 -translate-y-1/2 p-2">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[var(--text-tertiary)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
                         </button>
@@ -55,10 +55,10 @@
 
                 <!-- Buttons -->
                 <div class="col-span-full mt-4 flex gap-4 pt-4">
-                    <button type="submit" class="bg-[var(--button-primary-bg)] hover:opacity-90 text-[var(--button-primary-text)] px-8 py-3 rounded-xl font-semibold">
+                    <button type="submit" class="bg-[var(--button-primary-bg)] hover:opacity-90 text-[var(--button-primary-text)] px-6 py-2 rounded-sm text-sm font-semibold">
                         Create Account
                     </button>
-                    <button type="button" class="border border-[var(--border-secondary)] text-[var(--text-secondary)] hover:bg-[var(--bg-tertiary)] px-6 py-3 rounded-xl font-semibold bg-transparent">
+                    <button type="button" class="border border-[var(--border-secondary)] text-[var(--text-secondary)] hover:bg-[var(--bg-tertiary)] px-4 py-2 rounded-sm text-sm font-semibold bg-transparent">
                         Reset
                     </button>
                 </div>

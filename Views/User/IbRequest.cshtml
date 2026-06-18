@@ -3,8 +3,8 @@
 }
 
 <div class="p-4 md:p-8">
-    <div class="max-w-4xl space-y-6">
-        <h1 class="text-3xl font-bold text-[var(--text-primary)] tracking-tight">IB Application</h1>
+    <div class="max-w-4xl space-y-4">
+        <h1 class="text-2xl font-bold text-[var(--text-primary)] tracking-tight">IB Application</h1>
 
         @if (ViewBag.Status == "APPROVED")
         {
@@ -40,7 +40,7 @@
         else
         {
             <!-- Eligibility Note -->
-            <div class="bg-[var(--bg-primary)] border border-[var(--border-secondary)] rounded-2xl shadow-sm">
+            <div class="bg-white border border-[var(--border-secondary)] rounded-sm shadow-sm">
                 <div class="p-6 md:p-8 space-y-3">
                     <h2 class="text-xl font-bold text-[var(--text-primary)]">Eligibility</h2>
                     <p class="text-[var(--text-secondary)] leading-relaxed">
@@ -48,21 +48,21 @@
                         <span class="font-bold text-[var(--text-primary)]">5 clients</span> associated with your account.
                         <br />
                         <span class="text-sm mt-3 block text-[var(--text-secondary)] font-medium bg-[var(--bg-tertiary)] p-3 rounded-xl border border-[var(--border-secondary)]">
-                            💡 <span class="font-semibold text-[var(--text-primary)]">Tip:</span> Focus on inviting genuine, active clients. Strong client relationships and consistent activity improve your approval chances.
+                            ðŸ’¡ <span class="font-semibold text-[var(--text-primary)]">Tip:</span> Focus on inviting genuine, active clients. Strong client relationships and consistent activity improve your approval chances.
                         </span>
                     </p>
                 </div>
             </div>
 
             <!-- Application Form -->
-            <div class="bg-[var(--bg-primary)] border border-[var(--border-secondary)] rounded-2xl shadow-sm mt-6">
+            <div class="bg-white border border-[var(--border-secondary)] rounded-sm shadow-sm mt-6">
                 <div class="p-6 md:p-8 space-y-4">
-                    <form class="space-y-5">
+                    <form class="space-y-4">
                         <div>
                             <label class="block text-[var(--text-primary)] font-bold mb-2">Why do you want to become an IB?</label>
                             <textarea 
                                 rows="4"
-                                placeholder="Share your experience, growth plan, and how you’ll support referred clients…"
+                                placeholder="Share your experience, growth plan, and how youâ€™ll support referred clientsâ€¦"
                                 class="w-full p-4 rounded-xl border border-[var(--border-secondary)] bg-[var(--bg-primary)] text-[var(--text-primary)] placeholder-gray-400 focus:outline-none focus:border-[#4f46e5] focus:ring-2 focus:ring-[#4f46e5]/20 resize-y shadow-sm transition-all"></textarea>
                         </div>
                         <button type="submit" class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-white font-semibold py-3 px-8 rounded-xl shadow-md shadow-[var(--button-primary-bg)]/20 transition-all">

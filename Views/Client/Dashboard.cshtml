@@ -8,13 +8,13 @@
         
         <!-- Top bar -->
         <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between mb-6">
-            <h1 class="text-3xl lg:text-4xl font-bold tracking-tight">Hello, @Model.UserName 👋</h1>
+            <h1 class="text-3xl lg:text-4xl font-bold tracking-tight">Hello, @Model.UserName ðŸ‘‹</h1>
             <div class="flex items-center gap-2">
             </div>
         </div>
 
         <!-- Row 1: Hero + Right rail -->
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-8">
             
             <!-- Hero: Your Asset -->
             <div class="lg:col-span-2 rounded-3xl bg-[var(--bg-secondary)] border border-[var(--border-primary)] overflow-hidden shadow-lg transform transition-all hover:shadow-xl hover:-translate-y-0.5">
@@ -27,7 +27,7 @@
                     </div>
                 </div>
 
-                <div class="p-6 grid gap-6 lg:grid-cols-3">
+                <div class="p-6 grid gap-4 lg:grid-cols-3">
                     <!-- Big balance -->
                     <div class="lg:col-span-2 rounded-2xl p-6 bg-gradient-to-br from-[var(--bg-tertiary)]/40 via-[var(--bg-secondary)] to-[var(--bg-tertiary)] border border-[var(--border-primary)] shadow-md flex flex-col">
                         <div class="flex items-start justify-between mb-6">
@@ -101,7 +101,7 @@
                                 <div class="space-y-2 text-sm">
                                     <div class="rounded-xl p-3 bg-[var(--bg-secondary)]/60 border border-[var(--border-primary)] shadow-sm">
                                         <p class="text-[var(--text-secondary)]">Your Code</p>
-                                        <p class="font-semibold text-lg">@(string.IsNullOrEmpty(Model.ReferralCode) ? "—" : Model.ReferralCode)</p>
+                                        <p class="font-semibold text-lg">@(string.IsNullOrEmpty(Model.ReferralCode) ? "â€”" : Model.ReferralCode)</p>
                                     </div>
                                 </div>
                             </div>

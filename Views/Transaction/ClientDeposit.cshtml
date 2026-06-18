@@ -2,73 +2,73 @@
     ViewData["Title"] = "Client Deposit";
 }
 <div class="p-6 md:p-8">
-        <div class="max-w-6xl space-y-6">
+        <div class="max-w-6xl space-y-4">
             <h1 class="text-2xl font-bold text-[var(--text-primary)]">Client Deposit</h1>
             <p class="text-[var(--text-secondary)]">Search client and submit deposit details</p>
 
-            <div class="bg-[var(--bg-primary)] border border-[var(--border-secondary)] rounded-xl shadow-sm p-6 md:p-8">
-                <form class="grid grid-cols-1 lg:grid-cols-2 gap-6 relative">
+            <div class="bg-white border border-[var(--border-secondary)] rounded-sm shadow-none p-4 md:p-6">
+                <form class="grid grid-cols-1 lg:grid-cols-2 gap-4 relative">
                     <!-- Deposit Type -->
-                    <div class="space-y-2">
-                        <label class="text-[var(--text-primary)] font-medium">Deposit Type</label>
-                        <select class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-xl py-3 px-3 outline-none focus:ring-2 focus:ring-[var(--button-primary-bg)]">
+                    <div class="space-y-1">
+                        <label class="text-[var(--text-primary)] text-sm font-medium mb-1">Deposit Type</label>
+                        <select class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-sm py-2 px-3 text-sm outline-none focus:ring-1 focus:ring-[var(--button-primary-bg)]">
                             <option value="WALLET">Wallet</option>
                             <option value="ACCOUNT">Account</option>
                         </select>
                     </div>
 
                     <!-- Client Search -->
-                    <div class="space-y-2 relative">
-                        <label class="text-[var(--text-primary)] font-medium">Client</label>
-                        <input type="text" placeholder="Search Client" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-xl py-3 px-3 outline-none focus:ring-2 focus:ring-[var(--button-primary-bg)]" />
+                    <div class="space-y-1 relative">
+                        <label class="text-[var(--text-primary)] text-sm font-medium mb-1">Client</label>
+                        <input type="text" placeholder="Search Client" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-sm py-2 px-3 text-sm outline-none focus:ring-1 focus:ring-[var(--button-primary-bg)]" />
                     </div>
 
                     <!-- Account Selector (Hidden by default unless Account is selected) -->
-                    <div class="space-y-2 hidden">
-                        <label class="text-[var(--text-primary)] font-medium">Select Crib Account</label>
-                        <select class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-xl py-3 px-3 outline-none focus:ring-2 focus:ring-[var(--button-primary-bg)]">
+                    <div class="space-y-1 hidden">
+                        <label class="text-[var(--text-primary)] text-sm font-medium mb-1">Select Crib Account</label>
+                        <select class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-sm py-2 px-3 text-sm outline-none focus:ring-1 focus:ring-[var(--button-primary-bg)]">
                             <option>Choose account</option>
                         </select>
                     </div>
 
                     <!-- Amount -->
-                    <div class="space-y-2">
-                        <label class="text-[var(--text-primary)] font-medium">Amount</label>
-                        <input type="number" placeholder="Enter amount" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-xl py-3 px-3 outline-none focus:ring-2 focus:ring-[var(--button-primary-bg)]" />
+                    <div class="space-y-1">
+                        <label class="text-[var(--text-primary)] text-sm font-medium mb-1">Amount</label>
+                        <input type="number" placeholder="Enter amount" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-sm py-2 px-3 text-sm outline-none focus:ring-1 focus:ring-[var(--button-primary-bg)]" />
                     </div>
 
                     <!-- Exchanger Selection -->
-                    <div class="space-y-2">
-                        <label class="text-[var(--text-primary)] font-medium">Select Exchanger</label>
-                        <select class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-xl py-3 px-3 outline-none focus:ring-2 focus:ring-[var(--button-primary-bg)]">
+                    <div class="space-y-1">
+                        <label class="text-[var(--text-primary)] text-sm font-medium mb-1">Select Exchanger</label>
+                        <select class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-sm py-2 px-3 text-sm outline-none focus:ring-1 focus:ring-[var(--button-primary-bg)]">
                             <option>Select exchanger</option>
                         </select>
                     </div>
 
                     <!-- Transaction ID -->
-                    <div class="space-y-2">
-                        <label class="text-[var(--text-primary)] font-medium">Transaction ID</label>
-                        <input type="text" placeholder="Optional transaction reference" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-xl py-3 px-3 outline-none focus:ring-2 focus:ring-[var(--button-primary-bg)]" />
+                    <div class="space-y-1">
+                        <label class="text-[var(--text-primary)] text-sm font-medium mb-1">Transaction ID</label>
+                        <input type="text" placeholder="Optional transaction reference" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-sm py-2 px-3 text-sm outline-none focus:ring-1 focus:ring-[var(--button-primary-bg)]" />
                     </div>
 
                     <!-- Note -->
-                    <div class="space-y-2">
-                        <label class="text-[var(--text-primary)] font-medium">Note</label>
-                        <input type="text" placeholder="Additional remarks" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-xl py-3 px-3 outline-none focus:ring-2 focus:ring-[var(--button-primary-bg)]" />
+                    <div class="space-y-1">
+                        <label class="text-[var(--text-primary)] text-sm font-medium mb-1">Note</label>
+                        <input type="text" placeholder="Additional remarks" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-sm py-2 px-3 text-sm outline-none focus:ring-1 focus:ring-[var(--button-primary-bg)]" />
                     </div>
 
                     <!-- Proof File -->
-                    <div class="space-y-2">
-                        <label class="text-[var(--text-primary)] font-medium">Proof File (Image/PDF)</label>
+                    <div class="space-y-1">
+                        <label class="text-[var(--text-primary)] text-sm font-medium mb-1">Proof File (Image/PDF)</label>
                         <input type="file" accept="image/*,application/pdf" class="w-full bg-[var(--bg-tertiary)] border-[var(--border-secondary)] text-[var(--text-primary)] file:mr-4 file:py-1 file:px-2 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-[var(--button-primary-bg)] file:text-[var(--button-primary-text)] hover:file:bg-[var(--button-primary-hover-bg)]" />
                     </div>
 
                     <!-- Buttons -->
                     <div class="col-span-full mt-4 flex gap-4 pt-4">
-                        <button type="button" class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] hover:text-[var(--button-primary-hover-text)] px-8 py-3 rounded-xl font-semibold ">
+                        <button type="button" class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] hover:text-[var(--button-primary-hover-text)] px-6 py-2 rounded-sm text-sm font-semibold ">
                             Submit Deposit
                         </button>
-                        <button type="button" class="border border-[var(--border-secondary)] text-[var(--text-secondary)] hover:bg-[var(--bg-tertiary)] bg-transparent px-6 py-3 rounded-xl font-semibold">
+                        <button type="button" class="border border-[var(--border-secondary)] text-[var(--text-secondary)] hover:bg-[var(--bg-tertiary)] bg-transparent px-4 py-2 rounded-sm text-sm font-semibold">
                             Reset
                         </button>
                     </div>

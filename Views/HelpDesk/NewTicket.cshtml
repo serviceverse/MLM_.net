@@ -2,7 +2,7 @@
     ViewData["Title"] = "New Ticket";
 }
 <div class="p-6 md:p-8">
-    <div class="max-w-6xl space-y-6">
+    <div class="max-w-6xl space-y-4">
         <!-- Header -->
         <div class="text-center space-y-4">
             <div class="w-16 h-16 bg-gradient-to-r from-[var(--button-primary-bg)] to-[var(--button-primary-hover-bg)] rounded-full flex items-center justify-center mx-auto shadow-lg">
@@ -14,13 +14,13 @@
 
         <!-- Create Ticket Form -->
         <div class="bg-[var(--bg-primary)] border border-[var(--border-secondary)] rounded-xl shadow-sm">
-                <form class="grid grid-cols-1 lg:grid-cols-2 gap-6 relative">
+                <form class="grid grid-cols-1 lg:grid-cols-2 gap-4 relative">
                     <!-- Category -->
                     <div class="space-y-2">
                         <label class="text-[var(--text-tertiary)] font-medium block">
                             Category <span class="text-red-400">*</span>
                         </label>
-                        <select class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] focus:border-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)] rounded-xl py-3 px-4 outline-none" required>
+                        <select class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] focus:border-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)] rounded-sm py-2 px-3 text-sm outline-none" required>
                             <option value="">Please Choose...</option>
                             <option value="GENERAL">GENERAL</option>
                             <option value="ACCOUNT">ACCOUNT</option>
@@ -36,7 +36,7 @@
                         <label class="text-[var(--text-tertiary)] font-medium block">
                             Title <span class="text-red-400">*</span>
                         </label>
-                        <input type="text" placeholder="Enter Title" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-secondary)] focus:border-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)] rounded-xl py-3 px-4 outline-none" required />
+                        <input type="text" placeholder="Enter Title" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-secondary)] focus:border-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)] rounded-sm py-2 px-3 text-sm outline-none" required />
                     </div>
 
                     <!-- Priority -->
@@ -44,7 +44,7 @@
                         <label class="text-[var(--text-tertiary)] font-medium block">
                             Priority <span class="text-red-400">*</span>
                         </label>
-                        <select class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] focus:border-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)] rounded-xl py-3 px-4 outline-none" required>
+                        <select class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] focus:border-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)] rounded-sm py-2 px-3 text-sm outline-none" required>
                             <option value="">Please Choose...</option>
                             <option value="LOW">LOW</option>
                             <option value="MEDIUM">MEDIUM</option>
@@ -57,7 +57,7 @@
                         <label class="text-[var(--text-tertiary)] font-medium block">
                             Describe your problem <span class="text-red-400">*</span>
                         </label>
-                        <textarea placeholder="Describe your problem" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-secondary)] focus:border-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)] rounded-xl py-3 px-4 outline-none min-h-[128px] resize-none" required></textarea>
+                        <textarea placeholder="Describe your problem" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-secondary)] focus:border-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)] rounded-sm py-2 px-3 text-sm outline-none min-h-[128px] resize-none" required></textarea>
                         <p class="text-xs text-[var(--text-secondary)]">
                             Please provide as much detail as possible to help us resolve your issue quickly
                         </p>
@@ -76,7 +76,7 @@
 
                     <!-- Submit Button -->
                     <div class="col-span-full mt-4 flex justify-start pt-4">
-                        <button type="submit" class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] px-8 py-3 rounded-xl font-semibold flex items-center transition-colors">
+                        <button type="submit" class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] px-6 py-2 rounded-sm text-sm font-semibold flex items-center transition-colors">
                             Submit
                         </button>
                     </div>
@@ -88,10 +88,10 @@
         <div class="bg-[var(--bg-tertiary)]/30 border border-[var(--border-primary)] rounded-2xl p-6">
             <h3 class="text-lg font-semibold text-[var(--text-primary)] mb-3">What happens next?</h3>
             <ul class="space-y-2 text-[var(--text-secondary)] text-sm">
-                <li>• You will receive a confirmation email with your ticket number</li>
-                <li>• Our support team will review your ticket within 2-4 hours</li>
-                <li>• You will be notified via email when there are updates to your ticket</li>
-                <li>• You can track the progress of your ticket in the "My Tickets" section</li>
+                <li>â€¢ You will receive a confirmation email with your ticket number</li>
+                <li>â€¢ Our support team will review your ticket within 2-4 hours</li>
+                <li>â€¢ You will be notified via email when there are updates to your ticket</li>
+                <li>â€¢ You can track the progress of your ticket in the "My Tickets" section</li>
             </ul>
         </div>
     </div>

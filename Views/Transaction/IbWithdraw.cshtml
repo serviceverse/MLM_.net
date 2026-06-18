@@ -2,48 +2,48 @@
     ViewData["Title"] = "IB Wallet Withdrawal";
 }
 <div class="p-6 md:p-8">
-        <div class="max-w-6xl space-y-6">
+        <div class="max-w-6xl space-y-4">
             <h1 class="text-2xl font-bold text-[var(--text-primary)]">IB Wallet Withdrawal</h1>
             <p class="text-[var(--text-secondary)]">Search IB and process their withdrawal</p>
 
-            <div class="bg-[var(--bg-primary)] border border-[var(--border-secondary)] rounded-xl shadow-sm p-6 md:p-8">
-                <form class="grid grid-cols-1 lg:grid-cols-2 gap-6 relative">
+            <div class="bg-white border border-[var(--border-secondary)] rounded-sm shadow-none p-4 md:p-6">
+                <form class="grid grid-cols-1 lg:grid-cols-2 gap-4 relative">
                     <!-- IB Search -->
-                    <div class="space-y-2 relative">
-                        <label class="text-[var(--text-primary)] font-medium">IB Name</label>
-                        <input type="text" placeholder="Search IB by name" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-xl py-3 px-3 outline-none focus:ring-2 focus:ring-[var(--button-primary-bg)]" />
+                    <div class="space-y-1 relative">
+                        <label class="text-[var(--text-primary)] text-sm font-medium mb-1">IB Name</label>
+                        <input type="text" placeholder="Search IB by name" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-sm py-2 px-3 text-sm outline-none focus:ring-1 focus:ring-[var(--button-primary-bg)]" />
                     </div>
 
                     <!-- Amount -->
-                    <div class="space-y-2">
-                        <label class="text-[var(--text-primary)] font-medium">Amount</label>
-                        <input type="number" placeholder="Enter withdrawal amount" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-xl py-3 px-3 outline-none focus:ring-2 focus:ring-[var(--button-primary-bg)]" />
+                    <div class="space-y-1">
+                        <label class="text-[var(--text-primary)] text-sm font-medium mb-1">Amount</label>
+                        <input type="number" placeholder="Enter withdrawal amount" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-sm py-2 px-3 text-sm outline-none focus:ring-1 focus:ring-[var(--button-primary-bg)]" />
                     </div>
 
                     <!-- Method -->
-                    <div class="space-y-2">
-                        <label class="text-[var(--text-primary)] font-medium">Withdrawal Method</label>
-                        <input type="text" placeholder="Bank, Crypto, etc." class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-xl py-3 px-3 outline-none focus:ring-2 focus:ring-[var(--button-primary-bg)]" />
+                    <div class="space-y-1">
+                        <label class="text-[var(--text-primary)] text-sm font-medium mb-1">Withdrawal Method</label>
+                        <input type="text" placeholder="Bank, Crypto, etc." class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-sm py-2 px-3 text-sm outline-none focus:ring-1 focus:ring-[var(--button-primary-bg)]" />
                     </div>
 
                     <!-- Destination -->
-                    <div class="space-y-2">
-                        <label class="text-[var(--text-primary)] font-medium">Destination / Address</label>
-                        <input type="text" placeholder="Bank Account / USDT Address" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-xl py-3 px-3 outline-none focus:ring-2 focus:ring-[var(--button-primary-bg)]" />
+                    <div class="space-y-1">
+                        <label class="text-[var(--text-primary)] text-sm font-medium mb-1">Destination / Address</label>
+                        <input type="text" placeholder="Bank Account / USDT Address" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-sm py-2 px-3 text-sm outline-none focus:ring-1 focus:ring-[var(--button-primary-bg)]" />
                     </div>
 
                     <!-- Note -->
-                    <div class="space-y-2">
-                        <label class="text-[var(--text-primary)] font-medium">Note</label>
-                        <input type="text" placeholder="Remarks (optional)" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-xl py-3 px-3 outline-none focus:ring-2 focus:ring-[var(--button-primary-bg)]" />
+                    <div class="space-y-1">
+                        <label class="text-[var(--text-primary)] text-sm font-medium mb-1">Note</label>
+                        <input type="text" placeholder="Remarks (optional)" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-sm py-2 px-3 text-sm outline-none focus:ring-1 focus:ring-[var(--button-primary-bg)]" />
                     </div>
 
                     <!-- Buttons -->
                     <div class="col-span-full mt-4 flex gap-4 pt-4">
-                        <button type="button" class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] hover:text-[var(--button-primary-hover-text)] px-8 py-3 rounded-xl font-semibold ">
+                        <button type="button" class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] hover:text-[var(--button-primary-hover-text)] px-6 py-2 rounded-sm text-sm font-semibold ">
                             Submit Withdrawal
                         </button>
-                        <button type="button" class="border border-[var(--border-secondary)] text-[var(--text-secondary)] hover:bg-[var(--bg-tertiary)] bg-transparent px-6 py-3 rounded-xl font-semibold">
+                        <button type="button" class="border border-[var(--border-secondary)] text-[var(--text-secondary)] hover:bg-[var(--bg-tertiary)] bg-transparent px-4 py-2 rounded-sm text-sm font-semibold">
                             Reset
                         </button>
                     </div>

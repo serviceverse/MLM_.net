@@ -1,17 +1,17 @@
 @{
     ViewData["Title"] = "Document Upload";
 }
-<div class="p-4 md:p-8 space-y-6">
+<div class="p-4 md:p-8 space-y-4">
     <!-- Header -->
     <div class="mb-2">
-        <h1 class="text-3xl font-bold text-[var(--text-primary)] tracking-tight">Upload Document List</h1>
+        <h1 class="text-2xl font-bold text-[var(--text-primary)] tracking-tight">Upload Document List</h1>
         <p class="text-sm text-[var(--text-secondary)] mt-1 font-medium">Manage your trading account verification documents</p>
     </div>
 
     <!-- Upload Section -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
         <!-- POA Card -->
-        <div class="bg-[var(--bg-primary)] border border-[var(--border-secondary)] rounded-2xl shadow-sm p-6 md:p-8 flex flex-col transition-all hover:shadow-md">
+        <div class="bg-white border border-[var(--border-secondary)] rounded-sm shadow-sm p-6 md:p-8 flex flex-col transition-all hover:shadow-md">
             <h2 class="text-xl font-bold text-[var(--text-primary)] mb-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
                 Proof of Address (POA) 
                 <span class="text-xs bg-[var(--bg-tertiary)] text-[var(--text-secondary)] px-3 py-1 rounded-full font-medium border border-[var(--border-secondary)]">Aadhar Card</span>
@@ -22,7 +22,7 @@
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-[var(--text-secondary)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
                     </div>
                     <div class="space-y-2">
-                        <p class="text-[var(--text-primary)] font-medium">
+                        <p class="text-[var(--text-primary)] text-sm font-medium mb-1">
                             Drag & drop files or 
                             <label class="text-[var(--button-primary-bg)] hover:underline cursor-pointer">
                                 Browse
@@ -34,14 +34,14 @@
                 </div>
             </div>
             <div class="mt-6 flex justify-center">
-                <button class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] px-8 py-3 rounded-xl font-semibold shadow-md shadow-[var(--button-primary-bg)]/20 transition-all w-full sm:w-auto">
+                <button class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] px-6 py-2 rounded-sm text-sm font-semibold shadow-md shadow-[var(--button-primary-bg)]/20 transition-all w-full sm:w-auto">
                     UPLOAD FILES
                 </button>
             </div>
         </div>
 
         <!-- POI Card -->
-        <div class="bg-[var(--bg-primary)] border border-[var(--border-secondary)] rounded-2xl shadow-sm p-6 md:p-8 flex flex-col transition-all hover:shadow-md">
+        <div class="bg-white border border-[var(--border-secondary)] rounded-sm shadow-sm p-6 md:p-8 flex flex-col transition-all hover:shadow-md">
             <h2 class="text-xl font-bold text-[var(--text-primary)] mb-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
                 Proof of Identity (POI) 
                 <span class="text-xs bg-[var(--bg-tertiary)] text-[var(--text-secondary)] px-3 py-1 rounded-full font-medium border border-[var(--border-secondary)]">Driving License, Pancard</span>
@@ -52,7 +52,7 @@
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-[var(--text-secondary)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
                     </div>
                     <div class="space-y-2">
-                        <p class="text-[var(--text-primary)] font-medium">
+                        <p class="text-[var(--text-primary)] text-sm font-medium mb-1">
                             Drag & drop files or 
                             <label class="text-[var(--button-primary-bg)] hover:underline cursor-pointer">
                                 Browse
@@ -64,7 +64,7 @@
                 </div>
             </div>
             <div class="mt-6 flex justify-center">
-                <button class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] px-8 py-3 rounded-xl font-semibold shadow-md shadow-[var(--button-primary-bg)]/20 transition-all w-full sm:w-auto">
+                <button class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] px-6 py-2 rounded-sm text-sm font-semibold shadow-md shadow-[var(--button-primary-bg)]/20 transition-all w-full sm:w-auto">
                     UPLOAD FILES
                 </button>
             </div>
@@ -72,7 +72,7 @@
     </div>
 
     <!-- KYC Status Section -->
-    <div class="bg-[var(--bg-primary)] border border-[var(--border-secondary)] rounded-2xl shadow-sm overflow-hidden flex flex-col mt-6">
+    <div class="bg-white border border-[var(--border-secondary)] rounded-sm shadow-sm overflow-hidden flex flex-col mt-6">
         
         <div class="p-5 border-b border-[var(--border-secondary)] flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-[var(--bg-primary)]">
             <div class="flex space-x-6">

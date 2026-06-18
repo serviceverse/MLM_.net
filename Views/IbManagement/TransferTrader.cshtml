@@ -6,22 +6,22 @@
     <div class="max-w-3xl mx-auto space-y-8">
         <!-- Header -->
         <div>
-            <h1 class="text-3xl font-bold text-[var(--text-primary)] tracking-tight">Transfer Trader</h1>
+            <h1 class="text-2xl font-bold text-[var(--text-primary)] tracking-tight">Transfer Trader</h1>
             <p class="text-[var(--text-secondary)] mt-1">
                 Move a trader from one IB to another IB
             </p>
         </div>
 
         <!-- Main Card -->
-        <div class="bg-[var(--bg-primary)] border border-[var(--border-secondary)] rounded-2xl p-6 md:p-8 shadow-sm">
-            <form class="space-y-6">
+        <div class="bg-white border border-[var(--border-secondary)] rounded-sm p-6 md:p-8 shadow-sm">
+            <form class="space-y-4">
                 
                 <!-- Trader Selection -->
                 <div class="space-y-2">
-                    <label class="block text-sm font-medium text-[var(--text-primary)]">Select Trader <span class="text-red-400">*</span></label>
+                    <label class="block text-[var(--text-primary)] text-sm font-medium mb-1">Select Trader <span class="text-red-400">*</span></label>
                     
                     <div class="relative">
-                        <select class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-xl py-3 px-4 focus:outline-none focus:border-[var(--button-primary-bg)] focus:ring-1 focus:ring-[var(--button-primary-bg)] appearance-none">
+                        <select class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-sm py-2 px-3 text-sm focus:outline-none focus:border-[var(--button-primary-bg)] focus:ring-1 focus:ring-[var(--button-primary-bg)] appearance-none">
                             <option value="">Choose a trader...</option>
                             <!-- Options would be populated from ViewBag.Traders -->
                         </select>
@@ -33,10 +33,10 @@
 
                 <!-- Select New IB -->
                 <div class="space-y-2">
-                    <label class="block text-sm font-medium text-[var(--text-primary)]">Transfer To IB <span class="text-red-400">*</span></label>
+                    <label class="block text-[var(--text-primary)] text-sm font-medium mb-1">Transfer To IB <span class="text-red-400">*</span></label>
                     
                     <div class="relative">
-                        <select class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-xl py-3 px-4 focus:outline-none focus:border-[var(--button-primary-bg)] focus:ring-1 focus:ring-[var(--button-primary-bg)] appearance-none">
+                        <select class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-sm py-2 px-3 text-sm focus:outline-none focus:border-[var(--button-primary-bg)] focus:ring-1 focus:ring-[var(--button-primary-bg)] appearance-none">
                             <option value="">Choose IB...</option>
                             <!-- Options would be populated from ViewBag.Ibs -->
                         </select>
@@ -47,7 +47,7 @@
                 </div>
 
                 <!-- Submit Button -->
-                <button type="submit" class="w-full bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] hover:text-[var(--button-primary-hover-text)] py-3 rounded-xl font-semibold transition-colors">
+                <button type="submit" class="w-full bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] hover:text-[var(--button-primary-hover-text)] py-2 rounded-sm text-sm font-semibold transition-colors">
                     Transfer Trader
                 </button>
             </form>
@@ -56,9 +56,9 @@
         <!-- Info Section -->
         <div class="bg-[var(--bg-secondary)]/50 border border-[var(--border-primary)] rounded-2xl p-6">
             <div class="space-y-2 text-sm text-[var(--text-secondary)]">
-                <p>• This will move the trader to the new IB immediately.</p>
-                <p>• All future commissions will use the NEW IB.</p>
-                <p>• Old commissions before transfer remain unchanged.</p>
+                <p>â€¢ This will move the trader to the new IB immediately.</p>
+                <p>â€¢ All future commissions will use the NEW IB.</p>
+                <p>â€¢ Old commissions before transfer remain unchanged.</p>
             </div>
         </div>
     </div>

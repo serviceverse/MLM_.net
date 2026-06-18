@@ -5,35 +5,35 @@
 }
 
 <div class="p-6 md:p-8">
-    <div class="max-w-6xl space-y-6">
+    <div class="max-w-6xl space-y-4">
         <div>
             <h1 class="text-2xl font-bold text-[var(--text-primary)]">Create Role</h1>
             <p class="text-[var(--text-secondary)]">Add a new user role to the system</p>
         </div>
 
         <div class="bg-[var(--bg-primary)] border border-[var(--border-secondary)] rounded-xl shadow-sm p-6 md:p-8">
-            <form asp-action="Create" class="space-y-6">
+            <form asp-action="Create" class="space-y-4">
                 <div asp-validation-summary="ModelOnly" class="text-red-500 text-sm mb-4"></div>
                 
                 <div class="space-y-2">
                     <label asp-for="Name" class="text-[var(--text-tertiary)] font-medium block">Role Name <span class="text-red-400">*</span></label>
-                    <input asp-for="Name" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] focus:border-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)] rounded-xl py-3 px-4 outline-none" required />
+                    <input asp-for="Name" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] focus:border-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)] rounded-sm py-2 px-3 text-sm outline-none" required />
                     <span asp-validation-for="Name" class="text-red-500 text-sm"></span>
                 </div>
 
                 <div class="space-y-2">
                     <label asp-for="Description" class="text-[var(--text-tertiary)] font-medium block">Description</label>
-                    <textarea asp-for="Description" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] focus:border-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)] rounded-xl py-3 px-4 outline-none min-h-[100px] resize-none"></textarea>
+                    <textarea asp-for="Description" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] focus:border-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)] rounded-sm py-2 px-3 text-sm outline-none min-h-[100px] resize-none"></textarea>
                     <span asp-validation-for="Description" class="text-red-500 text-sm"></span>
                 </div>
 
                 <div class="flex items-center space-x-2 pt-2">
                     <input asp-for="IsAdmin" type="checkbox" class="w-4 h-4 rounded border-[var(--border-secondary)] bg-[var(--bg-tertiary)] text-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)]" />
-                    <label asp-for="IsAdmin" class="text-[var(--text-primary)] font-medium">Is Admin Role?</label>
+                    <label asp-for="IsAdmin" class="text-[var(--text-primary)] text-sm font-medium mb-1">Is Admin Role?</label>
                 </div>
 
                 <div class="col-span-full mt-4 flex items-center space-x-4 pt-6">
-                    <button type="submit" class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] font-semibold px-8 py-3 rounded-xl transition-colors">
+                    <button type="submit" class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] font-semibold px-6 py-2 rounded-sm text-sm transition-colors">
                         Create Role
                     </button>
                     <a asp-action="Index" class="text-[var(--text-secondary)] hover:text-[var(--text-primary)] font-medium px-4 py-2 transition-colors">

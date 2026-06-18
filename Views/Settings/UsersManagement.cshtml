@@ -1,15 +1,77 @@
 @{
-    ViewData["Title"] = "UsersManagement";
+    ViewData["Title"] = "User Management";
+    // Mock data for UI demonstration
+    var users = new[] {
+        new { Username = "admin", FullName = "System Admin", Email = "admin@example.com", ContactNo = "+1234567890", Role = "Administrator", Active = true },
+        new { Username = "jdoe", FullName = "John Doe", Email = "jdoe@example.com", ContactNo = "+1987654321", Role = "Manager", Active = true },
+        new { Username = "bsmith", FullName = "Bob Smith", Email = "bsmith@example.com", ContactNo = "+1555555555", Role = "User", Active = false }
+    };
 }
 
-<div class="p-6 md:p-8">
-    <div class="max-w-6xl space-y-6">
-        <div>
-            <h1 class="text-2xl font-bold text-[var(--text-primary)]">UsersManagement</h1>
-            <p class="text-[var(--text-secondary)]">Migrated from: settings\users-management\page.tsx</p>
+<div class="p-4 md:p-6 space-y-4">
+    <div class="flex justify-between items-center">
+        <h1 class="text-2xl font-bold text-[var(--text-primary)]">User Management</h1>
+    </div>
+
+    <div class="flex flex-wrap justify-between items-center gap-4">
+        <button type="button" class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] rounded-full w-10 h-10 flex items-center justify-center shadow-sm" title="Add User">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+        </button>
+
+        <div class="relative w-full md:w-1/4 min-w-[200px]">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute left-3 top-2.5 w-4 h-4 text-[var(--text-tertiary)]"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            <input type="text" placeholder="Search by Username" class="pl-9 pr-4 py-2 w-full rounded-sm bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] text-sm placeholder-[var(--text-tertiary)] focus:border-[var(--button-primary-bg)] focus:ring-1 focus:ring-[var(--button-primary-bg)] outline-none" />
         </div>
-        <div class="flex-1 overflow-hidden flex flex-col">
-            <p class="text-[var(--text-tertiary)]">Content for UsersManagement will go here.</p>
+    </div>
+
+    <div class="bg-white border border-[var(--border-secondary)] rounded-sm shadow-none">
+        <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+                <thead>
+                    <tr class="border-b border-[var(--border-secondary)] hover:bg-[var(--bg-tertiary)] even:bg-[var(--bg-secondary)]/40 transition-none">
+                        <th class="py-2 px-3 text-[11px] border-r border-[var(--border-secondary)] whitespace-nowrap text-left text-[var(--text-secondary)] font-semibold uppercase">Username</th>
+                        <th class="py-2 px-3 text-[11px] border-r border-[var(--border-secondary)] whitespace-nowrap text-left text-[var(--text-secondary)] font-semibold uppercase">Full Name</th>
+                        <th class="py-2 px-3 text-[11px] border-r border-[var(--border-secondary)] whitespace-nowrap text-left text-[var(--text-secondary)] font-semibold uppercase">Email</th>
+                        <th class="py-2 px-3 text-[11px] border-r border-[var(--border-secondary)] whitespace-nowrap text-left text-[var(--text-secondary)] font-semibold uppercase">Contact No</th>
+                        <th class="py-2 px-3 text-[11px] border-r border-[var(--border-secondary)] whitespace-nowrap text-left text-[var(--text-secondary)] font-semibold uppercase">Role</th>
+                        <th class="py-2 px-3 text-[11px] border-r border-[var(--border-secondary)] whitespace-nowrap text-center text-[var(--text-secondary)] font-semibold uppercase">Status</th>
+                        <th class="py-2 px-3 text-[11px] whitespace-nowrap text-center text-[var(--text-secondary)] font-semibold uppercase w-32">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var user in users)
+                    {
+                        <tr class="border-b border-[var(--border-secondary)] hover:bg-[var(--bg-tertiary)] even:bg-[var(--bg-secondary)]/40 transition-none">
+                            <td class="py-2 px-3 text-[12px] border-r border-[var(--border-secondary)] whitespace-nowrap text-[var(--text-primary)] font-medium">@user.Username</td>
+                            <td class="py-2 px-3 text-[12px] border-r border-[var(--border-secondary)] whitespace-nowrap text-[var(--text-primary)]">@user.FullName</td>
+                            <td class="py-2 px-3 text-[12px] border-r border-[var(--border-secondary)] whitespace-nowrap text-[var(--text-primary)]">@user.Email</td>
+                            <td class="py-2 px-3 text-[12px] border-r border-[var(--border-secondary)] whitespace-nowrap text-[var(--text-primary)]">@user.ContactNo</td>
+                            <td class="py-2 px-3 text-[12px] border-r border-[var(--border-secondary)] whitespace-nowrap text-[var(--text-primary)]">@user.Role</td>
+                            <td class="py-2 px-3 text-[12px] border-r border-[var(--border-secondary)] whitespace-nowrap text-[var(--text-primary)] text-center">
+                                @if (user.Active)
+                                {
+                                    <span class="inline-flex items-center rounded-sm border px-2.5 py-0.5 text-[10px] font-semibold bg-green-500/20 text-green-600 border-green-500/30">Active</span>
+                                }
+                                else
+                                {
+                                    <span class="inline-flex items-center rounded-sm border px-2.5 py-0.5 text-[10px] font-semibold bg-gray-500/20 text-gray-600 border-gray-500/30">Inactive</span>
+                                }
+                            </td>
+                            <td class="py-1 px-2 text-[12px] whitespace-nowrap text-center flex justify-center items-center space-x-1">
+                                <button class="p-1.5 text-[var(--text-secondary)] hover:text-[var(--button-primary-bg)] hover:bg-[var(--bg-tertiary)] rounded-sm transition-colors" title="Edit User">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/></svg>
+                                </button>
+                                <button class="p-1.5 text-[var(--text-secondary)] hover:text-[var(--button-primary-bg)] hover:bg-[var(--bg-tertiary)] rounded-sm transition-colors" title="Update Password">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M12 10a2 2 0 0 0-2 2c0 1.02-.1 2.51-.26 4H14c-.16-1.49-.26-2.98-.26-4a2 2 0 0 0-2-2Z"/><path d="M17.5 19c.83 0 1.5-.67 1.5-1.5 0-3.48-1.5-6.5-1.5-6.5C16 8 16 6 16 6c0-2.21-1.79-4-4-4S8 3.79 8 6v2c0 0-1.5 3.02-1.5 6.5 0 .83.67 1.5 1.5 1.5"/></svg>
+                                </button>
+                                <button class="p-1.5 text-red-400 hover:text-red-500 hover:bg-red-50 rounded-sm transition-colors" title="Delete User">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/><line x1="10" x2="10" y1="11" y2="17"/><line x1="14" x2="14" y1="11" y2="17"/></svg>
+                                </button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
         </div>
     </div>
 </div>

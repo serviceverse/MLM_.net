@@ -2,24 +2,24 @@
     ViewData["Title"] = "Set IB Commissions";
 }
 
-<div class="p-4 md:p-8 space-y-6">
+<div class="p-4 md:p-8 space-y-4">
     <!-- Header -->
     <div>
-        <h1 class="text-3xl font-bold text-[var(--text-primary)] tracking-tight">Set IB Commissions</h1>
+        <h1 class="text-2xl font-bold text-[var(--text-primary)] tracking-tight">Set IB Commissions</h1>
         <p class="text-[var(--text-secondary)] mt-1">
             Use the fields below to assign user-wise commissions
         </p>
     </div>
 
     <!-- Form Card -->
-    <div class="bg-[var(--bg-primary)] border border-[var(--border-secondary)] rounded-2xl p-6 md:p-8 shadow-sm">
-        <form class="space-y-6">
+    <div class="bg-white border border-[var(--border-secondary)] rounded-sm p-6 md:p-8 shadow-sm">
+        <form class="space-y-4">
             
             <!-- IB User Selection -->
             <div class="space-y-2">
-                <label class="block text-sm font-medium text-[var(--text-primary)]">IB User <span class="text-red-400">*</span></label>
+                <label class="block text-[var(--text-primary)] text-sm font-medium mb-1">IB User <span class="text-red-400">*</span></label>
                 <div class="relative">
-                    <input type="text" placeholder="Search by name or email" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-xl py-3 px-4 focus:outline-none focus:border-[var(--button-primary-bg)] focus:ring-2 focus:ring-[var(--button-primary-bg)]/20 shadow-sm transition-all" />
+                    <input type="text" placeholder="Search by name or email" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-sm py-2 px-3 text-sm focus:outline-none focus:border-[var(--button-primary-bg)] focus:ring-2 focus:ring-[var(--button-primary-bg)]/20 shadow-sm transition-all" />
                 </div>
                 <p class="text-xs text-[var(--text-tertiary)] mt-1">Only IB users who don't have commissions set will appear here.</p>
             </div>
@@ -31,25 +31,25 @@
                     <!-- Example Fields -->
                     <div>
                         <label class="block text-sm text-[var(--text-primary)] mb-2">Standard Group</label>
-                        <input type="number" min="0" step="0.01" placeholder="e.g. 10" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-xl py-3 px-4 focus:outline-none focus:border-[var(--button-primary-bg)] focus:ring-2 focus:ring-[var(--button-primary-bg)]/20 shadow-sm transition-all" />
+                        <input type="number" min="0" step="0.01" placeholder="e.g. 10" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-sm py-2 px-3 text-sm focus:outline-none focus:border-[var(--button-primary-bg)] focus:ring-2 focus:ring-[var(--button-primary-bg)]/20 shadow-sm transition-all" />
                     </div>
                     <div>
                         <label class="block text-sm text-[var(--text-primary)] mb-2">Pro Group</label>
-                        <input type="number" min="0" step="0.01" placeholder="e.g. 15" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-xl py-3 px-4 focus:outline-none focus:border-[var(--button-primary-bg)] focus:ring-2 focus:ring-[var(--button-primary-bg)]/20 shadow-sm transition-all" />
+                        <input type="number" min="0" step="0.01" placeholder="e.g. 15" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-sm py-2 px-3 text-sm focus:outline-none focus:border-[var(--button-primary-bg)] focus:ring-2 focus:ring-[var(--button-primary-bg)]/20 shadow-sm transition-all" />
                     </div>
                     <div>
                         <label class="block text-sm text-[var(--text-primary)] mb-2">VIP Group</label>
-                        <input type="number" min="0" step="0.01" placeholder="e.g. 20" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-xl py-3 px-4 focus:outline-none focus:border-[var(--button-primary-bg)] focus:ring-2 focus:ring-[var(--button-primary-bg)]/20 shadow-sm transition-all" />
+                        <input type="number" min="0" step="0.01" placeholder="e.g. 20" class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-sm py-2 px-3 text-sm focus:outline-none focus:border-[var(--button-primary-bg)] focus:ring-2 focus:ring-[var(--button-primary-bg)]/20 shadow-sm transition-all" />
                     </div>
                 </div>
             </div>
 
             <!-- Actions -->
             <div class="flex gap-4 pt-4">
-                <button type="submit" class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] px-8 py-3 rounded-xl font-bold shadow-md shadow-[var(--button-primary-bg)]/20 transition-all">
+                <button type="submit" class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] px-6 py-2 rounded-sm text-sm font-bold shadow-md shadow-[var(--button-primary-bg)]/20 transition-all">
                     Save Commissions
                 </button>
-                <button type="button" class="border border-[var(--border-secondary)] text-[var(--text-secondary)] hover:bg-[var(--bg-tertiary)] px-6 py-3 rounded-xl font-semibold">
+                <button type="button" class="border border-[var(--border-secondary)] text-[var(--text-secondary)] hover:bg-[var(--bg-tertiary)] px-4 py-2 rounded-sm text-sm font-semibold">
                     Reset
                 </button>
             </div>
@@ -60,13 +60,13 @@
     <div>
         <h2 class="text-2xl font-bold mb-4 text-[var(--text-primary)] tracking-tight">IB Commission Listing</h2>
 
-        <div class="bg-[var(--bg-primary)] border border-[var(--border-secondary)] rounded-2xl shadow-sm overflow-hidden flex flex-col">
+        <div class="bg-white border border-[var(--border-secondary)] rounded-sm shadow-none flex flex-col">
             <!-- Filters -->
-            <div class="p-5 border-b border-[var(--border-secondary)] flex flex-wrap items-center justify-between gap-4">
+            <div class="px-3 py-2 border-b border-[var(--border-secondary)] flex flex-wrap items-center justify-between gap-4">
                 <div class="flex items-center space-x-4">
                     <div class="flex items-center space-x-2">
                         <span class="text-[var(--text-secondary)] text-sm">Show</span>
-                        <select class="h-9 w-20 rounded-lg border border-[var(--border-secondary)] bg-[var(--bg-primary)] text-[var(--text-primary)] px-2 py-1 text-sm shadow-sm focus:outline-none focus:border-[var(--button-primary-bg)] focus:ring-1 focus:ring-[var(--button-primary-bg)]/20 transition-all">
+                        <select class="h-8 w-16 items-center justify-between rounded-sm border border-[var(--border-secondary)] bg-[var(--bg-tertiary)] px-2 py-1 text-xs ring-offset-background focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-[var(--text-primary)]">
                             <option value="10">10</option>
                             <option value="25">25</option>
                             <option value="50">50</option>
@@ -81,7 +81,10 @@
 
                 <div class="flex items-center space-x-2">
                     <span class="text-[var(--text-secondary)] text-sm">Search:</span>
-                    <input type="text" placeholder="Filter table..." class="w-full sm:w-64 bg-[var(--bg-primary)] border border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] focus:border-[var(--button-primary-bg)] focus:ring-1 focus:ring-[var(--button-primary-bg)]/20 rounded-lg py-2 px-3 outline-none text-sm shadow-sm transition-all" />
+                    <div class="relative">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3 text-gray-400 absolute left-2 top-1/2 transform -translate-y-1/2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                        <input type="text" placeholder="Filter table..." class="flex h-8 w-64 rounded-sm border px-2 py-1 text-xs ring-offset-background pl-7 bg-[var(--bg-tertiary)] border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] focus:border-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)]" />
+                    </div>
                 </div>
             </div>
 
@@ -89,21 +92,20 @@
             <div class="overflow-x-auto">
                 <table class="w-full text-sm">
                     <thead>
-                        <tr class="border-b border-[var(--border-secondary)] bg-[var(--bg-tertiary)]">
-                            <th class="py-3 px-5 text-xs text-left text-[var(--text-secondary)] font-bold uppercase tracking-wider">ID</th>
-                            <th class="py-3 px-5 text-xs text-left text-[var(--text-secondary)] font-bold uppercase tracking-wider">Name</th>
-                            <th class="py-3 px-5 text-xs text-left text-[var(--text-secondary)] font-bold uppercase tracking-wider">Email</th>
-                            <th class="py-3 px-5 text-xs text-left text-[var(--text-secondary)] font-bold uppercase tracking-wider">Sub IB Email</th>
-                            <th class="py-3 px-5 text-xs text-left text-[var(--text-secondary)] font-bold uppercase tracking-wider">Standard Group</th>
-                            <th class="py-3 px-5 text-xs text-left text-[var(--text-secondary)] font-bold uppercase tracking-wider">Pro Group</th>
-                            <th class="py-3 px-5 text-xs text-left text-[var(--text-secondary)] font-bold uppercase tracking-wider">VIP Group</th>
+                        <tr class="border-b border-[var(--border-secondary)] hover:bg-[var(--bg-tertiary)] even:bg-[var(--bg-secondary)]/40 transition-none">
+                            @foreach (var heading in new[] { "ID", "Name", "Email", "Sub IB Email", "Standard Group", "Pro Group", "VIP Group" })
+                            {
+                                <th class="py-1.5 px-2 text-[11px] border-r border-[var(--border-secondary)] whitespace-nowrap text-left text-[var(--text-secondary)] font-semibold uppercase">
+                                    @heading
+                                </th>
+                            }
                         </tr>
                     </thead>
                     <tbody>
                         @if (ViewBag.Commissions == null || ((IEnumerable<dynamic>)ViewBag.Commissions).Count() == 0)
                         {
                             <tr>
-                                <td colspan="7" class="text-center py-8 text-[var(--text-tertiary)] font-medium text-sm">
+                                <td colspan="7" class="text-center py-6 text-[12px] text-gray-400">
                                     No data found
                                 </td>
                             </tr>
@@ -112,14 +114,14 @@
                         {
                             foreach (var item in ViewBag.Commissions)
                             {
-                                <tr class="border-b border-[var(--border-secondary)] hover:bg-[var(--bg-tertiary)] hover:bg-[var(--bg-tertiary)]/50 transition-colors">
-                                    <td class="py-4 px-5 text-sm text-[var(--text-primary)] font-medium">@item.Id</td>
-                                    <td class="py-4 px-5 text-sm text-[var(--text-primary)] font-medium">@item.Name</td>
-                                    <td class="py-4 px-5 text-sm text-[var(--text-primary)] font-medium">@item.Email</td>
-                                    <td class="py-4 px-5 text-sm text-[var(--text-primary)] font-medium">@item.SubIbEmail</td>
-                                    <td class="py-4 px-5 text-sm text-[var(--text-primary)] font-medium">0</td>
-                                    <td class="py-4 px-5 text-sm text-[var(--text-primary)] font-medium">0</td>
-                                    <td class="py-4 px-5 text-sm text-[var(--text-primary)] font-medium">0</td>
+                                <tr class="border-b border-[var(--border-secondary)] hover:bg-[var(--bg-tertiary)] even:bg-[var(--bg-secondary)]/40 transition-none">
+                                    <td class="py-1 px-2 text-[12px] border-r border-[var(--border-secondary)] whitespace-nowrap text-[var(--text-primary)]">@item.Id</td>
+                                    <td class="py-1 px-2 text-[12px] border-r border-[var(--border-secondary)] whitespace-nowrap text-[var(--text-primary)]">@item.Name</td>
+                                    <td class="py-1 px-2 text-[12px] border-r border-[var(--border-secondary)] whitespace-nowrap text-[var(--text-primary)]">@item.Email</td>
+                                    <td class="py-1 px-2 text-[12px] border-r border-[var(--border-secondary)] whitespace-nowrap text-[var(--text-primary)]">@item.SubIbEmail</td>
+                                    <td class="py-1 px-2 text-[12px] border-r border-[var(--border-secondary)] whitespace-nowrap text-[var(--text-primary)]">0</td>
+                                    <td class="py-1 px-2 text-[12px] border-r border-[var(--border-secondary)] whitespace-nowrap text-[var(--text-primary)]">0</td>
+                                    <td class="py-1 px-2 text-[12px] border-r border-[var(--border-secondary)] whitespace-nowrap text-[var(--text-primary)]">0</td>
                                 </tr>
                             }
                         }
@@ -128,19 +130,21 @@
             </div>
 
             <!-- Pagination footer -->
-            <div class="p-5 border-t border-[var(--border-secondary)] flex flex-wrap items-center justify-between gap-4">
+            <div class="px-3 py-2 border-t border-[var(--border-secondary)] flex flex-wrap items-center justify-between gap-4">
                 <div class="text-[var(--text-secondary)] text-xs">
                     Showing 0 to 0 of 0 entries
                 </div>
                 <div class="flex items-center space-x-2">
-                    <button disabled class="px-4 py-2 border border-[var(--border-secondary)] rounded-lg text-[var(--text-tertiary)] bg-[var(--bg-tertiary)] cursor-not-allowed text-sm font-bold flex items-center">
+                    <button disabled class="inline-flex items-center justify-center rounded-sm text-xs font-medium transition-colors border border-[var(--border-secondary)] text-[var(--text-secondary)] hover:bg-[var(--bg-tertiary)] bg-transparent h-7 px-2 opacity-50 cursor-not-allowed">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3 mr-1"><path d="m15 18-6-6 6-6"/></svg>
                         Previous
                     </button>
                     <span class="px-2 py-1 text-xs bg-[var(--button-primary-bg)] text-[var(--button-primary-text)] rounded-sm">
                         1 / 1
                     </span>
-                    <button disabled class="px-4 py-2 border border-[var(--border-secondary)] rounded-lg text-[var(--text-tertiary)] bg-[var(--bg-tertiary)] cursor-not-allowed text-sm font-bold flex items-center">
+                    <button disabled class="inline-flex items-center justify-center rounded-sm text-xs font-medium transition-colors border border-[var(--border-secondary)] text-[var(--text-secondary)] hover:bg-[var(--bg-tertiary)] bg-transparent h-7 px-2 opacity-50 cursor-not-allowed">
                         Next
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3 ml-1"><path d="m9 18 6-6-6-6"/></svg>
                     </button>
                 </div>
             </div>

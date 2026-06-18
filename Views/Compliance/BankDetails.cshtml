@@ -1,57 +1,57 @@
 @{
     ViewData["Title"] = "Bank Details";
 }
-<div class="p-4 md:p-8 space-y-6">
+<div class="p-4 md:p-8 space-y-4">
     <!-- Header -->
     <div class="mb-2">
-        <h1 class="text-3xl font-bold text-[var(--text-primary)] tracking-tight">Add Bank Details</h1>
+        <h1 class="text-2xl font-bold text-[var(--text-primary)] tracking-tight">Add Bank Details</h1>
         <p class="text-sm text-[var(--text-secondary)] mt-1 font-medium">Provide your banking information for account verification</p>
     </div>
 
     <!-- Form -->
-    <div class="bg-[var(--bg-primary)] border border-[var(--border-secondary)] rounded-2xl shadow-sm p-6 md:p-8">
-        <form class="flex-1 flex flex-col space-y-6">
+    <div class="bg-white border border-[var(--border-secondary)] rounded-sm shadow-sm p-6 md:p-8">
+        <form class="flex-1 flex flex-col space-y-4">
             <!-- Row 1 -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div class="space-y-2">
                     <label class="font-bold text-[var(--text-primary)]">Account Holder's Name <span class="text-red-500">*</span></label>
-                    <input type="text" placeholder="Enter Account Holder's Name" class="w-full bg-[var(--bg-primary)] border border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] focus:border-[var(--button-primary-bg)] focus:ring-2 focus:ring-[var(--button-primary-bg)]/20 rounded-xl py-3 px-4 outline-none shadow-sm transition-all" required />
+                    <input type="text" placeholder="Enter Account Holder's Name" class="w-full bg-[var(--bg-primary)] border border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] focus:border-[var(--button-primary-bg)] focus:ring-2 focus:ring-[var(--button-primary-bg)]/20 rounded-sm py-2 px-3 text-sm outline-none shadow-sm transition-all" required />
                 </div>
 
                 <div class="space-y-2">
                     <label class="font-bold text-[var(--text-primary)]">Account No. <span class="text-red-500">*</span></label>
-                    <input type="text" placeholder="Enter account number" class="w-full bg-[var(--bg-primary)] border border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] focus:border-[var(--button-primary-bg)] focus:ring-2 focus:ring-[var(--button-primary-bg)]/20 rounded-xl py-3 px-4 outline-none shadow-sm transition-all" required />
+                    <input type="text" placeholder="Enter account number" class="w-full bg-[var(--bg-primary)] border border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] focus:border-[var(--button-primary-bg)] focus:ring-2 focus:ring-[var(--button-primary-bg)]/20 rounded-sm py-2 px-3 text-sm outline-none shadow-sm transition-all" required />
                 </div>
 
                 <div class="space-y-2">
                     <label class="font-bold text-[var(--text-primary)]">IFSC/Swift Code <span class="text-red-500">*</span></label>
-                    <input type="text" placeholder="Enter ifsc/swift code" class="w-full bg-[var(--bg-primary)] border border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] focus:border-[var(--button-primary-bg)] focus:ring-2 focus:ring-[var(--button-primary-bg)]/20 rounded-xl py-3 px-4 outline-none shadow-sm transition-all" required />
+                    <input type="text" placeholder="Enter ifsc/swift code" class="w-full bg-[var(--bg-primary)] border border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] focus:border-[var(--button-primary-bg)] focus:ring-2 focus:ring-[var(--button-primary-bg)]/20 rounded-sm py-2 px-3 text-sm outline-none shadow-sm transition-all" required />
                 </div>
             </div>
 
             <!-- Row 2 -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div class="space-y-2">
                     <label class="font-bold text-[var(--text-primary)]">IBAN No.</label>
-                    <input type="text" placeholder="Enter iban number" class="w-full bg-[var(--bg-primary)] border border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] focus:border-[var(--button-primary-bg)] focus:ring-2 focus:ring-[var(--button-primary-bg)]/20 rounded-xl py-3 px-4 outline-none shadow-sm transition-all" />
+                    <input type="text" placeholder="Enter iban number" class="w-full bg-[var(--bg-primary)] border border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] focus:border-[var(--button-primary-bg)] focus:ring-2 focus:ring-[var(--button-primary-bg)]/20 rounded-sm py-2 px-3 text-sm outline-none shadow-sm transition-all" />
                 </div>
 
                 <div class="space-y-2">
                     <label class="font-bold text-[var(--text-primary)]">Bank Name <span class="text-red-500">*</span></label>
-                    <input type="text" placeholder="Enter bank name" class="w-full bg-[var(--bg-primary)] border border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] focus:border-[var(--button-primary-bg)] focus:ring-2 focus:ring-[var(--button-primary-bg)]/20 rounded-xl py-3 px-4 outline-none shadow-sm transition-all" required />
+                    <input type="text" placeholder="Enter bank name" class="w-full bg-[var(--bg-primary)] border border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] focus:border-[var(--button-primary-bg)] focus:ring-2 focus:ring-[var(--button-primary-bg)]/20 rounded-sm py-2 px-3 text-sm outline-none shadow-sm transition-all" required />
                 </div>
 
                 <div class="space-y-2">
                     <label class="font-bold text-[var(--text-primary)]">Bank Address</label>
-                    <input type="text" placeholder="Enter bank address" class="w-full bg-[var(--bg-primary)] border border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] focus:border-[var(--button-primary-bg)] focus:ring-2 focus:ring-[var(--button-primary-bg)]/20 rounded-xl py-3 px-4 outline-none shadow-sm transition-all" />
+                    <input type="text" placeholder="Enter bank address" class="w-full bg-[var(--bg-primary)] border border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] focus:border-[var(--button-primary-bg)] focus:ring-2 focus:ring-[var(--button-primary-bg)]/20 rounded-sm py-2 px-3 text-sm outline-none shadow-sm transition-all" />
                 </div>
             </div>
 
             <!-- Row 3 -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div class="space-y-2">
                     <label class="font-bold text-[var(--text-primary)]">Country <span class="text-red-500">*</span></label>
-                    <select class="w-full bg-[var(--bg-primary)] border border-[var(--border-secondary)] text-[var(--text-primary)] focus:border-[var(--button-primary-bg)] focus:ring-2 focus:ring-[var(--button-primary-bg)]/20 rounded-xl py-3 px-4 outline-none shadow-sm transition-all" required>
+                    <select class="w-full bg-[var(--bg-primary)] border border-[var(--border-secondary)] text-[var(--text-primary)] focus:border-[var(--button-primary-bg)] focus:ring-2 focus:ring-[var(--button-primary-bg)]/20 rounded-sm py-2 px-3 text-sm outline-none shadow-sm transition-all" required>
                         <option value="">Please Choose...</option>
                         <option value="United States">United States</option>
                         <option value="United Kingdom">United Kingdom</option>
@@ -79,7 +79,7 @@
 
             <!-- Submit -->
             <div class="pt-4 flex justify-start">
-                <button type="submit" class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] hover:text-[var(--button-primary-hover-text)] px-8 py-3 rounded-xl font-bold shadow-md shadow-[var(--button-primary-bg)]/20 transition-all">
+                <button type="submit" class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] hover:text-[var(--button-primary-hover-text)] px-6 py-2 rounded-sm text-sm font-bold shadow-md shadow-[var(--button-primary-bg)]/20 transition-all">
                     Submit Details
                 </button>
             </div>
@@ -90,10 +90,10 @@
     <div class="bg-blue-50/50 border border-blue-100 rounded-2xl p-6 shadow-sm">
         <h3 class="text-lg font-bold text-blue-900 mb-3">Important Information</h3>
         <ul class="space-y-2 text-blue-800 font-medium text-sm">
-            <li class="flex items-start"><span class="mr-2 text-blue-500">•</span> Ensure all bank details are accurate to avoid processing delays</li>
-            <li class="flex items-start"><span class="mr-2 text-blue-500">•</span> The account name should match your registered trading account name</li>
-            <li class="flex items-start"><span class="mr-2 text-blue-500">•</span> Upload a clear copy of your bank statement or passbook</li>
-            <li class="flex items-start"><span class="mr-2 text-blue-500">•</span> Processing time for bank verification is typically 1-2 business days</li>
+            <li class="flex items-start"><span class="mr-2 text-blue-500">â€¢</span> Ensure all bank details are accurate to avoid processing delays</li>
+            <li class="flex items-start"><span class="mr-2 text-blue-500">â€¢</span> The account name should match your registered trading account name</li>
+            <li class="flex items-start"><span class="mr-2 text-blue-500">â€¢</span> Upload a clear copy of your bank statement or passbook</li>
+            <li class="flex items-start"><span class="mr-2 text-blue-500">â€¢</span> Processing time for bank verification is typically 1-2 business days</li>
         </ul>
     </div>
 </div>
