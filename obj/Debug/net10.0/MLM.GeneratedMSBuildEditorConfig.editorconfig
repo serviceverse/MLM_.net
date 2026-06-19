@@ -20,629 +20,629 @@ build_property.TargetFrameworkVersion = v10.0
 build_property.EntryPointFilePath = 
 build_property.RootNamespace = MLM
 build_property.RootNamespace = MLM
-build_property.ProjectDir = C:\Users\Kuter\Documents\.net\MLM_.net\
+build_property.ProjectDir = D:\dotNet\MLM\MLM\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 10.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Kuter\Documents\.net\MLM_.net
+build_property.MSBuildProjectDirectory = D:\dotNet\MLM\MLM
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 10.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Account/AccountList.cshtml]
+[D:/dotNet/MLM/MLM/Views/Account/AccountList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxBY2NvdW50TGlzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Account/ChangePassword.cshtml]
+[D:/dotNet/MLM/MLM/Views/Account/ChangePassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxDaGFuZ2VQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Account/OpenLiveAccount.cshtml]
+[D:/dotNet/MLM/MLM/Views/Account/OpenLiveAccount.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxPcGVuTGl2ZUFjY291bnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Account/UpdateLeverage.cshtml]
+[D:/dotNet/MLM/MLM/Views/Account/UpdateLeverage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxVcGRhdGVMZXZlcmFnZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Account/UpdateLiveAccount.cshtml]
+[D:/dotNet/MLM/MLM/Views/Account/UpdateLiveAccount.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxVcGRhdGVMaXZlQWNjb3VudC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Admin/AdminDashboard.cshtml]
+[D:/dotNet/MLM/MLM/Views/Admin/AdminDashboard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRtaW5EYXNoYm9hcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Admin/MileStones.cshtml]
+[D:/dotNet/MLM/MLM/Views/Admin/MileStones.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTWlsZVN0b25lcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Admin/Notifications.cshtml]
+[D:/dotNet/MLM/MLM/Views/Admin/Notifications.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTm90aWZpY2F0aW9ucy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Admin/RewardsManagement.cshtml]
+[D:/dotNet/MLM/MLM/Views/Admin/RewardsManagement.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUmV3YXJkc01hbmFnZW1lbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Admin/SendEmail.cshtml]
+[D:/dotNet/MLM/MLM/Views/Admin/SendEmail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU2VuZEVtYWlsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Admin/Tickets.cshtml]
+[D:/dotNet/MLM/MLM/Views/Admin/Tickets.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVGlja2V0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/AllReports/DepositReport.cshtml]
+[D:/dotNet/MLM/MLM/Views/AllReports/DepositReport.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWxsUmVwb3J0c1xEZXBvc2l0UmVwb3J0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/AllReports/History.cshtml]
+[D:/dotNet/MLM/MLM/Views/AllReports/History.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWxsUmVwb3J0c1xIaXN0b3J5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/AllReports/IbWithdrawReport.cshtml]
+[D:/dotNet/MLM/MLM/Views/AllReports/IbWithdrawReport.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWxsUmVwb3J0c1xJYldpdGhkcmF3UmVwb3J0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/AllReports/InternalTransferReport.cshtml]
+[D:/dotNet/MLM/MLM/Views/AllReports/InternalTransferReport.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWxsUmVwb3J0c1xJbnRlcm5hbFRyYW5zZmVyUmVwb3J0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/AllReports/LoginActivity.cshtml]
+[D:/dotNet/MLM/MLM/Views/AllReports/LoginActivity.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWxsUmVwb3J0c1xMb2dpbkFjdGl2aXR5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/AllReports/PositionReport.cshtml]
+[D:/dotNet/MLM/MLM/Views/AllReports/PositionReport.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWxsUmVwb3J0c1xQb3NpdGlvblJlcG9ydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/AllReports/WalletHistoryReport.cshtml]
+[D:/dotNet/MLM/MLM/Views/AllReports/WalletHistoryReport.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWxsUmVwb3J0c1xXYWxsZXRIaXN0b3J5UmVwb3J0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/AllReports/WithdrawReport.cshtml]
+[D:/dotNet/MLM/MLM/Views/AllReports/WithdrawReport.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWxsUmVwb3J0c1xXaXRoZHJhd1JlcG9ydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Auth/ClientRegisterReferralid.cshtml]
+[D:/dotNet/MLM/MLM/Views/Auth/ClientRegisterReferralid.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxDbGllbnRSZWdpc3RlclJlZmVycmFsaWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Auth/Login.cshtml]
+[D:/dotNet/MLM/MLM/Views/Auth/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Auth/MtsadminSignin.cshtml]
+[D:/dotNet/MLM/MLM/Views/Auth/MtsadminSignin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxNdHNhZG1pblNpZ25pbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Auth/Register.cshtml]
+[D:/dotNet/MLM/MLM/Views/Auth/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Auth/Signup.cshtml]
+[D:/dotNet/MLM/MLM/Views/Auth/Signup.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxTaWdudXAuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Auth/Verify.cshtml]
+[D:/dotNet/MLM/MLM/Views/Auth/Verify.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxWZXJpZnkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Bonus/Give.cshtml]
+[D:/dotNet/MLM/MLM/Views/Bonus/Give.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9udXNcR2l2ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Bonus/Index.cshtml]
+[D:/dotNet/MLM/MLM/Views/Bonus/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9udXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Bonus/List.cshtml]
+[D:/dotNet/MLM/MLM/Views/Bonus/List.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9udXNcTGlzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Bonus/Remove.cshtml]
+[D:/dotNet/MLM/MLM/Views/Bonus/Remove.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9udXNcUmVtb3ZlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Client/Dashboard.cshtml]
+[D:/dotNet/MLM/MLM/Views/Client/Dashboard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50XERhc2hib2FyZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Client/IbRequest.cshtml]
+[D:/dotNet/MLM/MLM/Views/Client/IbRequest.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50XEliUmVxdWVzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Compliance/BankDetails.cshtml]
+[D:/dotNet/MLM/MLM/Views/Compliance/BankDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcGxpYW5jZVxCYW5rRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Compliance/DocumentUpload.cshtml]
+[D:/dotNet/MLM/MLM/Views/Compliance/DocumentUpload.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcGxpYW5jZVxEb2N1bWVudFVwbG9hZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Compliance/Kyc.cshtml]
+[D:/dotNet/MLM/MLM/Views/Compliance/Kyc.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcGxpYW5jZVxLeWMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Exchanger/Deposit.cshtml]
+[D:/dotNet/MLM/MLM/Views/Exchanger/Deposit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhjaGFuZ2VyXERlcG9zaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Exchanger/IbWithdraw.cshtml]
+[D:/dotNet/MLM/MLM/Views/Exchanger/IbWithdraw.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhjaGFuZ2VyXEliV2l0aGRyYXcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Exchanger/List.cshtml]
+[D:/dotNet/MLM/MLM/Views/Exchanger/List.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhjaGFuZ2VyXExpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Exchanger/Transfer.cshtml]
+[D:/dotNet/MLM/MLM/Views/Exchanger/Transfer.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhjaGFuZ2VyXFRyYW5zZmVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Exchanger/Withdraw.cshtml]
+[D:/dotNet/MLM/MLM/Views/Exchanger/Withdraw.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhjaGFuZ2VyXFdpdGhkcmF3LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/ForgotPassword/Index.cshtml]
+[D:/dotNet/MLM/MLM/Views/ForgotPassword/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9yZ290UGFzc3dvcmRcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Fund/Deposits.cshtml]
+[D:/dotNet/MLM/MLM/Views/Fund/Deposits.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRnVuZFxEZXBvc2l0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Fund/ExternalTransfer.cshtml]
+[D:/dotNet/MLM/MLM/Views/Fund/ExternalTransfer.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRnVuZFxFeHRlcm5hbFRyYW5zZmVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Fund/InternalTransfer.cshtml]
+[D:/dotNet/MLM/MLM/Views/Fund/InternalTransfer.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRnVuZFxJbnRlcm5hbFRyYW5zZmVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Fund/Withdraw.cshtml]
+[D:/dotNet/MLM/MLM/Views/Fund/Withdraw.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRnVuZFxXaXRoZHJhdy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Group/Add.cshtml]
+[D:/dotNet/MLM/MLM/Views/Group/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JvdXBcQWRkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Group/List.cshtml]
+[D:/dotNet/MLM/MLM/Views/Group/List.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JvdXBcTGlzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Group/UpdateMt5.cshtml]
+[D:/dotNet/MLM/MLM/Views/Group/UpdateMt5.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JvdXBcVXBkYXRlTXQ1LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/HelpDesk/MyTickets.cshtml]
+[D:/dotNet/MLM/MLM/Views/HelpDesk/MyTickets.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGVscERlc2tcTXlUaWNrZXRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/HelpDesk/NewTicket.cshtml]
+[D:/dotNet/MLM/MLM/Views/HelpDesk/NewTicket.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGVscERlc2tcTmV3VGlja2V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/HelpDesk/Tickets.cshtml]
+[D:/dotNet/MLM/MLM/Views/HelpDesk/Tickets.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGVscERlc2tcVGlja2V0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Home/Index.cshtml]
+[D:/dotNet/MLM/MLM/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Home/Privacy.cshtml]
+[D:/dotNet/MLM/MLM/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/IbManagement/Requests.cshtml]
+[D:/dotNet/MLM/MLM/Views/IbManagement/Requests.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSWJNYW5hZ2VtZW50XFJlcXVlc3RzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/IbManagement/SetCommission.cshtml]
+[D:/dotNet/MLM/MLM/Views/IbManagement/SetCommission.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSWJNYW5hZ2VtZW50XFNldENvbW1pc3Npb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/IbManagement/TransferTrader.cshtml]
+[D:/dotNet/MLM/MLM/Views/IbManagement/TransferTrader.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSWJNYW5hZ2VtZW50XFRyYW5zZmVyVHJhZGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/IbManagement/Users.cshtml]
+[D:/dotNet/MLM/MLM/Views/IbManagement/Users.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSWJNYW5hZ2VtZW50XFVzZXJzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Ib/Dashboard.cshtml]
+[D:/dotNet/MLM/MLM/Views/Ib/Dashboard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSWJcRGFzaGJvYXJkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Ib/MyClients.cshtml]
+[D:/dotNet/MLM/MLM/Views/Ib/MyClients.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSWJcTXlDbGllbnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Ib/MyCommissions.cshtml]
+[D:/dotNet/MLM/MLM/Views/Ib/MyCommissions.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSWJcTXlDb21taXNzaW9ucy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Ib/SetupSubIbCommission.cshtml]
+[D:/dotNet/MLM/MLM/Views/Ib/SetupSubIbCommission.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSWJcU2V0dXBTdWJJYkNvbW1pc3Npb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Ib/TeamDepositReport.cshtml]
+[D:/dotNet/MLM/MLM/Views/Ib/TeamDepositReport.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSWJcVGVhbURlcG9zaXRSZXBvcnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Ib/TeamWithdrawReport.cshtml]
+[D:/dotNet/MLM/MLM/Views/Ib/TeamWithdrawReport.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSWJcVGVhbVdpdGhkcmF3UmVwb3J0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Ib/TreeCharts.cshtml]
+[D:/dotNet/MLM/MLM/Views/Ib/TreeCharts.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSWJcVHJlZUNoYXJ0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Ib/UsdtWithdrawn.cshtml]
+[D:/dotNet/MLM/MLM/Views/Ib/UsdtWithdrawn.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSWJcVXNkdFdpdGhkcmF3bi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Ib/Withdrawn.cshtml]
+[D:/dotNet/MLM/MLM/Views/Ib/Withdrawn.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSWJcV2l0aGRyYXduLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Marketing/Add.cshtml]
+[D:/dotNet/MLM/MLM/Views/Marketing/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFya2V0aW5nXEFkZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Marketing/IncentiveReport.cshtml]
+[D:/dotNet/MLM/MLM/Views/Marketing/IncentiveReport.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFya2V0aW5nXEluY2VudGl2ZVJlcG9ydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Marketing/List.cshtml]
+[D:/dotNet/MLM/MLM/Views/Marketing/List.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFya2V0aW5nXExpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Marketing/WithdrawReport.cshtml]
+[D:/dotNet/MLM/MLM/Views/Marketing/WithdrawReport.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFya2V0aW5nXFdpdGhkcmF3UmVwb3J0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/MyProfile/Index.cshtml]
+[D:/dotNet/MLM/MLM/Views/MyProfile/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXlQcm9maWxlXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/News/Index.cshtml]
+[D:/dotNet/MLM/MLM/Views/News/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmV3c1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/NotAuthorized/Index.cshtml]
+[D:/dotNet/MLM/MLM/Views/NotAuthorized/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm90QXV0aG9yaXplZFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Notifications/Index.cshtml]
+[D:/dotNet/MLM/MLM/Views/Notifications/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm90aWZpY2F0aW9uc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/NotVerified/Index.cshtml]
+[D:/dotNet/MLM/MLM/Views/NotVerified/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm90VmVyaWZpZWRcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Payment/Failure.cshtml]
+[D:/dotNet/MLM/MLM/Views/Payment/Failure.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF5bWVudFxGYWlsdXJlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Payment/Success.cshtml]
+[D:/dotNet/MLM/MLM/Views/Payment/Success.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF5bWVudFxTdWNjZXNzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Reports/Deal.cshtml]
+[D:/dotNet/MLM/MLM/Views/Reports/Deal.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0c1xEZWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Reports/Deposit.cshtml]
+[D:/dotNet/MLM/MLM/Views/Reports/Deposit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0c1xEZXBvc2l0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Reports/IbWithdrawn.cshtml]
+[D:/dotNet/MLM/MLM/Views/Reports/IbWithdrawn.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0c1xJYldpdGhkcmF3bi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Reports/Index.cshtml]
+[D:/dotNet/MLM/MLM/Views/Reports/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0c1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Reports/InternalTransfer.cshtml]
+[D:/dotNet/MLM/MLM/Views/Reports/InternalTransfer.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0c1xJbnRlcm5hbFRyYW5zZmVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Reports/Withdraw.cshtml]
+[D:/dotNet/MLM/MLM/Views/Reports/Withdraw.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0c1xXaXRoZHJhdy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Report/TradeHistory.cshtml]
+[D:/dotNet/MLM/MLM/Views/Report/TradeHistory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0XFRyYWRlSGlzdG9yeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/ResetPassword/Index.cshtml]
+[D:/dotNet/MLM/MLM/Views/ResetPassword/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXRQYXNzd29yZFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Rewards/Index.cshtml]
+[D:/dotNet/MLM/MLM/Views/Rewards/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV3YXJkc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Role/Create.cshtml]
+[D:/dotNet/MLM/MLM/Views/Role/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Role/Delete.cshtml]
+[D:/dotNet/MLM/MLM/Views/Role/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZVxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Role/Edit.cshtml]
+[D:/dotNet/MLM/MLM/Views/Role/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZVxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Role/Index.cshtml]
+[D:/dotNet/MLM/MLM/Views/Role/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Role/ManagePermissions.cshtml]
+[D:/dotNet/MLM/MLM/Views/Role/ManagePermissions.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZVxNYW5hZ2VQZXJtaXNzaW9ucy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Role/_RolePermissions.cshtml]
+[D:/dotNet/MLM/MLM/Views/Role/_RolePermissions.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZVxfUm9sZVBlcm1pc3Npb25zLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Sales/Add.cshtml]
+[D:/dotNet/MLM/MLM/Views/Sales/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZXNcQWRkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Sales/BulkUpload.cshtml]
+[D:/dotNet/MLM/MLM/Views/Sales/BulkUpload.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZXNcQnVsa1VwbG9hZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Sales/Dashboard.cshtml]
+[D:/dotNet/MLM/MLM/Views/Sales/Dashboard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZXNcRGFzaGJvYXJkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Sales/LeadList.cshtml]
+[D:/dotNet/MLM/MLM/Views/Sales/LeadList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZXNcTGVhZExpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Sales/LeadSource.cshtml]
+[D:/dotNet/MLM/MLM/Views/Sales/LeadSource.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZXNcTGVhZFNvdXJjZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Sales/LeadStatus.cshtml]
+[D:/dotNet/MLM/MLM/Views/Sales/LeadStatus.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZXNcTGVhZFN0YXR1cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Sales/List.cshtml]
+[D:/dotNet/MLM/MLM/Views/Sales/List.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZXNcTGlzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/SendEmail/Index.cshtml]
+[D:/dotNet/MLM/MLM/Views/SendEmail/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VuZEVtYWlsXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Settings/AppSettings.cshtml]
+[D:/dotNet/MLM/MLM/Views/Settings/AppSettings.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2V0dGluZ3NcQXBwU2V0dGluZ3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Settings/ErrorLogs.cshtml]
+[D:/dotNet/MLM/MLM/Views/Settings/ErrorLogs.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2V0dGluZ3NcRXJyb3JMb2dzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Settings/MenuManagement.cshtml]
+[D:/dotNet/MLM/MLM/Views/Settings/MenuManagement.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2V0dGluZ3NcTWVudU1hbmFnZW1lbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Settings/UsersManagement.cshtml]
+[D:/dotNet/MLM/MLM/Views/Settings/UsersManagement.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2V0dGluZ3NcVXNlcnNNYW5hZ2VtZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Shared/Components/Sidebar/Default.cshtml]
+[D:/dotNet/MLM/MLM/Views/Shared/Components/Sidebar/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcU2lkZWJhclxEZWZhdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Shared/Error.cshtml]
+[D:/dotNet/MLM/MLM/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/dotNet/MLM/MLM/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/TestPayment/Index.cshtml]
+[D:/dotNet/MLM/MLM/Views/TestPayment/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdFBheW1lbnRcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Tickets/Index.cshtml]
+[D:/dotNet/MLM/MLM/Views/Tickets/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0c1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Transaction/ClientDeposit.cshtml]
+[D:/dotNet/MLM/MLM/Views/Transaction/ClientDeposit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNhY3Rpb25cQ2xpZW50RGVwb3NpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Transaction/ClientWithdraw.cshtml]
+[D:/dotNet/MLM/MLM/Views/Transaction/ClientWithdraw.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNhY3Rpb25cQ2xpZW50V2l0aGRyYXcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Transaction/ExternalTransfer.cshtml]
+[D:/dotNet/MLM/MLM/Views/Transaction/ExternalTransfer.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNhY3Rpb25cRXh0ZXJuYWxUcmFuc2Zlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Transaction/FloxyAuto.cshtml]
+[D:/dotNet/MLM/MLM/Views/Transaction/FloxyAuto.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNhY3Rpb25cRmxveHlBdXRvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Transaction/FloxyAutoIb.cshtml]
+[D:/dotNet/MLM/MLM/Views/Transaction/FloxyAutoIb.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNhY3Rpb25cRmxveHlBdXRvSWIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Transaction/IbWithdraw.cshtml]
+[D:/dotNet/MLM/MLM/Views/Transaction/IbWithdraw.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNhY3Rpb25cSWJXaXRoZHJhdy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Transaction/InternalTransfer.cshtml]
+[D:/dotNet/MLM/MLM/Views/Transaction/InternalTransfer.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNhY3Rpb25cSW50ZXJuYWxUcmFuc2Zlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Transaction/PendingDeposit.cshtml]
+[D:/dotNet/MLM/MLM/Views/Transaction/PendingDeposit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNhY3Rpb25cUGVuZGluZ0RlcG9zaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Transaction/PendingExternal.cshtml]
+[D:/dotNet/MLM/MLM/Views/Transaction/PendingExternal.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNhY3Rpb25cUGVuZGluZ0V4dGVybmFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Transaction/PendingIbWithdraw.cshtml]
+[D:/dotNet/MLM/MLM/Views/Transaction/PendingIbWithdraw.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNhY3Rpb25cUGVuZGluZ0liV2l0aGRyYXcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Transaction/PendingInternal.cshtml]
+[D:/dotNet/MLM/MLM/Views/Transaction/PendingInternal.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNhY3Rpb25cUGVuZGluZ0ludGVybmFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Transaction/PendingWalletTransfer.cshtml]
+[D:/dotNet/MLM/MLM/Views/Transaction/PendingWalletTransfer.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNhY3Rpb25cUGVuZGluZ1dhbGxldFRyYW5zZmVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Transaction/PendingWithdraw.cshtml]
+[D:/dotNet/MLM/MLM/Views/Transaction/PendingWithdraw.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNhY3Rpb25cUGVuZGluZ1dpdGhkcmF3LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Transaction/WalletDeposit.cshtml]
+[D:/dotNet/MLM/MLM/Views/Transaction/WalletDeposit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNhY3Rpb25cV2FsbGV0RGVwb3NpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Transaction/WalletWithdraw.cshtml]
+[D:/dotNet/MLM/MLM/Views/Transaction/WalletWithdraw.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNhY3Rpb25cV2FsbGV0V2l0aGRyYXcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/User/AddBank.cshtml]
+[D:/dotNet/MLM/MLM/Views/User/AddBank.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxBZGRCYW5rLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/User/AddExisting.cshtml]
+[D:/dotNet/MLM/MLM/Views/User/AddExisting.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxBZGRFeGlzdGluZy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/User/AddUser.cshtml]
+[D:/dotNet/MLM/MLM/Views/User/AddUser.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxBZGRVc2VyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/User/ApprovedDocs.cshtml]
+[D:/dotNet/MLM/MLM/Views/User/ApprovedDocs.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxBcHByb3ZlZERvY3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/User/BankList.cshtml]
+[D:/dotNet/MLM/MLM/Views/User/BankList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxCYW5rTGlzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/User/ChangeMt5Password.cshtml]
+[D:/dotNet/MLM/MLM/Views/User/ChangeMt5Password.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxDaGFuZ2VNdDVQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/User/ChangePassword.cshtml]
+[D:/dotNet/MLM/MLM/Views/User/ChangePassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxDaGFuZ2VQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/User/Create.cshtml]
+[D:/dotNet/MLM/MLM/Views/User/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/User/CreateMt5.cshtml]
+[D:/dotNet/MLM/MLM/Views/User/CreateMt5.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxDcmVhdGVNdDUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/User/Delete.cshtml]
+[D:/dotNet/MLM/MLM/Views/User/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/User/Edit.cshtml]
+[D:/dotNet/MLM/MLM/Views/User/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/User/FollowUp.cshtml]
+[D:/dotNet/MLM/MLM/Views/User/FollowUp.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxGb2xsb3dVcC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/User/IbRequest.cshtml]
+[D:/dotNet/MLM/MLM/Views/User/IbRequest.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxJYlJlcXVlc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/User/Index.cshtml]
+[D:/dotNet/MLM/MLM/Views/User/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/User/LeverageList.cshtml]
+[D:/dotNet/MLM/MLM/Views/User/LeverageList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxMZXZlcmFnZUxpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/User/List.cshtml]
+[D:/dotNet/MLM/MLM/Views/User/List.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/User/Mt5List.cshtml]
+[D:/dotNet/MLM/MLM/Views/User/Mt5List.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxNdDVMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/User/Passwords.cshtml]
+[D:/dotNet/MLM/MLM/Views/User/Passwords.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxQYXNzd29yZHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/User/PendingDocs.cshtml]
+[D:/dotNet/MLM/MLM/Views/User/PendingDocs.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxQZW5kaW5nRG9jcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/User/Referrals.cshtml]
+[D:/dotNet/MLM/MLM/Views/User/Referrals.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxSZWZlcnJhbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/User/ResendDataMail.cshtml]
+[D:/dotNet/MLM/MLM/Views/User/ResendDataMail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxSZXNlbmREYXRhTWFpbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/User/ResendVerification.cshtml]
+[D:/dotNet/MLM/MLM/Views/User/ResendVerification.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxSZXNlbmRWZXJpZmljYXRpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/User/UpdateLeverage.cshtml]
+[D:/dotNet/MLM/MLM/Views/User/UpdateLeverage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxVcGRhdGVMZXZlcmFnZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/User/UploadDocs.cshtml]
+[D:/dotNet/MLM/MLM/Views/User/UploadDocs.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxVcGxvYWREb2NzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/VerifyClient/Index.cshtml]
+[D:/dotNet/MLM/MLM/Views/VerifyClient/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVyaWZ5Q2xpZW50XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Wallet/History.cshtml]
+[D:/dotNet/MLM/MLM/Views/Wallet/History.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2FsbGV0XEhpc3RvcnkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Wallet/Mt5ToWallet.cshtml]
+[D:/dotNet/MLM/MLM/Views/Wallet/Mt5ToWallet.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2FsbGV0XE10NVRvV2FsbGV0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Wallet/WalletToMt5.cshtml]
+[D:/dotNet/MLM/MLM/Views/Wallet/WalletToMt5.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2FsbGV0XFdhbGxldFRvTXQ1LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/_ViewImports.cshtml]
+[D:/dotNet/MLM/MLM/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/_ViewStart.cshtml]
+[D:/dotNet/MLM/MLM/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Shared/_Layout.cshtml]
+[D:/dotNet/MLM/MLM/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-mhip3ukctb

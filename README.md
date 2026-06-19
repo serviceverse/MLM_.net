@@ -58,3 +58,9 @@ Finally, launch the application:
 dotnet run
 ```
 Navigate to the URL provided in the terminal output (e.g., `https://localhost:7073`) to view the application!
+
+
+### database migration and syncing 
+
+> add-migration MigrationName
+> update database

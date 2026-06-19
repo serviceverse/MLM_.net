@@ -21,7 +21,6 @@ D:\dotNet\MLM\MLM\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
 D:\dotNet\MLM\MLM\obj\Debug\net10.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 D:\dotNet\MLM\MLM\obj\Debug\net10.0\scopedcss\bundle\MLM.styles.css
 D:\dotNet\MLM\MLM\obj\Debug\net10.0\scopedcss\projectbundle\MLM.bundle.scp.css
-D:\dotNet\MLM\MLM\obj\Debug\net10.0\compressed\tjgll5tn6g-{0}-b9sayid5wm-b9sayid5wm.gz
 D:\dotNet\MLM\MLM\obj\Debug\net10.0\compressed\pysaltuymr-{0}-61n19gt1b8-61n19gt1b8.gz
 D:\dotNet\MLM\MLM\obj\Debug\net10.0\compressed\cpcvg7pe6p-{0}-xtxxf3hu2r-xtxxf3hu2r.gz
 D:\dotNet\MLM\MLM\obj\Debug\net10.0\compressed\121sl93vpd-{0}-bqjiyaj88i-bqjiyaj88i.gz
@@ -453,3 +452,7 @@ C:\Users\Kuter\Documents\.net\MLM_.net\bin\Debug\net10.0\BCrypt-Net-Next.dll
 C:\Users\Kuter\Documents\.net\MLM_.net\obj\Debug\net10.0\compressed\vml4vazxfk-{0}-1ieaimc0zs-1ieaimc0zs.gz
 C:\Users\Kuter\Documents\.net\MLM_.net\obj\Debug\net10.0\compressed\tjgll5tn6g-{0}-rg7e7ng8mq-rg7e7ng8mq.gz
 C:\Users\Kuter\Documents\.net\MLM_.net\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
+D:\dotNet\MLM\MLM\bin\Debug\net10.0\BCrypt-Net-Next.dll
+D:\dotNet\MLM\MLM\obj\Debug\net10.0\MLM.sourcelink.json
+D:\dotNet\MLM\MLM\obj\Debug\net10.0\compressed\tjgll5tn6g-{0}-fa9g08e9yb-fa9g08e9yb.gz
+D:\dotNet\MLM\MLM\obj\Debug\net10.0\compressed\vml4vazxfk-{0}-w0fwe6r8ze-w0fwe6r8ze.gz

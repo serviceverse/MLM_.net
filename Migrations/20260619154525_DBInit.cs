@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
@@ -11,7 +11,6 @@ namespace MLM.Migrations
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            return; // BYPASS FOR EXISTING DB
             migrationBuilder.CreateTable(
                 name: "AppSettings",
                 columns: table => new
