@@ -319,6 +319,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm90QXV0aG9yaXplZFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Notifications/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm90aWZpY2F0aW9uc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Kuter/Documents/.net/MLM_.net/Views/NotVerified/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm90VmVyaWZpZWRcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -453,6 +457,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Kuter/Documents/.net/MLM_.net/Views/TestPayment/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdFBheW1lbnRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kuter/Documents/.net/MLM_.net/Views/Tickets/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0c1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Kuter/Documents/.net/MLM_.net/Views/Transaction/ClientDeposit.cshtml]

@@ -363,12 +363,41 @@
                 <div class="topbar-right">
                     <div class="col-span-full mt-4 dropdown profile-dropdown">
                         <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            @{
+                                var currentController = ViewContext.RouteData.Values["controller"]?.ToString();
+                                var isClient = currentController == "Client" || currentController == "Account" || currentController == "Fund";
+                                var profileName = isClient ? "Client User" : "Admin User";
+                                var profileRole = isClient ? "Trader" : "Administrator";
+                                var profileInitials = isClient ? "CU" : "AD";
+
+                                if (User.Identity?.IsAuthenticated == true)
+                                {
+                                    var userIdStr = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+                                    if (int.TryParse(userIdStr, out int uid))
+                                    {
+                                        var dbContext = Context.RequestServices.GetService(typeof(MLM.Data.AppDBContext)) as MLM.Data.AppDBContext;
+                                        if (dbContext != null)
+                                        {
+                                            var dbUser = dbContext.Users.FirstOrDefault(u => u.Id == uid);
+                                            if (dbUser != null)
+                                            {
+                                                profileName = dbUser.FullName;
+                                                profileInitials = !string.IsNullOrEmpty(profileName) && profileName.Length >= 2 
+                                                    ? profileName.Substring(0, 2).ToUpper() 
+                                                    : profileName.Substring(0, 1).ToUpper();
+                                                
+                                                profileRole = dbUser.RoleId == 1 ? "Administrator" : "Trader";
+                                            }
+                                        }
+                                    }
+                                }
+                            }
                             <div class="avatar">
-                                AD
+                                @profileInitials
                             </div>
                             <div class="d-none d-sm-block text-start">
-                                <div class="fw-bold" style="font-size:14px; line-height:1.2;">Admin User</div>
-                                <div class="text-muted" style="font-size:12px;">Administrator</div>
+                                <div class="fw-bold" style="font-size:14px; line-height:1.2;">@profileName</div>
+                                <div class="text-muted" style="font-size:12px;">@profileRole</div>
                             </div>
                             <i class="bi bi-chevron-down ms-2 text-muted" style="font-size: 12px;"></i>
                         </button>

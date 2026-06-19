@@ -1,108 +1,134 @@
 @{
     ViewData["Title"] = "My Tickets";
 }
-<div class="p-2 md:p-4">
-    
+
+<div class="p-4 md:p-6 lg:p-8 text-[var(--text-primary)] min-h-screen">
+    <div class="max-w-7xl mx-auto space-y-6">
         <!-- Page Header -->
-    <div class="mb-2 flex justify-between items-center">
-        <div>
-            <h1 class="text-2xl font-bold text-[var(--text-primary)]">My Tickets</h1>
-            <p class="text-sm text-[var(--text-secondary)] mt-1">View and manage your support tickets</p>
-        </div>
-        <a href="/HelpDesk/NewTicket" class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] px-4 py-2 rounded-sm text-sm font-semibold inline-flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-                Create New Ticket
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+            <div>
+                <h1 class="text-3xl font-bold flex items-center gap-3">
+                    <i class="bi bi-inboxes text-indigo-500"></i> My Tickets
+                </h1>
+                <p class="text-sm text-[var(--text-secondary)] mt-1">View and manage your support tickets and their statuses.</p>
+            </div>
+            <a href="/HelpDesk/NewTicket" class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-white px-5 py-2.5 rounded-sm text-sm font-semibold flex items-center transition-colors shadow-md shadow-indigo-500/20">
+                <i class="bi bi-plus-circle mr-2"></i> Create New Ticket
             </a>
-    </div>
+        </div>
 
-        <!-- Tickets Table -->
-        <div class="bg-[var(--bg-primary)] border border-[var(--border-secondary)] rounded-sm shadow-none">
-                <!-- Tabs -->
-                <div class="mb-6 border-b border-[var(--border-secondary)]">
-                    <button class="bg-[var(--button-primary-bg)] text-black px-4 py-2 font-semibold rounded-t-lg">
-                        Open Tickets
-                    </button>
-                    <button class="text-[var(--text-primary)] px-4 py-2 hover:bg-[var(--bg-tertiary)] rounded-t-lg transition-colors">
-                        Closed Tickets
-                    </button>
+        <!-- Tickets Table Card -->
+        <div class="bg-[var(--bg-primary)] border border-[var(--border-secondary)] rounded-sm shadow-sm overflow-hidden flex flex-col">
+            
+            <!-- Tabs -->
+            <div class="flex border-b border-[var(--border-secondary)] bg-[var(--bg-tertiary)]/30">
+                <button class="px-6 py-3 font-semibold text-sm border-b-2 border-indigo-500 text-indigo-500 bg-[var(--bg-primary)]">
+                    <i class="bi bi-envelope-open mr-2"></i> Open Tickets
+                </button>
+                <button class="px-6 py-3 font-semibold text-sm border-b-2 border-transparent text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)]/50 transition-colors">
+                    <i class="bi bi-envelope-check mr-2"></i> Closed Tickets
+                </button>
+            </div>
+
+            <!-- Controls (Search & Entries) -->
+            <div class="px-5 py-4 border-b border-[var(--border-secondary)] flex flex-wrap items-center justify-between gap-4 bg-[var(--bg-primary)]">
+                <div class="flex items-center space-x-3">
+                    <span class="text-[var(--text-secondary)] text-sm font-medium">Show</span>
+                    <select class="bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] rounded-sm py-1.5 px-3 outline-none focus:border-[var(--button-primary-bg)] focus:ring-1 focus:ring-[var(--button-primary-bg)] text-sm transition-colors cursor-pointer">
+                        <option value="10">10</option>
+                        <option value="25">25</option>
+                        <option value="50">50</option>
+                    </select>
+                    <span class="text-[var(--text-secondary)] text-sm font-medium">entries</span>
                 </div>
 
-                <!-- Controls -->
-                <div class="px-3 py-2 border-b border-[var(--border-secondary)] flex flex-wrap items-center justify-between gap-4">
-                <div class="flex items-center space-x-2">
-                    <span class="text-[var(--text-secondary)]">Show</span>
-                        <select class="bg-[var(--bg-tertiary)] border-[var(--border-secondary)] text-[var(--text-primary)] rounded-lg py-1 px-2 outline-none">
-                            <option value="10">10</option>
-                            <option value="25">25</option>
-                            <option value="50">50</option>
-                        </select>
-                        <span class="text-[var(--text-secondary)]">entries</span>
-                    </div>
-
-                    <div class="flex items-center space-x-2">
-                        <span class="text-[var(--text-secondary)]">Search:</span>
-                        <div class="relative">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[var(--text-tertiary)] absolute left-3 top-1/2 transform -translate-y-1/2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-                            <input type="text" placeholder="Search tickets..." class="pl-10 bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] focus:border-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)] rounded-lg py-2 outline-none" />
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Table -->
-                <div class="overflow-x-auto">
-                    <table class="w-full">
-                        <thead>
-                            <tr class="border-b border-[var(--border-secondary)] hover:bg-[var(--bg-tertiary)] even:bg-[var(--bg-secondary)]/40 transition-none">
-                                <th class="text-left py-4 px-4 text-[var(--text-secondary)] uppercase font-semibold">Serial No.</th>
-                                <th class="text-left py-4 px-4 text-[var(--text-secondary)] uppercase font-semibold">Enquiry Type</th>
-                                <th class="text-left py-4 px-4 text-[var(--text-secondary)] uppercase font-semibold">Ticket ID</th>
-                                <th class="text-left py-4 px-4 text-[var(--text-secondary)] uppercase font-semibold">Title</th>
-                                <th class="text-left py-4 px-4 text-[var(--text-secondary)] uppercase font-semibold">Priority</th>
-                                <th class="text-left py-4 px-4 text-[var(--text-secondary)] uppercase font-semibold">Status</th>
-                                <th class="text-left py-4 px-4 text-[var(--text-secondary)] uppercase font-semibold">Last Updated</th>
-                                <th class="text-left py-4 px-4 text-[var(--text-secondary)] uppercase font-semibold">Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!-- Mock Data -->
-                            <tr class="border-b border-[var(--border-secondary)]/50 hover:bg-[var(--bg-secondary)]/30">
-                                <td class="py-4 px-4 text-[var(--text-primary)]">1</td>
-                                <td class="py-4 px-4 text-[var(--text-primary)]">DEPOSIT</td>
-                                <td class="py-4 px-4 text-[var(--text-primary)] font-mono">TKT-12345</td>
-                                <td class="py-4 px-4 text-[var(--text-primary)]">Deposit not received</td>
-                                <td class="py-4 px-4">
-                                    <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[var(--badge-warning-bg)] text-[var(--badge-warning-text)] border border-[var(--badge-warning-border)]">High</span>
-                                </td>
-                                <td class="py-4 px-4">
-                                    <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[var(--badge-error-bg)] text-[var(--badge-error-text)] border border-[var(--badge-error-border)]">Open</span>
-                                </td>
-                                <td class="py-4 px-4 text-[var(--text-secondary)]">2023-10-27 10:30</td>
-                                <td class="py-4 px-4">
-                                    <button class="border border-[var(--border-secondary)] text-[var(--text-secondary)] hover:bg-[var(--bg-secondary)] bg-transparent rounded px-3 py-1 flex items-center text-sm">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
-                                        View
-                                    </button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <!-- Pagination -->
-        <div class="px-3 py-2 border-t border-[var(--border-secondary)] flex flex-wrap items-center justify-between gap-4">
-                    <div class="text-[var(--text-secondary)]">Showing 1 to 1 of 1 entries</div>
-                    <div class="flex items-center space-x-2">
-                        <button class="border border-[var(--border-secondary)] text-[var(--text-secondary)] hover:bg-[var(--bg-secondary)] bg-transparent rounded px-3 py-1 text-sm inline-flex items-center opacity-50 cursor-not-allowed">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
-                            Previous
-                        </button>
-                        <button class="bg-[var(--button-primary-bg)] text-[var(--button-primary-text)] hover:bg-[var(--button-primary-hover-bg)] rounded px-3 py-1 text-sm">1</button>
-                        <button class="border border-[var(--border-secondary)] text-[var(--text-secondary)] hover:bg-[var(--bg-secondary)] bg-transparent rounded px-3 py-1 text-sm inline-flex items-center opacity-50 cursor-not-allowed">
-                            Next
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-                        </button>
+                <div class="flex items-center space-x-3 w-full sm:w-auto">
+                    <div class="relative w-full sm:w-64">
+                        <i class="bi bi-search absolute left-3 top-1/2 transform -translate-y-1/2 text-[var(--text-tertiary)] text-sm pointer-events-none"></i>
+                        <input type="text" placeholder="Search tickets..." class="w-full pl-9 bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] focus:border-[var(--button-primary-bg)] focus:ring-1 focus:ring-[var(--button-primary-bg)] rounded-sm py-2 text-sm outline-none transition-colors" />
                     </div>
                 </div>
             </div>
+
+            <!-- Table -->
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm text-left">
+                    <thead class="bg-[var(--bg-secondary)] border-b border-[var(--border-secondary)] text-[var(--text-secondary)] uppercase text-xs">
+                        <tr>
+                            <th scope="col" class="px-6 py-4 font-semibold tracking-wider">#</th>
+                            <th scope="col" class="px-6 py-4 font-semibold tracking-wider">Ticket ID</th>
+                            <th scope="col" class="px-6 py-4 font-semibold tracking-wider">Category</th>
+                            <th scope="col" class="px-6 py-4 font-semibold tracking-wider">Title</th>
+                            <th scope="col" class="px-6 py-4 font-semibold tracking-wider">Priority</th>
+                            <th scope="col" class="px-6 py-4 font-semibold tracking-wider">Status</th>
+                            <th scope="col" class="px-6 py-4 font-semibold tracking-wider">Last Updated</th>
+                            <th scope="col" class="px-6 py-4 font-semibold tracking-wider text-right">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-[var(--border-secondary)]">
+                        <!-- Mock Row 1 -->
+                        <tr class="hover:bg-[var(--bg-tertiary)]/50 transition-colors group">
+                            <td class="px-6 py-4 font-medium">1</td>
+                            <td class="px-6 py-4 font-mono font-semibold text-[var(--button-primary-bg)]">TKT-12345</td>
+                            <td class="px-6 py-4">
+                                <span class="px-2.5 py-1 rounded-sm text-[10px] font-bold bg-[var(--bg-secondary)] border border-[var(--border-secondary)]">DEPOSIT</span>
+                            </td>
+                            <td class="px-6 py-4 font-medium">Deposit not received</td>
+                            <td class="px-6 py-4">
+                                <span class="flex items-center text-rose-500 font-semibold text-xs"><i class="bi bi-arrow-up-circle-fill mr-1.5"></i> High</span>
+                            </td>
+                            <td class="px-6 py-4">
+                                <span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-orange-500/10 text-orange-500 border border-orange-500/20">OPEN</span>
+                            </td>
+                            <td class="px-6 py-4 text-[var(--text-secondary)] text-xs">2023-10-27 10:30</td>
+                            <td class="px-6 py-4 text-right">
+                                <button class="text-[var(--text-secondary)] hover:text-indigo-500 hover:bg-indigo-500/10 rounded-full w-8 h-8 flex items-center justify-center transition-colors inline-flex" title="View Ticket">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        
+                        <!-- Mock Row 2 -->
+                        <tr class="hover:bg-[var(--bg-tertiary)]/50 transition-colors group">
+                            <td class="px-6 py-4 font-medium">2</td>
+                            <td class="px-6 py-4 font-mono font-semibold text-[var(--button-primary-bg)]">TKT-12346</td>
+                            <td class="px-6 py-4">
+                                <span class="px-2.5 py-1 rounded-sm text-[10px] font-bold bg-[var(--bg-secondary)] border border-[var(--border-secondary)]">TECHNICAL</span>
+                            </td>
+                            <td class="px-6 py-4 font-medium">Cannot login to MT5</td>
+                            <td class="px-6 py-4">
+                                <span class="flex items-center text-amber-500 font-semibold text-xs"><i class="bi bi-dash-circle-fill mr-1.5"></i> Medium</span>
+                            </td>
+                            <td class="px-6 py-4">
+                                <span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-emerald-500/10 text-emerald-500 border border-emerald-500/20">RESOLVED</span>
+                            </td>
+                            <td class="px-6 py-4 text-[var(--text-secondary)] text-xs">2023-10-25 14:15</td>
+                            <td class="px-6 py-4 text-right">
+                                <button class="text-[var(--text-secondary)] hover:text-indigo-500 hover:bg-indigo-500/10 rounded-full w-8 h-8 flex items-center justify-center transition-colors inline-flex" title="View Ticket">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Pagination -->
+            <div class="px-6 py-4 border-t border-[var(--border-secondary)] flex flex-col sm:flex-row items-center justify-between gap-4 bg-[var(--bg-primary)]">
+                <div class="text-[var(--text-secondary)] text-sm">
+                    Showing <span class="font-semibold text-[var(--text-primary)]">1</span> to <span class="font-semibold text-[var(--text-primary)]">2</span> of <span class="font-semibold text-[var(--text-primary)]">2</span> entries
+                </div>
+                <div class="flex items-center space-x-1">
+                    <button class="px-3 py-1.5 border border-[var(--border-secondary)] text-[var(--text-secondary)] hover:bg-[var(--bg-secondary)] hover:text-[var(--text-primary)] rounded-sm text-sm flex items-center transition-colors opacity-50 cursor-not-allowed">
+                        <i class="bi bi-chevron-left mr-1"></i> Prev
+                    </button>
+                    <button class="px-3.5 py-1.5 bg-[var(--button-primary-bg)] text-white border border-[var(--button-primary-bg)] rounded-sm text-sm font-medium shadow-sm">1</button>
+                    <button class="px-3 py-1.5 border border-[var(--border-secondary)] text-[var(--text-secondary)] hover:bg-[var(--bg-secondary)] hover:text-[var(--text-primary)] rounded-sm text-sm flex items-center transition-colors opacity-50 cursor-not-allowed">
+                        Next <i class="bi bi-chevron-right ml-1"></i>
+                    </button>
+                </div>
+            </div>
+
         </div>
     </div>
+</div>

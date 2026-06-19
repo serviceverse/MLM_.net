@@ -1,6 +1,369 @@
 @{
-    ViewData["Title"] = "AdminDashboard";
+    ViewData["Title"] = "Admin Dashboard";
 }
 
-<h2>AdminDashboard</h2>
+<div class="p-4 md:p-6 text-[var(--text-primary)] min-h-screen">
+    <!-- Header -->
+    <div class="mb-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+        <div>
+            <h1 class="text-2xl font-bold">Dashboard Overview</h1>
+            <p class="text-sm text-[var(--text-secondary)] mt-1">Welcome back, Admin. Here's what's happening today.</p>
+        </div>
+        <div class="flex gap-2">
+            <button class="bg-[var(--bg-tertiary)] hover:bg-[var(--bg-secondary)] border border-[var(--border-secondary)] px-4 py-2 rounded-sm text-sm font-semibold transition-colors flex items-center">
+                <i class="bi bi-calendar3 mr-2"></i> Last 30 Days
+            </button>
+            <button class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-white px-4 py-2 rounded-sm text-sm font-semibold transition-colors flex items-center shadow-md shadow-indigo-500/20">
+                <i class="bi bi-download mr-2"></i> Export Report
+            </button>
+        </div>
+    </div>
 
+    <!-- Stats Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <!-- Card 1 -->
+        <div class="bg-[var(--bg-primary)] border border-[var(--border-secondary)] rounded-sm p-5 relative overflow-hidden group hover:border-[var(--button-primary-bg)] transition-colors cursor-default">
+            <div class="flex justify-between items-start mb-4">
+                <div>
+                    <p class="text-[var(--text-secondary)] text-sm font-medium mb-1">Total Users</p>
+                    <h3 class="text-3xl font-bold">12,450</h3>
+                </div>
+                <div class="w-10 h-10 rounded-full bg-indigo-500/10 text-indigo-500 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+                    <i class="bi bi-people-fill"></i>
+                </div>
+            </div>
+            <div class="flex items-center text-sm">
+                <span class="text-emerald-500 flex items-center font-medium bg-emerald-500/10 px-2 py-0.5 rounded-full">
+                    <i class="bi bi-arrow-up-short text-lg leading-none"></i> 12.5%
+                </span>
+                <span class="text-[var(--text-tertiary)] ml-2">vs last month</span>
+            </div>
+            <div class="absolute -right-4 -bottom-4 w-24 h-24 bg-indigo-500/5 rounded-full blur-2xl"></div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-[var(--bg-primary)] border border-[var(--border-secondary)] rounded-sm p-5 relative overflow-hidden group hover:border-[var(--button-primary-bg)] transition-colors cursor-default">
+            <div class="flex justify-between items-start mb-4">
+                <div>
+                    <p class="text-[var(--text-secondary)] text-sm font-medium mb-1">Active Referrals</p>
+                    <h3 class="text-3xl font-bold">3,820</h3>
+                </div>
+                <div class="w-10 h-10 rounded-full bg-purple-500/10 text-purple-500 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+                    <i class="bi bi-share-fill"></i>
+                </div>
+            </div>
+            <div class="flex items-center text-sm">
+                <span class="text-emerald-500 flex items-center font-medium bg-emerald-500/10 px-2 py-0.5 rounded-full">
+                    <i class="bi bi-arrow-up-short text-lg leading-none"></i> 5.2%
+                </span>
+                <span class="text-[var(--text-tertiary)] ml-2">vs last month</span>
+            </div>
+            <div class="absolute -right-4 -bottom-4 w-24 h-24 bg-purple-500/5 rounded-full blur-2xl"></div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-[var(--bg-primary)] border border-[var(--border-secondary)] rounded-sm p-5 relative overflow-hidden group hover:border-[var(--button-primary-bg)] transition-colors cursor-default">
+            <div class="flex justify-between items-start mb-4">
+                <div>
+                    <p class="text-[var(--text-secondary)] text-sm font-medium mb-1">Total Deposits</p>
+                    <h3 class="text-3xl font-bold">$1.2M</h3>
+                </div>
+                <div class="w-10 h-10 rounded-full bg-emerald-500/10 text-emerald-500 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+                    <i class="bi bi-cash-stack"></i>
+                </div>
+            </div>
+            <div class="flex items-center text-sm">
+                <span class="text-emerald-500 flex items-center font-medium bg-emerald-500/10 px-2 py-0.5 rounded-full">
+                    <i class="bi bi-arrow-up-short text-lg leading-none"></i> 18.1%
+                </span>
+                <span class="text-[var(--text-tertiary)] ml-2">vs last month</span>
+            </div>
+            <div class="absolute -right-4 -bottom-4 w-24 h-24 bg-emerald-500/5 rounded-full blur-2xl"></div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="bg-[var(--bg-primary)] border border-[var(--border-secondary)] rounded-sm p-5 relative overflow-hidden group hover:border-[var(--button-primary-bg)] transition-colors cursor-default">
+            <div class="flex justify-between items-start mb-4">
+                <div>
+                    <p class="text-[var(--text-secondary)] text-sm font-medium mb-1">Open Tickets</p>
+                    <h3 class="text-3xl font-bold">42</h3>
+                </div>
+                <div class="w-10 h-10 rounded-full bg-orange-500/10 text-orange-500 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+                    <i class="bi bi-headset"></i>
+                </div>
+            </div>
+            <div class="flex items-center text-sm">
+                <span class="text-rose-500 flex items-center font-medium bg-rose-500/10 px-2 py-0.5 rounded-full">
+                    <i class="bi bi-arrow-down-short text-lg leading-none"></i> 2.4%
+                </span>
+                <span class="text-[var(--text-tertiary)] ml-2">vs last month</span>
+            </div>
+            <div class="absolute -right-4 -bottom-4 w-24 h-24 bg-orange-500/5 rounded-full blur-2xl"></div>
+        </div>
+    </div>
+
+    <!-- Charts Section -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+        <!-- Area Chart (2/3 width) -->
+        <div class="lg:col-span-2 bg-[var(--bg-primary)] border border-[var(--border-secondary)] rounded-sm p-5">
+            <div class="flex justify-between items-center mb-4 border-b border-[var(--border-secondary)] pb-4">
+                <h3 class="text-lg font-bold">Revenue Overview</h3>
+                <div class="flex gap-2">
+                    <button class="text-xs px-2 py-1 rounded bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] hover:bg-[var(--bg-secondary)]">Weekly</button>
+                    <button class="text-xs px-2 py-1 rounded bg-[var(--button-primary-bg)] text-white border border-[var(--button-primary-bg)]">Monthly</button>
+                    <button class="text-xs px-2 py-1 rounded bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] hover:bg-[var(--bg-secondary)]">Yearly</button>
+                </div>
+            </div>
+            <div id="revenueChart" style="min-height: 300px;"></div>
+        </div>
+
+        <!-- Donut Chart (1/3 width) -->
+        <div class="bg-[var(--bg-primary)] border border-[var(--border-secondary)] rounded-sm p-5">
+            <div class="mb-4 border-b border-[var(--border-secondary)] pb-4">
+                <h3 class="text-lg font-bold">User Distribution</h3>
+            </div>
+            <div id="userDistributionChart" style="min-height: 300px;"></div>
+            
+            <div class="mt-4 grid grid-cols-2 gap-4">
+                <div class="bg-[var(--bg-tertiary)] p-3 rounded-sm border border-[var(--border-secondary)]">
+                    <p class="text-xs text-[var(--text-secondary)] mb-1 flex items-center"><span class="w-2 h-2 rounded-full bg-indigo-500 mr-2"></span>IB Users</p>
+                    <p class="font-bold text-lg text-[var(--text-primary)]">3,820</p>
+                </div>
+                <div class="bg-[var(--bg-tertiary)] p-3 rounded-sm border border-[var(--border-secondary)]">
+                    <p class="text-xs text-[var(--text-secondary)] mb-1 flex items-center"><span class="w-2 h-2 rounded-full bg-purple-500 mr-2"></span>Clients</p>
+                    <p class="font-bold text-lg text-[var(--text-primary)]">8,630</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recent Activity Table -->
+    <div class="bg-[var(--bg-primary)] border border-[var(--border-secondary)] rounded-sm shadow-none overflow-hidden">
+        <div class="px-5 py-4 border-b border-[var(--border-secondary)] flex justify-between items-center">
+            <h3 class="text-lg font-bold">Recent Transactions</h3>
+            <a href="/Admin/TransactionWalletDeposit" class="text-sm text-[var(--button-primary-bg)] hover:underline font-medium">View All</a>
+        </div>
+        <div class="overflow-x-auto">
+            <table class="w-full">
+                <thead>
+                    <tr class="bg-[var(--bg-tertiary)] border-b border-[var(--border-secondary)]">
+                        <th class="text-left py-3 px-5 text-[var(--text-secondary)] text-xs uppercase tracking-wider font-semibold">User</th>
+                        <th class="text-left py-3 px-5 text-[var(--text-secondary)] text-xs uppercase tracking-wider font-semibold">Type</th>
+                        <th class="text-left py-3 px-5 text-[var(--text-secondary)] text-xs uppercase tracking-wider font-semibold">Amount</th>
+                        <th class="text-left py-3 px-5 text-[var(--text-secondary)] text-xs uppercase tracking-wider font-semibold">Date</th>
+                        <th class="text-left py-3 px-5 text-[var(--text-secondary)] text-xs uppercase tracking-wider font-semibold">Status</th>
+                        <th class="text-left py-3 px-5 text-[var(--text-secondary)] text-xs uppercase tracking-wider font-semibold">Action</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-[var(--border-secondary)]">
+                    <tr class="hover:bg-[var(--bg-secondary)]/30 transition-colors">
+                        <td class="py-3 px-5">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 rounded-full bg-indigo-500/20 text-indigo-500 flex items-center justify-center font-bold mr-3 text-sm">
+                                    JD
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-sm">John Doe</p>
+                                    <p class="text-xs text-[var(--text-secondary)]">john@example.com</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="py-3 px-5 text-sm font-medium">Deposit</td>
+                        <td class="py-3 px-5 text-sm font-bold text-emerald-500">+$2,500.00</td>
+                        <td class="py-3 px-5 text-sm text-[var(--text-secondary)]">Just now</td>
+                        <td class="py-3 px-5">
+                            <span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-emerald-500/10 text-emerald-500 border border-emerald-500/20">COMPLETED</span>
+                        </td>
+                        <td class="py-3 px-5">
+                            <button class="text-[var(--text-tertiary)] hover:text-[var(--button-primary-bg)] transition-colors"><i class="bi bi-three-dots-vertical"></i></button>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-[var(--bg-secondary)]/30 transition-colors">
+                        <td class="py-3 px-5">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 rounded-full bg-purple-500/20 text-purple-500 flex items-center justify-center font-bold mr-3 text-sm">
+                                    AS
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-sm">Alice Smith</p>
+                                    <p class="text-xs text-[var(--text-secondary)]">alice@example.com</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="py-3 px-5 text-sm font-medium">Withdrawal</td>
+                        <td class="py-3 px-5 text-sm font-bold text-rose-500">-$500.00</td>
+                        <td class="py-3 px-5 text-sm text-[var(--text-secondary)]">2 hours ago</td>
+                        <td class="py-3 px-5">
+                            <span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-orange-500/10 text-orange-500 border border-orange-500/20">PENDING</span>
+                        </td>
+                        <td class="py-3 px-5">
+                            <button class="text-[var(--text-tertiary)] hover:text-[var(--button-primary-bg)] transition-colors"><i class="bi bi-three-dots-vertical"></i></button>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-[var(--bg-secondary)]/30 transition-colors">
+                        <td class="py-3 px-5">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 rounded-full bg-blue-500/20 text-blue-500 flex items-center justify-center font-bold mr-3 text-sm">
+                                    MJ
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-sm">Michael Jones</p>
+                                    <p class="text-xs text-[var(--text-secondary)]">mjones@example.com</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="py-3 px-5 text-sm font-medium">Deposit</td>
+                        <td class="py-3 px-5 text-sm font-bold text-emerald-500">+$10,000.00</td>
+                        <td class="py-3 px-5 text-sm text-[var(--text-secondary)]">5 hours ago</td>
+                        <td class="py-3 px-5">
+                            <span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-emerald-500/10 text-emerald-500 border border-emerald-500/20">COMPLETED</span>
+                        </td>
+                        <td class="py-3 px-5">
+                            <button class="text-[var(--text-tertiary)] hover:text-[var(--button-primary-bg)] transition-colors"><i class="bi bi-three-dots-vertical"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <!-- Include ApexCharts -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+    <script>
+        // Check if dark mode is active by reading the CSS variable or background color.
+        const isDark = getComputedStyle(document.body).getPropertyValue('--bg-primary').includes('1f2937') || 
+                       getComputedStyle(document.body).backgroundColor === 'rgb(15, 23, 42)' ||
+                       document.body.classList.contains('dark');
+                       
+        const textColor = getComputedStyle(document.documentElement).getPropertyValue('--text-primary').trim() || '#e2e8f0';
+        const gridColor = 'rgba(150, 150, 150, 0.1)';
+
+        document.addEventListener('DOMContentLoaded', function () {
+            
+            // 1. Revenue Overview Area Chart
+            var revenueOptions = {
+                series: [{
+                    name: 'Deposits',
+                    data: [31000, 40000, 28000, 51000, 42000, 109000, 100000]
+                }, {
+                    name: 'Withdrawals',
+                    data: [11000, 32000, 45000, 32000, 34000, 52000, 41000]
+                }],
+                chart: {
+                    height: 320,
+                    type: 'area',
+                    fontFamily: 'Inter, sans-serif',
+                    toolbar: { show: false },
+                    background: 'transparent'
+                },
+                theme: {
+                    mode: isDark ? 'dark' : 'light'
+                },
+                colors: ['#10b981', '#f43f5e'], // Emerald and Rose
+                fill: {
+                    type: 'gradient',
+                    gradient: {
+                        shadeIntensity: 1,
+                        opacityFrom: 0.4,
+                        opacityTo: 0.05,
+                        stops: [0, 90, 100]
+                    }
+                },
+                dataLabels: { enabled: false },
+                stroke: {
+                    curve: 'smooth',
+                    width: 2
+                },
+                xaxis: {
+                    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+                    axisBorder: { show: false },
+                    axisTicks: { show: false },
+                    labels: { style: { colors: textColor } }
+                },
+                yaxis: {
+                    labels: {
+                        style: { colors: textColor },
+                        formatter: function (value) {
+                            return "$" + (value / 1000) + "k";
+                        }
+                    }
+                },
+                grid: {
+                    borderColor: gridColor,
+                    strokeDashArray: 4,
+                    yaxis: { lines: { show: true } },
+                    padding: { top: 0, right: 0, bottom: 0, left: 10 }
+                },
+                legend: {
+                    position: 'top',
+                    horizontalAlign: 'right',
+                    labels: { colors: textColor }
+                },
+                tooltip: {
+                    theme: isDark ? 'dark' : 'light'
+                }
+            };
+
+            var revenueChart = new ApexCharts(document.querySelector("#revenueChart"), revenueOptions);
+            revenueChart.render();
+
+            // 2. User Distribution Donut Chart
+            var donutOptions = {
+                series: [69, 31],
+                chart: {
+                    height: 320,
+                    type: 'donut',
+                    fontFamily: 'Inter, sans-serif',
+                    background: 'transparent'
+                },
+                theme: {
+                    mode: isDark ? 'dark' : 'light'
+                },
+                labels: ['Clients', 'IB Users'],
+                colors: ['#8b5cf6', '#6366f1'], // Purple and Indigo
+                plotOptions: {
+                    pie: {
+                        donut: {
+                            size: '75%',
+                            labels: {
+                                show: true,
+                                name: {
+                                    show: true,
+                                    fontSize: '14px',
+                                    color: textColor
+                                },
+                                value: {
+                                    show: true,
+                                    fontSize: '24px',
+                                    fontWeight: 'bold',
+                                    color: textColor
+                                },
+                                total: {
+                                    show: true,
+                                    showAlways: true,
+                                    label: 'Total Users',
+                                    color: textColor,
+                                    formatter: function (w) {
+                                        return "12,450"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                dataLabels: { enabled: false },
+                stroke: { show: false },
+                legend: { show: false },
+                tooltip: {
+                    theme: isDark ? 'dark' : 'light'
+                }
+            };
+
+            var donutChart = new ApexCharts(document.querySelector("#userDistributionChart"), donutOptions);
+            donutChart.render();
+        });
+    </script>
+}

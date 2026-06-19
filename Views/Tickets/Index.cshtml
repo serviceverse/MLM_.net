@@ -1,0 +1,382 @@
+@{
+    ViewData["Title"] = "Tickets";
+}
+
+<div class="p-2 md:p-4 text-[var(--text-primary)]">
+  <div class="space-y-6">
+    <div class="flex items-center justify-between">
+      <div>
+        <h1 class="text-2xl font-bold text-[var(--text-primary)]">Tickets</h1>
+        <p class="text-sm text-[var(--text-secondary)] mt-1">View and manage user support tickets</p>
+      </div>
+    </div>
+
+    <div class="bg-[var(--bg-primary)] border border-[var(--border-secondary)] rounded-sm">
+      <div class="p-8">
+        <ul class="nav nav-pills mb-6 bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] rounded-lg p-1 inline-flex" id="ticketsTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active px-4 py-2 rounded-md font-medium transition-colors" id="open-tab" data-bs-toggle="pill" data-bs-target="#open-tickets" type="button" role="tab" aria-controls="open-tickets" aria-selected="true" style="color: inherit;">
+              Open Tickets (<span id="open-count">0</span>)
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link px-4 py-2 rounded-md font-medium transition-colors" id="closed-tab" data-bs-toggle="pill" data-bs-target="#closed-tickets" type="button" role="tab" aria-controls="closed-tickets" aria-selected="false" style="color: inherit;">
+              Closed Tickets (<span id="closed-count">0</span>)
+            </button>
+          </li>
+        </ul>
+
+        <div class="flex items-center justify-between mt-6 mb-4">
+          <div></div>
+          <div class="relative w-80">
+            <i class="bi bi-search w-4 h-4 text-[var(--text-tertiary)] absolute left-3 top-1/2 -translate-y-1/2"></i>
+            <input type="text" id="search-input" placeholder="Search by id, title, user, email…" class="w-full pl-10 pr-4 py-2 bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] focus:outline-none focus:border-[var(--button-primary-bg)] focus:ring-1 focus:ring-[var(--button-primary-bg)] rounded-xl" />
+          </div>
+        </div>
+
+        <div class="tab-content" id="ticketsTabContent">
+          <div class="text-center py-8" id="loading-spinner">
+            <div class="spinner-border text-primary mx-auto" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+            <p class="text-[var(--text-secondary)] mt-2">Loading tickets...</p>
+          </div>
+          
+          <div class="overflow-x-auto d-none" id="tickets-table-container">
+            <table class="w-full">
+              <thead>
+                <tr class="border-b border-[var(--border-secondary)]">
+                  <th class="text-left py-4 px-4 text-[var(--text-secondary)] uppercase font-semibold">#</th>
+                  <th class="text-left py-4 px-4 text-[var(--text-secondary)] uppercase font-semibold">Enquiry</th>
+                  <th class="text-left py-4 px-4 text-[var(--text-secondary)] uppercase font-semibold">User</th>
+                  <th class="text-left py-4 px-4 text-[var(--text-secondary)] uppercase font-semibold">Email</th>
+                  <th class="text-left py-4 px-4 text-[var(--text-secondary)] uppercase font-semibold">Ticket ID</th>
+                  <th class="text-left py-4 px-4 text-[var(--text-secondary)] uppercase font-semibold">Title</th>
+                  <th class="text-left py-4 px-4 text-[var(--text-secondary)] uppercase font-semibold">Priority</th>
+                  <th class="text-left py-4 px-4 text-[var(--text-secondary)] uppercase font-semibold">Status</th>
+                  <th class="text-left py-4 px-4 text-[var(--text-secondary)] uppercase font-semibold">Updated</th>
+                  <th class="text-left py-4 px-4 text-[var(--text-secondary)] uppercase font-semibold">Action</th>
+                </tr>
+              </thead>
+              <tbody id="tickets-tbody">
+              </tbody>
+            </table>
+          </div>
+
+          <div class="flex items-center justify-between mt-6 d-none" id="pagination-container">
+            <div class="text-[var(--text-secondary)]" id="pagination-info">
+              Showing 0 to 0 of 0 entries
+            </div>
+            <div class="flex items-center gap-2">
+              <button class="border border-[var(--border-secondary)] text-[var(--text-secondary)] hover:bg-[var(--bg-secondary)] bg-transparent rounded-lg px-3 py-1 text-sm font-medium transition-colors disabled:opacity-50" id="btn-prev">
+                <i class="bi bi-chevron-left mr-1"></i> Previous
+              </button>
+              <button class="bg-[var(--button-primary-bg)] text-white px-3 py-1 rounded-lg text-sm font-medium" id="current-page">1</button>
+              <button class="border border-[var(--border-secondary)] text-[var(--text-secondary)] hover:bg-[var(--bg-secondary)] bg-transparent rounded-lg px-3 py-1 text-sm font-medium transition-colors disabled:opacity-50" id="btn-next">
+                Next <i class="bi bi-chevron-right ml-1"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ticket Modal -->
+  <div class="modal fade" id="ticketModal" tabindex="-1" aria-labelledby="ticketModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-scrollable">
+      <div class="modal-content bg-[var(--bg-secondary)] text-[var(--text-primary)] rounded-xl border border-[var(--border-primary)]">
+        <div class="modal-header border-b border-[var(--border-primary)]">
+          <h5 class="modal-title text-2xl font-semibold" id="ticketModalLabel">Ticket — <span id="modal-ticket-id"></span></h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-8">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="space-y-4">
+              <div class="grid grid-cols-2 gap-4">
+                <div>
+                  <label class="text-[var(--text-secondary)] text-sm">Category</label>
+                  <p class="mt-1" id="modal-category"></p>
+                </div>
+                <div>
+                  <label class="text-[var(--text-secondary)] text-sm">Priority</label>
+                  <div class="mt-1" id="modal-priority"></div>
+                </div>
+                <div>
+                  <label class="text-[var(--text-secondary)] text-sm">Status</label>
+                  <div class="mt-1" id="modal-status"></div>
+                </div>
+                <div>
+                  <label class="text-[var(--text-secondary)] text-sm">Created</label>
+                  <p class="mt-1 flex items-center">
+                    <i class="bi bi-calendar w-4 h-4 mr-2"></i>
+                    <span id="modal-created"></span>
+                  </p>
+                </div>
+              </div>
+              <div>
+                <label class="text-[var(--text-secondary)] text-sm">Title</label>
+                <p class="font-semibold mt-1" id="modal-title"></p>
+              </div>
+              <div>
+                <label class="text-[var(--text-secondary)] text-sm">Description</label>
+                <p class="mt-1 whitespace-pre-wrap break-words overflow-auto max-h-48 text-[var(--text-primary)]" id="modal-desc"></p>
+              </div>
+              <div class="grid grid-cols-1 gap-2">
+                <label class="text-[var(--text-secondary)] text-sm">User</label>
+                <p class="flex items-center"><i class="bi bi-person w-4 h-4 mr-2"></i> <span id="modal-user-name"></span></p>
+                <p class="text-[var(--text-secondary)]" id="modal-user-email"></p>
+              </div>
+            </div>
+            <div class="rounded-xl border border-[var(--border-secondary)] bg-[var(--bg-tertiary)] p-2 flex items-center justify-center">
+              <div id="modal-doc-container" class="w-full">
+                <!-- Image -->
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-6 border-t border-[var(--border-secondary)] pt-6">
+            <div class="space-y-4 max-h-56 overflow-y-auto mb-4" id="modal-messages">
+               <!-- Messages render here -->
+            </div>
+            
+            <div id="reply-container" class="space-y-3 d-none">
+              <label class="font-medium">Add Reply</label>
+              <textarea id="reply-message" placeholder="Type your message here..." class="w-full bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] focus:border-[var(--button-primary-bg)] focus:ring-[var(--button-primary-bg)] rounded-xl p-3 text-white" rows="3"></textarea>
+              <div class="flex justify-end gap-3">
+                <button type="button" class="border border-[var(--border-secondary)] text-[var(--text-secondary)] hover:bg-[var(--bg-secondary)] rounded-xl px-4 py-2" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-white rounded-xl px-4 py-2 flex items-center disabled:opacity-50" id="btn-send-message">
+                  <i class="bi bi-send w-4 h-4 mr-2"></i> Send Message
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+@section Scripts {
+  <style>
+    .nav-pills .nav-link.active {
+      background-color: var(--button-primary-bg);
+      color: var(--button-primary-text) !important;
+    }
+  </style>
+  <script>
+    const STATUS_GROUPS = {
+      open: ["OPEN", "IN_PROGRESS"],
+      closed: ["RESOLVED", "CLOSED"],
+    };
+
+    let activeTab = "open";
+    let tickets = [];
+    let openTickets = [];
+    let closedTickets = [];
+    let searchTerm = "";
+    let currentPage = 1;
+    let selectedTicket = null;
+    const pageSize = 10;
+    
+    async function fetchTickets() {
+      $('#loading-spinner').removeClass('d-none');
+      $('#tickets-table-container').addClass('d-none');
+      $('#pagination-container').addClass('d-none');
+      
+      try {
+        // Placeholder API call logic:
+        // const response = await fetch('/api/helpdesk/tickets?status=' + STATUS_GROUPS[activeTab].join(','));
+        // const data = await response.json();
+        
+        const data = []; // Mock
+        
+        if (activeTab === "open") {
+            openTickets = data;
+        } else {
+            closedTickets = data;
+        }
+        
+        $('#open-count').text(openTickets.length);
+        $('#closed-count').text(closedTickets.length);
+        
+      } catch (error) {
+        console.error("Failed to fetch tickets", error);
+      } finally {
+        $('#loading-spinner').addClass('d-none');
+        $('#tickets-table-container').removeClass('d-none');
+        $('#pagination-container').removeClass('d-none');
+        renderTable();
+      }
+    }
+
+    function getStatusBadge(status) {
+      switch (status) {
+        case "OPEN": return `<span class="badge bg-danger bg-opacity-10 text-danger border border-danger">Open</span>`;
+        case "IN_PROGRESS": return `<span class="badge bg-warning bg-opacity-10 text-warning border border-warning">In Progress</span>`;
+        case "RESOLVED": return `<span class="badge bg-success bg-opacity-10 text-success border border-success">Resolved</span>`;
+        case "CLOSED": return `<span class="badge bg-secondary bg-opacity-10 text-secondary border border-secondary">Closed</span>`;
+        default: return `<span class="badge bg-secondary bg-opacity-10 text-secondary border border-secondary">${status}</span>`;
+      }
+    }
+
+    function getPriorityBadge(priority) {
+      switch (priority) {
+        case "Urgent": return `<span class="badge bg-danger bg-opacity-10 text-danger border border-danger">Urgent</span>`;
+        case "High": return `<span class="badge bg-orange-500 bg-opacity-10 text-orange-500 border border-orange-500">High</span>`;
+        case "Medium": return `<span class="badge bg-warning bg-opacity-10 text-warning border border-warning">Medium</span>`;
+        case "Low": return `<span class="badge bg-success bg-opacity-10 text-success border border-success">Low</span>`;
+        default: return `<span class="badge bg-secondary bg-opacity-10 text-secondary border border-secondary">${priority}</span>`;
+      }
+    }
+
+    function renderTable() {
+      const currentList = activeTab === "open" ? openTickets : closedTickets;
+      const term = searchTerm.toLowerCase();
+      
+      const filtered = currentList.filter(t => 
+        (t.id && t.id.toLowerCase().includes(term)) ||
+        (t.title && t.title.toLowerCase().includes(term)) ||
+        (t.category && t.category.toLowerCase().includes(term)) ||
+        (t.user && t.user.fullName && t.user.fullName.toLowerCase().includes(term)) ||
+        (t.user && t.user.email && t.user.email.toLowerCase().includes(term))
+      );
+      
+      const tbody = $('#tickets-tbody');
+      tbody.empty();
+      
+      if (filtered.length === 0) {
+        tbody.append(`<tr><td colspan="10" class="py-8 text-center text-[var(--text-tertiary)]">No data available in table</td></tr>`);
+        $('#pagination-info').text(`Showing 0 to 0 of 0 entries`);
+      } else {
+        filtered.forEach((ticket, index) => {
+          const row = $(`<tr class="border-b border-[var(--border-secondary)]/50 hover:bg-[var(--bg-secondary)]/30">
+            <td class="py-4 px-4">${index + 1}</td>
+            <td class="py-4 px-4">${ticket.category || '-'}</td>
+            <td class="py-4 px-4">${ticket.user?.fullName || '-'}</td>
+            <td class="py-4 px-4">${ticket.user?.email || '-'}</td>
+            <td class="py-4 px-4 font-mono">${ticket.id || '-'}</td>
+            <td class="py-4 px-4">${ticket.title || '-'}</td>
+            <td class="py-4 px-4">${getPriorityBadge(ticket.priority)}</td>
+            <td class="py-4 px-4">${getStatusBadge(ticket.status)}</td>
+            <td class="py-4 px-4 text-[var(--text-secondary)]">${ticket.updatedAt ? new Date(ticket.updatedAt).toLocaleString() : '-'}</td>
+            <td class="py-4 px-4">
+              <button class="btn btn-sm btn-outline-secondary btn-view-ticket border-[var(--border-secondary)] text-[var(--text-secondary)] hover:bg-[var(--bg-secondary)] bg-transparent rounded-lg flex items-center" data-id="${ticket.id}">
+                <i class="bi bi-eye mr-1"></i> View
+              </button>
+            </td>
+          </tr>`);
+          
+          row.find('.btn-view-ticket').on('click', () => handleViewTicket(ticket));
+          tbody.append(row);
+        });
+        
+        $('#pagination-info').text(`Showing 1 to ${filtered.length} of ${filtered.length} entries`);
+      }
+    }
+
+    function handleViewTicket(ticket) {
+      selectedTicket = ticket;
+      
+      $('#modal-ticket-id').text(ticket.id);
+      $('#modal-category').text(ticket.category);
+      $('#modal-priority').html(getPriorityBadge(ticket.priority));
+      $('#modal-status').html(getStatusBadge(ticket.status));
+      $('#modal-created').text(ticket.createdAt ? new Date(ticket.createdAt).toLocaleString() : '-');
+      $('#modal-title').text(ticket.title);
+      $('#modal-desc').text(ticket.description || "No description provided");
+      $('#modal-user-name').text(ticket.user?.fullName || '-');
+      $('#modal-user-email').text(ticket.user?.email || '-');
+      
+      const docContainer = $('#modal-doc-container');
+      docContainer.empty();
+      if (ticket.docUrl) {
+        docContainer.append(`
+          <img src="${ticket.docUrl}" alt="Ticket attachment" class="max-h-[460px] w-full object-contain rounded-lg" loading="lazy" />
+          <div class="mt-3 flex justify-end">
+            <a href="${ticket.docUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm underline hover:no-underline" title="Open full image">
+              Open full image <i class="bi bi-box-arrow-up-right w-4 h-4"></i>
+            </a>
+          </div>
+        `);
+      } else {
+        docContainer.append(`<div class="text-[var(--text-tertiary)] text-sm">No attachment</div>`);
+      }
+      
+      const messagesContainer = $('#modal-messages');
+      messagesContainer.empty();
+      if (ticket.messages && ticket.messages.length > 0) {
+        ticket.messages.forEach(m => {
+          const bgClass = m.isStaff ? "bg-primary bg-opacity-20 border border-primary border-opacity-30" : "bg-[var(--bg-secondary)] border border-[var(--border-secondary)]";
+          messagesContainer.append(`
+            <div class="p-4 rounded-xl ${bgClass}">
+              <div class="flex justify-between items-start mb-2">
+                <span class="font-medium">${m.sender}</span>
+                <span class="text-sm text-[var(--text-secondary)]">${m.timestamp}</span>
+              </div>
+              <p>${m.message}</p>
+            </div>
+          `);
+        });
+      } else {
+        messagesContainer.append(`<p class="text-[var(--text-tertiary)] text-center py-4">No messages yet</p>`);
+      }
+      
+      if (ticket.status === "OPEN" || ticket.status === "IN_PROGRESS") {
+        $('#reply-container').removeClass('d-none');
+        $('#reply-message').val('');
+      } else {
+        $('#reply-container').addClass('d-none');
+      }
+      
+      const modal = new bootstrap.Modal(document.getElementById('ticketModal'));
+      modal.show();
+    }
+
+    $(document).ready(function() {
+      fetchTickets();
+      
+      $('button[data-bs-toggle="pill"]').on('shown.bs.tab', function (e) {
+        activeTab = $(e.target).attr('id') === 'open-tab' ? 'open' : 'closed';
+        currentPage = 1;
+        fetchTickets();
+      });
+      
+      $('#search-input').on('keyup', function() {
+        searchTerm = $(this).val();
+        renderTable();
+      });
+      
+      $('#reply-message').on('input', function() {
+        $('#btn-send-message').prop('disabled', !$(this).val().trim());
+      });
+      
+      $('#btn-send-message').on('click', async function() {
+        const msg = $('#reply-message').val().trim();
+        if (!msg || !selectedTicket) return;
+        
+        $(this).prop('disabled', true).html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Sending...');
+        
+        try {
+          const ts = new Date().toLocaleString("en-IN");
+          if (!selectedTicket.messages) selectedTicket.messages = [];
+          
+          selectedTicket.messages.push({
+            id: Date.now(),
+            sender: "Admin",
+            message: msg,
+            timestamp: ts,
+            isStaff: true
+          });
+          
+          handleViewTicket(selectedTicket);
+          
+        } catch(e) {
+          console.error("Failed to send msg", e);
+        } finally {
+          $(this).prop('disabled', false).html('<i class="bi bi-send w-4 h-4 mr-2"></i> Send Message');
+        }
+      });
+    });
+  </script>
+}

@@ -3,138 +3,286 @@
     ViewData["Title"] = "Client Dashboard";
 }
 
-<div class="min-h-screen bg-primary text-[var(--text-primary)] p-6 lg:p-8">
-    <div class="w-full">
-        
-        <!-- Top bar -->
-        <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between mb-6">
-            <h1 class="text-3xl lg:text-4xl font-bold tracking-tight">Hello, @Model.UserName Ã°Å¸â€˜â€¹</h1>
-            <div class="flex items-center gap-2">
+<div class="p-2 md:p-4 text-[var(--text-primary)]">
+    <!-- Header -->
+    <div class="mb-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+        <div>
+            <h1 class="text-2xl font-bold">Hello, @Model.UserName 👋</h1>
+            <p class="text-sm text-[var(--text-secondary)] mt-1">Here is the overview of your assets and performance.</p>
+        </div>
+        <div class="flex gap-2">
+            <a href="/fund/deposits" class="bg-[var(--bg-tertiary)] hover:bg-[var(--bg-secondary)] border border-[var(--border-secondary)] px-4 py-2 rounded-sm text-sm font-semibold transition-colors flex items-center">
+                <i class="bi bi-arrow-down-circle mr-2 text-emerald-500"></i> Deposit
+            </a>
+            <a href="/fund/withdraw" class="bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover-bg)] text-[var(--button-primary-text)] px-4 py-2 rounded-sm text-sm font-semibold transition-colors flex items-center shadow-md shadow-indigo-500/20">
+                <i class="bi bi-arrow-up-circle mr-2"></i> Withdraw
+            </a>
+        </div>
+    </div>
+
+    <!-- Stats Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+        <!-- Wallet Balance -->
+        <div class="bg-gradient-to-br from-[var(--bg-tertiary)]/80 to-[var(--bg-secondary)] border border-[var(--border-secondary)] rounded-sm p-5 shadow-sm">
+            <p class="text-[var(--text-secondary)] text-sm font-medium mb-1">Total Equity</p>
+            <h3 class="text-3xl font-extrabold mb-4">@Model.WalletBalance.ToString("N2") <span class="text-lg text-[var(--text-tertiary)]">@Model.Currency</span></h3>
+            <div class="flex items-center text-sm">
+                <span class="text-emerald-500 flex items-center font-medium bg-emerald-500/10 px-2 py-0.5 rounded-full">
+                    <i class="bi bi-arrow-up-short text-lg leading-none"></i> +2.4%
+                </span>
+                <span class="text-[var(--text-tertiary)] ml-2">24h Change</span>
             </div>
         </div>
 
-        <!-- Row 1: Hero + Right rail -->
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-8">
-            
-            <!-- Hero: Your Asset -->
-            <div class="lg:col-span-2 rounded-3xl bg-[var(--bg-secondary)] border border-[var(--border-primary)] overflow-hidden shadow-lg transform transition-all hover:shadow-xl hover:-translate-y-0.5">
-                <div class="p-6 pb-2 border-b border-[var(--border-primary)]">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-[var(--button-primary-bg)]/20 flex items-center justify-center">
-                            <svg class="w-5 h-5 text-[var(--button-primary-bg)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path></svg>
-                        </div>
-                        <h3 class="text-xl font-semibold leading-none tracking-tight">Your Asset</h3>
+        <!-- Accounts & Deposits -->
+        <div class="bg-[var(--bg-primary)] border border-[var(--border-secondary)] rounded-sm p-5 flex flex-col justify-center shadow-sm">
+            <div class="flex justify-between items-center mb-3">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 rounded-full bg-indigo-500/10 text-indigo-500 flex items-center justify-center">
+                        <i class="bi bi-briefcase"></i>
                     </div>
+                    <p class="text-[var(--text-secondary)] text-sm font-medium">MT5 Accounts</p>
                 </div>
-
-                <div class="p-6 grid gap-4 lg:grid-cols-3">
-                    <!-- Big balance -->
-                    <div class="lg:col-span-2 rounded-2xl p-6 bg-gradient-to-br from-[var(--bg-tertiary)]/40 via-[var(--bg-secondary)] to-[var(--bg-tertiary)] border border-[var(--border-primary)] shadow-md flex flex-col">
-                        <div class="flex items-start justify-between mb-6">
-                            <div>
-                                <p class="text-sm text-[var(--text-secondary)]">Total Equity</p>
-                                <p class="text-4xl font-extrabold mt-1">
-                                    @Model.WalletBalance.ToString("N2") @Model.Currency
-                                </p>
-                            </div>
-                            <div class="flex gap-2">
-                                <a href="/fund/withdraw" class="rounded-md bg-[var(--button-primary-bg)] text-[var(--button-primary-text)] hover:bg-[var(--button-primary-hover-bg)] text-sm px-4 py-2 flex items-center gap-1">Withdraw</a>
-                                <a href="/fund/deposits" class="rounded-md bg-[var(--button-primary-bg)] text-[var(--button-primary-text)] hover:bg-[var(--button-primary-hover-bg)] text-sm px-4 py-2 flex items-center gap-1">Deposit</a>
-                            </div>
-                        </div>
-
-                        <div class="flex-grow"></div>
-
-                        <!-- Cards positioned at the bottom -->
-                        <div class="grid grid-cols-2 gap-3 text-sm mt-auto">
-                            <div class="rounded-xl px-4 py-3 bg-[var(--bg-secondary)]/60 border border-[var(--border-primary)] shadow-sm">
-                                <p class="text-[var(--text-secondary)]">Accounts</p>
-                                <p class="text-xl font-semibold">@Model.AccountCount</p>
-                            </div>
-                            <div class="rounded-xl px-4 py-3 bg-[var(--bg-secondary)]/60 border border-[var(--border-primary)] shadow-sm">
-                                <p class="text-[var(--text-secondary)]">Total Deposit</p>
-                                <p class="text-xl font-semibold">@Model.TotalDeposits.ToString("N2") @Model.Currency</p>
-                            </div>
-                            <div class="rounded-xl px-4 py-3 bg-[var(--bg-secondary)]/60 border border-[var(--border-primary)] shadow-sm">
-                                <p class="text-[var(--text-secondary)]">Total Withdraw</p>
-                                <p class="text-xl font-semibold">@Model.TotalWithdrawals.ToString("N2") @Model.Currency</p>
-                            </div>
-                            <div class="rounded-xl px-4 py-3 bg-[var(--bg-secondary)]/60 border border-[var(--border-primary)] shadow-sm">
-                                <p class="text-[var(--text-secondary)]">Performance (24h)</p>
-                                <p class="flex items-center gap-1 text-green-400 font-semibold">
-                                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline><polyline points="16 7 22 7 22 13"></polyline></svg> +0.00%
-                                </p>
-                            </div>
-                        </div>
+                <h3 class="text-xl font-bold">@Model.AccountCount</h3>
+            </div>
+            <div class="flex justify-between items-center border-t border-[var(--border-secondary)] pt-3">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 rounded-full bg-emerald-500/10 text-emerald-500 flex items-center justify-center">
+                        <i class="bi bi-cash-stack"></i>
                     </div>
+                    <p class="text-[var(--text-secondary)] text-sm font-medium">Total Deposits</p>
+                </div>
+                <h3 class="text-xl font-bold text-emerald-500">@Model.TotalDeposits.ToString("N2")</h3>
+            </div>
+        </div>
 
-                    <!-- Right column: IB Overview + Referral -->
-                    <div class="flex flex-col gap-4">
-                        <div class="rounded-2xl p-6 bg-[var(--bg-tertiary)]/60 border border-[var(--border-primary)] shadow-md">
-                            <div class="flex items-center gap-2 mb-2">
-                                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M7 15v2"></path><path d="M11 11v6"></path><path d="M15 7v10"></path></svg>
-                                <p class="font-semibold">IB Overview</p>
-                            </div>
-                            <div class="space-y-3 text-sm">
-                                <div class="flex items-center justify-between">
-                                    <span class="text-[var(--text-secondary)]">Available Commission</span>
-                                    <span class="font-semibold">@Model.IbAvailable.ToString("N2") @Model.Currency</span>
-                                </div>
-                                <div class="flex items-center justify-between">
-                                    <span class="text-[var(--text-secondary)]">Withdrawn</span>
-                                    <span class="font-semibold">@Model.IbWithdrawn.ToString("N2") @Model.Currency</span>
-                                </div>
-                                <div class="flex items-center justify-between">
-                                    <span class="text-[var(--text-secondary)]">Total Clients</span>
-                                    <span class="font-semibold">@Model.IbTotalClients</span>
-                                </div>
-                            </div>
-                        </div>
+        <!-- IB Overview -->
+        <div class="bg-[var(--bg-primary)] border border-[var(--border-secondary)] rounded-sm p-5 shadow-sm flex flex-col">
+            <div class="flex items-center gap-2 mb-3">
+                <i class="bi bi-diagram-3 text-[var(--button-primary-bg)]"></i>
+                <p class="font-semibold text-sm">IB Overview</p>
+            </div>
+            <div class="space-y-2 text-sm flex-grow">
+                <div class="flex justify-between">
+                    <span class="text-[var(--text-secondary)]">Available</span>
+                    <span class="font-semibold">@Model.IbAvailable.ToString("N2") @Model.Currency</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-[var(--text-secondary)]">Withdrawn</span>
+                    <span class="font-semibold text-[var(--text-tertiary)]">@Model.IbWithdrawn.ToString("N2") @Model.Currency</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-[var(--text-secondary)]">Clients</span>
+                    <span class="font-semibold">@Model.IbTotalClients</span>
+                </div>
+            </div>
+        </div>
 
-                        @if (Model.ShowReferral)
+        <!-- Referral -->
+        @if (Model.ShowReferral)
+        {
+            <div class="bg-[var(--bg-primary)] border border-[var(--border-secondary)] rounded-sm p-5 shadow-sm flex flex-col">
+                <div class="flex items-center gap-2 mb-3">
+                    <i class="bi bi-link-45deg text-purple-500"></i>
+                    <p class="font-semibold text-sm">Your Referral Code</p>
+                </div>
+                <div class="bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] rounded p-3 flex justify-between items-center mb-2">
+                    <span class="font-bold text-lg tracking-wider">@(string.IsNullOrEmpty(Model.ReferralCode) ? "—" : Model.ReferralCode)</span>
+                    <button class="text-[var(--text-secondary)] hover:text-[var(--button-primary-bg)] transition-colors"><i class="bi bi-copy"></i></button>
+                </div>
+                <p class="text-xs text-[var(--text-tertiary)] mt-auto">Share this code with your network to earn IB commissions.</p>
+            </div>
+        }
+    </div>
+
+    <!-- Chart Row -->
+    <div class="bg-[var(--bg-primary)] border border-[var(--border-secondary)] rounded-sm p-5 shadow-sm mb-6">
+        <div class="flex justify-between items-center mb-4 border-b border-[var(--border-secondary)] pb-4">
+            <h3 class="text-lg font-bold">Asset Growth & Cashflow</h3>
+            <div class="flex gap-2">
+                <span class="text-xs font-semibold text-emerald-500 bg-emerald-500/10 px-2 py-1 rounded">Net: +$1,900</span>
+            </div>
+        </div>
+        <div id="cashflowChart" style="min-height: 320px;"></div>
+    </div>
+
+    <!-- Tables Row -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+        <!-- MT5 Accounts -->
+        <div class="bg-[var(--bg-primary)] border border-[var(--border-secondary)] rounded-sm shadow-sm overflow-hidden flex flex-col">
+            <div class="px-5 py-4 border-b border-[var(--border-secondary)] flex justify-between items-center bg-[var(--bg-tertiary)]/50">
+                <h3 class="text-base font-bold">My MT5 Accounts</h3>
+                <a href="/Account/OpenLiveAccount" class="text-xs text-[var(--button-primary-bg)] hover:underline font-medium">Open New</a>
+            </div>
+            <div class="overflow-x-auto flex-grow">
+                <table class="w-full text-sm">
+                    <thead>
+                        <tr class="bg-[var(--bg-secondary)] border-b border-[var(--border-secondary)]">
+                            <th class="text-left py-3 px-5 text-[var(--text-secondary)] font-semibold">Login ID</th>
+                            <th class="text-left py-3 px-5 text-[var(--text-secondary)] font-semibold">Group</th>
+                            <th class="text-right py-3 px-5 text-[var(--text-secondary)] font-semibold">Balance</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-[var(--border-secondary)]">
+                        @if(Model.Accounts != null && Model.Accounts.Any())
                         {
-                            <div class="rounded-2xl p-6 bg-[var(--bg-tertiary)]/60 border border-[var(--border-primary)] shadow-md">
-                                <div class="flex items-center gap-2 mb-3">
-                                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-                                    <p class="font-semibold">Referral</p>
-                                </div>
-                                <div class="space-y-2 text-sm">
-                                    <div class="rounded-xl p-3 bg-[var(--bg-secondary)]/60 border border-[var(--border-primary)] shadow-sm">
-                                        <p class="text-[var(--text-secondary)]">Your Code</p>
-                                        <p class="font-semibold text-lg">@(string.IsNullOrEmpty(Model.ReferralCode) ? "Ã¢â‚¬â€" : Model.ReferralCode)</p>
-                                    </div>
-                                </div>
-                            </div>
+                            foreach(var acc in Model.Accounts)
+                            {
+                                <tr class="hover:bg-[var(--bg-tertiary)]/50 transition-colors">
+                                    <td class="py-3 px-5 font-mono font-semibold">@acc.LoginId</td>
+                                    <td class="py-3 px-5"><span class="px-2 py-0.5 rounded text-[10px] bg-indigo-500/10 text-indigo-500 border border-indigo-500/20 uppercase">@acc.Group</span></td>
+                                    <td class="py-3 px-5 text-right font-bold">@acc.Balance.ToString("N2")</td>
+                                </tr>
+                            }
                         }
-                    </div>
-                </div>
-            </div>
-
-            <!-- Right rail widgets -->
-            <div class="space-y-4">
-                <div class="rounded-2xl bg-[var(--bg-secondary)] border border-[var(--border-primary)] shadow-lg transform transition-all hover:shadow-xl hover:-translate-y-0.5">
-                    <div class="p-5 text-center">
-                        <div class="w-10 h-10 mx-auto rounded-xl bg-[var(--button-primary-bg)]/20 flex items-center justify-center mb-2">
-                            <svg class="w-5 h-5 text-[var(--button-primary-bg)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"></path><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"></path><path d="M18 12a2 2 0 0 0 0 4h4v-4Z"></path></svg>
-                        </div>
-                        <p class="text-sm text-[var(--text-secondary)]">Wallet Balance</p>
-                        <p class="text-2xl font-bold mt-1">@Model.WalletBalance.ToString("N2") @Model.Currency</p>
-                    </div>
-                </div>
-
-                <div class="rounded-2xl bg-[var(--bg-secondary)] border border-[var(--border-primary)] shadow-lg transform transition-all hover:shadow-xl hover:-translate-y-0.5">
-                    <div class="p-5 text-center">
-                        <div class="w-10 h-10 mx-auto rounded-xl bg-[var(--button-primary-bg)]/20 flex items-center justify-center mb-2">
-                            <svg class="w-5 h-5 text-[var(--button-primary-bg)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                        </div>
-                        <p class="text-sm text-[var(--text-secondary)]">Total Iman Accounts</p>
-                        <p class="text-4xl font-extrabold mt-1 text-[var(--button-primary-bg)]">@Model.AccountCount</p>
-                    </div>
-                </div>
-
-                <!-- Trending Assets SVG Placeholder -->
+                        else
+                        {
+                            <tr><td colspan="3" class="py-6 text-center text-[var(--text-tertiary)]">No accounts found.</td></tr>
+                        }
+                    </tbody>
+                </table>
             </div>
         </div>
 
+        <!-- IB Clients -->
+        <div class="bg-[var(--bg-primary)] border border-[var(--border-secondary)] rounded-sm shadow-sm overflow-hidden flex flex-col">
+            <div class="px-5 py-4 border-b border-[var(--border-secondary)] flex justify-between items-center bg-[var(--bg-tertiary)]/50">
+                <h3 class="text-base font-bold">Recent IB Clients</h3>
+                <a href="/IbManagement" class="text-xs text-[var(--button-primary-bg)] hover:underline font-medium">View All</a>
+            </div>
+            <div class="overflow-x-auto flex-grow">
+                <table class="w-full text-sm">
+                    <thead>
+                        <tr class="bg-[var(--bg-secondary)] border-b border-[var(--border-secondary)]">
+                            <th class="text-left py-3 px-5 text-[var(--text-secondary)] font-semibold">Client Name</th>
+                            <th class="text-left py-3 px-5 text-[var(--text-secondary)] font-semibold">Joined</th>
+                            <th class="text-right py-3 px-5 text-[var(--text-secondary)] font-semibold">Total Deposit</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-[var(--border-secondary)]">
+                        @if(Model.IbClients != null && Model.IbClients.Any())
+                        {
+                            foreach(var client in Model.IbClients)
+                            {
+                                <tr class="hover:bg-[var(--bg-tertiary)]/50 transition-colors">
+                                    <td class="py-3 px-5 font-medium">@client.FullName</td>
+                                    <td class="py-3 px-5 text-[var(--text-secondary)] text-xs">@client.JoinedAt</td>
+                                    <td class="py-3 px-5 text-right font-bold text-emerald-500">@client.TotalDeposit.ToString("C")</td>
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <tr><td colspan="3" class="py-6 text-center text-[var(--text-tertiary)]">No clients referred yet.</td></tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 </div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+    <script>
+        const isDark = getComputedStyle(document.body).getPropertyValue('--bg-primary').includes('1f2937') || 
+                       getComputedStyle(document.body).backgroundColor === 'rgb(15, 23, 42)' ||
+                       document.body.classList.contains('dark');
+                       
+        const textColor = getComputedStyle(document.documentElement).getPropertyValue('--text-primary').trim() || '#e2e8f0';
+        const gridColor = 'rgba(150, 150, 150, 0.1)';
+
+        document.addEventListener('DOMContentLoaded', function () {
+            
+            // Serialize C# Lists to JS Arrays safely
+            const depositsData = @Json.Serialize(Model.MonthlyDeposits ?? new List<decimal>());
+            const withdrawalsData = @Json.Serialize(Model.MonthlyWithdrawals ?? new List<decimal>());
+            const netData = @Json.Serialize(Model.NetMonthly ?? new List<decimal>());
+
+            var options = {
+                series: [{
+                    name: 'Deposits',
+                    type: 'column',
+                    data: depositsData.length ? depositsData : [0,0,0,0,0,0,0]
+                }, {
+                    name: 'Withdrawals',
+                    type: 'column',
+                    data: withdrawalsData.length ? withdrawalsData : [0,0,0,0,0,0,0]
+                }, {
+                    name: 'Net Growth',
+                    type: 'area',
+                    data: netData.length ? netData : [0,0,0,0,0,0,0]
+                }],
+                chart: {
+                    height: 350,
+                    type: 'line',
+                    stacked: false,
+                    fontFamily: 'Inter, sans-serif',
+                    toolbar: { show: false },
+                    background: 'transparent'
+                },
+                theme: {
+                    mode: isDark ? 'dark' : 'light'
+                },
+                stroke: {
+                    width: [0, 0, 3],
+                    curve: 'smooth'
+                },
+                colors: ['#10b981', '#f43f5e', '#6366f1'], // Emerald, Rose, Indigo
+                fill: {
+                    opacity: [0.85, 0.85, 0.1],
+                    gradient: {
+                        inverseColors: false,
+                        shade: 'light',
+                        type: "vertical",
+                        opacityFrom: 0.5,
+                        opacityTo: 0.1,
+                        stops: [0, 100, 100, 100]
+                    }
+                },
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+                markers: {
+                    size: 0
+                },
+                xaxis: {
+                    axisBorder: { show: false },
+                    axisTicks: { show: false },
+                    labels: { style: { colors: textColor } }
+                },
+                yaxis: {
+                    labels: {
+                        style: { colors: textColor },
+                        formatter: function (value) {
+                            return "$" + value;
+                        }
+                    }
+                },
+                grid: {
+                    borderColor: gridColor,
+                    strokeDashArray: 4,
+                    yaxis: { lines: { show: true } }
+                },
+                tooltip: {
+                    shared: true,
+                    intersect: false,
+                    theme: isDark ? 'dark' : 'light',
+                    y: {
+                        formatter: function (y) {
+                            if (typeof y !== "undefined") {
+                                return "$" + y.toFixed(0);
+                            }
+                            return y;
+                        }
+                    }
+                },
+                legend: {
+                    labels: { colors: textColor }
+                }
+            };
+
+            var chart = new ApexCharts(document.querySelector("#cashflowChart"), options);
+            chart.render();
+        });
+    </script>
+}

@@ -1,0 +1,265 @@
+@{
+    ViewData["Title"] = "Notifications";
+}
+
+<div class="p-2 md:p-4 text-[var(--text-primary)]">
+  <div class="space-y-6">
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div>
+        <h1 class="text-2xl font-bold text-[var(--text-primary)]">Notifications</h1>
+        <p class="text-sm text-[var(--text-secondary)] mt-1">Activity logs and updates</p>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <select id="status-select" class="form-select bg-[var(--bg-secondary)] border-[var(--border-primary)] text-[var(--text-primary)] w-[140px] rounded-lg">
+          <option value="ALL">All Notifications</option>
+          <option value="UNREAD" selected>Unread Only</option>
+          <option value="READ">Read Only</option>
+        </select>
+
+        <select id="page-size-select" class="form-select bg-[var(--bg-secondary)] border-[var(--border-primary)] text-[var(--text-primary)] w-[100px] rounded-lg">
+          <option value="10" selected>10 / page</option>
+          <option value="25">25 / page</option>
+          <option value="50">50 / page</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="loading-spinner" class="text-center py-20 d-none">
+      <div class="spinner-border text-[var(--button-primary-bg)]" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+
+    <div id="empty-state" class="flex flex-col items-center justify-center py-20 bg-[var(--bg-primary)] rounded-sm border border-dashed border-[var(--border-secondary)] text-[var(--text-tertiary)] d-none">
+      <p>No notifications found.</p>
+    </div>
+
+    <div id="notifications-container" class="space-y-4">
+      <!-- Notifications will be injected here -->
+    </div>
+
+    <div id="pagination-controls" class="flex items-center justify-between mt-8 pt-4 border-t border-[var(--border-primary)] d-none">
+      <div class="text-sm text-[var(--text-secondary)]" id="pagination-info">
+        Showing 0 to 0 of 0 notifications
+      </div>
+
+      <div class="flex items-center gap-2">
+        <button id="btn-prev" class="p-2 rounded-lg bg-[var(--bg-secondary)] border border-[var(--border-primary)] disabled:opacity-50 hover:bg-[var(--bg-tertiary)] transition-colors">
+          <i class="bi bi-chevron-left w-5 h-5"></i>
+        </button>
+
+        <div class="flex items-center gap-1" id="page-numbers">
+          <!-- Page numbers injected here -->
+        </div>
+
+        <button id="btn-next" class="p-2 rounded-lg bg-[var(--bg-secondary)] border border-[var(--border-primary)] disabled:opacity-50 hover:bg-[var(--bg-tertiary)] transition-colors">
+          <i class="bi bi-chevron-right w-5 h-5"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Notification Details Modal -->
+  <div class="modal fade" id="notificationModal" tabindex="-1" aria-labelledby="notificationModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+      <div class="modal-content bg-[var(--bg-secondary)] border-[var(--border-primary)] text-[var(--text-primary)] rounded-xl">
+        <div class="modal-header border-b border-[var(--border-primary)]">
+          <h5 class="modal-title text-2xl font-bold" id="modal-title">Notification Title</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-6 max-h-[70vh] overflow-y-auto">
+          <div class="space-y-6">
+            <div class="space-y-2">
+              <h3 class="text-xs uppercase tracking-wider font-semibold text-[var(--text-tertiary)]">Message</h3>
+              <p class="text-base leading-relaxed bg-[var(--bg-primary)] p-4 rounded-xl border border-[var(--border-primary)]" id="modal-message"></p>
+            </div>
+            
+            <div id="modal-extra-content">
+              <!-- Dynamically rendered content based on type goes here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+@section Scripts {
+  <script>
+    let notifications = [];
+    let page = 1;
+    let pageSize = 10;
+    let status = "UNREAD";
+    let total = 0;
+    let totalPages = 0;
+    
+    $(document).ready(function() {
+      fetchNotifications();
+      
+      $('#status-select').on('change', function() {
+        status = $(this).val();
+        page = 1;
+        fetchNotifications();
+      });
+      
+      $('#page-size-select').on('change', function() {
+        pageSize = parseInt($(this).val());
+        page = 1;
+        fetchNotifications();
+      });
+      
+      $('#btn-prev').on('click', function() {
+        if (page > 1) {
+          page--;
+          fetchNotifications();
+        }
+      });
+      
+      $('#btn-next').on('click', function() {
+        if (page < totalPages) {
+          page++;
+          fetchNotifications();
+        }
+      });
+    });
+
+    async function fetchNotifications() {
+      $('#loading-spinner').removeClass('d-none');
+      $('#notifications-container').empty();
+      $('#empty-state').addClass('d-none');
+      $('#pagination-controls').addClass('d-none');
+      
+      try {
+        // Placeholder for real API call
+        // const res = await fetch(`/api/notifications?page=${page}&pageSize=${pageSize}&status=${status}`);
+        // const data = await res.json();
+        
+        // MOCK DATA for now
+        const mockData = {
+          data: [], // Add mock notifications here to test
+          pagination: { total: 0, totalPages: 0 }
+        };
+        
+        notifications = mockData.data;
+        total = mockData.pagination.total;
+        totalPages = mockData.pagination.totalPages;
+        
+      } catch (err) {
+        console.error("Error fetching notifications", err);
+      } finally {
+        $('#loading-spinner').addClass('d-none');
+        renderNotifications();
+      }
+    }
+
+    function renderNotifications() {
+      const container = $('#notifications-container');
+      container.empty();
+      
+      if (notifications.length === 0) {
+        $('#empty-state').removeClass('d-none');
+        $('#pagination-controls').addClass('d-none');
+        return;
+      }
+      
+      $('#empty-state').addClass('d-none');
+      $('#pagination-controls').removeClass('d-none');
+      
+      notifications.forEach(n => {
+        const isUnread = n.status === "UNREAD";
+        const cardClass = isUnread 
+          ? "border-[var(--button-primary-bg)] bg-[var(--button-primary-bg)]/5" 
+          : "border-[var(--border-primary)]";
+          
+        const badgeClass = isUnread
+          ? "bg-[var(--button-primary-bg)] text-white border-transparent"
+          : "text-[var(--text-tertiary)] border-[var(--border-secondary)]";
+
+        const card = $(`
+          <div class="card-item bg-[var(--bg-primary)] border rounded-sm shadow-none cursor-pointer hover:bg-[var(--bg-tertiary)] transition-all ${cardClass}" data-id="${n.id}">
+            <div class="p-5 space-y-2">
+              <div class="flex justify-between items-start">
+                <div class="flex-1 mr-4">
+                  <h2 class="text-lg font-semibold text-[var(--text-primary)]">${n.title}</h2>
+                  <p class="text-sm text-[var(--text-secondary)]">${n.message}</p>
+                </div>
+                <div class="flex flex-col items-end gap-3">
+                  <span class="px-3 py-0.5 rounded-full text-[10px] font-bold border ${badgeClass}">${n.status}</span>
+                  <span class="text-[10px] text-[var(--text-tertiary)]">${new Date(n.createdAt).toLocaleString()}</span>
+                </div>
+              </div>
+              ${isUnread ? '<button class="btn-mark-read text-xs text-[var(--button-primary-bg)] font-bold hover:underline mt-2 inline-block pt-2 border-t border-[var(--border-primary)]/50 w-full text-left">Mark as read</button>' : ''}
+            </div>
+          </div>
+        `);
+        
+        card.on('click', function() {
+          handleCardClick(n);
+        });
+        
+        card.find('.btn-mark-read').on('click', function(e) {
+          e.stopPropagation();
+          markAsRead(n.id);
+        });
+        
+        container.append(card);
+      });
+      
+      renderPagination();
+    }
+
+    function renderPagination() {
+      const start = (page - 1) * pageSize + 1;
+      const end = Math.min(page * pageSize, total);
+      $('#pagination-info').html(`Showing <span class="font-bold text-[var(--text-primary)]">${total === 0 ? 0 : start}</span> to <span class="font-bold text-[var(--text-primary)]">${end}</span> of <span class="font-bold text-[var(--text-primary)]">${total}</span> notifications`);
+      
+      $('#btn-prev').prop('disabled', page === 1);
+      $('#btn-next').prop('disabled', page === totalPages || totalPages === 0);
+      
+      const pageNumbers = $('#page-numbers');
+      pageNumbers.empty();
+      
+      for (let i = 0; i < Math.min(5, totalPages); i++) {
+        let pageNum = page <= 3 ? i + 1 : page + i - 2;
+        if (pageNum > totalPages) pageNum = totalPages - (4 - i);
+        if (pageNum < 1) pageNum = i + 1;
+        if (pageNum > totalPages) continue;
+        
+        const isCurrent = page === pageNum;
+        const btnClass = isCurrent 
+          ? "bg-[var(--button-primary-bg)] text-white shadow-lg" 
+          : "bg-[var(--bg-secondary)] text-[var(--text-secondary)] border border-[var(--border-primary)] hover:bg-[var(--bg-tertiary)]";
+          
+        const btn = $(`<button class="w-9 h-9 rounded-lg text-sm font-bold transition-all ${btnClass}">${pageNum}</button>`);
+        btn.on('click', function() {
+          page = pageNum;
+          fetchNotifications();
+        });
+        pageNumbers.append(btn);
+      }
+    }
+
+    async function markAsRead(id) {
+      try {
+        // await fetch('/api/notifications/' + id + '/read', { method: 'POST' });
+        // MOCK: update local status
+        const n = notifications.find(x => x.id === id);
+        if (n) n.status = "READ";
+        renderNotifications();
+      } catch (err) {
+        console.error("Failed to mark as read", err);
+      }
+    }
+
+    function handleCardClick(notification) {
+      $('#modal-title').text(notification.title);
+      $('#modal-message').text(notification.message);
+      
+      $('#modal-extra-content').html('');
+      
+      const modal = new bootstrap.Modal(document.getElementById('notificationModal'));
+      modal.show();
+    }
+  </script>
+}
